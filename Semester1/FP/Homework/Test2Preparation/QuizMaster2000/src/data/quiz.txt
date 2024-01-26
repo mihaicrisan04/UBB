@@ -1,0 +1,5 @@
+3;Which number is prime;2;32;9;2;easy
+2;Which number is the smallest;-3;3;0;3;easy
+11;Who is more beautiful?;Alesia;Ioana;Teodora;Teodora;easy
+10;The Western Roman Empire fell in;654;546;476;476;hard
+5;Which is not a fish;carpiorca;eel;orca;orca;medium

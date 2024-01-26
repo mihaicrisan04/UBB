@@ -1,0 +1,1 @@
+Number of associative operations: 17061118

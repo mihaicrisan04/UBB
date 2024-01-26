@@ -1,0 +1,33 @@
+Number of associative operations: 8
+Table number: 1
+1 1 
+1 1 
+--------------------
+Table number: 2
+1 1 
+1 2 
+--------------------
+Table number: 3
+1 1 
+2 2 
+--------------------
+Table number: 4
+1 2 
+1 2 
+--------------------
+Table number: 5
+1 2 
+2 1 
+--------------------
+Table number: 6
+1 2 
+2 2 
+--------------------
+Table number: 7
+2 1 
+1 2 
+--------------------
+Table number: 8
+2 2 
+2 2 
+--------------------
