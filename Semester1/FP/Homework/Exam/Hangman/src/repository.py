@@ -17,6 +17,9 @@ class SentenceRepository:
         try:
             with open(self.file_name, "r") as file:
                 for row in file:
+                    row = row.strip()
+                    if row == "":
+                        continue
                     sentence = Sentence.from_string(row)
                     self.add_sentence(sentence)
         except FileNotFoundError:

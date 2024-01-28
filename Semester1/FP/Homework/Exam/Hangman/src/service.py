@@ -13,15 +13,36 @@ class SentenceService:
         self.repository = repository    
 
 
+    def get_all_sentences(self) -> list:
+        return self.repository.sentences
+
+
+    def __validate_sentence(self, string: str) -> None:
+        if string == "":
+            raise ServiceException("Sentence cannot be empty!")
+
+        for letter in string:
+            if not letter.isalpha() and letter != " ":
+                raise ServiceException("Sentence can only contain letters and spaces!")
+
+        words = string.split(" ")
+
+        for word in words:
+            if len(word) < 3:
+                raise ServiceException("Word too short!")
+        
+
     def add_sentence(self, sentence_string: str):
+        try:
+            self.__validate_sentence(sentence_string)
+        except ServiceException as se:
+            raise ServiceException(str(se))
+
         sentence = Sentence.from_string(sentence_string)
         try:
             self.repository.add_sentence(sentence)
         except RepositoryException as re:
             raise ServiceException(str(re))
-
-        for s in self.repository.sentences:
-            print(s)
 
 
     def get_random_sentence(self) -> Sentence:

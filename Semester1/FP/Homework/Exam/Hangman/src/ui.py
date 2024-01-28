@@ -1,4 +1,5 @@
 from constants import *
+from service import ServiceException
 
 
 class UI:
@@ -6,9 +7,17 @@ class UI:
         self.service = service
 
     def print_menu(self):
+        print()
         print(ADD_SENTENCE_OPTION + ". Add a sentence")
         print(START_GAME_OPTION + ". Start game")
         print(EXIT_OPTION + ". Exit")
+
+    def validate_guess(self, guess: str) -> bool:
+        if len(guess) != 1:
+            return False
+        if not guess.isalpha():
+            return False
+        return True
 
     
     def run_game(self):
@@ -17,44 +26,27 @@ class UI:
         hangman = "hangman"
 
         while True:
+            output = sentence.preview_string + " - " + hangman[:hang_count]
+            print(output)
+
             guess = input("Enter guess: ").strip().lower()
 
-            if len(guess) != 1:
+            if not self.validate_guess(guess):
                 print("Invalid guess!")
                 continue
 
-            if not guess.isalpha():
-                print("Invalid guess!")
-                continue
-
-            # check if the letter was already guessed
-            if guess in sentence.guessed_letters:
-                print("Letter already guessed!")
-                continue
-
-            # check if the letter is in the sentence
             if not sentence.guess_letter(guess):
-                print("Letter not in sentence!")
                 hang_count += 1
+
 
             # check if the game is over
             if hang_count == 7:
-                print("You lost!")
-                print("The sentence was: " + str(sentence))
+                print(sentence.sentence_string + " - " + "You lost!") 
                 break
 
-            # print the sentence with the guessed letters
-            output = ""
-            for letter in sentence.sentence_string:
-                if letter in sentence.guessed_letters:
-                    output += letter
-                else:
-                    output += "_"   
-
-            output += " - " + hangman[:hang_count]
-            print(output)
-
-
+            if sentence.preview_string == sentence.sentence_string:
+                print(sentence.sentence_string + " - " + "You won!")
+                break
 
 
     def run(self):
@@ -65,16 +57,6 @@ class UI:
 
             if option == ADD_SENTENCE_OPTION:
                 sentence = input("Enter sentence: ").strip()
-
-                words = sentence.split()
-                if len(words) < 1:
-                    print("Invalid sentence!")
-                    continue
-
-                for word in words:
-                    if len(word) < 3:
-                        print("Invalid sentence!")
-                        continue
 
                 try:
                     self.service.add_sentence(sentence)
