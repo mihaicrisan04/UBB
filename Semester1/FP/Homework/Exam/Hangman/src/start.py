@@ -4,7 +4,7 @@ from ui import UI
 
 
 def main():
-    repository = SentenceRepository()
+    repository = SentenceRepository("sentences.txt")
     service = SentenceService(repository)
     ui = UI(service)
 

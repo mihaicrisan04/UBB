@@ -7,9 +7,9 @@ class RepositoryException(Exception):
 
 
 class SentenceRepository:
-    def __init__(self):
+    def __init__(self, file_name: str):
         self.sentences = []
-        self.file_name = "sentences.txt"    
+        self.file_name = file_name    
         self.read_data()
 
 
