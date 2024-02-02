@@ -14,6 +14,10 @@ class BoardRepository:
         self.load()
 
 
+    def get_boards(self) -> list:
+        return self.boards
+
+
     def load(self):
         try:
             with open(self.file_path, 'r') as f:
@@ -22,10 +26,12 @@ class BoardRepository:
 
                 for k in range(boards_count):
                     last_move = lines[k * 7][0].strip()
+                    last_move = None if last_move == 'N' else last_move
                     board = [[0 for _ in range(SIZE)] for _ in range(SIZE)]
                     for i in range(SIZE):
                         for j in range(SIZE):
-                            board[i][j] = lines[k * 7 + i][j]
+                            board[i][j] = lines[k * 7 + 1 + i][j]
+                            board[i][j] = 0 if board[i][j] == '0' else board[i][j]
 
                     self.boards.append(Board(k+1, board, last_move))
 
@@ -45,4 +51,15 @@ class BoardRepository:
 
     def add(self, board: Board):
         self.boards.append(board)
+        self.save()
+
+    
+    def create_board(self) -> Board:
+        board = Board(len(self.boards) + 1)
+        self.add(board)
+        return board
+
+
+    def delete_board(self, board: Board):
+        self.boards.remove(board)
         self.save()
