@@ -48,3 +48,5 @@ if __name__ == '__main__':
     for i in l:
         for j in l:
             print(i, j)
+
+    del l[0]
