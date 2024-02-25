@@ -53,10 +53,12 @@ def rod_cutting(n, prices):
     dp = [[0] * (n + 1) for _ in range(n + 1)]
 
     # Initialize the matrix
-    for i in range(1, n + 1):
-        for j in range(1, n + 1):
+    for i in range(1, n + 1):  # price for rods of length i
+        for j in range(1, n + 1):  # length of a rod
             if j >= i:
                 dp[i][j] = max(dp[i - 1][j], prices[i] + dp[i][j - i])
+            else:
+                dp[i][j] = dp[i - 1][j]
 
     return dp[n][n]
 
