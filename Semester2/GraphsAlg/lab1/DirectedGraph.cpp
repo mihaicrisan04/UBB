@@ -48,6 +48,12 @@ public:
     // Constructor
     DirectedGraph(int n) : numVertices(n), adjList(n) {}
 
+    // Copy constructor
+    DirectedGraph(const DirectedGraph& other) 
+                : numVertices(other.numVertices),
+                  adjList(other.adjList),
+                  edgeCosts(other.edgeCosts) {}
+
     // Function to get the number of vertices
     int getNumVertices() const {
         return numVertices;
@@ -109,26 +115,43 @@ public:
 
     // Function to retrieve the Edge_id of an edge
     Edge_id getEdgeId(int source, int target) const {
-        // Implement logic to retrieve Edge_id
+        for (const auto& item : edgeCosts) {
+            Edge_id edge = item.first;
+            if (edge == Edge_id(source, target)) {
+                return edge;
+            }
+        }
+        throw runtime_error("Edge not found");
     }
 
     // Function to get the in-degree of a vertex
     int getInDegree(int vertex) const {
-        // Implement logic to calculate in-degree
+        int inDegree = 0;
+        for (int i = 0; i < numVertices; i++) {
+            if (i == vertex) {
+                continue;
+            }   
+            inDegree += adjList[i].size();
+        }
+        return inDegree;
     }
 
     // Function to get the out-degree of a vertex
     int getOutDegree(int vertex) const {
-        // Implement logic to calculate out-degree
+        return adjList[vertex].size();
     }
 
     // Function to parse (iterate) the set of outbound edges of a specified vertex
     class OutEdgeIterator {
-        // Implement iterator logic
+        private:
+            const DirectedGraph& graph;
+            Edge_id currentEdge;
+        public:
+
     };
 
     OutEdgeIterator beginOutEdges(int vertex) {
-        // Implement iterator logic
+        // 
     }
 
     OutEdgeIterator endOutEdges(int vertex) {
@@ -150,7 +173,7 @@ public:
 
     // Function to retrieve the endpoints of an edge specified by an Edge_id
     pair<int, int> getEndpoints(Edge_id edge) const {
-        // Implement logic to retrieve endpoints
+        pair<int, int> endpoints = {edge.getSource(), edge.getTarget()};
     }
 
     // Function to retrieve or modify the information attached to a specified edge
