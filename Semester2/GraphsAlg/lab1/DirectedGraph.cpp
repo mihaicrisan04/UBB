@@ -149,7 +149,7 @@ public:
         public:
 
     };
-
+ 
     OutEdgeIterator beginOutEdges(int vertex) {
         // 
     }
