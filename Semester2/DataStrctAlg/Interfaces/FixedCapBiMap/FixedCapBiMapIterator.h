@@ -7,6 +7,8 @@ class FixedCapBiMapIterator
 private:
 	const FixedCapBiMap& map;
 	//TODO - Representation
+	int currentPos;
+	int currentPairElement;
 
 	FixedCapBiMapIterator(const FixedCapBiMap& m);
 public:

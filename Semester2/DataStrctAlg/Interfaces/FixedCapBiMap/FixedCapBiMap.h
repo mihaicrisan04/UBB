@@ -6,8 +6,8 @@
 //DO NOT CHANGE THIS PART
 typedef int TKey;
 typedef int TValue;
-typedef std::pair<TKey, TValue> TElem;
 typedef std::pair<TValue, TValue>  ValuePair;
+typedef std::pair<TKey, ValuePair> TElem;
 #define NULL_TVALUE -111111
 #define NULL_TELEM pair<TKey, TValue>(-111111, -111111)
 class FixedCapBiMapIterator;
@@ -24,7 +24,9 @@ class FixedCapBiMap {
 
 	private:
 		//TODO - Representation
-
+		int capacity;
+		int sizeOfMap;
+		TElem* elements;
 	public:
 
 	//constructor of the container. Creates a FixedCapBiMap with the given capacity. 
