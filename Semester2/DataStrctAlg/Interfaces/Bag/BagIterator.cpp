@@ -5,34 +5,36 @@
 using namespace std;
 
 
-BagIterator::BagIterator(const Bag& c): bag(c)
-{
+BagIterator::BagIterator(const Bag& c) : bag(c), index(0) {
 	//TODO - Implementation
 }
 
 void BagIterator::first() {
-	//TODO - Implementation
+	index = 0;	
 }
 
 
 void BagIterator::next() {
-	//TODO - Implementation
-	while (index < bag.size()) {
-
+	if (valid()) {
 		index++;
+	}
+	else {
+		throw exception();
 	}
 }
 
 
 bool BagIterator::valid() const {
-	//TODO - Implementation
-	return false;
+	return index < bag.size();
 }
 
 
 
-TElem BagIterator::getCurrent() const
-{
-	//TODO - Implementation
-	return NULL_TELEM 
+TElem BagIterator::getCurrent() const {
+	if (valid()) {
+		return bag.array[index];
+	}
+	else {
+		throw exception();
+	}
 }

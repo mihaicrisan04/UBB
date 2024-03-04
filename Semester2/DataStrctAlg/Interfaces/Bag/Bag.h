@@ -1,6 +1,6 @@
 #pragma once
 //DO NOT INCLUDE BAGITERATOR
-
+#include <vector>
 
 //DO NOT CHANGE THIS PART
 #define NULL_TELEM -111111;
@@ -10,7 +10,7 @@ class Bag {
 
 private:
 	//TODO - Representation
-	vector<TElem> array;
+	std::vector<TElem> array;
 	
 
 	//DO NOT CHANGE THIS PART

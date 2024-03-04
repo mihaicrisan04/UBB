@@ -205,7 +205,7 @@ void testIterator() {
 		assert(false);
 	}
 	catch (exception&) {
-		assert (true);
+		assert(true);
 	}
 	try {
 		it.getCurrent();
