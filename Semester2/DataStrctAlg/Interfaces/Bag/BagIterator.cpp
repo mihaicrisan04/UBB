@@ -17,6 +17,10 @@ void BagIterator::first() {
 
 void BagIterator::next() {
 	//TODO - Implementation
+	while (index < bag.size()) {
+
+		index++;
+	}
 }
 
 

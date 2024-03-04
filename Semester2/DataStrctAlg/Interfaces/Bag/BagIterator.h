@@ -8,7 +8,7 @@ class BagIterator
 private:
 	const Bag& bag;
 	//TODO  - Representation
-
+	int index = 0;
 	BagIterator(const Bag& c);
 public:
 	void first();
