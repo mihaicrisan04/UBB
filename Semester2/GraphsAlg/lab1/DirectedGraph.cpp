@@ -34,6 +34,14 @@ public:
     bool operator!=(const Edge_id& other) const {
         return !(*this == other);
     }
+
+    bool operator<(const Edge_id& other) const {
+        return source < other.source || (source == other.source && target < other.target);
+    }
+
+    bool operator>(const Edge_id& other) const {
+        return source > other.source || (source == other.source && target > other.target);
+    }
 };
 
 
@@ -46,7 +54,7 @@ private:
 
 public:
     // Constructor
-    DirectedGraph(int n) : numVertices(n), adjList(n) {}
+    DirectedGraph(int n) : numVertices(n), adjList(n+1) {}
 
     // Copy constructor
     DirectedGraph(const DirectedGraph& other) 
@@ -75,35 +83,35 @@ public:
     class VertexIterator {
     private:
         const DirectedGraph& graph;
-        int currentVertex;
+        int it;
 
     public:
-        VertexIterator(const DirectedGraph& g, int v) : graph(g), currentVertex(v) {}
+        VertexIterator(const DirectedGraph& g, int v) : graph(g), it(v) {}
 
         // Prefix increment operator (++iter)
         VertexIterator& operator++() {
-            ++currentVertex;
+            ++it;
             return *this;
         }
 
         // Dereference operator (*iter)
         int operator*() const {
-            return currentVertex;
+            return it;
         }
 
         // Inequality operator (iter1 != iter2)
         bool operator!=(const VertexIterator& other) const {
-            return currentVertex != other.currentVertex;
+            return it != other.it;
         }
     };
 
     // Function to begin iterating over vertices
-    DirectedGraph::VertexIterator DirectedGraph::beginVertices() {
+    VertexIterator beginVertices() {
         return VertexIterator(*this, 0);
     }
 
     // Function to end iteration over vertices
-    DirectedGraph::VertexIterator DirectedGraph::endVertices() {
+    VertexIterator endVertices() {
         return VertexIterator(*this, numVertices);
     }
 
@@ -144,36 +152,80 @@ public:
     // Function to parse (iterate) the set of outbound edges of a specified vertex
     class OutEdgeIterator {
         private:
-            const DirectedGraph& graph;
-            Edge_id currentEdge;
+            set<int>::iterator it;
         public:
+            OutEdgeIterator(const set<int>::iterator start) : it(start) {}
 
+            // Prefix increment operator (++iter)
+            OutEdgeIterator& operator++() {
+                ++it;
+                return *this;
+            }
+
+            // Dereference operator (*iter)
+            int operator*() const {
+                return *it;
+            }
+
+            // Inequality operator (iter1 != iter2)
+            bool operator!=(const OutEdgeIterator& other) const {
+                return it != other.it;
+            }
     };
  
     OutEdgeIterator beginOutEdges(int vertex) {
-        // 
+        return OutEdgeIterator(adjList[vertex].begin());
     }
 
     OutEdgeIterator endOutEdges(int vertex) {
-        // Implement iterator logic
+        return OutEdgeIterator(adjList[vertex].end());
     }
 
-    // Function to parse the set of inbound edges of a specified vertex
+
     class InEdgeIterator {
-        // Implement iterator logic
+        private:
+            const DirectedGraph& graph;
+            int vertex; 
+            int i;
+
+        public:
+            InEdgeIterator(const DirectedGraph& g, int v, int i) : graph(g), vertex(v), i(i) {}
+
+            // Prefix increment operator (++iter)
+            InEdgeIterator& operator++() {
+                do {
+                    i++;
+                } while (i < graph.numVertices && !graph.hasEdge(i, vertex));
+                return *this;
+            }
+
+            // Dereference operator (*iter)
+            int operator*() const {
+                return i;
+            }
+
+            // Inequality operator (iter1 != iter2)
+            bool operator!=(const InEdgeIterator& other) const {
+                return i != other.i;
+            }
     };
 
     InEdgeIterator beginInEdges(int vertex) {
-        // Implement iterator logic
+        int i = 0;
+        while (i < numVertices && !hasEdge(i, vertex)) {
+            i++;
+        }
+        return InEdgeIterator(*this, vertex, i);
     }
 
     InEdgeIterator endInEdges(int vertex) {
-        // Implement iterator logic
-    }
+        return InEdgeIterator(*this, vertex, numVertices);
+    }   
 
     // Function to retrieve the endpoints of an edge specified by an Edge_id
     pair<int, int> getEndpoints(Edge_id edge) const {
         pair<int, int> endpoints = {edge.getSource(), edge.getTarget()};
+        return endpoints;
     }
 
     // Function to retrieve or modify the information attached to a specified edge
@@ -183,28 +235,6 @@ public:
 
     void setEdgeCost(Edge_id edge, int cost) {
         edgeCosts[edge] = cost;
-    }
-
-    // Function to read the graph from a text file
-    static DirectedGraph readGraphFromFile(const string& filename) {
-        ifstream file(filename);
-        if (!file.is_open()) {
-            throw runtime_error("Failed to open file: " + filename);
-        }
-
-        int numVertices, numEdges;
-        file >> numVertices >> numEdges;
-
-        DirectedGraph graph(numVertices);
-
-        for (int i = 0; i < numEdges; ++i) {
-            int source, target, cost;
-            file >> source >> target >> cost;
-            graph.addEdge(source, target, cost);
-        }
-
-        file.close();
-        return graph;
     }
 
     // Function to write the graph to a text file
@@ -267,10 +297,31 @@ public:
 
 int main() {
     // Example usage:
-    DirectedGraph graph1 = DirectedGraph::readGraphFromFile("graph.txt");
-    DirectedGraph graph2 = DirectedGraph::createRandomGraph(10, 20);
+    DirectedGraph graph = DirectedGraph::readGraphFromFile("graph.txt");
+    // DirectedGraph graph = DirectedGraph::createRandomGraph(10, 20);
 
     // Use the graph...
 
+
+
+    for (DirectedGraph::VertexIterator it = graph.beginVertices(); it != graph.endVertices(); ++it) {
+        int vertex = *it;
+        // Do something with vertex
+
+        // Itereate ove the out-edges of a vertex 
+        for (DirectedGraph::OutEdgeIterator it = graph.beginOutEdges(vertex); it != graph.endOutEdges(vertex); ++it) {
+            int targetVertex = *it;
+            // Do something with targetVertex
+            printf("%d->%d\n", vertex, targetVertex);
+        }
+
+        // Iterate over the in-edges of a vertex
+        for (DirectedGraph::InEdgeIterator it = graph.beginInEdges(vertex); it != graph.endInEdges(vertex); ++it) {
+            int sourceVertex = *it;
+            // Do something with sourceVertex
+            printf("%d->%d\n", sourceVertex, vertex);
+        }
+    }
+    
     return 0;
 }
