@@ -2,12 +2,11 @@
 #include <utility>
 //DO NOT INCLUDE MAPITERATOR
 
-
 //DO NOT CHANGE THIS PART
 typedef int TKey;
 typedef int TValue;
 typedef std::pair<TValue, TValue>  ValuePair;
-typedef std::pair<TKey, ValuePair> TElem;
+typedef std::pair<TKey, TValue> TElem;
 #define NULL_TVALUE -111111
 #define NULL_TELEM pair<TKey, TValue>(-111111, -111111)
 class FixedCapBiMapIterator;

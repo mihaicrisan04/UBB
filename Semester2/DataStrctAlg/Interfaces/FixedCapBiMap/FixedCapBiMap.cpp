@@ -19,37 +19,23 @@ bool FixedCapBiMap::add(TKey c, TValue v){
 	}
 	for (int i = 0; i < sizeOfMap; i++) {
 		if (elements[i].first == c) {
-			if (elements[i].second.first != NULL_TVALUE && elements[i].second.second != NULL_TVALUE) {
-				return false;
-			}
-			if (elements[i].second.first == NULL_TVALUE) {
-				elements[i].second.first = v;
-				return true;
-			}
-			if (elements[i].second.second == NULL_TVALUE) {
-				elements[i].second.second = v;
-				return true;
+			for (int j = i + 1; j < sizeOfMap; j++) {
+				if (elements[j].first == c) {
+					return false;
+				}
 			}
 		}
 	}
-	elements[sizeOfMap] = std::pair<TKey, ValuePair>(c, std::pair<TValue, TValue>(v, NULL_TVALUE));
+	elements[sizeOfMap] = ValuePair(c, v); 
 	sizeOfMap++;
 	return true;	
 }
 
 ValuePair FixedCapBiMap::search(TKey c) const{
-	ValuePair result = std::pair<TValue, TValue>(NULL_TVALUE, NULL_TVALUE);
+	ValuePair result = {NULL_TVALUE, NULL_TVALUE};
 	for (int i = 0; i < sizeOfMap; i++) {
-		if (elements[i].first == c) {
-			if (elements[i].second.first != NULL_TVALUE) {
-				result.first = elements[i].second.first;
-			}
-			if (elements[i].second.second != NULL_TVALUE) {
-				result.second = elements[i].second.second;
-			}
-			return result;
-		}
-	}
+
+	}	
 }
 
 bool FixedCapBiMap::remove(TKey c, TValue v){
