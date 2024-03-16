@@ -1,3 +1,7 @@
+import copy
+import random
+
+
 # Python implementation
 
 class Edge_id:
@@ -47,22 +51,22 @@ class InEdgeIterator:
 
     def __next__(self):
         while self.current < len(self.adjList):
-            if self.vertex in self.adjList[self.current]:
-                self.current += 1
-                return self.current - 1
             self.current += 1
+            if self.vertex in self.adjList[self.current - 1]:
+                return self.current - 1
         raise StopIteration
 
 class OutEdgeIterator:
     def __init__(self, adjList):
         self.adjList = adjList
+        self.current = iter(self.adjList)
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self.adjList:
-            return self.adjList.pop()
+        if self.current:
+            return next(self.current)
         raise StopIteration
 
 class DirectedGraph:
@@ -86,7 +90,7 @@ class DirectedGraph:
         return InEdgeIterator(self.adjList, vertex)
 
     def OutEdgeIterator(self, vertex) -> 'OutEdgeIterator':
-        return OutEdgeIterator(self.adjList[vertex])
+        return OutEdgeIterator(copy.deepcopy(self.adjList[vertex]))
 
     def getEdgeId(self, source, taraget) -> 'Edge_id':
         if Edge_id(source, taraget) in self.edgeCosts:
@@ -134,7 +138,6 @@ class DirectedGraph:
 
     @staticmethod
     def createRandomGraph(numVertices, numEdges) -> 'DirectedGraph':
-        import random
         graph = DirectedGraph(numVertices)
         for _ in range(numEdges):
             source = random.randint(0, numVertices - 1)
@@ -145,6 +148,14 @@ class DirectedGraph:
             cost = random.randint(0, 100)
             graph.addEdge(source, target, cost)
         return graph
+
+    @staticmethod
+    def copyGraph(graph) -> 'DirectedGraph':
+        newGraph = DirectedGraph(graph.numVertices)
+        newGraph.adjList = copy.deepcopy(graph.adjList)
+        newGraph.edgeCosts = copy.deepcopy(graph.edgeCosts)
+        return newGraph
+
 
 if __name__ == "__main__":
     graph = DirectedGraph.readGraphFromFile("graph.txt")
@@ -161,3 +172,9 @@ if __name__ == "__main__":
         for j in graph.InEdgeIterator(i):
             print(j, end=" ")
         print()
+    
+    print(graph.getEdgeId(0, 1))
+    try:
+        print(graph.getEdgeId(0, 2))    
+    except Exception as e:
+        print(e)
