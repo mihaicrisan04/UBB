@@ -67,6 +67,29 @@ public:
         return numVertices;
     }
 
+    // Function to add a vertex to the graph
+    void addVertex() {
+        numVertices++;
+        adjList.push_back(set<int>());
+    }
+
+    // Function to remove a vertex from the graph
+    void removeVertex(int vertex) {
+        while (adjList[vertex].size() > 0) {
+            int target = *adjList[vertex].begin();
+            removeEdge(vertex, target);
+        }
+
+        for (int i = 0; i < numVertices; i++) {
+            if (i == vertex) {
+                continue;
+            }
+            if (adjList[i].count(vertex) > 0) {
+                removeEdge(i, vertex);
+            }
+        }
+    }
+
     // Function to add an edge to the graph
     void addEdge(int source, int target, int cost) {
         adjList[source].insert(target);
@@ -302,8 +325,6 @@ int main() {
 
     // Use the graph...
 
-
-
     for (DirectedGraph::VertexIterator it = graph.beginVertices(); it != graph.endVertices(); ++it) {
         int vertex = *it;
         // Do something with vertex
@@ -324,5 +345,18 @@ int main() {
         }
     }
     
+    // Copy the graph
+    DirectedGraph graphCopy = graph;
+    // Remove an edge from the copy 
+    // graphCopy.removeEdge(0, 1);
+
+    // Write the graph to a file
+    // graphCopy.writeGraphToFile("graph_copy.txt");
+
+    // Remove a vertex from the copy
+    graphCopy.removeVertex(1);
+
+    // Write the graph to a file
+    graphCopy.writeGraphToFile("graph_copy.txt");
     return 0;
 }
