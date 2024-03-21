@@ -183,75 +183,80 @@ class DirectedGraph:
 
 
 if __name__ == "__main__":
-    graph = DirectedGraph.readGraphFromFile("graph.txt")
+    graph = DirectedGraph.readGraphFromFile("graph1m.txt")
 
-    print(graph.adjList)
-    print(graph.edgeCosts)
+    # print(graph.adjList)
+    # print(graph.edgeCosts)
 
-    for i in graph.VertexIterator():
-        print(str(i) + ":", end=" ")
+    print("numVertices")
+    print(graph.numVertices)
+    print("numEdges")
+    print(len(graph.edgeCosts))
+    
+    # for i in graph.VertexIterator():
+        # print(str(i) + ":", end=" ")
 
-        print("Out:", end=" ")
-        for j in graph.OutEdgeIterator(i):
-            print(j, end=" ")
+        # print("Out:", end=" ")
+        # for j in graph.OutEdgeIterator(i):
+        #     print(j, end=" ")
 
-        print("; In:", end=" ")
-        for j in graph.InEdgeIterator(i):
-            print(j, end=" ")
-        print()
+        # print("; In:", end=" ")
+        # for j in graph.InEdgeIterator(i):
+        #     print(j, end=" ")
+        # print()
     
 
-    print("getEdgeId")
-    print(graph.getEdgeId(0, 1))
-    try:
-        print(graph.getEdgeId(0, 2))    
-    except Exception as e:
-        print(e)
+    # print("getEdgeId")
+    # print(graph.getEdgeId(0, 1))
+    # try:
+    #     print(graph.getEdgeId(0, 2))    
+    # except Exception as e:
+    #     print(e)
 
 
-    print("getInDegree: 1")
-    print(graph.getInDegree(1))
+    # print("getInDegree: 1")
+    # print(graph.getInDegree(1))
 
-    print("getOutDegree: 1")
-    print(graph.getOutDegree(1))
+    # print("getOutDegree: 1")
+    # print(graph.getOutDegree(1))
 
-    print("getEndpoints: 0 1")
-    print(graph.getEndpoints(Edge_id(0, 1)))
+    # print("getEndpoints: 0 1")
+    # print(graph.getEndpoints(Edge_id(0, 1)))
 
-    print("getEdgeCost: 0 1")
-    print(graph.getEdgeCost(Edge_id(0, 1)))
+    # print("getEdgeCost: 0 1")
+    # print(graph.getEdgeCost(Edge_id(0, 1)))
 
 
-    print("setEdgeCost: 0 1 100")
-    graph.setEdgeCost(Edge_id(0, 1), 100)
-    print(graph.getEdgeCost(Edge_id(0, 1)))
+    # print("setEdgeCost: 0 1 100")
+    # graph.setEdgeCost(Edge_id(0, 1), 100)
+    # print(graph.getEdgeCost(Edge_id(0, 1)))
 
-    print("copyGraph")
-    graphCopy = DirectedGraph.copyGraph(graph)
-    print("removeVertex: 1")
-    graphCopy.removeVertex(1)
-    for i in graphCopy.VertexIterator():
-        print(str(i) + ":", end=" ")
+    # print("copyGraph")
+    # graphCopy = DirectedGraph.copyGraph(graph)
+    # print("removeVertex: 1")
+    # graphCopy.removeVertex(1)
+    # for i in graphCopy.VertexIterator():
+    #     print(str(i) + ":", end=" ")
 
-        print("Out:", end=" ")
-        for j in graphCopy.OutEdgeIterator(i):
-            print(j, end=" ")
+    #     print("Out:", end=" ")
+    #     for j in graphCopy.OutEdgeIterator(i):
+    #         print(j, end=" ")
 
-        print("; In:", end=" ")
-        for j in graphCopy.InEdgeIterator(i):
-            print(j, end=" ")
-        print()
+    #     print("; In:", end=" ")
+    #     for j in graphCopy.InEdgeIterator(i):
+    #         print(j, end=" ")
+    #     print()
 
-    print("original graph") 
-    for i in graph.VertexIterator():
-        print(str(i) + ":", end=" ")
+    # print("original graph") 
+    # for i in graph.VertexIterator():
+    #     print(str(i) + ":", end=" ")
 
-        print("Out:", end=" ")
-        for j in graph.OutEdgeIterator(i):
-            print(j, end=" ")
+    #     print("Out:", end=" ")
+    #     for j in graph.OutEdgeIterator(i):
+    #         print(j, end=" ")
 
-        print("; In:", end=" ")
-        for j in graph.InEdgeIterator(i):
-            print(j, end=" ")
-        print()
+    #     print("; In:", end=" ")
+    #     for j in graph.InEdgeIterator(i):
+    #         print(j, end=" ")
+    #     print()
 
