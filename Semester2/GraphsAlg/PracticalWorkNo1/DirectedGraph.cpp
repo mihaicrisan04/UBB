@@ -320,43 +320,43 @@ public:
 
 int main() {
     // Example usage:
-    DirectedGraph graph = DirectedGraph::readGraphFromFile("graph1k.txt");
+    DirectedGraph graph = DirectedGraph::readGraphFromFile("graph.txt");
     // DirectedGraph graph = DirectedGraph::createRandomGraph(10, 20);
 
     // Use the graph...
 
-    // for (DirectedGraph::VertexIterator it = graph.beginVertices(); it != graph.endVertices(); ++it) {
-    //     int vertex = *it;
-    //     // Do something with vertex
+    for (DirectedGraph::VertexIterator it = graph.beginVertices(); it != graph.endVertices(); ++it) {
+        int vertex = *it;
+        // Do something with vertex
 
-    //     printf("\n%d\n", vertex);
-    //     // Itereate ove the out-edges of a vertex 
-    //     for (DirectedGraph::OutEdgeIterator it = graph.beginOutEdges(vertex); it != graph.endOutEdges(vertex); ++it) {
-    //         int targetVertex = *it;
-    //         // Do something with targetVertex
-    //         printf("%d->%d\n", vertex, targetVertex);
-    //     }
-    //     printf("\n");
-    //     // Iterate over the in-edges of a vertex
-    //     for (DirectedGraph::InEdgeIterator it = graph.beginInEdges(vertex); it != graph.endInEdges(vertex); ++it) {
-    //         int sourceVertex = *it;
-    //         // Do something with sourceVertex
-    //         printf("%d->%d\n", sourceVertex, vertex);
-    //     }
-    // }
+        printf("\n%d\n", vertex);
+        // Itereate ove the out-edges of a vertex 
+        for (DirectedGraph::OutEdgeIterator it = graph.beginOutEdges(vertex); it != graph.endOutEdges(vertex); ++it) {
+            int targetVertex = *it;
+            // Do something with targetVertex
+            printf("%d->%d\n", vertex, targetVertex);
+        }
+        printf("\n");
+        // Iterate over the in-edges of a vertex
+        for (DirectedGraph::InEdgeIterator it = graph.beginInEdges(vertex); it != graph.endInEdges(vertex); ++it) {
+            int sourceVertex = *it;
+            // Do something with sourceVertex
+            printf("%d->%d\n", sourceVertex, vertex);
+        }
+    }
     
-    // // Copy the graph
-    // DirectedGraph graphCopy = graph;
-    // // Remove an edge from the copy 
-    // // graphCopy.removeEdge(0, 1);
+    // Copy the graph
+    DirectedGraph graphCopy = graph;
+    // Remove an edge from the copy 
+    // graphCopy.removeEdge(0, 1);
 
-    // // Write the graph to a file
-    // // graphCopy.writeGraphToFile("graph_copy.txt");
-
-    // // Remove a vertex from the copy
-    // graphCopy.removeVertex(1);
-
-    // // Write the graph to a file
+    // Write the graph to a file
     // graphCopy.writeGraphToFile("graph_copy.txt");
+
+    // Remove a vertex from the copy
+    graphCopy.removeVertex(1);
+
+    // Write the graph to a file
+    graphCopy.writeGraphToFile("graph_copy.txt");
     return 0;
 }
