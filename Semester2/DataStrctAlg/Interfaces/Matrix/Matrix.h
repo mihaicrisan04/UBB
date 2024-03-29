@@ -30,20 +30,20 @@ public:
 
 	//returns the element from line i and column j (indexing starts from 0)
 	//throws exception if (i,j) is not a valid position in the Matrix
-	// complexitiy: O(size)
+	// complexitiy: best O(1), worst O(log size)
 	TElem element(int i, int j) const;
 
 	//modifies the value from line i and column j
 	//returns the previous value from the position
 	//throws exception if (i,j) is not a valid position in the Matrix
-	// complexity: O(size)
+	// complexity: best O(1), worst O(size) 
 	TElem modify(int i, int j, TElem e);
 
 
 	// returns the position of the element e from the Matrix (as a pair of lines and columns)
 	// if the element occurs multiple times, return the position of the first occurrence
 	// if the element is not in the Matrix, return a pair of -1, -1
-	// complexity: O(size)
+	// comlexity: best O(1), worst O(size)
 	std::pair<int, int> positionOf(TElem e) const;
 
 	//destructor

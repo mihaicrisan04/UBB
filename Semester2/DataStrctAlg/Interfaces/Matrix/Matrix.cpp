@@ -22,32 +22,49 @@ TElem Matrix::element(int i, int j) const {
 	if (i < 0 || i >= _nrLines || j < 0 || j >= _nrCols) {
 		throw exception();
 	}
-	for (int k = 0; k < size; k++) {
-		if (elements[k].first.first == i && elements[k].first.second == j) {
-			return elements[k].second;
+	// binary search for the i, j position
+	int left = 0, right = size - 1;
+	while (left <= right) {
+		int mid = (left + right) / 2;
+		if (elements[mid].first.first == i && elements[mid].first.second == j) {
+			return elements[mid].second;
+		}
+		if (elements[mid].first.first < i || (elements[mid].first.first == i && elements[mid].first.second < j)) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
 		}
 	}
 	return NULL_TELEM;
 }
 
 TElem Matrix::modify(int i, int j, TElem e) {
-	//TODO - Implementation
 	if (i < 0 || i >= _nrLines || j < 0 || j >= _nrCols) {
 		throw exception();
 	}
-	for (int k = 0; k < size; k++) {
-		if (elements[k].first.first == i && elements[k].first.second == j) {
-			TElem old = elements[k].second;
+	// binary search for the i, j position
+	int left = 0, right = size - 1;
+	while (left <= right) {
+		int mid = (left + right) / 2;
+		if (elements[mid].first.first == i && elements[mid].first.second == j) {
+			TElem old = elements[mid].second;
 			if (e == NULL_TELEM) {
-				for (int l = k; l < size - 1; l++) {
+				for (int l = mid; l < size - 1; l++) {
 					elements[l] = elements[l + 1];
 				}
 				size--;
 			}
 			else {
-				elements[k].second = e;
+				elements[mid].second = e;
 			}
 			return old;
+		}
+		if (elements[mid].first.first < i || (elements[mid].first.first == i && elements[mid].first.second < j)) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
 		}
 	}
 	// add the new triple at the right position
