@@ -78,17 +78,20 @@ TElem Matrix::modify(int i, int j, TElem e) {
 			delete[] elements;
 			elements = newElements;
 		}
-		int pos = 0;
-		while (pos < size && elements[pos].first.first < i) {
-			pos++;
-		}
-		while (pos < size && elements[pos].first.first == i && elements[pos].first.second < j) {
-			pos++;
-		}
-		for (int k = size; k > pos; k--) {
+		int left = 0, right = size - 1;
+		while (left <= right) {
+			int mid = (left + right) / 2;
+			if (elements[mid].first.first < i || (elements[mid].first.first == i && elements[mid].first.second < j)) {
+				left = mid + 1;
+			}
+			else {
+				right = mid - 1;
+			}
+		}	
+		for (int k = size; k > left; k--) {
 			elements[k] = elements[k - 1];
 		}
-		elements[pos] = {{i, j}, e};
+		elements[left] = {{i, j}, e};
 		size++;
 	}
 	return NULL_TELEM;
