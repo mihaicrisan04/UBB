@@ -36,7 +36,7 @@ public:
 	//modifies the value from line i and column j
 	//returns the previous value from the position
 	//throws exception if (i,j) is not a valid position in the Matrix
-	// complexity: best O(1), worst O(size) 
+	// complexity: best O(1), worst O(log size) 
 	TElem modify(int i, int j, TElem e);
 
 
