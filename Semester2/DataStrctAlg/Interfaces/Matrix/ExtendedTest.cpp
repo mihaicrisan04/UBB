@@ -156,10 +156,27 @@ void testMix() {
 	}
 }
 
+void tesetPositionOf() {
+	cout << "Test positionOf" << endl;
+	Matrix m(3, 3);
+	for (int i = 0; i < m.nrLines(); i++) {
+		for (int j = 0; j < m.nrColumns(); j++) {
+			m.modify(i, j, i * j + 1);
+		}
+	}
+	for (int i = 0; i < m.nrLines(); i++) {
+		for (int j = 0; j < m.nrColumns(); j++) {
+			pair<int, int> p = m.positionOf(i * j + 1);
+			assert(m.element(p.first, p.second) == i * j + 1);
+		}
+	}
+}
+
 void testAllExtended() {
 	testCreate();
 	testModify();
 	testQuantity();
 	testMix();
 	testExceptions();
+	tesetPositionOf();
 }

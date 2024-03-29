@@ -3,25 +3,22 @@
 using namespace std;
 
 
-Matrix::Matrix(int nrLines, int nrCols) : _nrLines(nrLines), _nrCols(nrCols), elements(new Triple[capacity]), size(0) {
-	//TODO - Implementation
+Matrix::Matrix(int nrLines, int nrCols) : _nrLines(nrLines), _nrCols(nrCols), size(0) {
+	elements = new Triple[capacity];
 }
 
 
 int Matrix::nrLines() const {
-	//TODO - Implementation
 	return _nrLines;
 }
 
 
 int Matrix::nrColumns() const {
-	//TODO - Implementation
 	return _nrCols;
 }
 
 
 TElem Matrix::element(int i, int j) const {
-	//TODO - Implementation
 	if (i < 0 || i >= _nrLines || j < 0 || j >= _nrCols) {
 		throw exception();
 	}
@@ -81,8 +78,17 @@ TElem Matrix::modify(int i, int j, TElem e) {
 }
 
 
+std::pair<int, int> Matrix::positionOf(TElem e) const {
+	for (int k = 0; k < size; k++) {
+		if (elements[k].second == e) {
+			return {elements[k].first.first, elements[k].first.second};
+		}
+	}
+	return {-1, -1};
+}
+
+
 Matrix::~Matrix() {
-	//TODO - Implementation
 	delete[] elements;
 }
 
