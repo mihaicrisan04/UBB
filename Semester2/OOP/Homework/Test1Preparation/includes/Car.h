@@ -13,6 +13,8 @@ public:
 
     Car(const std::string &name, const std::string &model, int year, const std::string &color);
 
+    Car(const Car &other);
+
     std::string getName() const;
 
     std::string getModel() const;
@@ -21,7 +23,9 @@ public:
 
     std::string getColor() const;
 
-    bool operator==(const Car &other);
+    bool operator==(const Car &other) const;
+
+    bool operator!=(const Car &other) const;
 
     Car& operator=(const Car &other);
 

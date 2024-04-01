@@ -1,7 +1,9 @@
 #pragma once
-#include "Car.hpp"
+#include "Car.h"
 #include <string>
 #include <vector>
+#include <algorithm>
+#include <stdexcept>
 
 
 class CarRepository {
@@ -19,4 +21,7 @@ public:
 
     std::vector<Car> getCars() const;
 
+    int getPosOfCar(const Car &car) const;
+
+    Car getCarAtPos(int pos) const;
 };
