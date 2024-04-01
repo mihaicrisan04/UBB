@@ -11,7 +11,7 @@ private:
 public:
     Car();
 
-    Car(std::string &name, std::string &model, int year, std::string &color);
+    Car(const std::string &name, const std::string &model, int year, const std::string &color);
 
     std::string getName() const;
 

@@ -3,7 +3,7 @@
 
 Car::Car() : name(""), model(""), year(0), color("") {}
 
-Car::Car(std::string &name, std::string &model, int year, std::string &color) : name(name), model(model), year(year), color(color) {}
+Car::Car(const std::string &name, const std::string &model, int year, const std::string &color) : name(name), model(model), year(year), color(color) {}
 
 std::string Car::getName() const {
     return name;
