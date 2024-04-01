@@ -1,10 +1,24 @@
-Semester1/FP/GitHubSchool
+
+# User-specific files for IDEs
 **/.DS_Store
 **/.vscode/settings.json
+
+# JetBrains IDEs config files
+**/.idea/
+
+# Python cache files
 **/__pycache__/
 **/*.pyc
-**/.idea/
+
+# Compiled source # 
 Semester2/**/output
+
+# Github school assignments repos
+Semester1/FP/GitHubSchool
 Semester2/OOP/GitHubSchool
+
+# data files
 Semester2/GraphsAlg/PracticalWorkNo1/graph1*.txt
+
+# Cmake build directory
 **/build/
