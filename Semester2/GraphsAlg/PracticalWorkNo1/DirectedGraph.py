@@ -186,6 +186,8 @@ class DirectedGraph:
 
     @staticmethod
     def createRandomGraph(numVertices, numEdges) -> 'DirectedGraph':
+        if numEdges > numVertices * (numVertices - 1):
+            raise Exception("Too many edges, immposible graph")
         graph = DirectedGraph(numVertices)
         for _ in range(numEdges):
             source = random.randint(0, numVertices - 1)
@@ -422,6 +424,14 @@ def menu():
 
 
 if __name__ == "__main__":
-#   test_graph()
+    # test_graph()
     # graph = DirectedGraph.readGraphFromFile("graph1m.txt")
-    menu()
+    # menu()
+    graph = DirectedGraph.createRandomGraph(7, 20);
+    graph.writeGraphtoFile("random_graph1.txt");
+    
+    try:
+        graph = DirectedGraph.createRandomGraph(6, 40);
+    except Exception as e:
+        with open("random_graph2.txt", "w") as file:
+            file.write(str(e))
