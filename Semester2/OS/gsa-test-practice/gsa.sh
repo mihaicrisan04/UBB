@@ -45,4 +45,56 @@
 
 
 # 11.
-# 
+# display the number of lines that end in a vowel and the number of lines that
+# end in a consonant from a flie
+#awk 'BEGIN{vowels=0;consonants=0}{if ($0 ~ /[aeiou]$/) {vowels++} else {consonants++}} END {print "Vowels: "vowels"\nConsonants: "consonants}' file.txt
+
+
+# 12.
+# calculate the sum of all the PID from ps aux that use the vim
+#ps aux | grep -E "(vim|joe|nano|pico|emacs)" | awk '{sum+=$2} END {print sum}'
+
+
+# 13.
+# display all the users in the system which name starts with a vowel from the
+# passwd file
+#awk -F: '$5 ~ /^[aeiouAEIOU]/ {print $1}' passwd.fake
+
+
+
+# 14.
+# display the files that have persmisions for read
+#ls -l | grep -E "^-(r..){3}"
+
+
+
+
+# 15.
+# using the last command display how many users have logged into the system
+#last | awk 'NF == 9 {print $1}' | sort | uniq -c | sort -rn
+
+
+
+# 16.
+# using only grep, display the nuumber of lines in a file
+#grep -E -c "" last.fake
+
+
+# 17.
+#sort last.fake | uniq -c | awk '$1 > 1 {c++} END {print c}'
+# sort -> sorts the lines in a file
+# uniq -c -> counts the number of occurences of each line
+
+
+# 18.
+#ls -l | awk '$1 ~ /^-/ {print $9}'
+
+
+# 19.
+#cat last.fake | awk '{print $1}' | sed "y/0123456789/1234567890/" | sort | uniq -c | sort -n 
+
+
+
+
+
+
