@@ -1,0 +1,10 @@
+
+# awk
+awk 'NF >= 2 { sum = 0; for (i = 1; i <= NF; i++) sum += $i; print NR" "sum}' awk.txt
+
+
+# grep
+ps -ef | grep -E -v "^ex[0-9]+" | grep -E "^[a-z0-9]+[ ]+[0-9]{1,3} "
+
+#sed
+sed 's/[[:space:]]\{2,\}/ /g' sed.txt
