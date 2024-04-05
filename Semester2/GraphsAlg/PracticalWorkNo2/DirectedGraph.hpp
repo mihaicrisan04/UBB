@@ -298,7 +298,7 @@ public:
         return graph;
     }
 
-    // Function to create a random graph with specified number of vertices and edges
+    // Function to create a random graph with specified number of vertices and edgesA
     static DirectedGraph createRandomGraph(int numVertices, int numEdges) {
         DirectedGraph graph(numVertices);
 
