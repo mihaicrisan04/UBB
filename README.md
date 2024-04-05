@@ -1,4 +1,4 @@
-### UBB
+### Babes Bolyai University -- Computer Science
 
 
 ## [Semester 1](https://github.com/mihaicrisan04/UBB/tree/main/Semester1)
