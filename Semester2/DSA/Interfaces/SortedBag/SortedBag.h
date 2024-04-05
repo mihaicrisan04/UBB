@@ -1,4 +1,5 @@
 #pragma once
+#include <utility> 
 //DO NOT INCLUDE SORTEDBAGITERATOR
 
 //DO NOT CHANGE THIS PART
@@ -13,8 +14,14 @@ class SortedBag {
 	friend class SortedBagIterator;
 
 private:
-	//TODO - Representation
+	struct Node {
+		std::pair<TElem, int> data;
+		Node* next;
+	};
 
+	Relation relation;
+	Node *head;
+	int length;
 public:
 	//constructor
 	SortedBag(Relation r);

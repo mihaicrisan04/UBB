@@ -34,6 +34,5 @@ void testAll() {
 	assert(it.valid() == false);
 	it.first();
 	assert(it.valid() == true);
-
 }
 

@@ -3,8 +3,7 @@
 
 class SortedBag;
 
-class SortedBagIterator
-{
+class SortedBagIterator {
 	friend class SortedBag;
 
 private:
@@ -12,6 +11,8 @@ private:
 	SortedBagIterator(const SortedBag& b);
 
 	//TODO - Representation
+	SortedBag::Node* current;
+	int currentOccurences;
 
 public:
 	TComp getCurrent();

@@ -26,5 +26,10 @@ add_executable(App
 # add_compile_options(-O0) 
 add_compile_options(-g)
 
-target_compile_options(${PROJECT_NAME} PRIVATE -g -Wall --coverage -fprofile-arcs -ftest-coverage)
-target_link_options(${PROJECT_NAME} PRIVATE -fprofile-arcs -ftest-coverage --coverage)
+# coverage
+# target_compile_options(${PROJECT_NAME} PRIVATE -g -Wall --coverage -fprofile-arcs -ftest-coverage)
+# target_link_options(${PROJECT_NAME} PRIVATE -fprofile-arcs -ftest-coverage --coverage)
+
+# simple run
+target_compile_options(${PROJECT_NAME} PRIVATE -g -Wall)
+target_link_options(${PROJECT_NAME} PRIVATE -g -Wall)

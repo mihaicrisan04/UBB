@@ -21,7 +21,6 @@ void testCreate() {
 	SortedBag sb(relation2);
 	assert(sb.isEmpty() == true);
 	assert(sb.size() == 0);
-
 	for (int i = -10; i < 30; i++) {
 		assert(sb.remove(i) == false);
 	}

@@ -1,43 +1,93 @@
 #include "SortedBag.h"
 #include "SortedBagIterator.h"
 
-SortedBag::SortedBag(Relation r) {
-	//TODO - Implementation
-}
+SortedBag::SortedBag(Relation r) : relation(r), head(nullptr), length(0) {}
 
 void SortedBag::add(TComp e) {
-	//TODO - Implementation
+	Node *current = head;
+	Node *prev = nullptr;
+	while (current != nullptr && relation(current->data.first, e)) {
+		if (current->data.first == e) {
+			current->data.second++;
+			length++;
+			return;
+		}
+		prev = current;
+		current = current->next;
+	}
+	Node *newNode = new Node;
+	newNode->data.first = e;
+	newNode->data.second = 1;
+	newNode->next = current;
+	length++;
+	if (prev == nullptr) {
+		head = newNode;
+	}
+	else {
+		prev->next = newNode;
+	}
 }
 
 
 bool SortedBag::remove(TComp e) {
-	//TODO - Implementation
+	Node *current = head;
+	Node *prev = nullptr;
+	while (current != nullptr && current->data.first != e) {
+		prev = current;
+		current = current->next;
+	}
+	if (current != nullptr) {
+		if (current->data.second > 1) {
+			current->data.second--;
+		}
+		else {
+			if (prev == nullptr) {
+				head = current->next;
+			}
+			else {
+				prev->next = current->next;
+			}
+			delete current;
+		}
+		length--;
+		return true;
+	}
 	return false;
 }
 
 
 bool SortedBag::search(TComp elem) const {
-	//TODO - Implementation
+	Node *current = head;
+	while (current != nullptr && current->data.first != elem) {
+		current = current->next;
+	}
+	if (current != nullptr) {
+		return true;
+	}
 	return false;
 }
 
 
 int SortedBag::nrOccurrences(TComp elem) const {
-	//TODO - Implementation
+	Node *current = head;
+	while (current != nullptr && current->data.first != elem) {
+		current = current->next;
+	}
+	if (current != nullptr) {
+		return current->data.second;
+	}
 	return 0;
 }
 
 
 
 int SortedBag::size() const {
-	//TODO - Implementation
-	return 0;
+	return length;
 }
 
 
 bool SortedBag::isEmpty() const {
-	//TODO - Implementation
-	return false;
+	return head == nullptr;
 }
 
 
@@ -47,5 +97,10 @@ SortedBagIterator SortedBag::iterator() const {
 
 
 SortedBag::~SortedBag() {
-	//TODO - Implementation
+	Node *current = head;
+	while (current != nullptr) {
+		Node *next = current->next;
+		delete current;
+		current = next;
+	}
 }
