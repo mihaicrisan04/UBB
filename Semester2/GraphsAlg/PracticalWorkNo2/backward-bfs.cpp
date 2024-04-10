@@ -6,9 +6,10 @@
 using namespace std;
 
 
-int backward_bfs(vector<vector<int>> &g, int a, int b) {
+void backward_bfs(vector<vector<int>> &g, int a, int b) {
     vector<int> dist(g.size(), -1);
     vector<int> visited(g.size(), 0);
+    vector<int> parent(g.size(), -1);
     queue<int> q;
 
     q.push(a);
@@ -22,29 +23,42 @@ int backward_bfs(vector<vector<int>> &g, int a, int b) {
             if (!visited[neigh]) {
                 visited[neigh] = 1;
                 dist[neigh] = dist[node] + 1;
+                parent[neigh] = node;
                 q.push(neigh);
             }
         }
     }
-    return dist[b];
+
+    if (dist[b] == -1) {
+        cout << "No path from " << a << " to " << b << "\n";
+    } 
+    else {
+        cout << "Distance from " << a << " to " << b << " is " << dist[b] << "\n";
+        cout << "Path: ";
+        while (b != -1) {
+            cout << b << " ";
+            b = parent[b];
+        }
+        cout << "\n";
+    }
 }
 
 
 
 int main() {
     ifstream fin ("bfs-data.in");
-    vector<vector<int>> g;
+    vector<vector<int>> gt;
     int n, m, a, b;
     
     fin >> n >> m >> a >> b;
-    g = vector<vector<int>>(n+1);
+    gt = vector<vector<int>>(n+1);
     for (int i = 0; i < m; i++) {
         int x, y;
         fin >> x >> y;
-        g[x].push_back(y);
+        gt[y].push_back(x);
     }
 
-    cout << backward_bfs(g, a, b) << "\n";
+    backward_bfs(gt, b, a);
 
     fin.close();
     return 0;
