@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void backward_bfs(vector<vector<int>> &g, int a, int b) {
+void bfs(vector<vector<int>> &g, int a, int b) {
     vector<int> dist(g.size(), -1);
     vector<int> visited(g.size(), 0);
     vector<int> parent(g.size(), -1);
@@ -58,7 +58,7 @@ int main() {
         gt[y].push_back(x);
     }
 
-    backward_bfs(gt, b, a);
+    bfs(gt, b, a);
 
     fin.close();
     return 0;
