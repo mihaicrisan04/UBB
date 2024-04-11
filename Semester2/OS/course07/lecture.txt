@@ -1,0 +1,17 @@
+### Lecture 7 ###
+
+read
+-extracts data
+-watis when empty
+    -unitl some data 
+    -until no more writers
+
+write
+-add data
+-waits when full
+    -until some space
+    -until no more readers
+
+open(FIFO)          <- O_NDELAY
+    -waits until FIFO openend
+
