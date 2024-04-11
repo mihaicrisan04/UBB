@@ -13,6 +13,9 @@
 # Compiled source # 
 Semester2/**/output
 
+# Compiled C files
+Semester2/**/*.dSYM/
+
 # Github school assignments repos
 Semester1/FP/GitHubSchool
 Semester2/OOP/GitHubSchool
