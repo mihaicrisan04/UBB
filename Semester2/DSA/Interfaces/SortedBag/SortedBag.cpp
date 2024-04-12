@@ -1,5 +1,6 @@
 #include "SortedBag.h"
 #include "SortedBagIterator.h"
+#include <stdexcept>
 
 SortedBag::SortedBag(Relation r) : relation(r), head(nullptr), length(0) {}
 
@@ -103,4 +104,35 @@ SortedBag::~SortedBag() {
 		delete current;
 		current = next;
 	}
+}
+
+
+int SortedBag::removeOccurences(int nr, TComp elem) {
+	if (nr < 0) {
+		throw std::invalid_argument("Number of occurences must be positive");
+	}
+	Node *current = head;
+	Node *prev = nullptr;
+	while (current != nullptr && current->data.first != elem) {
+		prev = current;
+		current = current->next;
+	}
+	if (current != nullptr) {
+		if (current->data.second > nr) {
+			current->data.second -= nr;
+		}
+		else {
+			if (prev == nullptr) {
+				head = current->next;
+			}
+			else {
+				prev->next = current->next;
+			}
+			nr = current->data.second;
+			delete current;
+		}
+		length -= nr;
+		return nr;
+	}
+	return 0;
 }

@@ -53,6 +53,13 @@ public:
 	// Complexity: Θ(1)
 	bool isEmpty() const;
 
+	// removes nr occurences of element e from the sorted bag
+	// if the the element appears less than nr times, all occurences will be removed
+	// return the number of times the element was removed
+	// throws an exception if nr is negative
+	// Complexity O(n)
+	int removeOccurences(int nr, TComp e);
+
 	//destructor
 	// Complexity: O(n) - n is the number of elements in the sorted bag
 	~SortedBag();

@@ -282,6 +282,43 @@ void testIterator(Relation rel) {
 	assert(count == sb.size());
 }
 
+void testRemoveOccurences(Relation r) {
+	cout << "Test remove occurences" << endl;
+	SortedBag sb(r);
+	for (int i = 0; i < 100; i++) {
+		sb.add(i);
+		sb.add(-i);
+		sb.add(i);
+		sb.add(-i);
+		sb.add(i);
+		sb.add(-i);
+	}
+	assert(sb.size() == 600);
+	// remmove 2 occurences
+	for (int i = 0; i < 100; i++) {
+		assert(sb.removeOccurences(2, i) == 2);
+		assert(sb.removeOccurences(2, -i) == 2);
+	}
+	assert(sb.size() == 200);
+	// remove 1 occurence
+	for (int i = 0; i < 100; i++) {
+		assert(sb.removeOccurences(1, i) == 1);
+		assert(sb.removeOccurences(1, -i) == 1);
+	}
+	assert(sb.size() == 0);
+	// test remove occurences for elements that do not exist
+	for (int i = 0; i < 100; i++) {
+		assert(sb.removeOccurences(1, i) == 0);
+		assert(sb.removeOccurences(1, -i) == 0);
+	}
+	try {
+		sb.removeOccurences(-1, 0);
+		assert(false);
+	}
+	catch (exception&) {
+		assert(true);
+	}
+}
 
 
 void testAllExtended() {
@@ -294,4 +331,5 @@ void testAllExtended() {
 	testIterator(relation3);
 	testQuantity(relation2);
 	testQuantity(relation3);
+	testRemoveOccurences(relation2);
 }
