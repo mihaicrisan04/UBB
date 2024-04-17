@@ -16,41 +16,46 @@ struct cmp {
     }
 };
 
-void dijkstra(vector<vector<pair<int,int>>>& g, int n, int a, int b) {
+
+/*
+    Assumming there are no infinite cycles in the graph, we can use Dijkstra's algorithm to find the shortest path from node a to node b.
+*/
+void num_min_walks(vector<vector<pair<int,int>>>& g, int n, int a, int b) {
     vector<int> dist(n+1, INF);
     vector<int> visited(n+1, 0);
+    vector<int> count(n+1, 0);
     priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> h;
 
     dist[a] = 0;
+    count[a] = 1;
     h.push({0, a});
 
     while (!h.empty()) {
         int curr = h.top().second;
         h.pop();
 
-        visited[curr] = 1;
+        visited[curr]++;
+
+        if (visited[curr] > n) {
+            cout << "The graph contains an infinite cycle\n";
+            return;
+        }
 
         for (const auto& i : g[curr]) {
             int neigh = i.first;
             int cost = i.second;
 
-            if (dist[neigh] > dist[curr] + cost) {
+            if (dist[neigh] == dist[curr] + cost) {
+                count[neigh] += count[curr];
+            }
+            else if (dist[neigh] > dist[curr] + cost) {
+                count[neigh] = count[curr];
                 dist[neigh] = dist[curr] + cost;
-                if (!visited[neigh]) {
-                    visited[neigh] = 1;
-                    h.push({dist[neigh], neigh});
-                }
+                h.push({dist[neigh], neigh});
             }
         }
     }
-
-    for (int i = 1; i <= n; i++) {
-        cout << '\t' << i;
-    }
-    cout << '\n';
-    for (int i = 1; i <= n; i++) {
-        cout << '\t' << dist[i];
-    }
+    cout << "The number of minimum walks from node " << a << " to node " << b << " is " << count[b] << " of distance " << dist[b] << '\n';
 }
 
 int main() {
@@ -66,7 +71,7 @@ int main() {
         g[x].push_back({y, c});
     }
 
-    dijkstra(g, n, a, b);
+    num_min_walks(g, n, a, b);
 
     fin.close();
     return 0;
