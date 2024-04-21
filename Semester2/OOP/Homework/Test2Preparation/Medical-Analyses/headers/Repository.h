@@ -1,6 +1,8 @@
 #include <vector>
 #include <string>
 #include "MedicalAnalysis.h"
+#include "BP.h"
+#include "BMI.h"
 
 class Repository {
 private:
