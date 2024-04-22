@@ -1,3 +1,4 @@
+#pragma once
 #include "MedicalAnalysis.h"
 #include <string>
 
@@ -7,14 +8,14 @@ class BMI : public MedicalAnalysis {
         double value;
 
     public:
-        BMI(std::string &date, double value) : MedicalAnalysis(date), value(value) {}
+        BMI(std::string date, double value) : MedicalAnalysis(date), value(value) {}
 
-        bool isResultOk() override {
+        bool isResultOK() override {
             return value >= 18.5 && value <= 25;
         }
 
         std::string toString() override {
-            return "BMI: " + std::to_string(value);
+            return "BMI: " + std::to_string(value) + " " + getDate();
         }
 
         ~BMI() override = default;

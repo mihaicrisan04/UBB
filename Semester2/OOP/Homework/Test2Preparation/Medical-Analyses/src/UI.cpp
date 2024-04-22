@@ -9,6 +9,7 @@ void UI::printMenu() {
     std::cout << "2. Get all analyses\n";
     std::cout << "3. Show if person is ill\n";
     std::cout << "4. Save the file with analyses between two dates\n";
+    std::cout << "0. Exit\n";
 }
 
 void UI::addAnalysis() {
@@ -69,11 +70,23 @@ void UI::saveFileWithAnalysesBetweenTwoDates() {
     std::cout << "Date2: ";
     std::cin >> date2;
 
-    person.writeToFile("output.txt", date1, date2);
+    person.writeToFile(date1, date2);
 }
 
 
 void UI::run() {
+    person.addAnalysis(new BP("2021.03.01", 100, 60));
+    person.addAnalysis(new BP("2021.03.03", 110, 70));
+    person.addAnalysis(new BP("2021.03.05", 119, 79));
+    person.addAnalysis(new BP("2021.04.06", 100, 70));
+    person.addAnalysis(new BP("2021.04.07", 130, 90));
+    person.addAnalysis(new BMI("2021.03.02", 18.5));
+    person.addAnalysis(new BMI("2021.03.04", 20.0));
+    person.addAnalysis(new BMI("2021.03.06", 25));
+    person.addAnalysis(new BMI("2021.04.05", 21));
+    person.addAnalysis(new BMI("2021.04.08", 30));
+
+
     while (true) {
         int command;
 

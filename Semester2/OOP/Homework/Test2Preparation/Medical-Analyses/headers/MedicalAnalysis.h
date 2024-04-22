@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -7,13 +8,13 @@ private:
     std::string date;
 
 public:
-    MedicalAnalysis(std::string &date) : date(date) {}
+    MedicalAnalysis(std::string date) : date(date) {}
 
     std::string getDate() const {
         return date;
     }
 
-    virtual bool isResultOk() = 0;
+    virtual bool isResultOK() = 0;
 
     virtual std::string toString() = 0;
 

@@ -1,6 +1,13 @@
 #include <iostream>
+#include "UI.h"
+#include "Person.h"
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Person person("John");
+    UI ui(person);
+
+    ui.run();
+
     return 0;
 }

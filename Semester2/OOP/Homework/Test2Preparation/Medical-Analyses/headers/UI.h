@@ -1,5 +1,5 @@
+#pragma once
 #include "Person.h"
-#include <iostream>
 
 
 class UI {
@@ -7,7 +7,7 @@ class UI {
         Person person;
 
     public:
-        UI(Person &person) : person(person) {}
+        UI(Person &person);
 
         void printMenu();
 

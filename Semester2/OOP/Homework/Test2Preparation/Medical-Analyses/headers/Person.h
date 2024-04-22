@@ -1,14 +1,17 @@
+#pragma once
 #include <string>
-#include <iostream>
-#include "Repository.h"
+#include <vector>
+#include "BMI.h"
+#include "BP.h"
+
 
 class Person {
 private:
     std::string name;
-    Repository repository;
+    std::vector<MedicalAnalysis *> analyses;
 
 public:
-    Person(std::string &name);
+    Person(std::string name);
 
     void addAnalysis(MedicalAnalysis *analysis);
 
@@ -20,7 +23,7 @@ public:
 
     std::vector<MedicalAnalysis *> getAnalysesBetweenDates(std::string &date1, std::string &date2);
 
-    void writeToFile(std::string filename, std::string date1, std::string date2);
+    void writeToFile(std::string date1, std::string date2);
 
     ~Person();
 };
