@@ -1,0 +1,6 @@
+Block: Str. Mihai Viteazu, nr. 1 1990 10 5
+Block: Str. Mihai Viteazu, nr. 3 2000 20 10
+House: Str. Mihai Viteazu, nr. 4 1950 brick 0
+Block: Str. Mihai Viteazu, nr. 5 2010 30 15
+Block: Str. Mihai Viteazu, nr. 7 2020 40 20
+House: Str. Mihai Viteazu, nr. 8 1910 wood 0
