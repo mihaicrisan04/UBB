@@ -1,0 +1,2 @@
+Normal client John with total income 2000.000000
+Wealthy client Alice with total income 15000.000000
