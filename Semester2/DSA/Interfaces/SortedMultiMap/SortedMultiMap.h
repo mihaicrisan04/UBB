@@ -35,13 +35,13 @@ class SortedMultiMap {
             int prev;
         };
 
+        Relation relation;
         KeyNode* keys;
         int capacity;
         int length;
         int head;
         int tail;
         int firstEmpty;
-        Relation relation;
 
         void keysResize();
         void valuesResize(int keyIndex);

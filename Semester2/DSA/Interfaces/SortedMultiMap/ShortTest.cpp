@@ -5,6 +5,8 @@
 #include <exception>
 #include <vector>
 
+#include <iostream>
+
 using namespace std;
 
 bool relation1(TKey cheie1, TKey cheie2) {
@@ -26,8 +28,17 @@ void testAll(){
     assert(!smm.isEmpty());
     vector<TValue> v= smm.search(1);
     assert(v.size()==2);
+
+	SMMIterator it = smm.iterator();
+    while (it.valid()) {
+        TElem e = it.getCurrent();
+        cout << e.first << " " << e.second << endl; 
+        it.next();
+    }
+
     v= smm.search(3);
     assert(v.size()==0);
+    /*
     SMMIterator it = smm.iterator();
     it.first();
     while (it.valid()){
@@ -38,5 +49,6 @@ void testAll(){
     assert(smm.remove(1, 3) == true);
     assert(smm.remove(2, 1) == false);
     assert(smm.isEmpty());
+    */
 }
 

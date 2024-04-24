@@ -11,6 +11,8 @@ private:
 	SMMIterator(const SortedMultiMap& map);
 
 	//TODO - Representation
+	int currentKey;
+	int currentKeyIndex;	
 
 public:
 	void first();
