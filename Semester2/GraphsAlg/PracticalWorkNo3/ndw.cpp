@@ -29,7 +29,6 @@ void ndw(vector<vector<int>>& g, int n, int a, int b) {
         q.pop();
 
         for (const int& neigh: g[curr]) {
-            // *remove the edge from the graph, marking it as computed
             if (--indegree[neigh] == 0)  // if the indegree of the node is 0, that means that all the previous nodes have been computed
                 q.push(neigh);
 
