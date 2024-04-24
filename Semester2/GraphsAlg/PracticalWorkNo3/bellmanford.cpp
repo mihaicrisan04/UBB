@@ -23,7 +23,7 @@ void bellmanford(vector<vector<pair<int, int>>>& g, int n, int a, int b) {
         q.pop();
         visited[node]++;
 
-        if (visited[node] >= n) {
+        if (visited[node] == n) {
             negative_cycle = true;
             cout << "Negative cycle\n";
             return;
@@ -40,15 +40,17 @@ void bellmanford(vector<vector<pair<int, int>>>& g, int n, int a, int b) {
         }
     }
 
-    if (!negative_cycle) {
-        for (int i = 1; i <= n; i++) {
-            cout << i << '\t';
-        }
-        cout << '\n';
-        for (int i = 1; i <= n; i++) {
-            cout << dist[i] << '\t';
-        }
-    }
+    cout << "The shortest path from node " << a << " to node " << b << " is " << dist[b] << '\n';
+
+    // if (!negative_cycle) {
+    //     for (int i = 1; i <= n; i++) {
+    //         cout << i << '\t';
+    //     }
+    //     cout << '\n';
+    //     for (int i = 1; i <= n; i++) {
+    //         cout << dist[i] << '\t';
+    //     }
+    // }
 }
 
 int main() {
