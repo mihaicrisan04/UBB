@@ -22,6 +22,10 @@ void SMMIterator::first() {
 }
 
 void SMMIterator::next() {
+	if (map.length == 0) {
+		throw std::exception();
+	}
+
 	if (valid()) {
 		if (map.keys[currentKey].values[currentKeyIndex].next != -1) {
 			currentKeyIndex = map.keys[currentKey].values[currentKeyIndex].next;
@@ -42,6 +46,9 @@ bool SMMIterator::valid() const {
 }
 
 TElem SMMIterator::getCurrent() const {
+	if (map.length == 0) {
+		throw std::exception();
+	}
 	return TElem(map.keys[currentKey].key, map.keys[currentKey].values[currentKeyIndex].value);
 }
 

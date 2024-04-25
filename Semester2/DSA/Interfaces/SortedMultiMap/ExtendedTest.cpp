@@ -10,7 +10,7 @@
 using namespace std;
 
 bool asc(TKey c1, TKey c2) {
-	if (c1 <= c2) {
+	if (c1 < c2) {
 		return true;
 	} else {
 		return false;
@@ -18,7 +18,7 @@ bool asc(TKey c1, TKey c2) {
 }
 
 bool desc(TKey c1, TKey c2) {
-	if (c1 >= c2) {
+	if (c1 > c2) {
 		return true;
 	} else {
 		return false;
@@ -61,6 +61,7 @@ void testIteratorSteps(SortedMultiMap& m) {
 		c++;
 		smmi.next();
 	}
+	cout << c << " " << m.size() << endl;
 	assert(c == m.size());
 }
 

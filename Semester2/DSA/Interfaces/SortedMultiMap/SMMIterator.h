@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SortedMultiMap.h"
+#include <exception>
 
 
 class SMMIterator{
