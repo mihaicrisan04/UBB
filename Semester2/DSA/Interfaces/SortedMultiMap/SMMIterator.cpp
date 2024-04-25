@@ -12,7 +12,7 @@ SMMIterator::SMMIterator(const SortedMultiMap& d) : map(d) {
 }
 
 void SMMIterator::first() {
-	if (map.head == -1) {
+	if (map.isEmpty()) {
 		currentKey = -1;
 		currentKeyIndex = -1;
 		return;
@@ -22,7 +22,7 @@ void SMMIterator::first() {
 }
 
 void SMMIterator::next() {
-	if (map.length == 0) {
+	if (map.isEmpty()) {
 		throw std::exception();
 	}
 
@@ -46,7 +46,7 @@ bool SMMIterator::valid() const {
 }
 
 TElem SMMIterator::getCurrent() const {
-	if (map.length == 0) {
+	if (map.isEmpty()) {
 		throw std::exception();
 	}
 	return TElem(map.keys[currentKey].key, map.keys[currentKey].values[currentKeyIndex].value);

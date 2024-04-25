@@ -52,11 +52,9 @@ void SortedMultiMap::add(TKey c, TValue v) {
 	}
 
 	int currentKey = head;
-	while (currentKey != -1 && relation(keys[currentKey].key, c)) {
+	while (currentKey != -1 && relation(keys[currentKey].key, c) && keys[currentKey].key != c) {
 		currentKey = keys[currentKey].next;
 	}
-
-	// cout << currentKey << endl;
 
 	if (keys[currentKey].key != c) {
 		// new key
@@ -88,14 +86,14 @@ void SortedMultiMap::add(TKey c, TValue v) {
 			keys[firstEmpty].prev = tail;
 			keys[tail].next = firstEmpty;
 			tail = firstEmpty;
-	
 		}
 		else {
 			// new key in the middle add before currentKey
-			keys[firstEmpty].next = currentKey;
-			keys[firstEmpty].prev = keys[currentKey].prev;
-			keys[keys[currentKey].prev].next = firstEmpty;
-			keys[currentKey].prev = firstEmpty;
+			// prev <-> firstEmpty <-> currentKey
+			keys[firstEmpty].next = currentKey;  // firstEmpty -> currentKey
+			keys[firstEmpty].prev = keys[currentKey].prev;  // prev <- firstEmpty 
+			keys[keys[currentKey].prev].next = firstEmpty;   // prev -> firstEmpty
+			keys[currentKey].prev = firstEmpty;  // firstEmpty <- currentKey 
 
 		}
 		firstEmpty++;
@@ -120,7 +118,7 @@ void SortedMultiMap::add(TKey c, TValue v) {
 vector<TValue> SortedMultiMap::search(TKey c) const {
 	vector<TValue> result;
 	int currentKey = head;
-	while (currentKey != -1 && relation(keys[currentKey].key, c)) {
+	while (currentKey != -1 && relation(keys[currentKey].key, c) && keys[currentKey].key != c) {
 		currentKey = keys[currentKey].next;
 	}
 
@@ -141,7 +139,7 @@ vector<TValue> SortedMultiMap::search(TKey c) const {
 
 bool SortedMultiMap::remove(TKey c, TValue v) {
 	int currentKey = head;
-	while (currentKey != -1 && relation(keys[currentKey].key, c)) {
+	while (currentKey != -1 && relation(keys[currentKey].key, c) && keys[currentKey].key != c) {
 		currentKey = keys[currentKey].next;
 	}
 
@@ -213,7 +211,6 @@ bool SortedMultiMap::remove(TKey c, TValue v) {
 		length--;
 		return true;
 	}
-	return false;
 }
 
 
