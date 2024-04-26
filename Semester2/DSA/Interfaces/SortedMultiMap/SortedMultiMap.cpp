@@ -11,8 +11,10 @@ SortedMultiMap::SortedMultiMap(Relation r) : relation(r), capacity(10), length(0
 
 void SortedMultiMap::keysResize() {
 	KeyNode* newKeys = new KeyNode[capacity * 2];
-	for (int i = 0; i < capacity; i++) {
+	int i = head;
+	while (i != -1) {
 		newKeys[i] = keys[i];
+		i = keys[i].next;
 	}
 	delete[] keys;
 	keys = newKeys;
@@ -21,14 +23,19 @@ void SortedMultiMap::keysResize() {
 
 void SortedMultiMap::valuesResize(int keyIndex) {
 	ValueNode* newValues = new ValueNode[keys[keyIndex].valuesCapacity * 2];
-	for (int i = 0; i < keys[keyIndex].valuesCapacity; i++) {
+	int i = keys[keyIndex].head;
+	while (i != -1) {
 		newValues[i] = keys[keyIndex].values[i];
+		i = keys[keyIndex].values[i].next;
 	}
 	delete[] keys[keyIndex].values;
 	keys[keyIndex].values = newValues;
 	keys[keyIndex].valuesCapacity *= 2;
 }
 
+//Complexity: O(k) - k is the number of keys 
+// best case: Theta(1) - empty map
+// worst case: Theta(k) - key is in the middle
 void SortedMultiMap::add(TKey c, TValue v) {
 	if (head == -1) {
 		// empty map
@@ -115,6 +122,9 @@ void SortedMultiMap::add(TKey c, TValue v) {
 	}
 }
 
+// Complexity: O(k + n) - k is the number of keys, n is the number of values
+// best case: Theta(1) - key is head or tail, and value is head or tail
+// worst case: Theta(k + n) - key is in the middle, and value is in the middle
 vector<TValue> SortedMultiMap::search(TKey c) const {
 	vector<TValue> result;
 	int currentKey = head;
@@ -137,6 +147,9 @@ vector<TValue> SortedMultiMap::search(TKey c) const {
 	return result;
 }
 
+// Complexity: O(k + n) - k is the number of keys, n is the number of values
+// best case: Theta(1) - key is head or tail, and value is head or tail
+// worst case: Theta(k + n) - key is in the middle, and value is in the middle
 bool SortedMultiMap::remove(TKey c, TValue v) {
 	int currentKey = head;
 	while (currentKey != -1 && relation(keys[currentKey].key, c) && keys[currentKey].key != c) {
@@ -213,11 +226,12 @@ bool SortedMultiMap::remove(TKey c, TValue v) {
 	}
 }
 
-
+// Complexity: Theta(1)
 int SortedMultiMap::size() const {
 	return length;
 }
 
+// Complexity: Theta(1)
 bool SortedMultiMap::isEmpty() const {
 	return length == 0;
 }

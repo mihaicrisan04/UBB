@@ -10,7 +10,7 @@
 using namespace std;
 
 bool asc(TKey c1, TKey c2) {
-	if (c1 < c2) {
+	if (c1 <= c2) {
 		return true;
 	} else {
 		return false;
@@ -18,7 +18,7 @@ bool asc(TKey c1, TKey c2) {
 }
 
 bool desc(TKey c1, TKey c2) {
-	if (c1 > c2) {
+	if (c1 >= c2) {
 		return true;
 	} else {
 		return false;
@@ -119,12 +119,12 @@ void testCreate() {
 
 void testSearch(Relation r) {
 	cout << "Test search" << endl;
-	SortedMultiMap smm = SortedMultiMap(r);
-	int kMin = 0;
+	SortedMultiMap smm(r);
+	int kMin = 2;
 	int kMax = 10;
 	for (int i = kMin; i <= kMax; i++) {
-			smm.add(i, i + 1);
-			smm.add(i, i + 2);
+		smm.add(i, i + 1);
+		smm.add(i, i + 2);
 	}
 	int intervalDim = 10;
 	testIteratorSteps(smm);
@@ -140,6 +140,8 @@ void testSearch(Relation r) {
         vector<TValue> v= smm.search(i);
         assert(v.size()==0);
 	}
+	/*
+	*/
 }
 
 void testSearch() {
@@ -204,10 +206,10 @@ vector<int> randomKeys(int kMin, int kMax) {
 
 void testIterator(Relation r) {
 	cout << "Test iterator" << endl;
-	/*
 	SortedMultiMap smm = SortedMultiMap(r);
 	SMMIterator it = smm.iterator();
-	assert(!it.valid());
+	assert(it.valid() == false);
+	assert(smm.isEmpty() == true);
 	try {
 		it.next();
 		assert(false);
@@ -249,7 +251,6 @@ void testIterator(Relation r) {
 		kPrev = k;
 		itsmm.next();
 	}
-	*/
 }
 
 void testIterator() {
@@ -262,5 +263,5 @@ void testAllExtended() {
 	testSearch();
 	testRemove();
 	testIterator();
-	// testRelations();
+	testRelations();
 }

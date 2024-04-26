@@ -1,55 +1,43 @@
 #include "SMMIterator.h"
 #include "SortedMultiMap.h"
+#include <iostream>
 
 SMMIterator::SMMIterator(const SortedMultiMap& d) : map(d) {
-	if (map.head == -1) {
-		currentKey = -1;
-		currentKeyIndex = -1;
-		return;
-	}
-	currentKey = map.head;
-	currentKeyIndex = map.keys[currentKey].head;
+	first();	
 }
 
 void SMMIterator::first() {
 	if (map.isEmpty()) {
-		currentKey = -1;
 		currentKeyIndex = -1;
-		return;
-	}
-	currentKey = map.head;
-	currentKeyIndex = map.keys[currentKey].head;
+		currentValueIndex = -1;
+	} else {
+		currentKeyIndex = map.head;
+		currentValueIndex = map.keys[currentKeyIndex].head;
+	}	
 }
 
 void SMMIterator::next() {
-	if (map.isEmpty()) {
+	if (!valid()) {
 		throw std::exception();
-	}
-
-	if (valid()) {
-		if (map.keys[currentKey].values[currentKeyIndex].next != -1) {
-			currentKeyIndex = map.keys[currentKey].values[currentKeyIndex].next;
-		}
-		else {
-			currentKey = map.keys[currentKey].next;
-			if (currentKey == -1) {
-				currentKeyIndex = -1;
-				return;
-			}
-			currentKeyIndex = map.keys[currentKey].head;
+	}	
+	currentValueIndex = map.keys[currentKeyIndex].values[currentValueIndex].next;
+	if (currentValueIndex == -1) {
+		currentKeyIndex = map.keys[currentKeyIndex].next;
+		if (currentKeyIndex != -1) {
+			currentValueIndex = map.keys[currentKeyIndex].head;
 		}
 	}
 }
 
 bool SMMIterator::valid() const {
-	return currentKey != -1;
+	return currentKeyIndex != -1 && currentValueIndex != -1;
 }
 
 TElem SMMIterator::getCurrent() const {
-	if (map.isEmpty()) {
+	if (!valid()) {
 		throw std::exception();
 	}
-	return TElem(map.keys[currentKey].key, map.keys[currentKey].values[currentKeyIndex].value);
+	return TElem(map.keys[currentKeyIndex].key, map.keys[currentKeyIndex].values[currentValueIndex].value);
 }
 
 
