@@ -60,6 +60,7 @@ void SortedMultiMap::add(TKey c, TValue v) {
 
 	int currentKey = head;
 	while (currentKey != -1 && relation(keys[currentKey].key, c) && keys[currentKey].key != c) {
+		cout << "prev " << keys[currentKey].prev << " current " << keys[currentKey].key << " next: " << keys[currentKey].next << "\n";
 		currentKey = keys[currentKey].next;
 	}
 
@@ -98,10 +99,9 @@ void SortedMultiMap::add(TKey c, TValue v) {
 			// new key in the middle add before currentKey
 			// prev <-> firstEmpty <-> currentKey
 			keys[firstEmpty].next = currentKey;  // firstEmpty -> currentKey
+			keys[currentKey].prev = firstEmpty;  // firstEmpty <- currentKey 
 			keys[firstEmpty].prev = keys[currentKey].prev;  // prev <- firstEmpty 
 			keys[keys[currentKey].prev].next = firstEmpty;   // prev -> firstEmpty
-			keys[currentKey].prev = firstEmpty;  // firstEmpty <- currentKey 
-
 		}
 		firstEmpty++;
 		length++;
@@ -153,9 +153,12 @@ vector<TValue> SortedMultiMap::search(TKey c) const {
 bool SortedMultiMap::remove(TKey c, TValue v) {
 	int currentKey = head;
 	while (currentKey != -1 && relation(keys[currentKey].key, c) && keys[currentKey].key != c) {
+		cout <<"prev " << keys[currentKey].prev << " current " << keys[currentKey].key << " next: " << keys[currentKey].next << "\n";
 		currentKey = keys[currentKey].next;
 	}
+	
 
+	cout << "In remove currentKey: " << keys[currentKey].key << " c: " << c << " map size: " << size() << "\n";
 	if (currentKey == -1 || keys[currentKey].key != c) {
 		return false;
 	}
@@ -170,6 +173,8 @@ bool SortedMultiMap::remove(TKey c, TValue v) {
 		if (currentValue == -1) {
 			return false;
 		}
+
+		// cout << "In remove currentKey: " << keys[currentKey].key << " currentValue: " << keys[currentKey].values[currentValue].value << "\n";
 
 		// value found
 		if (keys[currentKey].valuesLength == 1) {
@@ -193,32 +198,35 @@ bool SortedMultiMap::remove(TKey c, TValue v) {
 				delete keys[copyTail].values;
 			}
 			else {
-				// key is not head
+				// key is not head or tail
 				keys[keys[currentKey].prev].next = keys[currentKey].next;
-				if (keys[currentKey].next != -1) {
-					keys[keys[currentKey].next].prev = keys[currentKey].prev;
-				}
+				keys[keys[currentKey].next].prev = keys[currentKey].prev;
 				delete keys[currentKey].values;
 			}
+			keys[currentKey].valuesLength = 0;
 			length--;
 			return true;
 		}
 
 		// key has more than one value
-		if (keys[currentKey].values[currentValue].prev == -1) {
+		if (keys[currentKey].values[currentValue].prev == -1 and keys[currentKey].values[currentValue].next != -1) {
 			// remove head
 			keys[currentKey].head = keys[currentKey].values[currentValue].next;	
 			keys[keys[currentKey].values[currentValue].next].prev = -1;
 		}
-		else if (keys[currentKey].values[currentValue].next == -1) {
+		else if (keys[currentKey].values[currentValue].next == -1 and keys[currentKey].values[currentValue].prev != -1) {
 			// remove tail
+			cout << "values head: " << keys[currentKey].head << "\n";
+			cout << "values tail: " << keys[currentKey].tail << "\n";
+			cout << "prev tail: " << keys[currentKey].values[currentValue].prev << "\n";
+			cout << "valuesLength: " << keys[currentKey].valuesLength << "\n";
 			keys[currentKey].tail = keys[currentKey].values[currentValue].prev;
-			keys[keys[currentKey].values[currentValue].prev].next = -1;
+			keys[keys[currentKey].tail].next = -1;
 		}
-		else {
+		else if (keys[currentKey].values[currentValue].prev != -1 && keys[currentKey].values[currentValue].next != -1) {
 			// remove value in the middle
-			keys[keys[currentKey].values[currentValue].prev].next = keys[currentKey].values[currentValue].next;
-			keys[keys[currentKey].values[currentValue].next].prev = keys[currentKey].values[currentValue].prev;
+			keys[currentKey].values[keys[currentKey].values[currentValue].prev].next = keys[currentKey].values[currentValue].next;
+			keys[currentKey].values[keys[currentKey].values[currentValue].next].prev = keys[currentKey].values[currentValue].prev;
 		}
 		keys[currentKey].valuesLength--;
 		length--;
@@ -238,6 +246,29 @@ bool SortedMultiMap::isEmpty() const {
 
 SMMIterator SortedMultiMap::iterator() const {
 	return SMMIterator(*this);
+}
+
+void SortedMultiMap::filter(Condition c) {
+	int currentKey = head;
+	while (currentKey != -1) {
+		int nextKey = keys[currentKey].next;
+
+		int currentValue = keys[currentKey].head;
+		while (currentValue != -1) {
+			
+			cout << "currentKey: " << keys[currentKey].key << " currentValue: " << keys[currentKey].values[currentValue].value << "\n";
+
+			int nextValue = keys[currentKey].values[currentValue].next;
+
+			if (!c(keys[currentKey].values[currentValue].value)) {
+				remove(keys[currentKey].key, keys[currentKey].values[currentValue].value);	
+			}
+
+			currentValue = nextValue;
+		}
+
+		currentKey = nextKey;
+	}
 }
 
 SortedMultiMap::~SortedMultiMap() {

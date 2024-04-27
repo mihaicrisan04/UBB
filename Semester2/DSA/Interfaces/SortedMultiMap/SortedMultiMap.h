@@ -13,6 +13,8 @@ using namespace std;
 class SMMIterator;
 typedef bool(*Relation)(TKey, TKey);
 
+typedef bool(*Condition)(TValue);
+
 
 class SortedMultiMap {
 	friend class SMMIterator;
@@ -50,6 +52,9 @@ class SortedMultiMap {
 
     // constructor
     SortedMultiMap(Relation r);
+
+    // keeps in the SortedMultiMap only the pairs whose value respects the condition
+    void filter(Condition c);
 
 	//adds a new key value pair to the sorted multi map
     void add(TKey c, TValue v);
