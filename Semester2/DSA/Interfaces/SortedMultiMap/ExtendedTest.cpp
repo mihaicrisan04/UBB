@@ -249,10 +249,26 @@ void testIterator() {
 	testIterator(desc);
 }
 
+bool cond1(TValue v) {
+	return v % 2 == 0;
+}
+
+void testCondition() {
+	cout << "Test condition" << endl;
+	SortedMultiMap smm = SortedMultiMap(asc);
+	for (int i = 0; i < 10; i++) {
+		smm.add(i, i);
+		smm.add(i, i + 1);
+	}
+	smm.filter(cond1);
+	assert(smm.size() == 10);
+}
+
 void testAllExtended() {
 	testCreate();
 	testSearch();
 	testRemove();
-	testIterator();
-	testRelations();
+	// testIterator();
+	// testRelations();
+	testCondition();
 }

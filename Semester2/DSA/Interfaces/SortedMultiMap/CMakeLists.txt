@@ -10,6 +10,7 @@ include_directories(headers)
 
 add_executable(${PROJECT_NAME} 
                 App.cpp
+                dlla.h
                 ExtendedTest.h
                 ExtendedTest.cpp
                 ShortTest.h

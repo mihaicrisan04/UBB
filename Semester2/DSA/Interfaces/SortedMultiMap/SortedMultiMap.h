@@ -1,5 +1,6 @@
 #pragma once
 //DO NOT INCLUDE SMMITERATOR
+#include "dlla.h"
 
 //DO NOT CHANGE THIS PART
 #include <vector>
@@ -12,13 +13,28 @@ typedef std::pair<TKey, TValue> TElem;
 using namespace std;
 class SMMIterator;
 typedef bool(*Relation)(TKey, TKey);
+typedef bool(*Condition)(TValue);
 
 
 class SortedMultiMap {
 	friend class SMMIterator;
     private:
-		//TODO - Representation
+        struct Node {
+            int key;
+            DLLA<TValue> values;    
+            int prev;
+            int next;
+        };
 
+        Node* arr;
+        int capacity;
+        int Size;
+        int head;
+        int tail;
+        int firstEmpty;
+        Relation r;
+
+        void resize();
     public:
 
     // constructor
@@ -39,6 +55,9 @@ class SortedMultiMap {
 
     //verifies if the sorted multi map is empty
     bool isEmpty() const;
+
+    // removes all the values that dont respect the condition
+    void filter(Condition cond);
 
     // returns an iterator for the sorted multimap. The iterator will returns the pairs as required by the relation (given to the constructor)	
     SMMIterator iterator() const;

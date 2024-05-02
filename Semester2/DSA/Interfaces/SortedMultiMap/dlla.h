@@ -43,6 +43,20 @@ public:
         arr[capacity - 1].next = -1;
     }
 
+    DLLA(const DLLA<T>& other) {
+        capacity = other.capacity;
+        size = other.size;
+        head = other.head;
+        tail = other.tail;
+        firstEmpty = other.firstEmpty;
+        
+        // Allocate new array and copy elements
+        arr = new Node[capacity];
+        for (int i = 0; i < capacity; i++) {
+            arr[i] = other.arr[i];
+        }
+    }
+
     void add(T value) {
         if (size == capacity) {
             resize();
@@ -100,6 +114,43 @@ public:
             current = arr[current].next;
         }
         return result;
+    }
+
+    DLLA<T> deepCopy() const {
+        DLLA<T> copy;
+        copy.capacity = capacity;
+        copy.size = size;
+        copy.head = head;
+        copy.tail = tail;
+        copy.firstEmpty = firstEmpty;
+        
+        // Allocate new array and copy elements
+        copy.arr = new Node[capacity];
+        for (int i = 0; i < capacity; i++) {
+            copy.arr[i] = arr[i];
+        }
+        
+        return copy;
+    }
+
+    DLLA<T>& operator=(const DLLA<T>& other) {
+        if (this != &other) { // protect against invalid self-assignment
+            // 1: deallocate old memory
+            delete[] arr;
+
+            // 2: allocate new memory and copy the elements
+            capacity = other.capacity;
+            size = other.size;
+            head = other.head;
+            tail = other.tail;
+            firstEmpty = other.firstEmpty;
+            arr = new Node[capacity];
+            for (int i = 0; i < capacity; i++) {
+                arr[i] = other.arr[i];
+            }
+        }
+        // by convention, always return *this
+        return *this;
     }
 
     ~DLLA() {

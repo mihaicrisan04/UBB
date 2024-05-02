@@ -11,7 +11,9 @@ private:
 	SMMIterator(const SortedMultiMap& map);
 
 	//TODO - Representation
-
+	int currentKey;
+	int currentVal;
+	std::vector<TValue> values;
 public:
 	void first();
 	void next();
