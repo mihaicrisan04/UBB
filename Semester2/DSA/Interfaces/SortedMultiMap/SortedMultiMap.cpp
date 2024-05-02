@@ -10,6 +10,7 @@ SortedMultiMap::SortedMultiMap(Relation r) {
 	head = -1;
 	tail = -1;
 	firstEmpty = 0;
+	keysCount = 0;
 	this->r = r;
 	arr = new Node[capacity];
 	for (int i = 0; i < capacity - 1; i++) {
@@ -39,7 +40,7 @@ void SortedMultiMap::resize() {
 }
 
 void SortedMultiMap::add(TKey c, TValue v) {
-	if (Size == capacity) {
+	if (keysCount == capacity) {
 		resize();
 	}
 
@@ -51,6 +52,7 @@ void SortedMultiMap::add(TKey c, TValue v) {
 		arr[head].values.add(v);
 		arr[head].next = -1;
 		arr[head].prev = -1;
+		keysCount++;
 		Size++;
 		return;
 	}
@@ -71,6 +73,7 @@ void SortedMultiMap::add(TKey c, TValue v) {
 		arr[tail].values.add(v);
 		arr[tail].next = -1;
 		Size++;
+		keysCount++;
 		return;
 	}
 
@@ -91,6 +94,7 @@ void SortedMultiMap::add(TKey c, TValue v) {
 		arr[head].values.add(v);
 		arr[head].prev = -1;
 		Size++;
+		keysCount++;
 		return;
 	}
 	// add in the middle before current
@@ -103,6 +107,7 @@ void SortedMultiMap::add(TKey c, TValue v) {
 	arr[newElem].key = c;
 	arr[newElem].values.add(v);
 	Size++;
+	keysCount++;
 	return;
 }
 
@@ -145,6 +150,7 @@ bool SortedMultiMap::remove(TKey c, TValue v) {
 				arr[arr[current].prev].next = arr[current].next;
 				arr[arr[current].next].prev = arr[current].prev;
 			}
+			keysCount--;
 			arr[current].next = firstEmpty;
 			firstEmpty = current;
 		}

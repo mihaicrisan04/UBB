@@ -29,6 +29,7 @@ class SortedMultiMap {
         Node* arr;
         int capacity;
         int Size;
+        int keysCount;
         int head;
         int tail;
         int firstEmpty;

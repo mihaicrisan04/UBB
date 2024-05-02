@@ -268,7 +268,7 @@ void testAllExtended() {
 	testCreate();
 	testSearch();
 	testRemove();
-	// testIterator();
-	// testRelations();
+	testIterator();
+	testRelations();
 	testCondition();
 }
