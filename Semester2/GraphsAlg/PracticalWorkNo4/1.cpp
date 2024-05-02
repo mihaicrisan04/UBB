@@ -40,12 +40,12 @@ bool isDAG(vector<vector<pair<int,int>>> &g, int n) {
     for (int i = 1; i <= n; i++) {
         if (!visited[i]) {
             if (isCyclicUtil(g, i, visited, recStack)) {
-                return true;
+                return false;
             }
         }
     } 
     
-    return false;
+    return true;
 }    
 
 void dfs(vector<vector<pair<int, int>>> &g, int node, vector<bool> &visited, stack<int> &s) {
