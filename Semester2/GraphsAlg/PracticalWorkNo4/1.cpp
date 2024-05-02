@@ -173,6 +173,10 @@ void schedule(vector<vector<pair<int, int>>> &g, int n, vector<int> &costs, vect
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
     ifstream fin("input-1.txt");
 
     vector<vector<pair<int, int>>> g(30), gt(30);
@@ -199,7 +203,7 @@ int main() {
         }
     }
 
-    if (isDAG(g, n)) {
+    if (!isDAG(g, n)) {
         cout << "Graph is not a DAG\n";
         return 0;
     }
