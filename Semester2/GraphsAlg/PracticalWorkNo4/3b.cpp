@@ -79,12 +79,8 @@ struct cmp {
     }
 };
 
-/*
-    Assumming there are no infinite cycles in the graph, we can use Dijkstra's algorithm to find the shortest path from node a to node b.
-*/
 void num_min_walks(vector<vector<pair<int,int>>>& g, int n, int a, int b) {
     vector<int> dist(n+1, INF);
-    vector<int> visited(n+1, 0);
     vector<int> count(n+1, 0);
     priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> h;
 
@@ -93,20 +89,12 @@ void num_min_walks(vector<vector<pair<int,int>>>& g, int n, int a, int b) {
     h.push({0, a});
 
     while (!h.empty()) {
-        int curr = h.top().second;
+        int curr = h.top().second, dCurr = h.top().first;
         h.pop();
 
-        visited[curr]++;
+        if (dCurr > dist[curr]) continue;
 
-        if (visited[curr] > n) {
-            cout << "The graph contains an infinite cycle\n";
-            return;
-        }
-
-        for (const auto& i : g[curr]) {
-            int neigh = i.first;
-            int cost = i.second;
-
+        for (const auto&[neigh, cost]: g[curr]) {
             if (dist[neigh] == dist[curr] + cost) {
                 count[neigh] += count[curr];
             }
