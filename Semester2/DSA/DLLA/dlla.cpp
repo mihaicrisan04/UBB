@@ -9,6 +9,11 @@ int main() {
     for (int i = 0; i < 20; i++) {
         list.add(i);
     }
+    std::vector<int> v = list.toVector();
+    for (int i: v) {
+        std::cout << i << " ";
+    }
+    std::cout << '\n';
     for (int i = 0; i < 20; i++) {
         assert(list.remove(i) == true);
     }

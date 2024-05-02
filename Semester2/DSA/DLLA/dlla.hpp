@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 template <typename T>
 class DLLA {
@@ -85,6 +86,20 @@ public:
             current = arr[current].next;
         }
         return false;
+    }
+
+    int getSize() {
+        return size;
+    }
+
+    std::vector<T> toVector() {
+        std::vector<T> result;
+        int current = head;
+        while (current != -1) {
+            result.push_back(arr[current].value);
+            current = arr[current].next;
+        }
+        return result;
     }
 
     ~DLLA() {
