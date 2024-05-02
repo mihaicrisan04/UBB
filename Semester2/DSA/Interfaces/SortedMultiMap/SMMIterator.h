@@ -1,7 +1,6 @@
 #pragma once
 
 #include "SortedMultiMap.h"
-#include <exception>
 
 
 class SMMIterator{
@@ -12,8 +11,6 @@ private:
 	SMMIterator(const SortedMultiMap& map);
 
 	//TODO - Representation
-	int currentKeyIndex;
-	int currentValueIndex;	
 
 public:
 	void first();

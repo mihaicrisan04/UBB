@@ -48,14 +48,6 @@ bool rel5(TKey c1, TKey c2) {
 	return c1 % 1111 >= c2 % 1111;
 }
 
-bool cond1(TValue v) {
-	return v % 2 == 0;
-}
-
-bool cond2(TValue v) {
-	return v <= 2;
-}
-
 void testIteratorSteps(SortedMultiMap& m) {
 	SMMIterator smmi = m.iterator();
 	int count = m.size();
@@ -65,20 +57,10 @@ void testIteratorSteps(SortedMultiMap& m) {
 	smmi.first();
 	int c = 0;
 	
-	// cout << "Test iterator steps\n";
-	// cout << "Size: " << m.size() << endl;
 	while (smmi.valid()) {
 		c++;
-		TElem current = smmi.getCurrent();
-		// cout << current.first << " " << current.second << endl;
-		try {
-			smmi.next();
-		}
-		catch (exception& ex) {
-			break;
-		}
+		smmi.next();
 	}
-	// cout << c << " ###### " << m.size() << endl;
 	assert(c == m.size());
 }
 
@@ -106,10 +88,10 @@ void testRelation(Relation r) {
 void testRelations() {
 	cout << "Test relations" << endl;
 	testRelation(asc);
-	// testRelation(desc);
+	testRelation(desc);
 	testRelation(rel3);
 	testRelation(rel4);
-	// testRelation(rel5);
+	testRelation(rel5);
 }
 
 
@@ -132,12 +114,12 @@ void testCreate() {
 
 void testSearch(Relation r) {
 	cout << "Test search" << endl;
-	SortedMultiMap smm(r);
-	int kMin = 2;
+	SortedMultiMap smm = SortedMultiMap(r);
+	int kMin = 0;
 	int kMax = 10;
 	for (int i = kMin; i <= kMax; i++) {
-		smm.add(i, i + 1);
-		smm.add(i, i + 2);
+			smm.add(i, i + 1);
+			smm.add(i, i + 2);
 	}
 	int intervalDim = 10;
 	testIteratorSteps(smm);
@@ -153,8 +135,6 @@ void testSearch(Relation r) {
         vector<TValue> v= smm.search(i);
         assert(v.size()==0);
 	}
-	/*
-	*/
 }
 
 void testSearch() {
@@ -171,7 +151,6 @@ void populateSMMEmpty(SortedMultiMap& smm, int min, int max) {
 }
 
 void testRemoveSearch(Relation r) {
-	cout << "Test remove and search" << endl;
 	cout << "Test remove and search" << endl;
 	SortedMultiMap smm = SortedMultiMap(r);
 	int min = 10;
@@ -191,7 +170,7 @@ void testRemoveSearch(Relation r) {
             assert(smm.remove(c,c) == true);
 		}
         else{
-			assert(smm.remove(c,c+2) == true);
+              assert(smm.remove(c,c+2) == true);
         }
 		testIteratorSteps(smm);
 	}    
@@ -200,7 +179,7 @@ void testRemoveSearch(Relation r) {
 
 void testRemove() {
 	testRemoveSearch(asc);
-	// testRemoveSearch(desc);
+	testRemoveSearch(desc);
 }
 
 vector<int> randomKeys(int kMin, int kMax) {
@@ -221,8 +200,7 @@ void testIterator(Relation r) {
 	cout << "Test iterator" << endl;
 	SortedMultiMap smm = SortedMultiMap(r);
 	SMMIterator it = smm.iterator();
-	assert(it.valid() == false);
-	assert(smm.isEmpty() == true);
+	assert(!it.valid());
 	try {
 		it.next();
 		assert(false);
@@ -271,43 +249,10 @@ void testIterator() {
 	testIterator(desc);
 }
 
-void testCondition() {
-	cout << "Test condition" << endl;
-	SortedMultiMap smm = SortedMultiMap(asc);
-	
-	for (int i = 5; i < 10; i++) {
-		smm.add(i, 2);
-		smm.add(i, 3);
-		smm.add(i, 1);
-	}
-
-	assert(smm.size() == 15);
-
-	smm.filter(cond2);
-
-	cout << smm.size() << endl;
-	assert(smm.size() == 10);
-
-	for (int i = 5; i < 10; i++) {
-		if (smm.remove(i, 1) == true) {
-			cout << "Removed " << i << " 1" << endl;
-		}
-		else {
-			cout << "Not removed " << i << " 1" << endl;
-		}
-		// smm.remove(i, 2);
-	}
-
-	cout << smm.size() << endl;
-	// assert(smm.isEmpty());
-}
-
-
 void testAllExtended() {
-	// testCreate();
-	// testSearch();
-	// testRemove();
-	// testIterator();
-	// testRelations();
-	testCondition();
+	testCreate();
+	testSearch();
+	testRemove();
+	testIterator();
+	testRelations();
 }
