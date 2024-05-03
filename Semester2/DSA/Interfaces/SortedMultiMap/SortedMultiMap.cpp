@@ -66,9 +66,9 @@ void SortedMultiMap::add(TKey c, TValue v) {
 	if (current == -1) {
 		// add at the end
 		arr[tail].next = firstEmpty;
+		arr[firstEmpty].prev = tail;
 		tail = firstEmpty;
 		firstEmpty = arr[firstEmpty].next;
-		arr[firstEmpty].prev = tail;
 		arr[tail].key = c;
 		arr[tail].values.add(v);
 		arr[tail].next = -1;
