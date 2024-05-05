@@ -39,6 +39,10 @@ void SortedMultiMap::resize() {
 	capacity *= 2;
 }
 
+// Complexity: O(k + n), where k is the number of keys and n is the number of values
+// Best case: Θ(1) - when the key is the same as the head key and there are no values 
+// Worst case: Θ(k + n) - when the key is at the end of the list and there are n values
+// Average case: Θ(k + n) - when the key is in the middle of the list and there are n values
 void SortedMultiMap::add(TKey c, TValue v) {
 	if (keysCount == capacity) {
 		resize();
@@ -111,6 +115,10 @@ void SortedMultiMap::add(TKey c, TValue v) {
 	return;
 }
 
+// Complexity: O(k), where k is the number of keys
+// Best case: Θ(1) - when the key is the same as the head key
+// Worst case: Θ(k) - when the key is at the end of the list
+// Average case: Θ(k) - when the key is in the middle of the list
 vector<TValue> SortedMultiMap::search(TKey c) const {
 	int current = head;
 	while (current != -1 && arr[current].key != c) {
@@ -123,6 +131,10 @@ vector<TValue> SortedMultiMap::search(TKey c) const {
 	return arr[current].values.toVector();
 }
 
+// Complexity: O(k + n), where k is the number of keys and n is the number of values
+// Best case: Θ(1) - when the key is the same as the head key and there is only one value
+// Worst case: Θ(k + n) - when the key is at the end of the list and there are n values
+// Average case: Θ(k + n) - when the key is in the middle of the list and there are n values
 bool SortedMultiMap::remove(TKey c, TValue v) {
 	int current = head;
 	while (current != -1 && arr[current].key != c) {
@@ -160,14 +172,17 @@ bool SortedMultiMap::remove(TKey c, TValue v) {
 }
 
 
+// Complexity: Θ(1)
 int SortedMultiMap::size() const {
 	return Size;
 }
 
+// Complexity: Θ(1)
 bool SortedMultiMap::isEmpty() const {
 	return Size == 0;
 }
 
+// Complexity: O(V *(k + n)), where k is the number of keys and n is the number of values and V is the numbe of values that dont respect the condition
 void SortedMultiMap::filter(Condition cond) {
 	int current = head;
 	while (current != -1) {
