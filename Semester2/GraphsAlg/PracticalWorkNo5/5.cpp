@@ -49,6 +49,23 @@ void dijkstra(vvii &g, int n, int a, int b) {
     cout << "The shortest path from " << a << " to " << b << " is " << dist[b] << endl;
 }
 
+void back(int u, int d, int b, vi &visited, int &min_cost, vvii &g) {
+    if (u == b) {
+        min_cost = min(min_cost, d);
+        return;
+    }
+
+    visited[u]++;
+    if (visited[u] >= g.size()) {
+        cout << "Negative cycle detected\n";
+        exit(0);
+    }
+    for (auto &[neigh, cost]: g[u]) {
+        back(neigh, d + cost, b, visited, min_cost, g);
+    }
+    visited[u]--;
+}
+
 int main() { 
     int n, m, a, b;
     vvii g;
@@ -64,9 +81,11 @@ int main() {
     // Complexity: O((V + E) * log(V))
     dijkstra(g, n, a, b);
 
-    // Exponential complexity
-    // ...
-
+    // Exponential complexity O(V^E)
+    vi visited(n + 1, 0);
+    int min_cost = INT_MAX;
+    back(a, 0, b, visited, min_cost, g);
+    cout << "The shortest path from " << a << " to " << b << " is " << min_cost << endl;
 
     fin.close();
     return 0;
