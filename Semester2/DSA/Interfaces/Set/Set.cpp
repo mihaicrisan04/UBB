@@ -1,5 +1,5 @@
 #include "Set.h"
-#include "SetITerator.h"
+#include "SetIterator.h"
 
 Set::Set() {
 	//TODO - Implementation
