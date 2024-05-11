@@ -12,6 +12,7 @@
 
 # Compiled source # 
 Semester2/**/output
+**/a.out
 
 # Compiled C files
 Semester2/**/*.dSYM/
