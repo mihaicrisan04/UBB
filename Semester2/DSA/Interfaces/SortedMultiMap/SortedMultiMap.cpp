@@ -5,7 +5,7 @@
 #include <exception>
 using namespace std;
 SortedMultiMap::SortedMultiMap(Relation r) {
-	capacity = 10;
+	capacity = 1000;
 	Size = 0;
 	head = -1;
 	tail = -1;
