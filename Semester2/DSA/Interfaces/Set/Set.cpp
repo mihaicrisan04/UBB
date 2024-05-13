@@ -52,6 +52,10 @@ int Set::hash(TElem elem) const {
 // Worst case: Θ(n) - the element is the last in the chain
 // Average case: Θ(n)
 bool Set::add(TElem elem) {
+	if (length == capacity) {
+		resize();
+	}
+
 	int index = hash(elem);
 
 	if (list[index] != nullptr) {
@@ -60,21 +64,11 @@ bool Set::add(TElem elem) {
 			if (node->data == elem) return false;
 			node = node->next;
 		}
-		Node* newNode = new Node;
-		newNode->data = elem;	
-		newNode->next = list[index];
-		list[index] = newNode;
-		length++;
-		return true;
-	}
-
-	if (length == capacity) {
-		resize();
 	}
 
 	Node* newNode = new Node;
 	newNode->data = elem;
-	newNode->next = nullptr;
+	newNode->next = list[index]; // if the chain is empty, newNode->next will be nullptr
 	list[index] = newNode;
 	length++;
 	return true;
@@ -151,6 +145,7 @@ Set::~Set() {
 			node = nextNode;
 		}
 	}
+	delete[] list;
 }
 
 
