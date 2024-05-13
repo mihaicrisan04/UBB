@@ -2,6 +2,7 @@
 #include <assert.h>
 #include "Set.h"
 #include "SetIterator.h"
+#include <iostream>
 
 void testAll() { 
 	Set s;
@@ -31,6 +32,5 @@ void testAll() {
 		it.next();
 	}
 	assert(sum == 19);
-
 }
 

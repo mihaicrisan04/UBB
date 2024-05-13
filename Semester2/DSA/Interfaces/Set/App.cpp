@@ -15,8 +15,6 @@ int main() {
 	testAllExtended();
 
 	cout << "That's all!" << endl;
-	system("pause");
-
 }
 
 

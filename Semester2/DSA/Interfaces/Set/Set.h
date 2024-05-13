@@ -11,7 +11,20 @@ class Set {
 	friend class SetIterator;
 
     private:
-		//TODO - Representation
+        struct Node
+        {
+            TElem data;
+            Node* next;
+        };
+
+        Node** list;
+        int capacity;
+        int length;
+
+        void resize();
+
+        int hash(TElem elem) const;
+
 
     public:
         //implicit constructor
@@ -19,11 +32,11 @@ class Set {
 
         //adds an element to the set
 		//returns true if the element was added, false otherwise (if the element was already in the set and it was not added)
-        bool add(TElem e);
+        bool add(TElem elem);
 
         //removes an element from the set
 		//returns true if e was removed, false otherwise
-        bool remove(TElem e);
+        bool remove(TElem elem);
 
         //checks whether an element belongs to the set or not
         bool search(TElem elem) const;

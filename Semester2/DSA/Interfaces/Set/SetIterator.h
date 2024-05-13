@@ -1,5 +1,6 @@
 #pragma once
 #include "Set.h"
+#include <exception>
 
 class SetIterator
 {
@@ -11,6 +12,8 @@ private:
 	SetIterator(const Set& s);
 
 	//TODO - Representation
+	int index;
+	Set::Node* node;
 
 public:
 	void first();
