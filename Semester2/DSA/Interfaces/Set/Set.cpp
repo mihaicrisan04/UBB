@@ -47,6 +47,10 @@ int Set::hash(TElem elem) const {
 }
 
 
+// Complexity: O(n) - n = the number of elements in the chain
+// Best case: Θ(1) - the element is the first in the chain or the chain is empty
+// Worst case: Θ(n) - the element is the last in the chain
+// Average case: Θ(n)
 bool Set::add(TElem elem) {
 	int index = hash(elem);
 
@@ -77,6 +81,10 @@ bool Set::add(TElem elem) {
 }
 
 
+// Complexity: O(n) - n = the number of elements in the chain
+// Best case: Θ(1) - the element is the first in the chain or the chain is empty
+// Worst case: Θ(n) - the element is the last in the chain
+// Average case: Θ(n)
 bool Set::remove(TElem elem) {
 	int index = hash(elem);
 
@@ -103,6 +111,10 @@ bool Set::remove(TElem elem) {
 	return false;
 }
 
+// Complexity: O(n) - n = the number of elements in the chain
+// Best case: Θ(1) - the element is the first in the chain or the chain is empty
+// Worst case: Θ(n) - the element is the last in the chain
+// Average case: Θ(n)
 bool Set::search(TElem elem) const {
 	int index = hash(elem);
 
@@ -118,11 +130,13 @@ bool Set::search(TElem elem) const {
 }
 
 
+// Complexity: Θ(1)
 int Set::size() const {
 	return length;
 }
 
 
+// Complexity: Θ(1)
 bool Set::isEmpty() const {
 	return length == 0;
 }
