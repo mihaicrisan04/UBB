@@ -113,8 +113,10 @@ void schedule(vector<vector<pair<int, int>>> &g, int n, vector<int> &costs, vect
     }
 
     int maxEarliest = 0;
+    int latestStart = 0;
     for (int i = 1; i <= n; i++) {
         maxEarliest = max(maxEarliest, earliest[i]);
+        latestStart = max(latestStart, earliest[i] + costs[i]);
     } 
 
     // compute toatl time for activities
@@ -126,7 +128,7 @@ void schedule(vector<vector<pair<int, int>>> &g, int n, vector<int> &costs, vect
 
     // reset vectors for finding the latest starting times for activities
     for (int i = 1; i <= n; i++) {
-        latest[i] = maxEarliest;
+        latest[i] = total;
         inDegree[i] = 0;
     }
 
@@ -140,6 +142,7 @@ void schedule(vector<vector<pair<int, int>>> &g, int n, vector<int> &costs, vect
     // start from the last activities
     for (int i = 1; i <= n; i++) {
         if (inDegree[i] == 0) {
+            latest[i] = total - costs[i];
             q.push(i);
         }
     }
@@ -156,6 +159,7 @@ void schedule(vector<vector<pair<int, int>>> &g, int n, vector<int> &costs, vect
             latest[neigh.first] = min(latest[neigh.first], latest[curr] - neigh.second);
         }
     }
+
 
     for (int i = 1; i <= n; i++) {
         cout << (char)(i + 'A' - 1) << ": earliest: " << earliest[i] << " - latest: " << latest[i] << " - duration: " << costs[i] << '\n';
@@ -198,6 +202,8 @@ int main() {
     }        
     for (int i = 1; i <= n; i++) {
         for (int s: srcs[i]) {
+            // cout << (char)(s + 'A' - 1) << ' ' << (char)(i + 'A' - 1) << ' ' << costs[s] << '\n';
+            // cout << s-1 << ' ' << i-1 << ' ' << costs[s] << '\n';
             g[s].push_back({i, costs[s]});
             gt[i].push_back({s, costs[s]});
         }
