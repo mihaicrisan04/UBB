@@ -47,6 +47,10 @@ class Set {
         //check whether the set is empty or not;
         bool isEmpty() const;
 
+        // keep only those elements that do not appear in s
+        // returns the number of removed elements
+        int difference(const Set& s);
+
         //return an iterator for the set
         SetIterator iterator() const;
 

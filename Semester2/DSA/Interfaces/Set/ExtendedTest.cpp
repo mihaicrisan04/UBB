@@ -294,6 +294,26 @@ void testQuantity() {//add lots of elements
 	assert(s.size() == 0);
 }
 
+void testDifference() {
+	cout << "Test difference" << endl;
+	Set s1;
+	Set s2;
+	for (int i = 0; i < 100; i++) {
+		s1.add(i);
+	}
+	for (int i = 0; i < 100; i = i + 2) {
+		s2.add(i);
+	}
+	assert(s1.difference(s2) == 50);
+	assert(s1.size() == 50);
+	for (int i = 0; i < 100; i = i + 2) {
+		assert(s1.search(i) == false);
+	}
+	for (int i = 1; i < 100; i = i + 2) {
+		assert(s1.search(i) == true);
+	}
+}
+
 
 // we don't know how the set is represented and in which order the elements are stored or printed, we can only test general thing
 void testAllExtended() {
@@ -303,7 +323,7 @@ void testAllExtended() {
 	testIterator();
 	testMix();
 	testQuantity();
-
+	testDifference();
 }
 
 
