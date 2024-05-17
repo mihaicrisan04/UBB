@@ -52,7 +52,7 @@ int Set::hash(TElem elem) const {
 // Worst case: Θ(k) - the element is the last in the chain
 // Average case: O(k)
 bool Set::add(TElem elem) {
-	if (length == capacity) {
+	if ((double)(length + 1) / capacity > 0.75) {
 		resize();
 	}
 
