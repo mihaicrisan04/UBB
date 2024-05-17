@@ -3,7 +3,7 @@
 
 
 Set::Set() {
-	capacity = 3000;
+	capacity = 17;
 	list = new Node*[capacity];
 	for (int i = 0; i < capacity; i++) {
 		list[i] = nullptr;
