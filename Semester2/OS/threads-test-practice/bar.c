@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <time.h>
-#include "pthread_barrier.h"
+#include <pthread_barrier.h>
 
 pthread_barrier_t bar;
 pthread_mutex_t mutex;
