@@ -9,7 +9,8 @@ private:
 	const SortedIndexedList& list;
 	ListIterator(const SortedIndexedList& list);
 
-	//TODO - Representation
+	int* stack;
+	int top;
 
 public:
 	void first();
