@@ -5,38 +5,35 @@ using namespace std;
 #include <exception>
 
 SortedIndexedList::SortedIndexedList(Relation r) : r(r) {
-	capacity = 10;
-	nodes = new Node[capacity];
-	freeStack = new int[capacity];
-
-	root = NULL_TCOMP;
 	length = 0;
-
-	freeTop = 0;
+	capacity = 1000000;
+	tree = new Node[capacity];
+	freeStack = new int[capacity];
 	for (int i = 0; i < capacity; i++) {
-		freeStack[freeTop++] = i;
+		freeStack[i] = i;
 	}
+	freeStackTop = capacity - 1;
+	root = NULL_NODE;
 }
 
-void SortedIndexedList::resize() {
-	Node* newNodes = new Node[capacity * 2];
+void SortedIndexedList::resize() {	
+	Node* newTree = new Node[capacity * 2];
 	int* newFreeStack = new int[capacity * 2];
-
 	for (int i = 0; i < capacity; i++) {
-		newNodes[i] = nodes[i];
+		newTree[i].value = tree[i].value;
+		newTree[i].left = tree[i].left;
+		newTree[i].right = tree[i].right;
 		newFreeStack[i] = freeStack[i];
 	}
-
 	for (int i = capacity; i < capacity * 2; i++) {
-		newFreeStack[freeTop++] = i;
-	}
-
-	delete[] nodes;
+		newFreeStack[i] = i;
+	}	
+	delete[] tree;
 	delete[] freeStack;
-
-	nodes = newNodes;
+	tree = newTree;
 	freeStack = newFreeStack;
-	capacity *= 2;
+	freeStackTop = capacity * 2 - 1;
+	capacity *= 2;	
 }
 
 int SortedIndexedList::size() const {
@@ -51,19 +48,19 @@ TComp SortedIndexedList::getElement(int i) const{
 	if (i < 0 || i >= length) {
 		throw exception();
 	}
+
 	int current = root;
-	while (current != NULL_TCOMP) {
-		if (nodes[current].leftCount == i) {
-			return nodes[current].value;
-		}
-		else if (nodes[current].leftCount > i) {
-			current = nodes[current].left;
-		}
+	while (current != NULL_NODE) {
+		if (tree[current].leftCount == i) return tree[current].value;
+		if (tree[current].leftCount > i)
+			current = tree[current].left;
 		else {
-			i -= nodes[current].leftCount + 1;
-			current = nodes[current].right;
+			i -= tree[current].leftCount + 1;
+			current = tree[current].right;
 		}
 	}
+
+	return NULL_TCOMP;	
 }
 
 TComp SortedIndexedList::remove(int i) {
@@ -72,128 +69,127 @@ TComp SortedIndexedList::remove(int i) {
 	}
 
 	int current = root;
-	int parent = NULL_TCOMP;
-	while (current != NULL_TCOMP) {
-		if (nodes[current].leftCount == i) {
-			break;
-		}
-		else if (nodes[current].leftCount > i) {
-			nodes[current].leftCount--;
+	int parent = NULL_NODE;
+	while (current != NULL_NODE) {
+		if (tree[current].leftCount == i) break;
+		if (tree[current].leftCount > i) {
+			tree[current].leftCount--;
 			parent = current;
-			current = nodes[current].left;
+			current = tree[current].left;
 		}
 		else {
-			i -= nodes[current].leftCount + 1;
+			i -= tree[current].leftCount + 1;
 			parent = current;
-			current = nodes[current].right;
+			current = tree[current].right;
 		}
 	}
 
-	TComp removed = nodes[current].value;
-
-	if (nodes[current].left == NULL_TCOMP && nodes[current].right != NULL_TCOMP) {
-		transplant(current, nodes[current].right);
-	}
-	else if (nodes[current].right == NULL_TCOMP && nodes[current].left != NULL_TCOMP) {
-		transplant(current, nodes[current].left);
-	}
-	else if (nodes[current].left != NULL_TCOMP && nodes[current].right != NULL_TCOMP) {
-		int successor = nodes[current].right;
-		while (nodes[successor].left != NULL_TCOMP) {
-			successor = nodes[successor].left;
+	TComp removed = tree[current].value;
+	if (tree[current].left == NULL_NODE && tree[current].right == NULL_NODE) {
+		if (parent == NULL_NODE) {
+			root = NULL_NODE;
 		}
-
-		if (nodes[successor].parent != current) {
-			transplant(successor, nodes[successor].right);
-			nodes[successor].right = nodes[current].right;
-			nodes[nodes[successor].right].parent = successor;
+		else {
+			if (tree[parent].left == current) {
+				tree[parent].left = NULL_NODE;
+			}
+			else {
+				tree[parent].right = NULL_NODE;
+			}
 		}
-
-		transplant(current, successor);
-		nodes[successor].left = nodes[current].left;
-		nodes[nodes[successor].left].parent = successor;
+		freeStack[++freeStackTop] = current;
+	}
+	else if (tree[current].left == NULL_NODE) {
+		if (parent == NULL_NODE) {
+			root = tree[current].right;
+		}
+		else {
+			if (tree[parent].left == current) {
+				tree[parent].left = tree[current].right;
+			}
+			else {
+				tree[parent].right = tree[current].right;
+			}
+		}
+		freeStack[++freeStackTop] = current;
+	}
+	else if (tree[current].right == NULL_NODE) {
+		if (parent == NULL_NODE) {
+			root = tree[current].left;
+		}
+		else {
+			if (tree[parent].left == current) {
+				tree[parent].left = tree[current].left;
+			}
+			else {
+				tree[parent].right = tree[current].left;
+			}
+		}
+		freeStack[++freeStackTop] = current;
 	}
 	else {
-		transplant(current, NULL_TCOMP);
+		int successor = tree[current].right;
+		int successorParent = current;
+		while (tree[successor].left != NULL_NODE) {
+			tree[successor].leftCount--;
+			successorParent = successor;
+			successor = tree[successor].left;
+		}
+		tree[current].value = tree[successor].value;
+		if (successorParent == current) {
+			tree[current].right = tree[successor].right;
+		}
+		else {
+			tree[successorParent].left = tree[successor].right;
+		}
+		freeStack[++freeStackTop] = successor;
 	}
-
-	freeStack[freeTop++] = current;
 	length--;
 
 	return removed;
 }
 
-void SortedIndexedList::transplant(int u, int v) {
-	if (nodes[u].parent == NULL_TCOMP) {
-		root = v;
-	}
-	else if (u == nodes[nodes[u].parent].left) {
-		nodes[nodes[u].parent].left = v;
-	}
-	else {
-		nodes[nodes[u].parent].right = v;
-	}
-
-	if (v != NULL_TCOMP) {
-		nodes[v].parent = nodes[u].parent;
-	}
-}
-
 int SortedIndexedList::search(TComp e) const {
 	int current = root;
-	while (current != NULL_TCOMP) {
-		if (nodes[current].value == e) {
-			return nodes[current].leftCount;
-		}
-		else if (r(e, nodes[current].value)) {
-			current = nodes[current].left;
+	int pos = 0;
+	while (current != NULL_NODE) {
+		if (tree[current].value == e) return pos + tree[current].leftCount;
+		if (r(tree[current].value, e)) {
+			pos += tree[current].leftCount + 1;
+			current = tree[current].right;
 		}
 		else {
-			current = nodes[current].right;
+			current = tree[current].left;
 		}
 	}
 	return -1;
 }
 
 void SortedIndexedList::add(TComp e) {
-	if (length == capacity) {
-		resize();
-	}
-
-	if (root == NULL_TCOMP) {
-		root = freeStack[--freeTop];
-		nodes[root].value = e;
-		nodes[root].left = NULL_TCOMP;
-		nodes[root].right = NULL_TCOMP;
-		nodes[root].parent = NULL_TCOMP;
-		nodes[root].leftCount = 0;
+	if (root == NULL_NODE) {
+		root = freeStack[freeStackTop--];
+		tree[root].value = e;
 		length++;
 		return;
 	}
 
 	int current = root;
-	int parent = NULL_TCOMP;
-
-	while (current != NULL_TCOMP) {
-		parent = current;
-		if (r(e, nodes[current].value)) {
-			nodes[current].leftCount++;
-			current = nodes[current].left;
+	int parent = NULL_NODE;
+	while (current != NULL_NODE) {
+		if (r(tree[current].value, e)) {
+			parent = current;
+			current = tree[current].right;
 		}
 		else {
-			current = nodes[current].right;
+			tree[current].leftCount++;
+			parent = current;
+			current = tree[current].left;
 		}
 	}
 
-	int newNode = freeStack[--freeTop];
-	nodes[newNode].value = e;
-	nodes[newNode].left = NULL_TCOMP;
-	nodes[newNode].right = NULL_TCOMP;
-	nodes[newNode].parent = parent;
-	nodes[newNode].leftCount = 0;
-
-	(r(e, nodes[parent].value) ? nodes[parent].left : nodes[parent].right) = newNode;
-
+	int newNode = freeStack[freeStackTop--];
+	tree[newNode].value = e;
+	(r(tree[parent].value, e) ? tree[parent].right : tree[parent].left) = newNode;
 	length++;
 }
 
@@ -203,6 +199,6 @@ ListIterator SortedIndexedList::iterator(){
 
 //destructor
 SortedIndexedList::~SortedIndexedList() {
-	delete[] nodes;
+	delete[] tree;
 	delete[] freeStack;
 }

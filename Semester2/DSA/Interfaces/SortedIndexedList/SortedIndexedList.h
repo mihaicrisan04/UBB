@@ -11,27 +11,27 @@ class SortedIndexedList {
 private:
 	friend class ListIterator;
 private:
-	// using BST with linked representation on an array. Every node of the BST will retain
-	// the number of elemnts to the left of the node aswell
 
-	struct Node { 
-		TComp value = NULL_TCOMP;
-		int parent = NULL_TCOMP;
-		int leftCount = 0;
-		int left = NULL_TCOMP;
-		int right = NULL_TCOMP;
+	#define NULL_NODE -1
+
+	struct Node {
+		TComp value;
+		int left;
+		int right;
+		int leftCount;
+
+		Node() : value(NULL_TCOMP), left(NULL_NODE), right(NULL_NODE), leftCount(0) {}
 	};
 
 	Relation r;
-	Node* nodes;
+	Node* tree;
 	int root;
-	int* freeStack;
-	int freeTop;
-	int capacity;
 	int length;
+	int capacity;
+	int* freeStack;
+	int freeStackTop;
 
 	void resize();
-	void transplant(int u, int v);
 
 public:
 	// constructor

@@ -17,6 +17,43 @@ bool relation1(TComp e1, TComp e2) {
 
 void testAll(){
 	SortedIndexedList list = SortedIndexedList(relation1);
+
+    // list.add(6);
+    // list.add(2);
+    // list.add(4);
+    // list.add(3);
+    // list.add(5);
+    // list.add(1);
+    // list.add(7);
+    // list.add(6);
+    // list.add(8);
+
+    // ListIterator iterator = list.iterator();
+    // iterator.first();
+    // while (iterator.valid()) {
+    //     cout << iterator.getCurrent() << " ";
+    //     iterator.next();
+    // }
+
+    // std::cout << std::endl;
+    // std::cout << list.getElement(3) << std::endl;
+    // std::cout << list.search(4) << std::endl;
+    // std::cout << list.getElement(0) << std::endl;
+    // std::cout << list.search(6) << std::endl;
+    // std::cout << list.getElement(4) << std::endl;
+    // std::cout << list.search(5) << std::endl;
+    // std::cout << list.size() << std::endl;
+
+    // std::cout << list.remove(4) << std::endl;
+
+    // iterator.first();
+    // while (iterator.valid()) {
+    //     cout << iterator.getCurrent() << " ";
+    //     iterator.next();
+    // }
+
+
+
 	assert(list.size() == 0);
 	assert(list.isEmpty());
     list.add(1);

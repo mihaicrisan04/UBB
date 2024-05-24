@@ -9,35 +9,42 @@ ListIterator::ListIterator(const SortedIndexedList& list) : list(list) {
 	first();
 }
 
+ListIterator::~ListIterator() {
+	delete[] stack;
+}
+
 void ListIterator::first() {
 	int current = list.root;
-	top = -1;
-	while (current != NULL_TCOMP) {
-		stack[++top] = current;
-		current = list.nodes[current].left;
+	top = 0;
+	while (current != NULL_NODE) {
+		stack[top++] = current;
+		current = list.tree[current].left;
 	}
 }
 
 void ListIterator::next() {
-	int current = list.nodes[top--].right;
-	cout << top << endl;
-	while (current != NULL_TCOMP) {
-		cout << current << endl;
-		stack[++top] = current;
-		current = list.nodes[current].left;
+	if (!valid()) {
+		throw exception();
 	}
+	int current = stack[--top];
+	if (list.tree[current].right != NULL_NODE) {
+		current = list.tree[current].right;
+		while (current != NULL_NODE) {
+			stack[top++] = current;
+			current = list.tree[current].left;
+		}
+	}	
 }
 
 bool ListIterator::valid() const{
-	return top >= 0 && top < list.size();
+	return top > 0;
 }
 
 TComp ListIterator::getCurrent() const{
 	if (!valid()) {
 		throw exception();
 	}
-
-	return list.nodes[stack[top]].value;
+	return list.tree[stack[top - 1]].value;
 }
 
 

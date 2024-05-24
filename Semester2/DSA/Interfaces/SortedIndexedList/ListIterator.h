@@ -11,12 +11,15 @@ private:
 
 	int* stack;
 	int top;
+	TComp current;
 
 public:
 	void first();
 	void next();
 	bool valid() const;
     TComp getCurrent() const;
+
+	~ListIterator();
 };
 
 
