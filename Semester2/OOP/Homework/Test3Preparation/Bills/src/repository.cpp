@@ -21,14 +21,6 @@ void Repository::readFromFile(std::string filename) {
     file.close();
 }
 
-void Repository::writeToFile(std::string filename) {
-    std::ofstream file(filename);
-    for (int i = 0; i < this->bills.size(); i++) {
-        file << this->bills[i].companyName << ";" << this->bills[i].serialNumber << ";" << this->bills[i].amount << ";" << (this->bills[i].paid ? "true" : "false") << "\n";
-    }
-    file.close();
-}
-
 void Repository::addBill(Bill bill) {
     this->bills.push_back(bill);
 }

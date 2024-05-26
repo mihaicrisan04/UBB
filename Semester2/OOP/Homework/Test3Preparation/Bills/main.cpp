@@ -1,13 +1,11 @@
 #include <iostream>
+#include "gui.hpp"
 
 #include <QApplication>
-#include <QMainWindow>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-
-    QMainWindow window;
-    window.show();
-
+    GUI gui("../bills.txt");
+    gui.show(); 
     return app.exec();
 }

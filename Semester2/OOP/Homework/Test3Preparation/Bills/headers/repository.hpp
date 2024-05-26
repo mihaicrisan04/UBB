@@ -11,7 +11,6 @@ class Repository {
     public:
         Repository(std::string filename);
         void readFromFile(std::string filename);
-        void writeToFile(std::string filename);
         void addBill(Bill bill);
         void payBill(std::string serialNumber);
         std::vector<Bill> getBills();

@@ -1,4 +1,4 @@
-#include "Bill.hpp"
+#include "bill.hpp"
 
 #include <iomanip>  // Required for std::fixed and std::setprecision
 #include <sstream>  // Required for std::ostringstream
@@ -15,7 +15,7 @@ void Bill::payBill() {
     this->paid = true;
 }
 
-std::string Bill::toString() {
+std::string Bill::toString() const {
     std::string amountString = std::to_string(this->amount);
     amountString = amountString.substr(0, amountString.size() - 4);
 

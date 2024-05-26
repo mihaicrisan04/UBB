@@ -13,7 +13,7 @@ class Bill {
         Bill(std::string companyName, std::string serialNumber, double amount, bool paid);
 
         void payBill();
-        std::string toString();
+        std::string toString() const;
 
         ~Bill();
 };
