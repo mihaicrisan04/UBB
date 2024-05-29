@@ -1,6 +1,7 @@
 # Graph's Cheat Sheet
 
 ## Typedefs
+
 ```cpp
 typedef pair<int, int> pii;
 typedef vector<int> vi;
@@ -9,7 +10,8 @@ typedef vector<pii> vii;
 typedef vector<vii> vvii;
 ```
 
-# Dijkstra's Algorithm
+## Dijkstra's Algorithm
+
 ```cpp
 void dijkstra(vvii &g, int n, int a, int b) {
     priority_queue<pii, vii, greater<pii>> q;
@@ -38,7 +40,44 @@ void dijkstra(vvii &g, int n, int a, int b) {
 }
 ```
 
-# Kruskal's Algorithm
+## Bellman-Ford's Algorithm
+
+```cpp
+int n;
+bool negative_cycle = false;
+vvii g(DIM);
+vi dist(DIM, INF), viz(DIM);
+
+void bellman_ford() {
+    queue<int> q;
+
+    dist[1] = 0;
+    q.push(1);
+
+    while (!q.empty() && !negative_cycle) {
+        int u = q.front();
+        q.pop();
+        viz[u]++;
+
+        if (viz[u] == n) {
+            negative_cycle = true;
+            return;
+        }
+
+        for (const auto& neigh: g[u]) {
+            int vecin = neigh.first;
+            int cost = neigh.second;
+
+            if (dist[vecin] > dist[u] + cost) {
+                dist[vecin] = dist[u] + cost;
+                q.push(vecin);
+            }
+        }
+    }
+}
+```
+
+## Kruskal's Algorithm
 
 ```cpp
 struct Edge {
@@ -85,7 +124,13 @@ void Kruskal() {
 }
 ```
 
-# Topological Sort
+## Prims's Algorithm
+
+```cpp
+
+```
+
+## Topological Sort
 
 ```cpp
 int n;
@@ -116,52 +161,15 @@ void top_sort() {
 }
 ```
 
-# Prims's Algorithm
+## Kosraju's Algorithm
 
 ```cpp
+
 
 ```
 
-# Bellman-Ford's Algorithm
+## Maximum Flow
 
 ```cpp
-int n;
-bool negative_cycle = false;
-vvii g(DIM);
-vi dist(DIM, INF), viz(DIM);
-
-void bellman_ford() {
-    queue<int> q;
-
-    dist[1] = 0;
-    q.push(1);
-
-    while (!q.empty() && !negative_cycle) {
-        int u = q.front();
-        q.pop();
-        viz[u]++;
-
-        if (viz[u] == n) {
-            negative_cycle = true;
-            return;
-        }
-
-        for (const auto& neigh: g[u]) {
-            int vecin = neigh.first;
-            int cost = neigh.second;
-
-            if (dist[vecin] > dist[u] + cost) {
-                dist[vecin] = dist[u] + cost;
-                q.push(vecin);
-            }
-        }
-    }
-}
-```
-
-# Kosraju's Algorithm
-
-```cpp
-
 
 ```
