@@ -56,15 +56,18 @@ void back(int u, int d, int b, vi &visited, int &min_cost, vvii &g) {
     }
 
     visited[u]++;
-    if (visited[u] >= g.size()) {
-        cout << "Negative cycle detected\n";
-        exit(0);
-    }
     for (auto &[neigh, cost]: g[u]) {
+        if (visited[u] > g.size()) {
+            cout << "Negative cycle detected\n";
+            return;
+        }
         back(neigh, d + cost, b, visited, min_cost, g);
     }
     visited[u]--;
 }
+
+
+
 
 int main() { 
     int n, m, a, b;
@@ -79,7 +82,7 @@ int main() {
     }   
 
     // Complexity: O((V + E) * log(V))
-    dijkstra(g, n, a, b);
+    // dijkstra(g, n, a, b);
 
     // Exponential complexity O(V^E)
     vi visited(n + 1, 0);
