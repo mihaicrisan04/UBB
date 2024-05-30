@@ -15,6 +15,11 @@ typedef vector<vii> vvii;
 
 ## Dijkstra's Algorithm
 
+1. Initialize a list of `dist` with `INF` and the priority queue to be used as a min heap
+2. Set the `dist[source]` to `0` and push the pair of `{dist, node}` into the queue to start
+3. For each of the current vertex's unvisited neighbour update the distances and push the pair into the queue for further computations
+4. In the end we are left with the shortest path from the source vertex to every other vertex in the graph.
+
 ```cpp
 void dijkstra(vvii &g, int n, int a, int b) {
     priority_queue<pii, vii, greater<pii>> pq;
@@ -25,11 +30,7 @@ void dijkstra(vvii &g, int n, int a, int b) {
 
     while (!pq.empty()) {
         int u = pq.top().second;
-        int d = pq.top().first;
         pq.pop();
-
-        // skip the node if a shorter distance was already found
-        if (d > dist[u]) continue;
 
         for (auto &[neigh, cost]: g[u]) {
             if (dist[u] + cost < dist[neigh]) {
