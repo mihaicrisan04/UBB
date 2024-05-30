@@ -6,7 +6,7 @@ using namespace std;
 
 SortedIndexedList::SortedIndexedList(Relation r) : r(r) {
 	length = 0;
-	capacity = 1000000;
+	capacity = 10000;
 	tree = new Node[capacity];
 	freeStack = new int[capacity];
 	for (int i = 0; i < capacity; i++) {
@@ -16,24 +16,18 @@ SortedIndexedList::SortedIndexedList(Relation r) : r(r) {
 	root = NULL_NODE;
 }
 
-void SortedIndexedList::resize() {	
+void SortedIndexedList::resize() {		
 	Node* newTree = new Node[capacity * 2];
 	int* newFreeStack = new int[capacity * 2];
 	for (int i = 0; i < capacity; i++) {
-		newTree[i].value = tree[i].value;
-		newTree[i].left = tree[i].left;
-		newTree[i].right = tree[i].right;
-		newFreeStack[i] = freeStack[i];
+		newTree[i] = tree[i];
+		newFreeStack[i] = i + capacity;
 	}
-	for (int i = capacity; i < capacity * 2; i++) {
-		newFreeStack[i] = i;
-	}	
 	delete[] tree;
-	delete[] freeStack;
+	delete[] freeStack;	
 	tree = newTree;
 	freeStack = newFreeStack;
-	freeStackTop = capacity * 2 - 1;
-	capacity *= 2;	
+	capacity *= 2;
 }
 
 int SortedIndexedList::size() const {

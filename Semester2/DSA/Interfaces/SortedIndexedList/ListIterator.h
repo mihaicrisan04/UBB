@@ -11,7 +11,6 @@ private:
 
 	int* stack;
 	int top;
-	TComp current;
 
 public:
 	void first();
