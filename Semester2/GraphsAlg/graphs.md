@@ -16,26 +16,26 @@ typedef vector<vii> vvii;
 
 ```cpp
 void dijkstra(vvii &g, int n, int a, int b) {
-    priority_queue<pii, vii, greater<pii>> q;
+    priority_queue<pii, vii, greater<pii>> pq;
     vi dist(n + 1, INT_MAX);
 
     dist[a] = 0;
-    q.push({0, a});
+    pq.push({0, a});
 
-    while (!q.empty()) {
-      int u = q.top().second;
-      int d = q.top().first;
-      q.pop();
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        int d = pq.top().first;
+        pq.pop();
 
-      // skip the node if a shorter distance was already found
-      if (d > dist[u]) continue;
+        // skip the node if a shorter distance was already found
+        if (d > dist[u]) continue;
 
-      for (auto &[neigh, cost]: g[u]) {
-        if (dist[u] + cost < dist[neigh]) {
-            dist[neigh] = dist[u] + cost;
-            q.push({dist[neigh], neigh});
+        for (auto &[neigh, cost]: g[u]) {
+            if (dist[u] + cost < dist[neigh]) {
+                dist[neigh] = dist[u] + cost;
+                pq.push({dist[neigh], neigh});
+            }
         }
-      }
     }
 
     cout << "The shortest path from " << a << " to " << b << " is " << dist[b] << endl;
