@@ -6,7 +6,7 @@ using namespace std;
 
 SortedIndexedList::SortedIndexedList(Relation r) : r(r) {
 	length = 0;
-	capacity = 10000;
+	capacity = 100;
 	tree = new Node[capacity];
 	freeStack = new int[capacity];
 	for (int i = 0; i < capacity; i++) {
