@@ -1,6 +1,6 @@
 # Graph's Cheat Sheet
 
-## Typedefs
+## Typedefs and Consts
 
 ```cpp
 typedef pair<int, int> pii;
@@ -8,6 +8,8 @@ typedef vector<int> vi;
 typedef vector<bool> vb;
 typedef vector<pii> vii;
 typedef vector<vii> vvii;
+
+#define INF 1e9
 ```
 
 ## Dijkstra's Algorithm
@@ -45,8 +47,8 @@ void dijkstra(vvii &g, int n, int a, int b) {
 ```cpp
 int n;
 bool negative_cycle = false;
-vvii g(DIM);
-vi dist(DIM, INF), viz(DIM);
+vvii g(N);
+vi dist(N, INF), visited(N, 0);
 
 void bellman_ford() {
     queue<int> q;
@@ -57,20 +59,17 @@ void bellman_ford() {
     while (!q.empty() && !negative_cycle) {
         int u = q.front();
         q.pop();
-        viz[u]++;
 
-        if (viz[u] == n) {
+        visited[u]++;
+        if (visited[u] == n) {
             negative_cycle = true;
             return;
         }
 
-        for (const auto& neigh: g[u]) {
-            int vecin = neigh.first;
-            int cost = neigh.second;
-
-            if (dist[vecin] > dist[u] + cost) {
-                dist[vecin] = dist[u] + cost;
-                q.push(vecin);
+        for (auto &[neigh, weight]: g[u]) {
+            if (dist[neigh] > dist[u] + weight) {
+                dist[neigh] = dist[u] + weight;
+                q.push(neigh);
             }
         }
     }
@@ -85,7 +84,7 @@ struct Edge {
     int c;
 };
 
-int n, sol;
+int n, mstWeight;
 vector<Edge> edges;
 vi t(NMAX, -1), r(NMAX, 0);
 
@@ -107,8 +106,10 @@ void unite(int ra, int rb) {
     }
 }
 
-void Kruskal() {
-    sort(edges.begin(), edges.end(), [](const Edge &a, const Edge &b) {return a.c < b.c;});
+int Kruskal() {
+    sort(edges.begin(), edges.end(), [](const Edge &a, const Edge &b) {
+        return a.c < b.c;
+    });
 
     for (int i = 0; i < edges.size(); i++) {
         int ra = root(edges[i].a);
@@ -119,15 +120,46 @@ void Kruskal() {
         }
     }
 
-    // sol is the total path cost between all the vertices
-    cout << sol;
+    return mstWeight;
 }
 ```
 
 ## Prims's Algorithm
 
 ```cpp
+int prim(vvii &g, vi &t, int start) {
+    int n = g.size();
+    int mstWeight = 0;
+    vb visited(n+1, false);
+    vi key(n+1, INF); // used to make the dads vector
+    priority_queue<pii, vector<pii>, greater<pii>> pq; // priority queue to select the next edge to add to the MST
 
+    t[start] = 0;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        int w = pq.top().first;
+        pq.pop();
+
+        if (visited[u]) continue; // skip visited vertices
+
+        visited[u] = true;
+        mstWeight += w;
+
+        for (auto &[neigh, weight]: g[u]) {
+            if (!visited[neigh]) {
+                if (key[neigh] > weight) {
+                    key[neigh] = weight;    
+                    t[neigh] = u; 
+                }
+                pq.push({weight, neigh});
+            }
+        }
+    }
+
+    return mstWeight;
+}
 ```
 
 ## Topological Sort
@@ -155,8 +187,8 @@ void top_sort() {
     
     // write the nodes in sorted topological order
     while (!st.empty()) {
-      cout << st.top() << ' ';
-      st.pop();
+        cout << st.top() << ' ';
+        st.pop();
     } 
 }
 ```
