@@ -20,27 +20,27 @@ typedef vector<vii> vvii;
 3. For each of the current vertex's unvisited neighbour update the distances and push the pair into the queue for further computations
 4. In the end we are left with the shortest path from the source vertex to every other vertex in the graph.
 
-```cpp
-void dijkstra(vvii &g, int n, int a, int b) {
-    priority_queue<pii, vii, greater<pii>> pq;
-    vi dist(n + 1, INT_MAX);
+**NOTE:** using the priority queue ensures that only the shortest distances are taken into account first, so in this version of the algorithm there is no need for a visited vector (also dijkstra only works for non negative weights!)
 
-    dist[a] = 0;
-    pq.push({0, a});
+```cpp
+void dijkstra(vvii &g, int n, int source) {
+    priority_queue<pii, vii, greater<pii>> pq;
+    vi dist(n + 1, INF);
+
+    dist[source] = 0;
+    pq.push({0, source});
 
     while (!pq.empty()) {
         int u = pq.top().second;
         pq.pop();
 
-        for (auto &[neigh, cost]: g[u]) {
-            if (dist[u] + cost < dist[neigh]) {
-                dist[neigh] = dist[u] + cost;
+        for (auto &[neigh, weight]: g[u]) {
+            if (dist[u] + weight < dist[neigh]) {
+                dist[neigh] = dist[u] + weight;
                 pq.push({dist[neigh], neigh});
             }
         }
     }
-
-    cout << "The shortest path from " << a << " to " << b << " is " << dist[b] << endl;
 }
 ```
 
