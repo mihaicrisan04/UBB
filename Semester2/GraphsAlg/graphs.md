@@ -5,6 +5,7 @@
 ```cpp
 typedef pair<int, int> pii;
 typedef vector<int> vi;
+typedef vector<vi> vvi;
 typedef vector<bool> vb;
 typedef vector<pii> vii;
 typedef vector<vii> vvii;
@@ -196,11 +197,127 @@ void top_sort() {
 ## Kosraju's Algorithm
 
 ```cpp
+void dfs(int node, vector<vector<int>> &g, vector<bool> &visited, stack<int> &st) {
+    visited[node] = true;
+    for (auto neigh: g[node]) {
+        if (!visited[neigh]) {
+            dfs(neigh, g, visited, st);
+        }
+    }
+    st.push(node);
+}
 
+void dfs2(int node, vector<vector<int>> &g, vector<bool> &visited) {
+    visited[node] = true;
+    cout << node << " ";
+    for (auto neigh : g[node]) {
+        if (!visited[neigh]) {
+            dfs2(neigh, g, visited);
+        }
+    }
+}
+
+// Complexity O(V + E)
+void kosaraju(int n, vvi &g, vvi &gt) {
+    stack<int> st;
+    vb visited(n + 1, false);
+
+    // First DFS to get the order of the nodes in topological order
+    for (int i = 1; i <= n; i++) {
+        if (!visited[i]) {
+            dfs(i, g, visited, st);
+        }
+    }
+
+    // Reset visited
+    for (int i = 1; i <= n; i++) visited[i] = false;
+
+    // go through the stack and get the SCCs
+    while (!st.empty()) {
+        int v = st.top();
+        st.pop();
+
+        // DFS on the transpose to get an SCC
+        if (!visited[v]) {
+            dfs2(v, gt, visited);
+            cout << "\n";
+        }
+    }
+}
+```
+
+## Maximum Length Path in DAG in O(n + m)
+
+```cpp
+void dfs(int node, vvi &g, vb &visited, stack<int> &st) {
+    visited[node] = true;
+    for (const int &neigh: g[node])
+        if (!visited[neigh])
+            dfs(neigh, g, visited, st);
+    st.push(node);
+}
+
+int MaxLengthPathInDag(vvi &g, int n, int start) {
+    vb visited(n+1, false);
+    stack<int> st;
+    vi dist(n+1, -INF), parent(n+1, -1);
+    int maxDist = -INF;
+
+    for (int i=1; i<=n; i++)
+        if (!visited[i])
+            dfs(i, g, visited, st);
+
+    dist[start] = 0;
+    parent[start] = start;
+    while (!st.empty()) {
+        int node = st.top();
+        st.pop();
+
+        for (const int &neigh: g[node]) {
+            dist[neigh] = max(dist[neigh], dist[node] + 1);
+            if (dist[neigh] == dist[node] + 1)
+                parent[neigh] = node;
+        }
+    }
+
+    int end = 0;
+    for (int i = 1; i <= n; i++) {
+        if (dist[i] > maxDist) {
+            maxDist = dist[i];
+            end = i;
+        }
+    }
+
+    vi path;
+    int node = end;
+    while (node != parent[node]) {
+        path.push_back(node);
+        node = parent[node];
+    }
+    path.push_back(start);
+
+    for (int i = path.size()-1; i >= 0; i--)
+        cout << path[i] << ' ';
+    cout << '\n';
+
+    return maxDist;
+}
+```
+
+## Maximum Flow Ford-Fulkerson Algorithm
+
+1. Start with initial flow as 0.
+2. While there exists an augmenting path from the source to the sink:  
+    - Find an augmenting path using any path-finding algorithm, such as breadth-first search or depth-first search.
+    - Determine the amount of flow that can be sent along the augmenting path, which is the minimum residual capacity along the edges of the path.
+    - Increase the flow along the augmenting path by the determined amount.
+3. Return the maximum flow.
+
+```cpp
 
 ```
 
-## Maximum Flow
+## Maximum Flow Minimum Cost
 
 ```cpp
 
