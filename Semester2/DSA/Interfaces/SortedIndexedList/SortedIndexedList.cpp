@@ -27,7 +27,7 @@ void SortedIndexedList::resize() {
     delete[] freeStack;
     tree = newTree;
     freeStack = newFreeStack;
-    freeStackTop = freeStackTop+capacity;
+    freeStackTop = freeStackTop + capacity;
     capacity *= 2;
 }
 
