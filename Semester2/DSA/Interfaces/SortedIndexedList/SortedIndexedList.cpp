@@ -17,17 +17,18 @@ SortedIndexedList::SortedIndexedList(Relation r) : r(r) {
 }
 
 void SortedIndexedList::resize() {		
-	Node* newTree = new Node[capacity * 2];
-	int* newFreeStack = new int[capacity * 2];
-	for (int i = 0; i < capacity; i++) {
-		newTree[i] = tree[i];
-		newFreeStack[i] = i + capacity;
-	}
-	delete[] tree;
-	delete[] freeStack;	
-	tree = newTree;
-	freeStack = newFreeStack;
-	capacity *= 2;
+	Node* newTree = new Node[capacity<<1];
+    int* newFreeStack = new int[capacity<<1];
+    for (int i = 0; i < capacity; i++) {
+        newTree[i]=tree[i];
+        newFreeStack[freeStackTop+1+i] = i+capacity;
+    }
+    delete[] tree;
+    delete[] freeStack;
+    tree = newTree;
+    freeStack = newFreeStack;
+    freeStackTop = freeStackTop+capacity;
+    capacity <<= 1;
 }
 
 int SortedIndexedList::size() const {
@@ -179,6 +180,10 @@ void SortedIndexedList::add(TComp e) {
 			parent = current;
 			current = tree[current].left;
 		}
+	}
+	
+	if (freeStackTop == -1) {
+		resize();
 	}
 
 	int newNode = freeStack[freeStackTop--];
