@@ -31,14 +31,19 @@ void SortedIndexedList::resize() {
     capacity <<= 1;
 }
 
+// Complexity: Θ(1)
 int SortedIndexedList::size() const {
 	return length;
 }
 
+// Complexity: Θ(1)
 bool SortedIndexedList::isEmpty() const {
 	return length == 0;
 }
 
+// Complexity: O(LogN)
+// Worst case: O(LogN)
+// Best case: Θ(1)
 TComp SortedIndexedList::getElement(int i) const{
 	if (i < 0 || i >= length) {
 		throw exception();
@@ -58,6 +63,9 @@ TComp SortedIndexedList::getElement(int i) const{
 	return NULL_TCOMP;	
 }
 
+// Complexity: O(LogN)
+// Worst case: O(LogN)
+// Best case: Θ(1)
 TComp SortedIndexedList::remove(int i) {
 	if (i < 0 || i >= length) {
 		throw exception();
@@ -144,6 +152,9 @@ TComp SortedIndexedList::remove(int i) {
 	return removed;
 }
 
+// Complexity: O(LogN)
+// Worst case: O(LogN)
+// Best case: Θ(1)
 int SortedIndexedList::search(TComp e) const {
 	int current = root;
 	int pos = 0;
@@ -160,6 +171,9 @@ int SortedIndexedList::search(TComp e) const {
 	return -1;
 }
 
+// Complexity: O(LogN)
+// Worst case: O(LogN)
+// Best case: Θ(1)
 void SortedIndexedList::add(TComp e) {
 	if (root == NULL_NODE) {
 		root = freeStack[freeStackTop--];
