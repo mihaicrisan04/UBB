@@ -206,6 +206,28 @@ void SortedIndexedList::add(TComp e) {
 	length++;
 }
 
+// Complexity: O(H * N)
+// Worst case: Θ(H * N)
+// Best case: Θ(N)
+void SortedIndexedList::filter(Condition cond) {
+	int* stack = new int[length];
+	int k = 0;
+	stack[k++] = root;
+
+	while (k) {
+		int current = stack[--k];
+		if (!cond(tree[current].value)) {
+			remove(search(tree[current].value));
+		}
+		if (tree[current].right != NULL_NODE) {
+			stack[k++] = tree[current].right;
+		}
+		if (tree[current].left != NULL_NODE) {
+			stack[k++] = tree[current].left;
+		}
+	}
+}
+
 ListIterator SortedIndexedList::iterator(){
 	return ListIterator(*this);
 }

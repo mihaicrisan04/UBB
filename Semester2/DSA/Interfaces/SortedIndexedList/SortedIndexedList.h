@@ -5,6 +5,7 @@
 class ListIterator;
 typedef int TComp;
 typedef bool (*Relation)(TComp, TComp);
+typedef bool (*Condition)(TComp);
 #define NULL_TCOMP -11111
 
 class SortedIndexedList {
@@ -57,6 +58,9 @@ public:
 
 	// searches for an element and returns the first position where the element appears or -1 if the element is not in the list
 	int search(TComp e) const;
+
+	// keeps in the sorted list only the elements that respect the given condition
+	void filter(Condition cond);
 
 	// returns an iterator set to the first element of the list or invalid if the list is empty
 	ListIterator iterator();

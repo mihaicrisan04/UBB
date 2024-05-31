@@ -28,6 +28,10 @@ bool desc(TComp c1, TComp c2) {
 	}
 }
 
+bool condition(TComp c) {
+	return c % 2 == 0;	
+}
+
 void testIteratorSteps(SortedIndexedList& list, Relation r) {
 	int count = 0;
 	ListIterator li = list.iterator();
@@ -344,11 +348,32 @@ void testQuantity(){
     assert(list.isEmpty());
 }
 
+void testFilter() {
+	cout << "Test filter" << endl;
+	SortedIndexedList list = SortedIndexedList(asc);
+
+	for (int i = 0; i < 10; i++) {
+		list.add(i);
+	}
+
+	list.filter(condition);
+
+	ListIterator it = list.iterator();
+	it.first();
+	while (it.valid()) {
+		assert(it.getCurrent() % 2 == 0);
+		it.next();
+	}
+
+	assert(list.size() == 5);
+}
+
 void testAllExtended() {
 	testCreate();
 	testAddAndSearch();
 	testDeleteSearch();
     testQuantity();
+	testFilter();
 }
 
 
