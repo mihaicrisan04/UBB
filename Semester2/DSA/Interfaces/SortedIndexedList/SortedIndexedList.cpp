@@ -41,8 +41,8 @@ bool SortedIndexedList::isEmpty() const {
 	return length == 0;
 }
 
-// Complexity: O(LogN)
-// Worst case: O(LogN)
+// Complexity: O(H)
+// Worst case: Θ(H)
 // Best case: Θ(1)
 TComp SortedIndexedList::getElement(int i) const{
 	if (i < 0 || i >= length) {
@@ -63,8 +63,8 @@ TComp SortedIndexedList::getElement(int i) const{
 	return NULL_TCOMP;	
 }
 
-// Complexity: O(LogN)
-// Worst case: O(LogN)
+// Complexity: O(H)
+// Worst case: Θ(H)
 // Best case: Θ(1)
 TComp SortedIndexedList::remove(int i) {
 	if (i < 0 || i >= length) {
@@ -152,8 +152,8 @@ TComp SortedIndexedList::remove(int i) {
 	return removed;
 }
 
-// Complexity: O(LogN)
-// Worst case: O(LogN)
+// Complexity: O(H)
+// Worst case: Θ(H)
 // Best case: Θ(1)
 int SortedIndexedList::search(TComp e) const {
 	int current = root;
@@ -171,8 +171,8 @@ int SortedIndexedList::search(TComp e) const {
 	return -1;
 }
 
-// Complexity: O(LogN)
-// Worst case: O(LogN)
+// Complexity: O(H)
+// Worst case: Θ(H)
 // Best case: Θ(1)
 void SortedIndexedList::add(TComp e) {
 	if (root == NULL_NODE) {
