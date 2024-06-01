@@ -8,6 +8,7 @@
 
 ## [Semester 2](https://github.com/mihaicrisan04/UBB/tree/main/Semester2)
 * [Data Structures & Algorithms](https://github.com/mihaicrisan04/UBB/tree/main/Semester2/DSA)  
+* [Dynamical Systems](https://github.com/mihaicrisan04/UBB/tree/main/Semester2/DS)  
 * [Graphs Algorithms](https://github.com/mihaicrisan04/UBB/tree/main/Semester2/GraphsAlg)  
 * [Object Oriented Programming](https://github.com/mihaicrisan04/UBB/tree/main/Semester2/OOP)  
 * [Operating Sysntems](https://github.com/mihaicrisan04/UBB/tree/main/Semester2/OS)  
