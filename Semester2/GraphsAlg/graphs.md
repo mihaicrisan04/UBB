@@ -201,7 +201,7 @@ void top_sort() {
 ## Kosraju's Algorithm
 
 ```cpp
-void dfs(int node, vector<vector<int>> &g, vector<bool> &visited, stack<int> &st) {
+void dfs(int node, vvi &g, vector<bool> &visited, stack<int> &st) {
     visited[node] = true;
     for (auto neigh: g[node]) {
         if (!visited[neigh]) {
@@ -211,7 +211,7 @@ void dfs(int node, vector<vector<int>> &g, vector<bool> &visited, stack<int> &st
     st.push(node);
 }
 
-void dfs2(int node, vector<vector<int>> &g, vector<bool> &visited) {
+void dfs2(int node, vvi &g, vector<bool> &visited) {
     visited[node] = true;
     cout << node << " ";
     for (auto neigh : g[node]) {
