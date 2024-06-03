@@ -32,10 +32,13 @@ void dijkstra(vvii &g, int n, int source) {
 
     while (!pq.empty()) {
         int u = pq.top().second;
+        int d = pq.top().first;
         pq.pop();
 
+        if (d > dist[u]) continue;
+
         for (auto &[neigh, weight]: g[u]) {
-            if (dist[u] + weight < dist[neigh]) {
+            if (dist[neigh] > dist[u] + weight) {
                 dist[neigh] = dist[u] + weight;
                 pq.push({dist[neigh], neigh});
             }
@@ -260,9 +263,9 @@ void dfs(int u, vvi &gout, vb &visited, stack<int> &st) {
     st.push(u);
 }
 
-void Schedule(int n, vvi &gin, vvi &gout, vi &costs) {;
+void Schedule(int n, vvi &gin, vvi &gout, vi &costs) {
     stack<int> st;
-    vb visited(n, false), critical(n, false);
+    vb visited(n + 1, false), critical(n + 1, false);
     vi es(n + 1, 0), ef(n + 1, 0), ls(n + 1, INF), lf(n + 1, INF);
     vi topSort;
     int maxEf = 0;
@@ -371,7 +374,106 @@ int MaxLengthPathInDag(vvi &g, int n, int start) {
 }
 ```
 
-## Maximum Flow Ford-Fulkerson Algorithm
+## Shortest Cycle in a Directed Graph
+
+```cpp
+vi findShortestCycle(const vvi &graph) {
+    int V = graph.size();
+    int min_cycle_length = INF;
+    vi shortest_cycle;
+
+    // BFS function to find the shortest cycle starting from a given vertex
+    auto bfs = [&](int start_vertex) {
+        queue<pair<int, pair<int, vi>>> q;  // {current_vertex, {distance, path}}
+        vb visited(V, false);
+        vi dist(V, INF);
+
+        q.push({start_vertex, {0, {start_vertex}}});
+        dist[start_vertex] = 0;
+
+        while (!q.empty()) {
+            auto [current_vertex, dist_path] = q.front();
+            auto [distance, path] = dist_path;
+            q.pop();
+
+            visited[current_vertex] = true;
+
+            for (int neighbor : graph[current_vertex]) {
+                if (neighbor == start_vertex && distance + 1 < min_cycle_length) {
+                    min_cycle_length = distance + 1;
+                    path.push_back(neighbor);
+                    shortest_cycle = path;
+                    path.pop_back();
+                } 
+                else if (!visited[neighbor] || distance + 1 < dist[neighbor]) {
+                    dist[neighbor] = distance + 1;
+                    vi new_path = path;
+                    new_path.push_back(neighbor);
+                    q.push({neighbor, {distance + 1, new_path}});
+                }
+            }
+        }
+    };
+
+    // Perform BFS for each vertex
+    for (int vertex = 0; vertex < V; ++vertex) {
+        bfs(vertex);
+    }
+
+    return min_cycle_length < INF ? shortest_cycle : vi{};
+}
+```
+
+## Polynomial Shortest Cycle in Directed Graph With Negative Cost
+
+```cpp
+struct Edge {
+    int u, v, cost;
+};
+
+vi findNegativeCycle(int V, int s, vector<Edge>& edges) {
+    // Distance table to store shortest paths with exactly k edges
+    // Layered V times to ensure a full graph traversal is done
+    vvi dist(V + 1, vi(V, INF));
+    vvi parent(V + 1, vi(V, -1));
+    dist[0][s] = 0;
+
+    // Relax edges up to V times (basically traverse the graph and update the distance and parent vectors)
+    for (int k = 1; k <= V; ++k) {
+        for (const auto& edge : edges) {
+            if (dist[k-1][edge.u] != INF && dist[k-1][edge.u] + edge.cost < dist[k][edge.v]) {
+                dist[k][edge.v] = dist[k-1][edge.u] + edge.cost;
+                parent[k][edge.v] = edge.u;
+            }
+        }
+    }
+
+    // Check for negative cycle
+    for (int v = 0; v < V; ++v) {
+        if (dist[V][v] < dist[V-1][v]) {
+            // A negative cycle exists, trace it back
+            vi cycle;
+            int cycle_vertex = v;
+
+            // Extract the cycle
+            int start_vertex = cycle_vertex;
+            do {
+                cycle.push_back(cycle_vertex);
+                cycle_vertex = parent[V][cycle_vertex];
+            } while (cycle_vertex != start_vertex);
+            cycle.push_back(start_vertex);
+            reverse(cycle.begin(), cycle.end());
+
+            return cycle;
+        }
+    }
+
+    // No negative cycle found
+    return vi{};
+}
+```
+
+## Maximum Flow Ford-Fulkerson Algorithm + Min Cut
 
 1. Start with initial flow as 0.
 2. While there exists an augmenting path from the source to the sink:  
@@ -398,12 +500,22 @@ bool bfs(vvii &g, int s, int t, vi &p) {
             if (!visited[v] && w > 0) {
                 visited[v] = true;
                 p[v] = u;
-                q.push(v);
                 if (v == t) return true;
+                q.push(v);
             }
         }
     }
     return false;
+}
+
+// DFS to mark all reachable vertices from the source
+void dfs(vvii &r, int s, vb &visited) {
+    visited[s] = true;
+    for (auto &[v, w] : r[s]) {
+        if (w > 0 && !visited[v]) { // Only consider edges with positive residual capacity
+            dfs(r, v, visited);
+        }
+    }
 }
 
 // The weight represents the capacity of the edge from u to v 
@@ -448,6 +560,21 @@ int maxFlow(vvii &g, int s, int t) {
 
         // Add path flow to overall flow
         max_flow += path_flow;
+
+        // Find all reachable vertices from source
+        vb visited(n, false);
+        dfs(r, s, visited);
+
+        // Find the minimum cut edges
+        for (int u = 0; u < n; ++u) {
+            if (visited[u]) { // u is reachable from the source
+                for (auto &[v, w] : g[u]) {
+                    if (!visited[v] && w > 0) { // v is not reachable and there is an edge u -> v in the original graph
+                        min_cut.push_back({u, v});
+                    }
+                }
+            }
+        }
     }
     return max_flow;
 }
