@@ -43,7 +43,7 @@ vi findShortestCycle(const vvi &graph, int s, int n) {
     }
 
     vi cycle;
-    
+
 
     return vi();
 }
