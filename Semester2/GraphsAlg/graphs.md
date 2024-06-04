@@ -449,23 +449,20 @@ vi findNegativeCycle(int V, int s, vector<Edge>& edges) {
     }
 
     // Check for negative cycle
-    for (int v = 0; v < V; ++v) {
-        if (dist[V][v] < dist[V-1][v]) {
-            // A negative cycle exists, trace it back
-            vi cycle;
-            int cycle_vertex = v;
+    if (dist[V][s] < dist[V-1][s]) {
+        // A negative cycle exists, trace it back
+        vi cycle;
+        int cycle_vertex = s;
 
-            // Extract the cycle
-            int start_vertex = cycle_vertex;
-            do {
-                cycle.push_back(cycle_vertex);
-                cycle_vertex = parent[V][cycle_vertex];
-            } while (cycle_vertex != start_vertex);
-            cycle.push_back(start_vertex);
-            reverse(cycle.begin(), cycle.end());
+        // Extract the cycle
+        do {
+            cycle.push_back(cycle_vertex);
+            cycle_vertex = parent[V][cycle_vertex];
+        } while (cycle_vertex != s);
+        cycle.push_back(s);
+        reverse(cycle.begin(), cycle.end());
 
-            return cycle;
-        }
+        return cycle;
     }
 
     // No negative cycle found
