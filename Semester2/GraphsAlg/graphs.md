@@ -575,8 +575,74 @@ int maxFlow(vvii &g, int s, int t) {
 }
 ```
 
-## Maximum Flow Minimum Cost
+## Minimum Cost Maximum Flow
 
-```cpp
+```py
+class MCMFGraph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.adj = [[] for _ in range(vertices)]
+        self.cap = {}
+        self.cost = {}
+        self.flow = {}
 
+    def add_edge(self, u, v, capacity, cost):
+        self.adj[u].append(v)
+        self.adj[v].append(u)
+        self.cap[(u, v)] = capacity
+        self.cap[(v, u)] = 0
+        self.cost[(u, v)] = cost
+        self.cost[(v, u)] = -cost
+        self.flow[(u, v)] = 0
+        self.flow[(v, u)] = 0
+
+    def bellman_ford(self, src, sink):
+        dist = [float('inf')] * self.V
+        parent = [-1] * self.V
+        in_queue = [False] * self.V
+
+        dist[src] = 0
+        queue = deque([src])
+        in_queue[src] = True
+
+        while queue:
+            u = queue.popleft()
+            in_queue[u] = False
+
+            for v in self.adj[u]:
+                if self.cap[(u, v)] > self.flow[(u, v)] and dist[v] > dist[u] + self.cost[(u, v)]:
+                    dist[v] = dist[u] + self.cost[(u, v)]
+                    parent[v] = u
+                    if not in_queue[v]:
+                        queue.append(v)
+                        in_queue[v] = True
+
+        return dist, parent
+
+    def min_cost_max_flow(self, source, sink):
+        max_flow = 0
+        min_cost = 0
+
+        while True:
+            dist, parent = self.bellman_ford(source, sink)
+            if dist[sink] == float('inf'):
+                break
+
+            path_flow = float('inf')
+            s = sink
+            while s != source:
+                path_flow = min(path_flow, self.cap[(parent[s], s)] - self.flow[(parent[s], s)])
+                s = parent[s]
+
+            max_flow += path_flow
+            min_cost += path_flow * dist[sink]
+
+            v = sink
+            while v != source:
+                u = parent[v]
+                self.flow[(u, v)] += path_flow
+                self.flow[(v, u)] -= path_flow
+                v = parent[v]
+
+        return max_flow, min_cost
 ```
