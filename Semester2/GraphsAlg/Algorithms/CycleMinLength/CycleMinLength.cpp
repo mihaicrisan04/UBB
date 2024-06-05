@@ -20,7 +20,7 @@ vi findShortestCycle(const vvi &graph, int s, int n) {
     for (int i = 1; i <= n; i++) {
         for (int j : graph[i]) {
             dist[i][j] = 1;
-            parent[i][j] = j;
+            parent[i][j] = i;
         }
     }
     
@@ -29,23 +29,32 @@ vi findShortestCycle(const vvi &graph, int s, int n) {
             for (int v = 1; v <= n; v++) {
                 if (dist[u][v] > dist[u][k] + dist[k][v]) {
                     dist[u][v] = dist[u][k] + dist[k][v];
-                    parent[u][v] = parent[u][k];
+                    parent[u][v] = parent[k][v];
                 }
             }
         }
     }
 
+    int min_cycle_len = INF;
+    vi cycle;
     for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            cout << dist[i][j] << " ";
+        if (dist[i][i] < min_cycle_len) {
+            min_cycle_len = dist[i][i];
+            cycle.clear();
+            int v = i;
+            while (true) {
+                cycle.push_back(v);
+                v = parent[i][v];
+                if (v == i) {
+                    cycle.push_back(v);
+                    break;
+                }
+            }
+            reverse(cycle.begin(), cycle.end());
         }
-        cout << endl;
     }
 
-    vi cycle;
-
-
-    return vi();
+    return cycle;
 }
 
 int main() {

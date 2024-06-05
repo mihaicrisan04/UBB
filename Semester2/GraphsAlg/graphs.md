@@ -378,49 +378,47 @@ int MaxLengthPathInDag(vvi &g, int n, int start) {
 
 ```cpp
 vi findShortestCycle(const vvi &graph) {
-    int V = graph.size();
-    int min_cycle_length = INF;
-    vi shortest_cycle;
+    vvi dist(n + 1, vi(n + 1, INF));
+    vvi parent(n + 1, vi(n + 1, -1));
 
-    // BFS function to find the shortest cycle starting from a given vertex
-    auto bfs = [&](int start_vertex) {
-        queue<pair<int, pair<int, vi>>> q;  // {current_vertex, {distance, path}}
-        vb visited(V, false);
-        vi dist(V, INF);
-
-        q.push({start_vertex, {0, {start_vertex}}});
-        dist[start_vertex] = 0;
-
-        while (!q.empty()) {
-            auto [current_vertex, dist_path] = q.front();
-            auto [distance, path] = dist_path;
-            q.pop();
-
-            visited[current_vertex] = true;
-
-            for (int neighbor : graph[current_vertex]) {
-                if (neighbor == start_vertex && distance + 1 < min_cycle_length) {
-                    min_cycle_length = distance + 1;
-                    path.push_back(neighbor);
-                    shortest_cycle = path;
-                    path.pop_back();
-                } 
-                else if (!visited[neighbor] || distance + 1 < dist[neighbor]) {
-                    dist[neighbor] = distance + 1;
-                    vi new_path = path;
-                    new_path.push_back(neighbor);
-                    q.push({neighbor, {distance + 1, new_path}});
+    for (int i = 1; i <= n; i++) {
+        for (int j : graph[i]) {
+            dist[i][j] = 1;
+            parent[i][j] = i;
+        }
+    }
+    
+    for (int k = 1; k <= n; k++) {
+        for (int u = 1; u <= n; u++) {
+            for (int v = 1; v <= n; v++) {
+                if (dist[u][v] > dist[u][k] + dist[k][v]) {
+                    dist[u][v] = dist[u][k] + dist[k][v];
+                    parent[u][v] = parent[k][v];
                 }
             }
         }
-    };
-
-    // Perform BFS for each vertex
-    for (int vertex = 0; vertex < V; ++vertex) {
-        bfs(vertex);
     }
 
-    return min_cycle_length < INF ? shortest_cycle : vi{};
+    int min_cycle_len = INF;
+    vi cycle;
+    for (int i = 1; i <= n; i++) {
+        if (dist[i][i] < min_cycle_len) {
+            min_cycle_len = dist[i][i];
+            cycle.clear();
+            int v = i;
+            while (true) {
+                cycle.push_back(v);
+                v = parent[i][v];
+                if (v == i) {
+                    cycle.push_back(v);
+                    break;
+                }
+            }
+            reverse(cycle.begin(), cycle.end());
+        }
+    }
+
+    return cycle;
 }
 ```
 
