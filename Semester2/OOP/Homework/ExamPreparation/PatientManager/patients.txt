@@ -1,0 +1,5 @@
+Gicu|tumor|neuro||2023.10.10
+Ioana|vasc|cardio|Maria|2023.10.09
+Marcel|cancer|neuro|Ionut|2023.10.08
+Mihai|undiagnosed|||2022.10.10
+Nicu|heart|cardio|Maria|2222.22.22
