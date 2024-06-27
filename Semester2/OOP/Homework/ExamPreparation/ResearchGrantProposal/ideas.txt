@@ -1,0 +1,3 @@
+Tren,tren prin oras,proposed,Andrei,3
+Avion,avion pe post de taxi,proposed,Maria,2
+Taxi Elicopter,elicoptere pe post de taxi,proposed,Andrei,1
