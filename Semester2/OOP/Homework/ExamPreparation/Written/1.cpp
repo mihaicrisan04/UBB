@@ -15,7 +15,7 @@ public:
     SmartPointer& operator=(const SmartPointer& other) {
         if (this != &other) {
             delete ptr;
-            ptr = new T(*other.ptr);
+            ptr = new T{ *other.ptr };
         }
         return *this;
     }
