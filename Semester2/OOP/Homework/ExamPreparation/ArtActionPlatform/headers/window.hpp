@@ -9,6 +9,7 @@
 #include <QPushButton>
 #include <QListWidget>
 #include <QListWidgetItem>
+#include <QComboBox>    
 
 
 class Window: public QWidget, public Observer {
