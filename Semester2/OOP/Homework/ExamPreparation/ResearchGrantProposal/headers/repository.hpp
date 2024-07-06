@@ -24,6 +24,19 @@ class Repository {
             saveIdeas();
         }
 
+        void addIdea(Idea idea) {
+            ideas.push_back(idea);
+        }
+
+        void updateIdeaStatus(Idea idea, std::string status) {
+            for (auto &i : ideas) {
+                if (i.title == idea.title) {
+                    i.status = status;
+                    break;
+                }
+            }
+        }
+
         void loadResearchers() {
             std::ifstream file("../researchers.txt");
             std::string line;
