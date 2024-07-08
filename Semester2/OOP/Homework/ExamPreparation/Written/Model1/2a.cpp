@@ -28,5 +28,11 @@ int main() {
     cout << a1.get() << " ";
     cout << a2.get() << " ";
     cout << a3.get() << " ";
+    // result:
+    // 2
+    // 2
+    // 8 0 8
     return 0;
+    // when the deconstructor are called a double free will occur for a1 and a3 because the 
+    // operation = is not specified and default behaviour occurs which is a shallow copy
 }

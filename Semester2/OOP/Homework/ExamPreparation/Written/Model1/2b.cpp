@@ -20,9 +20,10 @@ public:
 
 int main() {
     B* b = new B();
-    B* d = new D(b);
-    d->f();
-    delete d;
-    delete b;
+    B* d = new D(b); // D 
+    d->f(); // D.f B.fcopy ~B 
+    delete d; // ~B 
+    delete b; // ~B
     return 0;
+    //D D.f B.fcopy ~B ~B ~B 
 }
