@@ -11,7 +11,8 @@ public:
     int price;
     std::vector<std::tuple<int, std::string, int>> offers;
 
-    Item(std::string name, std::string category, int price, std::vector<std::tuple<int, std::string, int>> offers) : name(name), category(category), price(price), offers(offers) {}
+    Item(std::string name, std::string category, int price, std::vector<std::tuple<int, std::string, int>> offers = {}) : name(name), category(category), price(price), offers(offers) {}
+    Item(Item const &item) : name(item.name), category(item.category), price(item.price), offers(item.offers) {}
 };
 
 

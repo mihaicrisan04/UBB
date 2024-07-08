@@ -21,6 +21,23 @@ public:
         notify();
     }
 
+    std::vector<std::string> getCategories() {
+        std::vector<std::string> categories;
+        for (auto item: repo.getItems()) {
+            bool found = false;
+            for (auto category: categories) {
+                if (category == item.category) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                categories.push_back(item.category);
+            }
+        }
+        return categories;
+    }
+
     std::vector<Item> getItems() {
         return repo.getItems();
     }
