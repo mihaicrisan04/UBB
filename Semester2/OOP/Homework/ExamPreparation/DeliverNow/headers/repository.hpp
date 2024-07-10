@@ -22,6 +22,15 @@ public:
         savePackages();
     }   
 
+    void updatePackageDeliveredStatusOf(std::string recipientName) {
+        for (auto &package : packages) {
+            if (package.recipient == recipientName) {
+                package.delivered = true;
+                break;
+            }
+        }
+    }
+
     void addCourier(Courier courier) {
         couriers.push_back(courier);
     }

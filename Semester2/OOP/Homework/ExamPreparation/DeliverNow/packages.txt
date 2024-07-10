@@ -1,2 +1,4 @@
 Mihai|Pintenului|2,2|false
-Andreea|Bucuresti|20,20|false
+Andreea|Bucuresti|6,6|false
+Ionica|Muncii|20,20|false
+Maria|Pintenului|3,3|false
