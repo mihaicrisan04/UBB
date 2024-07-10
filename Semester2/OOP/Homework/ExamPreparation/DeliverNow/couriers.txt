@@ -1,0 +1,3 @@
+Gicu|Pintenului,Spicului,|1,1,2
+Vlad|Vlaicu,|2,2,4
+Nelu|Bucuresti,Borzesti,|19,19,5

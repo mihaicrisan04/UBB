@@ -1,0 +1,2 @@
+Mihai|Pintenului|2,2|false
+Andreea|Bucuresti|20,20|false
