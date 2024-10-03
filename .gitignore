@@ -31,3 +31,6 @@ Semester2/GraphsAlg/PracticalWorkNo1/graph1*.txt
 # qt model lecture 9
 Semester2/OOP/Homework/qt-work/QtWidgetsApp_stub
 
+# Java class files
+*.class
+
