@@ -26,6 +26,11 @@ class Lista:
     # (l1, l2) -> (l3, l4) -> ... -> (ln-1, ln) -> None
     # (1, 2) -> (3, 4) -> (5, _) -> None
     #                        false
+    '''
+    f(l1, l2, ..., ln) = True  n = 0
+                         False n = 1
+                         f(l3 l4 .. ln) n > 2 otherwise
+    '''
     def evenNumberOfElementsRec(self, nod):
         if nod == None:
             return True
@@ -89,8 +94,8 @@ program pentru test
 def main():
     list = creareLista()
     print("pare" if list.evenNumberOfElementsRec(list.prim) else "impare")
-    # x = int(input("de sters="))
-    # list.deleteAllOccurrences(x)
+    x = int(input("de sters="))
+    list.deleteAllOccurrences(x)
     tipar(list)
     
 main() 
