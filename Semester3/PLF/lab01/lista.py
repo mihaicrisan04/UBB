@@ -9,8 +9,8 @@ class Lista:
       
     '''
     Determine if a list has even number of elements, without computing the length of the list.
-                            |  1, n = 0             (1 == pare, 0 == impare)
-    f(l1, l2, ..., ln, i) = |  f(l_i+1, ..., l_n, 1 - i), nod != None
+                            |  1 - i, n = 0             (1 == pare, 0 == impare)
+    f(l1, l2, ..., ln, i) = |  f(2, ..., ln, 1 - i), nod != None
                             |
     '''
     # def evenNumberOfElements(self):
@@ -21,13 +21,17 @@ class Lista:
     #         return self.evenNumberOfElementsRec(nod.urm, 1 - i)
     #     return 1 - i
 
+    # true false  (true = pare, false = impare)
+    #  _    _ 
+    # (l1, l2) -> (l3, l4) -> ... -> (ln-1, ln) -> None
+    # (1, 2) -> (3, 4) -> (5, _) -> None
+    #                        false
     def evenNumberOfElementsRec(self, nod):
         if nod == None:
             return True
         if nod.urm == None:
             return False
         return self.evenNumberOfElementsRec(nod.urm.urm)
-
 
     ''' 
     Delete all occurrences of an element e from a list.
