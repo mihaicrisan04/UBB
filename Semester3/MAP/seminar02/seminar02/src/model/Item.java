@@ -1,4 +1,21 @@
 package model;
 
-public class Item {
+public abstract class Item {
+    protected float weight;
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public Item(float weight) {
+        this.weight = weight;
+    }
+
+    public String toString() {
+        return "Weight: " + weight;
+    } // object to string
 }
