@@ -1,0 +1,48 @@
+Aspecte administrative
+- codul pentru Teams v8wjpwh
+- structura team-ului din Teams
+- citit regulile de seminar Seminar Rules
+- lista de prezenta
+
+1. C++ vs Java
+-- .h, .cpp,  vs .java
+-- compilare+executie (prg.exe params) vs compilare+interpretare (java <main class name> params)
+-- portabiltiatea Java intre OS
+
+2. link JDK
+- https://www.oracle.com/java/
+- https://www.oracle.com/java/technologies/downloads/
+- https://www.oracle.com/java/technologies/downloads/#jdk23-windows
+- Java Documentation https://docs.oracle.com/en/java/javase/23/docs/api/index.html
+
+
+2'. Java documentation
+- Java Documentation https://docs.oracle.com/en/java/javase/21/
+- Java Platform API Specification https://docs.oracle.com/en/java/javase/21/docs/api/index.html
+
+
+3. link jetbrains.com (Eclipse, NetBeans)
+- https://account.jetbrains.com/login
+- adresa scs.ubbcluj.ro sau stud.ubbcluj.ro
+- https://www.jetbrains.com/idea/download/#section=windows  - ULTIMATE
+
+- activare licenta
+
+4. creare proiect Java, New Project
+- Java, JDK 21
+- arhitectura Model- Repository-Controller- view, main class===> pachete
+- in pachetul model - folosim clase
+- in pachetul repository - folosim interfete
+- eventual, discutie, cand folosim interfete si clase (abstracte sau nu)
+
+5. PACHETUL MODEL
+- de implementat clasa Item, Apple, creare, afisare de obiecte in metoda statica main
+- discutie despre clasa de baza Object, adnotarea override si metoda toString
+- apelul automat la metodei toString sau afisarea adresei de memorie a obiectului
+- clasa System si obiectele out, in, err
+- rulare cu parametru din linia de comanda sau hardcoded
+
+6. PACHETUL REPOSITORY
+- interfata pentru repository + implementarea repo-ului folosind array of fixed size + afisare
+- afisare cu "foreach" sau "for (int index=0;index<size;index++)
+Rezolvarea problemei (partial, nu va fi timp suficient)
