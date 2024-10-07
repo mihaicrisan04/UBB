@@ -1,4 +1,8 @@
 
+# git files
+**/.gitignore
+**/.git
+
 # User-specific files for IDEs
 **/.DS_Store
 **/.vscode/
