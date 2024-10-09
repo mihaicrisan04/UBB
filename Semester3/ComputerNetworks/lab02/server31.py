@@ -12,9 +12,10 @@ buff = conn.recv(20).decode('utf-8')
 num1, num2 = buff.split(',')
 num1 = int(num1)
 num2 = int(num2)
+sum = num1 + num2
 
 print(f"Received from client: {num1} and {num2}")
-response = f"{num1} and {num2}".encode('utf-8')
+response = f"{sum}".encode('utf-8')
 
 conn.sendall(response)
 
