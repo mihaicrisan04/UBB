@@ -37,5 +37,8 @@ Semester2/OOP/Homework/qt-work/QtWidgetsApp_stub
 
 # Java class files
 *.class
+Semester3/MAP/**/*.class
+Semester3/MAP/**/*.jar
+Semester3/MAP/**/bin/
 Semester3/MAP/**/*.iml
 
