@@ -49,7 +49,9 @@ public class Repository implements IRepository {
 
     @Override
     public Tree[] all() {
-        return trees;
+        Tree[] allTrees = new Tree[size];
+        System.arraycopy(trees, 0, allTrees, 0, size);
+        return allTrees;
     }
 
     @Override
