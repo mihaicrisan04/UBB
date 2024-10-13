@@ -10,20 +10,32 @@ public class Controller {
         this.repo = repo;
     }
 
-    public void addVehicle(Vehicle vehicle) {
-        repo.add(vehicle);
+    public void addVehicle(Vehicle vehicle) throws ControllerException {
+        try {
+            repo.add(vehicle);
+        } catch (Exception e) {
+            throw new ControllerException(e.getMessage());
+        }
     }
 
-    public void removeVehicle(int index) {
-        repo.remove(index);
+    public void removeVehicle(int index) throws ControllerException {
+        try {
+            repo.remove(index);
+        } catch (Exception e) {
+            throw new ControllerException(e.getMessage());
+        }
     }
 
     public Vehicle[] getAllVehicles() {
         return repo.getAll();
     }
 
-    public Vehicle getVehicle(int index) {
-        return repo.get(index);
+    public Vehicle getVehicle(int index) throws ControllerException {
+        try {
+            return repo.get(index);
+        } catch (Exception e) {
+            throw new ControllerException(e.getMessage());
+        }
     }
 
     public Vehicle[] getVehiclesWithRepairPriceOver(int price) {
@@ -41,5 +53,4 @@ public class Controller {
         }
         return finalResult;
     }
-    
 }

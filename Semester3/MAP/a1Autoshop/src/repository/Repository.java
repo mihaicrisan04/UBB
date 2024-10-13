@@ -23,25 +23,25 @@ public class Repository {
         vehicles[size++] = new Motorcycle("Bike1", 50, false);
     }
 
-    public void add(Vehicle vehicle) {
+    public void add(Vehicle vehicle) throws RepositoryException {
         if (size == capacity) {
-            // throw exception or resize the array
+            throw new RepositoryException("Repository is full");
         }
         vehicles[size++] = vehicle;
     }
 
-    public Vehicle get(int index) {
+    public Vehicle get(int index) throws RepositoryException {
         if (index < 0 || index >= size) {
-            // throw exception
+            throw new RepositoryException("Invalid index");
         }
         return vehicles[index];
     }
 
     public int size() { return size; }
 
-    public void remove(int index) {
+    public void remove(int index) throws RepositoryException {
         if (index < 0 || index >= size) {
-            // throw exception
+            throw new RepositoryException("Invalid index");
         }
         for (int i = index; i < size - 1; i++) {
             vehicles[i] = vehicles[i + 1];
@@ -50,11 +50,12 @@ public class Repository {
     }
 
     public Vehicle[] getAll() {
+        // return a copy of the vehicles array with the actual references of the vehicles but
+        // with a size equal to the number of vehicles so that the no null references are returned
         Vehicle[] result = new Vehicle[size];
         for (int i = 0; i < size; i++) {
             result[i] = vehicles[i];
         }
         return result;
     }
-    
 }

@@ -10,5 +10,4 @@ public class App {
         Console console = new Console(controller);
         console.run();
     }
-
 }
