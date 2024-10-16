@@ -1,6 +1,6 @@
 package model;
 
-public class Motorcycle extends Vehicle {
+public class Motorcycle extends AbstractVehicle {
     private boolean hasSidecar;
 
     public Motorcycle() {

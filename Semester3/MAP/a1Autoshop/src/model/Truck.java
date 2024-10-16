@@ -1,6 +1,6 @@
 package model;
 
-public class Truck extends Vehicle {
+public class Truck extends AbstractVehicle{
     private int maxWeight;
 
     public Truck() {

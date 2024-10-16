@@ -1,6 +1,6 @@
 package model;
 
-public class Car extends Vehicle {
+public class Car extends AbstractVehicle {
     private int numberOfDoors;
 
     public Car() {

@@ -1,12 +1,12 @@
 package controller;
 
 import model.Vehicle;
-import repository.Repository;
+import repository.IRepository;
 
 public class Controller {
-    private Repository repo;
+    private IRepository repo;
 
-    public Controller(Repository repo) {
+    public Controller(IRepository repo) {
         this.repo = repo;
     }
 
