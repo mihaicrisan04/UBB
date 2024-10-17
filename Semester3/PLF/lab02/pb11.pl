@@ -1,15 +1,24 @@
 
 % Predicate to substitute an element X with Y in a list.
-% substitute(+List, +X, +Y, -Result)
-substitute([], _, _, []).                  % Base case: empty list, nothing to substitute.
-substitute([X|Tail], X, Y, [Y|NewTail]) :-  % If head matches X, replace it with Y.
-    substitute(Tail, X, Y, NewTail).        % Recurse on the rest of the list.
-substitute([Head|Tail], X, Y, [Head|NewTail]) :-  % If head does not match, keep it.
-    substitute(Tail, X, Y, NewTail).            % Recurse on the rest of the list.
+% substitute(+List-list, +X-elem, +Y-elem, -Result-elem)(i, i, i, o)
+/*
+f(l1, l2, ..., ln, x, y) =  [], n = 0
+                            y U f(l2, ..., ln) , l1 = x 
+                            l1 U f(l2, ..., ln), l1 != x
+*/
+substitute([], _, _, []).                  
+substitute([X|Tail], X, Y, [Y|NewTail]) :-  
+    substitute(Tail, X, Y, NewTail).        
+substitute([Head|Tail], X, Y, [Head|NewTail]) :-  
+    substitute(Tail, X, Y, NewTail). 
 
 
 % Predicate to create a sublist from the main list.
-% sublist(+List, +Start, +End, -Sublist)
+% sublist(+List-list, +Start-elem, +End-elem, -Sublist-list)(i, i, i, o)
+/*
+f(l1, l2, ..., ln, )
+
+*/
 sublist(List, Start, End, Sublist) :- 
     nth1(Start, List, _, Rest),          % Drop the elements before the start index.
     EndIndex is End - Start + 1,         % Calculate the length of the sublist.
