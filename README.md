@@ -1,7 +1,6 @@
 
 # Babes Bolyai University - Computer Science
 
-```Step into my vault of Computer Science homework, assignments, and notes. Made public for those who need a helping hand 😉. Inspiration is just a clone away! 🚀```
 
 ## [Semester 1](https://github.com/mihaicrisan04/UBB/tree/main/Semester1)
 

@@ -27,7 +27,7 @@ sublist(List, Start, End, Sublist) :-
     length(Sublist, EndIndex).           % Ensure the sublist is of the correct length.
 
 nth1(1, [H|T], H, T).                    % Base case, first element is H.
-nth1(N, [H|T], E, [H|Rest]) :-           % Recursive case, count down.
+nth1(N, [H|T], E, [H|Rest]) :-           % Recursive case, count down, until all elements before N are dropped.
     N > 1,
     N1 is N - 1,
     nth1(N1, T, E, Rest).
