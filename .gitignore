@@ -25,6 +25,9 @@ Semester2/**/*.dSYM/
 Semester1/FP/GitHubSchool
 Semester2/OOP/GitHubSchool
 
+# Semester 2
+Semester2/.useful.sh
+
 # data files
 Semester2/GraphsAlg/PracticalWorkNo1/graph1*.txt
 
