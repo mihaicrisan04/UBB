@@ -1,8 +1,7 @@
 package controller;
 
-import model.Tree;
+import model.Vehicle;
 import repository.IRepository;
-import repository.CapacityExceededException;
 
 public class Controller {
     private IRepository repo;
@@ -11,40 +10,47 @@ public class Controller {
         this.repo = repo;
     }
 
-    public Tree[] all() {
-        return repo.all();
-    }
-
-    public int size() {
-        return repo.size();
-    }
-
-    public void add(Tree tree) {
+    public void addVehicle(Vehicle vehicle) throws ControllerException {
         try {
-            repo.add(tree);
-        } catch (CapacityExceededException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void remove(Tree tree) {
-        try {
-            repo.remove(tree);
+            repo.add(vehicle);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new ControllerException(e.getMessage());
         }
     }
 
-    public Tree[] filter(int age) {
-        Tree[] result = new Tree[repo.size()];
+    public void removeVehicle(int index) throws ControllerException {
+        try {
+            repo.remove(index);
+        } catch (Exception e) {
+            throw new ControllerException(e.getMessage());
+        }
+    }
+
+    public Vehicle[] getAllVehicles() {
+        return repo.getAll();
+    }
+
+    public Vehicle getVehicle(int index) throws ControllerException {
+        try {
+            return repo.get(index);
+        } catch (Exception e) {
+            throw new ControllerException(e.getMessage());
+        }
+    }
+
+    public Vehicle[] getVehiclesWithRepairPriceOver(int price) {
+        Vehicle[] vehicles = repo.getAll();
+        Vehicle[] result = new Vehicle[repo.size()];
         int size = 0;
-        for (Tree tree: repo.all()) {
-            if (tree.getAge() > age) {
-                result[size++] = tree;
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getRepairPrice() >= price) {
+                result[size++] = vehicle;
             }
         }
-        Tree[] filtered = new Tree[size];
-        System.arraycopy(result, 0, filtered, 0, size);
-        return filtered;
+        Vehicle[] finalResult = new Vehicle[size];
+        for (int i = 0; i < size; i++) {
+            finalResult[i] = result[i];
+        }
+        return finalResult;
     }
 }

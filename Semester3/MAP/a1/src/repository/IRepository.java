@@ -1,11 +1,11 @@
 package repository;
 
-import model.Tree;
+import model.Vehicle;
 
 public interface IRepository {
-    void add(Tree tree) throws CapacityExceededException;
-    void remove(Tree tree) throws Exception;
-    Tree[] all();
+    void add(Vehicle vehicle) throws RepositoryException;
+    Vehicle get(int index) throws RepositoryException;
+    void remove(int index) throws RepositoryException;
+    Vehicle[] getAll();
     int size();
 }
-

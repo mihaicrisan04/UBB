@@ -1,62 +1,66 @@
 package repository;
 
-import model.Tree;
+import model.Vehicle;
+import model.Car;
+import model.Truck;
+import model.Motorcycle;
 
-public class Repository implements IRepository {
-    private Tree[] trees;
-    private static int capacity = 10;
+public class Repository implements IRepository{
+    private Vehicle[] vehicles;
     private int size;
+    private int capacity;
 
     public Repository() {
-        trees = new Tree[capacity];
+        capacity = 10;
         size = 0;
-    }
+        vehicles = new Vehicle[capacity];
 
-    private void resize() {
-        Tree[] newTrees = new Tree[capacity * 2];
-        for (int i = 0; i < size; i++) {
-            newTrees[i] = trees[i];
-        }
-        trees = newTrees;
-        capacity *= 2;
+        // add some default vehicles
+        vehicles[size++] = new Car("Car1", 100, 4);
+        vehicles[size++] = new Truck("Truck1", 200, 1000);
+        vehicles[size++] = new Car("Car2", 150, 2);
+        vehicles[size++] = new Truck("Truck2", 250, 2000);
+        vehicles[size++] = new Motorcycle("Bike1", 50, false);
     }
 
     @Override
-    public void add(Tree tree) throws CapacityExceededException {
+    public void add(Vehicle vehicle) throws RepositoryException {
         if (size == capacity) {
-            throw new CapacityExceededException();
+            throw new RepositoryException("Repository is full");
         }
-        trees[size++] = tree;
+        vehicles[size++] = vehicle;
     }
 
     @Override
-    public void remove(Tree tree) throws Exception {
-        int index = -1;
-        for (int i = 0; i < size; i++) {
-            if (trees[i].equals(tree)) {
-                index = i;
-                break;
-            }
+    public Vehicle get(int index) throws RepositoryException {
+        if (index < 0 || index >= size) {
+            throw new RepositoryException("Invalid index");
         }
-        if (index == -1) {
-            throw new Exception("Tree not found");
+        return vehicles[index];
+    }
+
+    @Override
+    public int size() { return size; }
+
+    @Override
+    public void remove(int index) throws RepositoryException {
+        if (index < 0 || index >= size) {
+            throw new RepositoryException("Invalid index");
         }
         for (int i = index; i < size - 1; i++) {
-            trees[i] = trees[i + 1];
+            vehicles[i] = vehicles[i + 1];
         }
         size--;
     }
 
     @Override
-    public Tree[] all() {
-        Tree[] allTrees = new Tree[size];
-        System.arraycopy(trees, 0, allTrees, 0, size);
-        return allTrees;
+    public Vehicle[] getAll() {
+        // return a copy of the vehicles array with the actual references of the vehicles but
+        // with a size equal to the number of vehicles so that the no null references are returned
+        Vehicle[] result = new Vehicle[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = vehicles[i];
+        }
+        return result;
     }
-
-    @Override
-    public int size() {
-        return size;
-    }
-
 }
