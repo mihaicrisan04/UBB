@@ -5,12 +5,14 @@ import collections.dictionary.*;
 import collections.stack.*;
 import collections.list.*;
 import model.statements.IStmt;
+import model.types.IntType;
 
 
 public class PrgState {
    private MyIStack<IStmt> exeStack;
    private MyIDictionary<String, Integer> symTable;
    private MyIList<Integer> out;
+   private MyIDictionary<Integer, Integer> heap;
    private IStmt originalProgram;
 
    PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Integer> symtbl, MyIList<Integer> ot, IStmt prg) {
@@ -21,13 +23,13 @@ public class PrgState {
       stk.push(prg);
    }
    
-   MyIStack<IStmt> getExeStack() { return exeStack; }
+   public MyIStack<IStmt> getExeStack() { return exeStack; }
 
-   MyIDictionary<String, Integer> getSymTable() { return symTable; }
+   public MyIDictionary<String, Integer> getSymTable() { return symTable; }
 
-   MyIList<Integer> getOut() { return out; } // get out :))
+   public MyIList<Integer> getOut() { return out; } // get out :))
 
-   IStmt getOriginalProgram() { return originalProgram; }
+   public IStmt getOriginalProgram() { return originalProgram; }
 
    public void setExeStack(MyIStack<IStmt> stk) { exeStack = stk; }
 
@@ -38,6 +40,8 @@ public class PrgState {
    public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   
+
+   public MyIDictionary<Integer, Integer> getHeap() { return heap; }
 
    public PrgState oneStep() throws MyException {
       if (exeStack.isEmpty()) {
