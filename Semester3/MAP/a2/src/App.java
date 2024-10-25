@@ -34,7 +34,33 @@ public class App {
             )
         );
 
-        PrgState prg = new PrgState(ex2);
+        IStmt ex3 = new CompoundStmt(
+            new VarDeclStmt("a", new IntType()),
+            new CompoundStmt(
+                new VarDeclStmt("b", new IntType()),
+                new CompoundStmt(
+                    new AssignStmt("a", new ArithExp(
+                        new ValueExp(new IntValue(2)),
+                        new ArithExp(
+                            new ValueExp(new IntValue(3)),
+                            new ValueExp(new IntValue(5)),
+                            ArithOperation.ADD
+                        ),
+                        ArithOperation.MUL
+                    )),
+                    new CompoundStmt(
+                        new AssignStmt("b", new ArithExp(
+                            new VarExp("a"),
+                            new ValueExp(new IntValue(1)),
+                            ArithOperation.ADD
+                        )),
+                        new PrintStmt(new VarExp("b"))
+                    )
+                )
+            )
+        );
+
+        PrgState prg = new PrgState(ex3);
         System.out.println(prg);
         while (prg.isNotCompleted()) {
             prg.oneStep();
