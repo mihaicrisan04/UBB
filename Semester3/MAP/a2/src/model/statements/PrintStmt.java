@@ -1,19 +1,27 @@
 package model.statements;
 
+import collections.list.MyIList;
 import model.PrgState;
+import model.exceptions.MyException;
 import model.expressions.Exp;
+import model.values.Value;
 
 public class PrintStmt implements IStmt {
     private Exp exp;
 
-    PrintStmt(Exp exp) {
+    public PrintStmt(Exp exp) {
         this.exp = exp;
     }
 
     @Override
-    public PrgState execute(PrgState state) {
-        // TODO: implement this
-        return state;
+    public PrgState execute(PrgState state) throws MyException {
+        try {
+            Value val = exp.eval(state.getSymTable());
+            state.getOut().add(val);
+            return state;
+        } catch (MyException e) {
+            throw e;
+        }
     }
 
     @Override

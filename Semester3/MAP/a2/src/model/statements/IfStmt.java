@@ -3,6 +3,9 @@ package model.statements;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.expressions.Exp;
+import model.types.BoolType;
+import model.values.BoolValue;
+import model.values.Value;
 
 public class IfStmt implements IStmt {
     private IStmt thenS;
@@ -17,10 +20,18 @@ public class IfStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        if (exp.eval(state.getSymTable(), state.getHeap()) != 0) {
-            state.getExeStack().push(thenS);
-        } else {
-            state.getExeStack().push(elseS);
+        try {
+            Value val = exp.eval(state.getSymTable());
+            if (val.getType() == new BoolType()) {
+                BoolValue b = (BoolValue) val;
+                if (b.getValue()) { state.getExeStack().push(thenS); } 
+                else { state.getExeStack().push(elseS); }
+            } 
+            else {
+                throw new MyException("If statement: Expression is not a boolean");
+            }
+        } catch (MyException e) {
+            throw new MyException("If statement: " + e.getMessage());
         }
         return null;
     }

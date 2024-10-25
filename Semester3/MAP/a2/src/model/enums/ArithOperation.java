@@ -2,9 +2,9 @@ package model.enums;
 
 public enum ArithOperation {
     ADD("+"),
-    SUBTRACT("-"),
-    MULTIPLY("*"),
-    DIVIDE("/");
+    SUB("-"),
+    MUL("*"),
+    DIV("/");
 
     private final String symbol;
 

@@ -5,48 +5,55 @@ import collections.dictionary.*;
 import collections.stack.*;
 import collections.list.*;
 import model.statements.IStmt;
-import model.types.IntType;
+import model.values.Value;
 
 
 public class PrgState {
    private MyIStack<IStmt> exeStack;
-   private MyIDictionary<String, Integer> symTable;
-   private MyIList<Integer> out;
-   private MyIDictionary<Integer, Integer> heap;
+   private MyIDictionary<String, Value> symTable;
+   private MyIList<Value> out;
    private IStmt originalProgram;
+   // TODO: implement heap
 
-   PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Integer> symtbl, MyIList<Integer> ot, IStmt prg) {
+   public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, IStmt prg) {
       exeStack = stk;
       symTable = symtbl;
       out = ot;
       originalProgram = prg; // TODO: deep copy?
-      stk.push(prg);
+      exeStack.push(prg);
    }
+
+   public PrgState(IStmt prg) {
+      exeStack = new MyStack<IStmt>();
+      symTable = new MyDictionary<String, Value>();
+      out = new MyList<Value>();
+      originalProgram = prg;
+      exeStack.push(prg);
+   } 
    
    public MyIStack<IStmt> getExeStack() { return exeStack; }
 
-   public MyIDictionary<String, Integer> getSymTable() { return symTable; }
+   public MyIDictionary<String, Value> getSymTable() { return symTable; }
 
-   public MyIList<Integer> getOut() { return out; } // get out :))
+   public MyIList<Value> getOut() { return out; } // get out :))
 
    public IStmt getOriginalProgram() { return originalProgram; }
 
    public void setExeStack(MyIStack<IStmt> stk) { exeStack = stk; }
 
-   public void setSymTable(MyIDictionary<String, Integer> symtbl) { symTable = symtbl; }
+   public void setSymTable(MyIDictionary<String, Value> symtbl) { symTable = symtbl; }
 
-   public void setOut(MyIList<Integer> ot) { out = ot; }
+   public void setOut(MyIList<Value> ot) { out = ot; }
 
    public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   
 
-   public MyIDictionary<Integer, Integer> getHeap() { return heap; }
+   // TODO: implement heap
+   // public MyIDictionary<Integer, Integer> getHeap() { return heap; }
 
    public PrgState oneStep() throws MyException {
-      if (exeStack.isEmpty()) {
-         throw new MyException("Program state stack is empty");
-      }
+      if (exeStack.isEmpty()) { throw new MyException("Program state stack is empty"); }
       IStmt crtStmt = exeStack.pop();
       return crtStmt.execute(this);
    }

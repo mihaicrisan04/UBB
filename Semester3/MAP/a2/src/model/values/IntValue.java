@@ -6,6 +6,10 @@ import model.types.IntType;
 public class IntValue implements Value {
     private int value;
 
+    public IntValue() {
+        this.value = 0;
+    }
+
     public IntValue(int value) {
         this.value = value;
     }

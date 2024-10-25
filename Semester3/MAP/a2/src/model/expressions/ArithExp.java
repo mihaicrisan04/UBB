@@ -34,11 +34,11 @@ public class ArithExp implements Exp {
         switch (op) {
             case ADD:
                 return new IntValue(n1 + n2);
-            case SUBTRACT:
+            case SUB:
                 return new IntValue(n1 - n2);
-            case MULTIPLY:
+            case MUL:
                 return new IntValue(n1 * n2);
-            case DIVIDE:
+            case DIV:
                 if (n2 == 0) throw new MyException("Division by zero");
                 return new IntValue(n1 / n2);
             default:
@@ -48,7 +48,7 @@ public class ArithExp implements Exp {
 
     @Override
     public String toString() {
-        return e1.toString() + " " + op.toString() + " " + e2.toString();
+        return "(" + e1.toString() + " " + op.toString() + " " + e2.toString() + ")";
     }
 }
 

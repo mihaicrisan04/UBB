@@ -34,4 +34,9 @@ public class MyList<T> implements MyIList<T> {
     public int size() {
         return list.size();
     }
+
+    @Override
+    public String toString() {
+        return list.toString();
+    }
 }

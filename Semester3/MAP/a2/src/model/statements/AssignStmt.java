@@ -1,8 +1,10 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.expressions.Exp;
+import model.values.Value;
 
 public class AssignStmt implements IStmt {
     String id;
@@ -15,7 +17,14 @@ public class AssignStmt implements IStmt {
     
     @Override
     public PrgState execute(PrgState state) throws MyException{
-        // TODO: implement this
+        MyIDictionary<String, Value> symTable = state.getSymTable();
+
+        if (!symTable.containsKey(id)) { throw new MyException("Variable " + id + " is not defined"); }
+
+        Value val = exp.eval(symTable);
+        if (val.getType().equals(symTable.get(id).getType())) { symTable.put(id, val); } 
+        else { throw new MyException("Type of expression does not match type of variable"); }
+
         return state;
     }
 
