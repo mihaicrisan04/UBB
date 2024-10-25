@@ -1,7 +1,5 @@
 package model.statements;
 
-import java.lang.foreign.ValueLayout;
-
 import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.MyException;

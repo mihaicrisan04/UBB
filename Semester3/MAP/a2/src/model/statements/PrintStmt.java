@@ -1,6 +1,5 @@
 package model.statements;
 
-import collections.list.MyIList;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.expressions.Exp;
