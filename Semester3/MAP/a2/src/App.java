@@ -1,11 +1,15 @@
 
+import collections.list.*;
 import model.expressions.*;
 import model.statements.*;
 import model.types.*;
 import model.values.*;
 import model.PrgState;
 import model.enums.*;
-
+import repository.IRepository;
+import repository.Repository;
+import controller.Controller;
+import view.Console;
 
 
 public class App {
@@ -60,11 +64,14 @@ public class App {
             )
         );
 
-        PrgState prg = new PrgState(ex3);
-        System.out.println(prg);
-        while (prg.isNotCompleted()) {
-            prg.oneStep();
-            System.out.println(prg);
-        }
+        MyIList<PrgState> prgList = new MyList<PrgState>();
+        // prgList.add(new PrgState(ex));
+        // prgList.add(new PrgState(ex2));
+        prgList.add(new PrgState(ex3));
+
+        IRepository repo = new Repository(prgList);
+        Controller ctrl = new Controller(repo);
+        Console console = new Console(ctrl);
+        console.run();
     }
 }

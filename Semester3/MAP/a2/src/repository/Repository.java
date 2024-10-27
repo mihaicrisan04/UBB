@@ -26,6 +26,44 @@ public class Repository implements IRepository {
 
     @Override
     public void logPrgStateExec() {
-        System.out.println(programList.get(0).toString());
+        System.out.println(getCurrentProgram().toString());
+    }
+
+    public void addProgram(PrgState prg) {
+        programList.add(prg);
+    }
+
+    public void removeProgram(int index) {
+        programList.remove(index);
+    }
+
+    public void removeProgram(PrgState prg) {
+        for (int i = 0; i < programList.size(); i++) {
+            if (programList.get(i).equals(prg)) {
+                programList.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void clear() {
+        programList.clear();
+    }
+
+    public int size() {
+        return programList.size();
+    }
+
+    public PrgState getProgram(int index) {
+        return programList.get(index);
+    }
+
+    public void clearCompleted() {
+        for (int i = 0; i < programList.size(); i++) {
+            if (!programList.get(i).isNotCompleted()) {
+                programList.remove(i);
+                i--;
+            }
+        }
     }
 }

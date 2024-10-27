@@ -16,6 +16,11 @@ public class MyList<T> implements MyIList<T> {
     }
 
     @Override
+    public T remove(int index) {
+        return list.remove(index);
+    }
+
+    @Override
     public void clear() {
         list.clear();
     }
