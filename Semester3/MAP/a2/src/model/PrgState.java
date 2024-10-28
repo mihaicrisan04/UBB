@@ -19,7 +19,7 @@ public class PrgState {
       exeStack = stk;
       symTable = symtbl;
       out = ot;
-      originalProgram = prg; // TODO: deep copy?
+      originalProgram = prg.deepCopy();
       exeStack.push(prg);
    }
 

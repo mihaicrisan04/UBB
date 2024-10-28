@@ -14,10 +14,13 @@ public class VarExp implements Exp {
 
     @Override
     public Value eval(MyIDictionary<String, Value> table) throws MyException {
-        if (!table.containsKey(id)) {
-            throw new MyException("Variable " + id + " is not defined");
-        }
+        if (!table.containsKey(id)) { throw new MyException("Variable " + id + " is not defined"); }
         return table.get(id);
+    }
+
+    @Override
+    public Exp deepCopy() {
+        return new VarExp(id);
     }
 
     @Override

@@ -22,6 +22,11 @@ public class CompoundStmt implements IStmt {
     }
 
     @Override
+    public IStmt deepCopy() {
+        return new CompoundStmt(first.deepCopy(), second.deepCopy());
+    }
+
+    @Override
     public String toString() {
         return "{" + first.toString() + "; " + second.toString() + "}";
     }

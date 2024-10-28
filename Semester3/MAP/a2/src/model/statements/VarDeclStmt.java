@@ -3,8 +3,8 @@ package model.statements;
 import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
-import model.values.*;
-import model.types.*;
+import model.values.Value;
+import model.types.Type;
 
 public class VarDeclStmt implements IStmt {
     String id;
@@ -21,16 +21,18 @@ public class VarDeclStmt implements IStmt {
 
         if (symTable.containsKey(id)) { throw new MyException("Variable " + id + " is already defined"); }
 
-        if (type.equals(new IntType())) { symTable.put(id, new IntValue(0)); }
-        else if (type.equals(new BoolType())) { symTable.put(id, new BoolValue(false)); }
-        else if (type.equals(new StringType())) { symTable.put(id, new StringValue("")); }
+        symTable.put(id, type.defaultValue());
 
         return state;
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return new VarDeclStmt(id, type);
     }
 
     @Override
     public String toString() {
         return type.toString() + " " + id;
     }
-    
 }

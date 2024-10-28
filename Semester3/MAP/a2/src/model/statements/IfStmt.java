@@ -22,18 +22,22 @@ public class IfStmt implements IStmt {
     public PrgState execute(PrgState state) throws MyException {
         try {
             Value val = exp.eval(state.getSymTable());
-            if (val.getType() == new BoolType()) {
-                BoolValue b = (BoolValue) val;
-                if (b.getValue()) { state.getExeStack().push(thenS); } 
-                else { state.getExeStack().push(elseS); }
-            } 
-            else {
-                throw new MyException("If statement: Expression is not a boolean");
-            }
+            
+            if (!val.getType().equals(new BoolType())) { throw new MyException("If statement: Expression is not a boolean"); }
+
+            BoolValue b = (BoolValue) val;
+            if (b.getValue()) { state.getExeStack().push(thenS); } 
+            else { state.getExeStack().push(elseS); }
+
         } catch (MyException e) {
             throw new MyException("If statement: " + e.getMessage());
         }
         return null;
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return new IfStmt(exp.deepCopy(), thenS.deepCopy(), elseS.deepCopy());
     }
 
     @Override

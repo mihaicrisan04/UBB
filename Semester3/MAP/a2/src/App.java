@@ -64,10 +64,29 @@ public class App {
             )
         );
 
+        IStmt ex4 = new CompoundStmt(
+            new VarDeclStmt("a", new BoolType()),
+            new CompoundStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompoundStmt(
+                    new AssignStmt("a", new ValueExp(new BoolValue(true))),
+                    new CompoundStmt(
+                        new IfStmt(
+                            new VarExp("a"),
+                            new AssignStmt("v", new ValueExp(new IntValue(2))),
+                            new AssignStmt("v", new ValueExp(new IntValue(3)))
+                        ),
+                        new PrintStmt(new VarExp("v"))
+                    )
+                )
+            )
+        );
+
         MyIList<PrgState> prgList = new MyList<PrgState>();
         // prgList.add(new PrgState(ex));
         // prgList.add(new PrgState(ex2));
-        prgList.add(new PrgState(ex3));
+        // prgList.add(new PrgState(ex3));
+        prgList.add(new PrgState(ex4));
 
         IRepository repo = new Repository(prgList);
         Controller ctrl = new Controller(repo);

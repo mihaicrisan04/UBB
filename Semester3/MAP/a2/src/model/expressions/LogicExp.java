@@ -43,6 +43,11 @@ public class LogicExp implements Exp {
     }
 
     @Override
+    public Exp deepCopy() {
+        return new LogicExp(e1.deepCopy(), e2.deepCopy(), op);
+    }
+
+    @Override
     public String toString() {
         return e1.toString() + " " + op.toString() + " " + e2.toString();
     }
