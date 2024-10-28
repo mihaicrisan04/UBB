@@ -7,7 +7,8 @@ merge_sort([X], [X]).
 
 % Recursive case: Split the list, sort both halves, and merge them.
 merge_sort(List, Sorted) :-
-    List = [_, _|_], % Ensure the list has at least two elements
+    length(List, Len),
+    Len > 1,
     split(List, L1, L2),
     merge_sort(L1, Sorted1),
     merge_sort(L2, Sorted2),
