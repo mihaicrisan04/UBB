@@ -41,6 +41,8 @@ public class Repository implements IRepository {
     @Override
     public void logPrgStateExec() throws IOException {
         System.out.println(getCurrentProgram().toString()); // log to console
+        if (logFilePath.equals("")) return;
+
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
         logFile.write(getCurrentProgram().toString());
         logFile.close();

@@ -83,12 +83,12 @@ public class App {
         );
 
         MyIList<PrgState> prgList = new MyList<PrgState>();
-        // prgList.add(new PrgState(ex));
-        // prgList.add(new PrgState(ex2));
-        // prgList.add(new PrgState(ex3));
+        prgList.add(new PrgState(ex));
+        prgList.add(new PrgState(ex2));
+        prgList.add(new PrgState(ex3));
         prgList.add(new PrgState(ex4));
 
-        IRepository repo = new Repository(prgList, "log4.txt");
+        IRepository repo = new Repository(prgList);
         Controller ctrl = new Controller(repo);
         Console console = new Console(ctrl);
         console.run();
