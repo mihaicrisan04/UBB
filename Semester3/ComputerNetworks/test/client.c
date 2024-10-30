@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>        // for close()
+#include <arpa/inet.h>     // for inet_addr()
+#include <sys/socket.h>  
              
 #define max 100
  
@@ -24,8 +31,8 @@ int main() {
   
   memset(&server, 0, sizeof(struct sockaddr_in));
   server.sin_family = AF_INET;
-  server.sin_port = htons(4321);
-  server.sin_addr.s_addr = inet_addr("192.168.0.108");
+  server.sin_port = htons(2555);
+  server.sin_addr.s_addr = inet_addr("172.30.248.171");
   
   cod = connect(c, (struct sockaddr *) &server, sizeof(struct sockaddr_in));
   if (cod < 0) {
