@@ -88,7 +88,7 @@ public class App {
         // prgList.add(new PrgState(ex3));
         prgList.add(new PrgState(ex4));
 
-        IRepository repo = new Repository(prgList);
+        IRepository repo = new Repository(prgList, "log4.txt");
         Controller ctrl = new Controller(repo);
         Console console = new Console(ctrl);
         console.run();

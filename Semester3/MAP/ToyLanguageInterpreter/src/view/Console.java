@@ -15,6 +15,8 @@ public class Console {
             ctrl.executeAllSteps();
         } catch (MyException e) {
             System.out.println(e.getMessage());
+        } catch (Exception e) { 
+            System.out.println(e.getMessage());
         }
     }
 }

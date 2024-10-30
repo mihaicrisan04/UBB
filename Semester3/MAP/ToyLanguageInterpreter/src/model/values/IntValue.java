@@ -19,6 +19,14 @@ public class IntValue implements Value {
     }
 
     @Override
+    public boolean equals(Object another) {
+        if (another instanceof IntValue) {
+            return value == ((IntValue) another).getValue();
+        }
+        return false;
+    }
+
+    @Override
     public Type getType() {
         return new IntType();
     }

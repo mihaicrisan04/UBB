@@ -1,0 +1,114 @@
+------------------------------------------------------
+ExeStack:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+
+SymTable:
+{}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+{int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}
+bool a
+
+SymTable:
+{}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+{int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}
+
+SymTable:
+{a=false}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+{a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}
+int v
+
+SymTable:
+{a=false}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+{a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}
+
+SymTable:
+{a=false, v=0}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+{IF(a) THEN(v=2) ELSE(v=3); print(v)}
+a=true
+
+SymTable:
+{a=false, v=0}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+{IF(a) THEN(v=2) ELSE(v=3); print(v)}
+
+SymTable:
+{a=true, v=0}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+IF(a) THEN(v=2) ELSE(v=3)
+
+SymTable:
+{a=true, v=0}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+v=2
+
+SymTable:
+{a=true, v=0}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+
+SymTable:
+{a=true, v=2}
+Out:
+[]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}
+------------------------------------------------------
+ExeStack:
+
+SymTable:
+{a=true, v=2}
+Out:
+[2]
+Original Program:
+{bool a; {int v; {a=true; {IF(a) THEN(v=2) ELSE(v=3); print(v)}}}}

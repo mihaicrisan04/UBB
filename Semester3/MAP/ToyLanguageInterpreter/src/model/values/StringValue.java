@@ -19,6 +19,14 @@ public class StringValue implements Value {
     }
 
     @Override
+    public boolean equals(Object another) {
+        if (another instanceof StringValue) {
+            return value.equals(((StringValue) another).getValue());
+        }
+        return false;
+    }
+
+    @Override
     public Type getType() {
         return new StringType();
     }

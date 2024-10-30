@@ -1,0 +1,61 @@
+------------------------------------------------------
+ExeStack:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+
+SymTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+ExeStack:
+{v=(2 * (3 + 5)); print(v)}
+int v
+
+SymTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+ExeStack:
+{v=(2 * (3 + 5)); print(v)}
+
+SymTable:
+{v=0}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+ExeStack:
+print(v)
+v=(2 * (3 + 5))
+
+SymTable:
+{v=0}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+ExeStack:
+print(v)
+
+SymTable:
+{v=16}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+ExeStack:
+
+SymTable:
+{v=16}
+Out:
+[16]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}

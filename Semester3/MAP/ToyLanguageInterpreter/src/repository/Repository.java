@@ -1,18 +1,32 @@
 package repository;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+
 import collections.list.MyIList;
 import collections.list.MyList;
 import model.PrgState;
+import model.exceptions.MyException;
 
 public class Repository implements IRepository {
-    MyIList<PrgState> programList;
+    private MyIList<PrgState> programList;
+    private String logFilePath;
 
     public Repository() {
         programList = new MyList<PrgState>();
+        logFilePath = "";
     }
     
     public Repository(MyIList<PrgState> list) {
         programList = list;
+        logFilePath = "";
+    }
+
+    public Repository(MyIList<PrgState> list, String logFilePath) {
+        programList = list;
+        this.logFilePath = logFilePath;
     }
 
     @Override
@@ -25,8 +39,11 @@ public class Repository implements IRepository {
     public void setProgramList(MyIList<PrgState> list) { programList = list; }
 
     @Override
-    public void logPrgStateExec() {
-        System.out.println(getCurrentProgram().toString());
+    public void logPrgStateExec() throws IOException {
+        System.out.println(getCurrentProgram().toString()); // log to console
+        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+        logFile.write(getCurrentProgram().toString());
+        logFile.close();
     }
 
     public void addProgram(PrgState prg) {
