@@ -1,4 +1,5 @@
 
+-- TODO: constraints to when deleting data from tables to avoid orphaned records
 
 -- 1. Users Table
 CREATE TABLE Users (
