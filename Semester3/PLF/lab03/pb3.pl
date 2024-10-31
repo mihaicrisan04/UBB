@@ -1,11 +1,15 @@
 
 % a)
 
-% Base case: An empty list or a single-element list is already sorted.
+/* merge_sort(l1, l2, ..., ln)  = [] , n = 0
+                                = [l1] , n = 1
+                                = merge(merge_sort(l1, ..., li), merge_sort(li+1, ..., ln)) , n > 1
+                                where li = n / 2
+
+merge_sort(List-list, Sorted-list) (i, o)
+*/
 merge_sort([], []).
 merge_sort([X], [X]).
-
-% Recursive case: Split the list, sort both halves, and merge them.
 merge_sort(List, Sorted) :-
     length(List, Len),
     Len > 1,
@@ -54,16 +58,18 @@ flatten_list([H|T], FlatList) :-
     flatten_list(T, FlatT),
     append(FlatH, FlatT, FlatList).
 flatten_list([H|T], [H|FlatT]) :-
-    \+ is_list(H),
+    \+ is_list(H), % H is an integer not a list
     flatten_list(T, FlatT).
 
-% Heterogeneous sort: merge all sublists and remove duplicates
+/* het_sort(l1, l2, ..., ln) = [] , n = 0
+                            = merge_sort(remove_duplicates(flatten_list(l1, l2, ..., ln))) , n > 0
+het_sort(List-list, Sorted-list) (i, o)
+*/
 het_sort(List, Sorted) :-
     flatten_list(List, FlatList),
     remove_duplicates(FlatList, NoDupList),
     merge_sort(NoDupList, Sorted).
 
-% Helper predicate to append two lists
 append([], L, L).
 append([H|T], L, [H|R]) :-
     append(T, L, R).
