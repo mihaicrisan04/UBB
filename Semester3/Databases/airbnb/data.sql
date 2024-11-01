@@ -134,3 +134,18 @@ VALUES
 (6, 'https://via.placeholder.com/800x600.png?text=Lake+Cabin', '2023-11-16 16:00:00'),
 (6, 'https://via.placeholder.com/800x600.png?text=Lake+Cabin', '2023-11-17 18:00:00'),
 (6, 'https://via.placeholder.com/800x600.png?text=Lake+Cabin', '2023-11-18 20:00:00');
+
+
+-- 11. Messages Table
+INSERT INTO Messages (sender_id, receiver_id, message_text, sent_at)
+VALUES
+(1, 2, 'Hi Bob, I am interested in booking your property.', '2023-12-01 10:00:00'),
+(2, 1, 'Hi Alice, I would like to book your property.', '2023-12-01 12:00:00'),
+(1, 2, 'Sure, when would you like to stay?', '2023-12-01 14:00:00'),
+(2, 1, 'I am looking to stay from December 15th to December 20th.', '2023-12-01 16:00:00'),
+(1, 2, 'Great! I have updated the availability for those dates.', '2023-12-01 18:00:00'),
+(2, 1, 'Thank you, I will proceed with the booking.', '2023-12-01 20:00:00'),
+(1, 3, 'Hi Charlie, I saw your review on my property. Is there anything I can improve?', '2023-12-02 10:00:00'),
+(3, 1, 'Hi Alice, overall it was a good experience. Maybe consider adding more amenities.', '2023-12-02 12:00:00'),
+(1, 3, 'Thank you for the feedback. I will take that into consideration.', '2023-12-02 14:00:00'),
+(3, 1, 'Youre welcome. Looking forward to staying at your property again.', '2023-12-02 16:00:00');
