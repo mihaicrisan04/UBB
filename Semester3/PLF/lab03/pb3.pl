@@ -18,14 +18,25 @@ merge_sort(List, Sorted) :-
     merge_sort(L2, Sorted2),
     merge(Sorted1, Sorted2, Sorted).
 
-% Split a list into two halves
+/* 
+split(l1, l2, ..., ln) = [], n = 0
+                       = l1, n = 1
+                       = ([l1, l2, ..., li], [li+1, ..., ln], []) , n > 1 where li = n / 2
+split(List-list, List-list, List-list) (i, o, o)
+*/
 split([], [], []).
 split([X], [X], []).
 split([X,Y|Rest], [X|L1], [Y|L2]) :-
     split(Rest, L1, L2).
 
-% Merge two sorted lists into one sorted list
-% merge(L1, L2, Result) (i, i, o)
+/*
+merge(l1, l2, .., ln, m1, m2, .., mn) = [] , n = 0, m = 0
+                                      = [l1] + merge(l2, .., ln, m1, m2, .., mn) , l1 <= m1
+                                      = [m1] + merge(l1, l2, .., ln, m2, .., mn) , l1 > m1
+                                      = [l1, l2, ..., ln], n > 0, m = 0
+                                      = [m1, m2, ..., mn], n = 0, m > 0
+merge(L1, L2, Result) (i, i, o)
+ */
 merge([], L, L).
 merge(L, [], L).
 merge([X|L1], [Y|L2], [X|L]) :-
@@ -41,16 +52,14 @@ merge([X|L1], [Y|L2], [Y|L]) :-
 % [1, [2, 31, 4, 5, [1, 4, 6], 3, [1, 3, 7, 9, 101, 5, [1, 1, 11], 81]]] => [1, 2, 3, 4, 6, 7, 9, 10, 11].
 
 
-% Remove duplicates from a list
 remove_duplicates([], []).
 remove_duplicates([H|T], [H|T1]) :-
-    \+ member(H, T),
+    not(member(H, T)),
     remove_duplicates(T, T1).
 remove_duplicates([H|T], T1) :-
     member(H, T),
     remove_duplicates(T, T1).
 
-% Flatten a list of lists into a single list
 flatten_list([], []).
 flatten_list([H|T], FlatList) :-
     is_list(H),
@@ -58,7 +67,7 @@ flatten_list([H|T], FlatList) :-
     flatten_list(T, FlatT),
     append(FlatH, FlatT, FlatList).
 flatten_list([H|T], [H|FlatT]) :-
-    \+ is_list(H), % H is an integer not a list
+    integer(H),
     flatten_list(T, FlatT).
 
 /* het_sort(l1, l2, ..., ln) = [] , n = 0
