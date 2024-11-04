@@ -1,6 +1,7 @@
 package model.statements;
 
 import model.PrgState;
+import model.exceptions.StmtException;
 import model.exceptions.MyException;
 import model.expressions.Exp;
 import model.values.Value;
@@ -13,14 +14,14 @@ public class PrintStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
-        try {
-            Value val = exp.eval(state.getSymTable());
-            state.getOut().add(val);
-            return state;
-        } catch (MyException e) {
-            throw e;
-        }
+    public PrgState execute(PrgState state) throws MyException, StmtException {
+        Value val;
+        try { val = exp.eval(state.getSymTable()); } 
+        catch (MyException e) { throw new StmtException("Print statement: " + e.getMessage()); }
+
+        state.getOut().add(val);
+
+        return state;
     }
 
     @Override

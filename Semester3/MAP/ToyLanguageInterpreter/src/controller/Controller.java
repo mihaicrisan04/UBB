@@ -37,9 +37,7 @@ public class Controller {
             }
         } catch (MyException e) {
             throw e;
-        } catch (Exception e) {
-            throw new MyException(e.getMessage());
-        }
+        } 
     }
 
     public void executeAllSteps(int index) throws MyException {

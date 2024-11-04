@@ -2,6 +2,7 @@ package model.statements;
 
 import model.PrgState;
 import model.exceptions.MyException;
+import model.exceptions.StmtException;
 import model.expressions.Exp;
 import model.types.BoolType;
 import model.values.BoolValue;
@@ -19,19 +20,17 @@ public class IfStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
-        try {
-            Value val = exp.eval(state.getSymTable());
-            
-            if (!val.getType().equals(new BoolType())) { throw new MyException("If statement: Expression is not a boolean"); }
+    public PrgState execute(PrgState state) throws MyException, StmtException {
+        Value val;
+        try { val = exp.eval(state.getSymTable()); }
+        catch (MyException e) { throw new StmtException("If statement: " + e.getMessage()); }
 
-            BoolValue b = (BoolValue) val;
-            if (b.getValue()) { state.getExeStack().push(thenS); } 
-            else { state.getExeStack().push(elseS); }
+        if (!val.getType().equals(new BoolType())) { throw new StmtException("If statement: Expression is not a boolean"); }
 
-        } catch (MyException e) {
-            throw new MyException("If statement: " + e.getMessage());
-        }
+        BoolValue b = (BoolValue) val;
+        if (b.getValue()) { state.getExeStack().push(thenS); } 
+        else { state.getExeStack().push(elseS); }
+
         return null;
     }
 

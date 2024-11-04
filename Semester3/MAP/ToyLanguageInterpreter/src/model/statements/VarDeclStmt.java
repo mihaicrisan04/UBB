@@ -2,7 +2,7 @@ package model.statements;
 
 import collections.dictionary.MyIDictionary;
 import model.PrgState;
-import model.exceptions.MyException;
+import model.exceptions.VariableAlreadyDefined;
 import model.values.Value;
 import model.types.Type;
 
@@ -16,10 +16,10 @@ public class VarDeclStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
+    public PrgState execute(PrgState state) throws VariableAlreadyDefined {
         MyIDictionary<String, Value> symTable = state.getSymTable();
 
-        if (symTable.containsKey(id)) { throw new MyException("Variable " + id + " is already defined"); }
+        if (symTable.containsKey(id)) { throw new VariableAlreadyDefined("Variable " + id + " is already defined"); }
 
         symTable.put(id, type.defaultValue());
 

@@ -3,6 +3,8 @@ package model.statements;
 import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
+import model.exceptions.StmtException;
+import model.exceptions.VariableNotDefined;
 import model.expressions.Exp;
 import model.values.Value;
 
@@ -16,14 +18,16 @@ public class AssignStmt implements IStmt {
     }
     
     @Override
-    public PrgState execute(PrgState state) throws MyException{
+    public PrgState execute(PrgState state) throws MyException, StmtException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
+        if (!symTable.containsKey(id)) { throw new VariableNotDefined("Variable " + id + " is not defined"); }
 
-        if (!symTable.containsKey(id)) { throw new MyException("Variable " + id + " is not defined"); }
+        Value val;
+        try { val = exp.eval(symTable); }
+        catch (MyException e) { throw new StmtException(e.getMessage()); }
 
-        Value val = exp.eval(symTable);
         if (val.getType().equals(symTable.get(id).getType())) { symTable.put(id, val); } 
-        else { throw new MyException("Type of expression does not match type of variable"); }
+        else { throw new StmtException("Type of expression does not match type of variable"); }
 
         return state;
     }

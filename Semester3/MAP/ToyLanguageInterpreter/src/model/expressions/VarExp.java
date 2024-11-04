@@ -1,6 +1,6 @@
 package model.expressions;
 
-import model.exceptions.MyException;
+import model.exceptions.VariableNotDefined;
 import model.values.Value;
 import collections.dictionary.MyIDictionary;
 
@@ -13,8 +13,8 @@ public class VarExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException {
-        if (!table.containsKey(id)) { throw new MyException("Variable " + id + " is not defined"); }
+    public Value eval(MyIDictionary<String, Value> table) throws VariableNotDefined{
+        if (!table.containsKey(id)) { throw new VariableNotDefined("Variable " + id + " is not defined"); }
         return table.get(id);
     }
 

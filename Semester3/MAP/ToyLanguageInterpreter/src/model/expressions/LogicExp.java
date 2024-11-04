@@ -1,6 +1,8 @@
 package model.expressions;
 
 import model.enums.LogicOperation;
+import model.exceptions.ExpException;
+import model.exceptions.InvalidOperandType;
 import model.exceptions.MyException;
 import model.types.BoolType;
 import model.values.BoolValue;
@@ -19,13 +21,15 @@ public class LogicExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException {
+    public Value eval(MyIDictionary<String, Value> table) throws MyException, InvalidOperandType, ExpException {
         Value v1, v2;
+        try {
+            v1 = e1.eval(table);
+            v2 = e2.eval(table);
+        } catch (MyException e) { throw new ExpException("Logic expression: " + e.getMessage()); }
 
-        v1 = e1.eval(table);
-        if (!v1.getType().equals(new BoolType())) { throw new MyException("First operand is not a boolean"); }
-        v2 = e2.eval(table);
-        if (!v2.getType().equals(new BoolType())) { throw new MyException("Second operand is not a boolean"); }
+        if (!v1.getType().equals(new BoolType())) { throw new InvalidOperandType("First operand is not a boolean"); }
+        if (!v2.getType().equals(new BoolType())) { throw new InvalidOperandType("Second operand is not a boolean"); }
 
         BoolValue b1 = (BoolValue)v1;
         BoolValue b2 = (BoolValue)v2;
@@ -33,12 +37,9 @@ public class LogicExp implements Exp {
         boolean n2 = b2.getValue();
 
         switch(op) {
-            case AND:
-                return new BoolValue(n1 && n2);
-            case OR:
-                return new BoolValue(n1 || n2);
-            default:
-                throw new MyException("Invalid operation");
+            case AND: return new BoolValue(n1 && n2);
+            case OR: return new BoolValue(n1 || n2);
+            default: throw new ExpException("Invalid operation");
         }
     }
 

@@ -1,11 +1,14 @@
 package model.expressions;
 
+import model.exceptions.DivisionByZeroException;
+import model.exceptions.ExpException;
+import model.exceptions.InvalidOperandType;
 import model.exceptions.MyException;
 import model.types.IntType;
 import model.values.IntValue;
 import model.values.Value;
-import collections.dictionary.MyIDictionary;
 import model.enums.ArithOperation;
+import collections.dictionary.MyIDictionary;
 
 public class ArithExp implements Exp {
     Exp e1, e2;    
@@ -18,13 +21,15 @@ public class ArithExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException {
+    public Value eval(MyIDictionary<String, Value> table) throws ExpException, DivisionByZeroException, InvalidOperandType {
         Value v1, v2;
+        try {
+            v1 = e1.eval(table);
+            v2 = e2.eval(table);
+        } catch (MyException e) { throw new ExpException(e.getMessage()); }
 
-        v1 = e1.eval(table);
-        if (!v1.getType().equals(new IntType())) { throw new MyException("First operand is not an integer"); }
-        v2 = e2.eval(table);
-        if (!v2.getType().equals(new IntType())) { throw new MyException("Second operand is not an integer"); }
+        if (!v1.getType().equals(new IntType())) { throw new InvalidOperandType("First operand is not an integer"); }
+        if (!v2.getType().equals(new IntType())) { throw new InvalidOperandType("Second operand is not an integer"); }
 
         IntValue i1 = (IntValue)v1;
         IntValue i2 = (IntValue)v2;
@@ -39,10 +44,10 @@ public class ArithExp implements Exp {
             case MUL:
                 return new IntValue(n1 * n2);
             case DIV:
-                if (n2 == 0) throw new MyException("Division by zero");
+                if (n2 == 0) throw new DivisionByZeroException("Division by zero");
                 return new IntValue(n1 / n2);
             default:
-                throw new MyException("Invalid operation");
+                throw new ExpException("Invalid operation");
         }
     }
 
