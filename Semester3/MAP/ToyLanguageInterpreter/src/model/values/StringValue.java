@@ -20,8 +20,8 @@ public class StringValue implements Value {
 
     @Override
     public boolean equals(Object another) {
-        if (another instanceof StringValue) {
-            return value.equals(((StringValue) another).getValue());
+        if (another instanceof StringValue other) {
+            return value.equals(other.value);
         }
         return false;
     }

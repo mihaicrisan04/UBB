@@ -20,8 +20,8 @@ public class IntValue implements Value {
 
     @Override
     public boolean equals(Object another) {
-        if (another instanceof IntValue) {
-            return value == ((IntValue) another).getValue();
+        if (another instanceof IntValue other) {
+            return value == other.value;
         }
         return false;
     }
