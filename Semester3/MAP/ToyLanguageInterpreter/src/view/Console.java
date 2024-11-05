@@ -7,9 +7,15 @@ import model.PrgState;
 
 public class Console {
     private Controller ctrl;
+    private boolean displayFlag = true;
 
     public Console(Controller c) {
         ctrl = c;
+    }
+
+    public Console(Controller c, boolean flag) {
+        ctrl = c;
+        displayFlag = flag;
     }   
 
     private void printMenu() {
@@ -51,7 +57,7 @@ public class Console {
         }
 
         try {
-            ctrl.executeAllSteps(cmd);
+            ctrl.executeAllSteps(cmd, displayFlag);
         } catch (MyException e) {
             System.out.println(e.getMessage());
         } 

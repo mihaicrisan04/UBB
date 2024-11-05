@@ -40,14 +40,15 @@ public class Controller {
         } 
     }
 
-    public void executeAllSteps(int index) throws MyException {
+    public void executeAllSteps(int index, boolean displayFlag) throws MyException {
         PrgState prg = repo.getProgramList().get(index);
         try {
-            System.out.println(prg.toString());
+            if (displayFlag) { System.out.println(prg.toString()); }
             while (prg.isNotCompleted()) {
                 prg.oneStep();
-                System.out.println(prg.toString());
+                if (displayFlag) { System.out.println(prg.toString()); }
             }
+            if (!displayFlag) { System.out.println(prg.toString()); }
         } catch (MyException e) {
             throw e;
         } catch (Exception e) {
