@@ -90,7 +90,7 @@ public class App {
 
         IRepository repo = new Repository(prgList);
         Controller ctrl = new Controller(repo);
-        Console console = new Console(ctrl, false);
+        Console console = new Console(ctrl, true);
         console.run();
     }
 }
