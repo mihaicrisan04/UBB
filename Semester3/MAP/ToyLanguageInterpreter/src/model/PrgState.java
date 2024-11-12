@@ -1,10 +1,13 @@
 package model;
 
+import java.io.BufferedReader;
+
 import model.exceptions.MyException;
 import collections.dictionary.*;
 import collections.stack.*;
 import collections.list.*;
 import model.statements.IStmt;
+import model.values.StringValue;
 import model.values.Value;
 
 
@@ -13,14 +16,14 @@ public class PrgState {
    private MyIDictionary<String, Value> symTable;
    private MyIList<Value> out;
    private IStmt originalProgram;
-   // private TreeNode exeTreeRoot;
-   // private MyIDictionary<String, Value> fileTable;
+   private MyIDictionary<StringValue, BufferedReader> fileTable;
 
-   public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, IStmt prg) {
+   public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, IStmt prg, MyIDictionary<StringValue, BufferedReader> fileTbl) {
       exeStack = stk;
       symTable = symtbl;
       out = ot;
       originalProgram = prg.deepCopy();
+      fileTable = fileTbl;
       exeStack.push(prg);
    }
 
@@ -28,6 +31,7 @@ public class PrgState {
       exeStack = new MyStack<IStmt>();
       symTable = new MyDictionary<String, Value>();
       out = new MyList<Value>();
+      fileTable = new MyDictionary<StringValue, BufferedReader>();
       originalProgram = prg.deepCopy();
       exeStack.push(prg);
    } 
@@ -40,6 +44,8 @@ public class PrgState {
 
    public IStmt getOriginalProgram() { return originalProgram; }
 
+   public MyIDictionary<StringValue, BufferedReader> getFileTable() { return fileTable; }
+
    public void setExeStack(MyIStack<IStmt> stk) { exeStack = stk; }
 
    public void setSymTable(MyIDictionary<String, Value> symtbl) { symTable = symtbl; }
@@ -48,10 +54,10 @@ public class PrgState {
 
    public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
+   public void setFileTable(MyIDictionary<StringValue, BufferedReader> fileTbl) { fileTable = fileTbl; }
+
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   
 
-   // TODO: implement heap
-   // public MyIDictionary<Integer, Integer> getHeap() { return heap; }
 
    public PrgState oneStep() throws MyException {
       if (exeStack.isEmpty()) { throw new MyException("Program state stack is empty"); }
@@ -65,6 +71,7 @@ public class PrgState {
              "ExeStack:\n" + exeStack.toString() + "\n" +
              "SymTable:\n" + symTable.toString() + "\n" +
              "Out:\n" + out.toString() + "\n" +
+             "FileTable:\n" + fileTable.toString() + "\n" +
              "Original Program:\n" + originalProgram.toString() + "\n";
    }
 }
