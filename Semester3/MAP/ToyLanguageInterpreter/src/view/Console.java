@@ -36,12 +36,12 @@ public class Console {
     private void InputProgram() {
         MyIList<PrgState> prgList = ctrl.getProgramList();
         for (int i = 0; i < prgList.size(); i++) {
-            System.out.println("Program " + i + ":");
+            System.out.println("-- Program " + i + ":");
             if (prgList.get(i).isNotCompleted()) {
-                System.out.println(prgList.get(i).getOriginalProgram().toString());
+                System.out.println(prgList.get(i).getOriginalProgram().toString() + "\n");
             }
             else {
-                System.out.println("Program finished");
+                System.out.println("Program finished\n");
             }
         }
 
@@ -52,7 +52,7 @@ public class Console {
         }
 
         if (!prgList.get(cmd).isNotCompleted()) {
-            System.out.println("Program finished");
+            System.out.println("Program finished\n");
             return;
         }
 

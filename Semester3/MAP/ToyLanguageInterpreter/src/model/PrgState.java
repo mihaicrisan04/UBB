@@ -13,7 +13,8 @@ public class PrgState {
    private MyIDictionary<String, Value> symTable;
    private MyIList<Value> out;
    private IStmt originalProgram;
-   // TODO: implement heap
+   // private TreeNode exeTreeRoot;
+   // private MyIDictionary<String, Value> fileTable;
 
    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, IStmt prg) {
       exeStack = stk;
@@ -27,7 +28,7 @@ public class PrgState {
       exeStack = new MyStack<IStmt>();
       symTable = new MyDictionary<String, Value>();
       out = new MyList<Value>();
-      originalProgram = prg;
+      originalProgram = prg.deepCopy();
       exeStack.push(prg);
    } 
    

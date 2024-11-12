@@ -13,6 +13,10 @@ public class CompoundStmt implements IStmt {
         this.second = second;
     }
 
+    public IStmt getFirst() { return first; }
+
+    public IStmt getSecond() { return second; }
+
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIStack<IStmt> stack = state.getExeStack();
@@ -28,6 +32,7 @@ public class CompoundStmt implements IStmt {
 
     @Override
     public String toString() {
+        // return first.toString() + "\n" + second.toString();
         return "{" + first.toString() + "; " + second.toString() + "}";
     }
 }
