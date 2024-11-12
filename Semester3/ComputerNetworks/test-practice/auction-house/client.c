@@ -53,18 +53,27 @@ void *udp_listener(void *arg) {
     printf("Listening for UDP broadcasts on port %d\n", PORT_UDP);
 
     while (1) {
-        int len = recvfrom(udp_sockfd, buffer, sizeof(buffer) - 1, 0, (struct sockaddr *)&udp_serv_addr, &addr_len);
-        if (len < 0) {
-            error("recvfrom failed");
+        int n = recvfrom(udp_sockfd, buffer, sizeof(buffer), 0, (struct sockaddr *)&udp_serv_addr, &addr_len);
+        if (n < 0) {
+            close(udp_sockfd);
+            error("UDP receive failed");
         }
-        buffer[len] = '\0';
 
-        // Update the current price with mutex protection
-        int received_price = atoi(buffer);
-        if (received_price > current_price) {
+        if (n == sizeof(int)) {
+            int received_value;
+            memcpy(&received_value, buffer, sizeof(int));
+            received_value = ntohl(received_value);
+
+
             pthread_mutex_lock(&price_mutex);
-            current_price = received_price;
+            if (received_value > current_price) {
+                current_price = received_value;
+                printf("[Broadcast] new price is: %d\n", current_price);  
+            }
             pthread_mutex_unlock(&price_mutex);
+
+        } else {
+            printf("Received unexpected number of bytes: %d\n", n);
         }
     }
 
@@ -72,11 +81,21 @@ void *udp_listener(void *arg) {
     return NULL;
 }
 
+int raise_bid() {
+    int bid;
+    pthread_mutex_lock(&price_mutex);
+    bid = current_price + 1;
+    pthread_mutex_unlock(&price_mutex);
+
+    sleep(1); // sleep for 1 second
+    
+    return bid;
+}
+
 
 int main() {
     int tcp_sockfd;
     struct sockaddr_in tcp_serv_addr;
-    char buffer[1024];
     int bid;
     pthread_t udp_thread;
 
@@ -114,6 +133,7 @@ int main() {
     }
 
     // Receive welcome message from the server
+    char buffer[1024];
     int valread = read(tcp_sockfd, buffer, sizeof(buffer) - 1);
     if (valread < 0) {
         close(tcp_sockfd);
@@ -130,8 +150,10 @@ int main() {
         pthread_mutex_unlock(&price_mutex);
 
         // Get the user's bid
+        // bid = raise_bid();
         printf("Enter your bid: ");
         scanf("%d", &bid);
+        printf("Your bid: %d\n", bid);
 
         // Check if the bid is higher than the current price
         pthread_mutex_lock(&price_mutex);
@@ -148,18 +170,29 @@ int main() {
             error("Send failed");
         }
 
-        // Receive response from the server
-        valread = read(tcp_sockfd, buffer, sizeof(buffer) - 1); // Will wait until 
-        if (valread < 0) {
+        char answer;
+        if (recv(tcp_sockfd, &answer, 1, 0) < 0) {
             close(tcp_sockfd);
-            error("TCP read failed");
+            error("Receive failed");
         }
-        buffer[valread] = '\0';
-        printf("%s\n", buffer);
 
-        if (strstr(buffer, "winner") || strstr(buffer, "loser")) {
+        if (answer == 's') {
+            printf("Your bid is successful\n");
+        } else if (answer == 'f') {
+            printf("Your bid is failed\n");
+        } 
+
+        if (current_price >= 100) {
+            printf("You are the winner\n");
             break;
         }
+        // else if (answer == 'w') {
+            // printf("You are the winner\n");
+        //     break;
+        // } else if (answer == 'l') {
+        //     printf("You are the loser\n");
+        //     break;
+        // }
     }
 
     close(tcp_sockfd);
@@ -168,61 +201,3 @@ int main() {
 
     return 0;
 }
-
-// int main() {
-//     srand(time(NULL));  
-
-//     // Create socket UDP
-//     int udp_sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-//     if (udp_sockfd < 0) {
-//         error("UDP socket creation error");
-//     }
-
-//     // Create socket TCP
-//     int tcp_sockfd = socket(AF_INET, SOCK_STREAM, 0);
-//     if (tcp_sockfd < 0) {
-//         error("TCP socket creation error");
-//     }
-
-//     // Set SO_REUSEADDR and SO_REUSEPORT
-//     int reuse = 1;
-//     if (setsockopt(udp_sockfd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse)) == -1) {
-//         close(udp_sockfd);
-//         close(tcp_sockfd);
-//         error("setsockopt SO_REUSEADDR failed");
-//     }
-//     if (setsockopt(udp_sockfd, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse)) == -1) {
-//         close(udp_sockfd);
-//         close(tcp_sockfd);
-//         error("setsockopt SO_REUSEPORT failed");
-//     }
-
-//     // Bind the socket to the address and port
-//     struct sockaddr_in udp_serv_addr, tcp_serv_addr;
-//     memset(&udp_serv_addr, 0, sizeof(udp_serv_addr));
-//     memset(&tcp_serv_addr, 0, sizeof(tcp_serv_addr));
-
-//     udp_serv_addr.sin_family = AF_INET;
-//     udp_serv_addr.sin_port = htons(PORT_UDP);
-//     udp_serv_addr.sin_addr.s_addr = INADDR_ANY;
-
-//     tcp_serv_addr.sin_family = AF_INET;
-//     tcp_serv_addr.sin_port = htons(PORT_TCP);
-//     tcp_serv_addr.sin_addr.s_addr = INADDR_ANY;
-
-//     if (bind(udp_sockfd, (struct sockaddr *)&udp_serv_addr, sizeof(udp_serv_addr)) < 0) {
-//         close(udp_sockfd);
-//         close(tcp_sockfd);
-//         error("UDP bind failed");
-//     }
-
-//     if (connect(tcp_sockfd, (struct sockaddr *)&tcp_serv_addr, sizeof(tcp_serv_addr)) < 0) {
-//         close(udp_sockfd);
-//         close(tcp_sockfd);
-//         error("TCP connect failed");
-//     }
-
-
-
-//     return 0;
-// }

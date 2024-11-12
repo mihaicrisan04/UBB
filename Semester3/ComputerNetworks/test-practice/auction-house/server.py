@@ -8,12 +8,12 @@ Server sends through UDP periodically the current price
 '''
 
 # TODO reset the auction after it ends
-# TODO 
 
 import socket
 import threading
 import random
 import time
+import struct
 
 
 port_udp = 1234
@@ -21,7 +21,8 @@ port_tcp = 2222
 host = '0.0.0.0'
 
 random.seed()
-current_price = random.randint(50, 100)
+# current_price = random.randint(50, 100)
+current_price = 50
 lock = threading.Lock()
 threads = []
 winner_thread = 0
@@ -42,7 +43,7 @@ def broadcast_price():
     global current_price
 
     with lock:
-        udp_sock.sendto(str(current_price).encode('utf-8'), ('<broadcast>', port_udp))
+        udp_sock.sendto(struct.pack('I', current_price), ('<broadcast>', port_udp))
 
 def setup_udp():
     udp_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -64,6 +65,15 @@ def setup_tcp():
 
     return tcp_sock
 
+def recv_all(sock, length):
+    data = b''
+    while len(data) < length:
+        more = sock.recv(length - len(data))
+        if not more:
+            raise EOFError("Socket closed before receiving all data")
+        data += more
+    return data
+
 def client_worker(cs):
     global current_price, winner_thread, last_bid_time, lock
 
@@ -72,8 +82,9 @@ def client_worker(cs):
 
     while is_auction_active():
         try:
-            data = cs.recv(4) # wait for the client to send a bid
-            bid = int(data.decode('utf-8'))
+            # data = cs.recv(4) # wait for the client to send a bid
+            data = recv_all(cs, 4)  # Ensure we receive exactly 4 bytes
+            bid = struct.unpack('I', data)[0]
             print(f"Client {cs.getpeername()} bid: {bid}")
 
             if bid > current_price:
@@ -82,22 +93,21 @@ def client_worker(cs):
                     winner_thread = threading.get_ident()
                     last_bid_time = time.time()
                 broadcast_price()
-                message = f"Your bid of {bid} was accepted"
+                print(f"New price: {current_price}")
+                cs.sendall(b's')
             else:
-                message = f"Your bid of {bid} was rejected. Current price is {current_price}"
-            cs.sendall(message.encode('utf-8'))
+                cs.sendall(b'f')
 
         except Exception as e:
-            print(f"Client {cs.getpeername()} disconnected")
+            print(f"Error: {e}")
             break
 
 
     if threading.get_ident() == winner_thread:
-        message = f"You are the winner! The price was {current_price}"
+        cs.sendall(b'w')
         print(f"Client {cs.getpeername()} is the winner!")
     else:
-        message = f"You are a loser! The price was {current_price}"
-    cs.sendall(message.encode('utf-8'))
+        cs.sendall(b'l')
 
     cs.close()
 
