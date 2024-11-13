@@ -1,5 +1,222 @@
 ------------------------------------------------------
 ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+Out:
+[15, 50]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+string varf
+{varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+varf=test.in
+{open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+open(varf)
+{int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+int varc
+{read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+read(varf, varc)
+{print(varc); {read(varf, varc); {print(varc); close(varf)}}}
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{print(varc); {read(varf, varc); {print(varc); close(varf)}}}
+SymTable:
+{varf=test.in, varc=15}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+print(varc)
+{read(varf, varc); {print(varc); close(varf)}}
+SymTable:
+{varf=test.in, varc=15}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{read(varf, varc); {print(varc); close(varf)}}
+SymTable:
+{varf=test.in, varc=15}
+Out:
+[15]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+read(varf, varc)
+{print(varc); close(varf)}
+SymTable:
+{varf=test.in, varc=15}
+Out:
+[15]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+{print(varc); close(varf)}
+SymTable:
+{varf=test.in, varc=50}
+Out:
+[15]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+print(varc)
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+Out:
+[15]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+Out:
+[15, 50]
+FileTable:
+{test.in=java.io.BufferedReader@b1bc7ed}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+Out:
+[15, 50]
+FileTable:
+{}
+Original Program:
+{string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+ExeStack:
 {string varf; {varf=test.in; {open(varf); {int varc; {read(varf, varc); {print(varc); {read(varf, varc); {print(varc); close(varf)}}}}}}}}
 SymTable:
 {}

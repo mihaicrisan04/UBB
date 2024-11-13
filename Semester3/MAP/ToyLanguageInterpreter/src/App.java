@@ -109,17 +109,6 @@ public class App {
             )
         );
 
-        // MyIList<PrgState> prgList = new MyList<PrgState>();
-        // prgList.add(new PrgState(ex));
-        // prgList.add(new PrgState(ex2));
-        // prgList.add(new PrgState(ex3));
-        // prgList.add(new PrgState(ex4));
-
-        // IRepository repo = new Repository(prgList);
-        // Controller ctrl = new Controller(repo);
-        // Console console = new Console(ctrl, true);
-        // console.run();
-
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
         menu.addCommand(new RunExCommand("1", ex.toString(), ex, "log1.txt"));
