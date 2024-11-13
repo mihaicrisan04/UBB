@@ -18,7 +18,7 @@ int main() {
     int sockfd;
     struct sockaddr_in serv_addr;
     char buffer[1024];
-    int guess, sr = 0, er = (1 << 17) - 1, step_count = 0;
+    int guess, sr = 1, er = 10, step_count = 0;
     char answer;
     int finished = 0;
 
@@ -50,7 +50,8 @@ int main() {
     printf("%s\n", buffer);
 
     while (!finished) {
-        guess = sr + rand() % (er - sr + 1);
+        // guess = sr + rand() % (er - sr + 1);
+        guess = rand() % 10 + 1;
 
         // Send guess
         int guess_network_order = htonl(guess);
@@ -67,9 +68,9 @@ int main() {
         printf("Sent %d Answer %c\n", guess, answer);
 
         if (answer == 'H') {
-            sr = guess;
+            // sr = guess;
         } else if (answer == 'S') {
-            er = guess;
+            // er = guess;
         } else if (answer == 'G' || answer == 'L') {
             finished = 1;
         }

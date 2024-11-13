@@ -43,7 +43,7 @@ def broadcast_price():
     global current_price
 
     with lock:
-        udp_sock.sendto(struct.pack('I', current_price), ('<broadcast>', port_udp))
+        udp_sock.sendto(struct.pack('!I', current_price), ('<broadcast>', port_udp))
 
 def setup_udp():
     udp_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -84,7 +84,7 @@ def client_worker(cs):
         try:
             # data = cs.recv(4) # wait for the client to send a bid
             data = recv_all(cs, 4)  # Ensure we receive exactly 4 bytes
-            bid = struct.unpack('I', data)[0]
+            bid = struct.unpack('!I', data)[0]
             print(f"Client {cs.getpeername()} bid: {bid}")
 
             if bid > current_price:

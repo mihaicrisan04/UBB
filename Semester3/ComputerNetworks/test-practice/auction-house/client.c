@@ -11,7 +11,8 @@
 
 #define PORT_UDP 1234
 #define PORT_TCP 2222
-#define HOST "172.20.10.10"
+// #define HOST "172.20.10.10"
+#define HOST "192.168.0.104"
 
 void error(const char *msg) {
     perror(msg);
@@ -150,10 +151,13 @@ int main() {
         pthread_mutex_unlock(&price_mutex);
 
         // Get the user's bid
-        // bid = raise_bid();
         printf("Enter your bid: ");
-        scanf("%d", &bid);
-        printf("Your bid: %d\n", bid);
+        pthread_mutex_lock(&price_mutex);
+        bid = current_price + rand() % 10 + 1;
+        // sleep for 1 second
+        usleep(1000000);
+        printf("You bid: %d\n", bid);
+        pthread_mutex_unlock(&price_mutex);
 
         // Check if the bid is higher than the current price
         pthread_mutex_lock(&price_mutex);
@@ -186,8 +190,9 @@ int main() {
             printf("You are the winner\n");
             break;
         }
-        // else if (answer == 'w') {
-            // printf("You are the winner\n");
+
+        // if (answer == 'w') {
+        //     printf("You are the winner\n");
         //     break;
         // } else if (answer == 'l') {
         //     printf("You are the loser\n");
