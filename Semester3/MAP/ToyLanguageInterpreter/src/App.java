@@ -122,11 +122,11 @@ public class App {
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
-        menu.addCommand(new RunExCommand("1", ex.toString(), ex));
-        menu.addCommand(new RunExCommand("2", ex2.toString(), ex2));
-        menu.addCommand(new RunExCommand("3", ex3.toString(), ex3));
-        menu.addCommand(new RunExCommand("4", ex4.toString(), ex4));
-        menu.addCommand(new RunExCommand("5", ex5.toString(), ex5));
+        menu.addCommand(new RunExCommand("1", ex.toString(), ex, "log1.txt"));
+        menu.addCommand(new RunExCommand("2", ex2.toString(), ex2, "log2.txt"));
+        menu.addCommand(new RunExCommand("3", ex3.toString(), ex3, "log3.txt"));
+        menu.addCommand(new RunExCommand("4", ex4.toString(), ex4, "log4.txt"));
+        menu.addCommand(new RunExCommand("5", ex5.toString(), ex5, "log5.txt"));
         menu.show();
     }
 }

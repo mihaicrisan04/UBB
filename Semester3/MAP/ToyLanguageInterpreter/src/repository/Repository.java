@@ -18,6 +18,11 @@ public class Repository implements IRepository {
         programList = new MyList<PrgState>();
         logFilePath = "";
     }
+
+    public Repository(String logFilePath) {
+        programList = new MyList<PrgState>();
+        this.logFilePath = logFilePath;
+    }
     
     public Repository(MyIList<PrgState> list) {
         programList = list;

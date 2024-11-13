@@ -1,6 +1,6 @@
 ------------------------------------------------------
 ExeStack:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}
 SymTable:
 {}
 Out:
@@ -8,11 +8,11 @@ Out:
 FileTable:
 {}
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}
 ------------------------------------------------------
 ExeStack:
 int v
-{v=(2 * (3 + 5)); print(v)}
+{v=2; print(v)}
 SymTable:
 {}
 Out:
@@ -20,10 +20,10 @@ Out:
 FileTable:
 {}
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}
 ------------------------------------------------------
 ExeStack:
-{v=(2 * (3 + 5)); print(v)}
+{v=2; print(v)}
 SymTable:
 {v=0}
 Out:
@@ -31,10 +31,10 @@ Out:
 FileTable:
 {}
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}
 ------------------------------------------------------
 ExeStack:
-v=(2 * (3 + 5))
+v=2
 print(v)
 SymTable:
 {v=0}
@@ -43,26 +43,26 @@ Out:
 FileTable:
 {}
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}
 ------------------------------------------------------
 ExeStack:
 print(v)
 SymTable:
-{v=16}
+{v=2}
 Out:
 []
 FileTable:
 {}
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}
 ------------------------------------------------------
 ExeStack:
 
 SymTable:
-{v=16}
+{v=2}
 Out:
-[16]
+[2]
 FileTable:
 {}
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+{int v; {v=2; print(v)}}

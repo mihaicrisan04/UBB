@@ -1,95 +1,104 @@
 ------------------------------------------------------
 ExeStack:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
-
 SymTable:
 {}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
-{int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}
 int a
-
+{int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}
 SymTable:
 {}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
 {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}
-
 SymTable:
 {a=0}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
-{a=(2 * (3 + 5)); {b=(a + 1); print(b)}}
 int b
-
+{a=(2 * (3 + 5)); {b=(a + 1); print(b)}}
 SymTable:
 {a=0}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
 {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}
-
 SymTable:
 {a=0, b=0}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
-{b=(a + 1); print(b)}
 a=(2 * (3 + 5))
-
+{b=(a + 1); print(b)}
 SymTable:
 {a=0, b=0}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
 {b=(a + 1); print(b)}
-
 SymTable:
 {a=16, b=0}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
-print(b)
 b=(a + 1)
-
+print(b)
 SymTable:
 {a=16, b=0}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
 ExeStack:
 print(b)
-
 SymTable:
 {a=16, b=17}
 Out:
 []
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
 ------------------------------------------------------
@@ -99,5 +108,7 @@ SymTable:
 {a=16, b=17}
 Out:
 [17]
+FileTable:
+{}
 Original Program:
 {int a; {int b; {a=(2 * (3 + 5)); {b=(a + 1); print(b)}}}}
