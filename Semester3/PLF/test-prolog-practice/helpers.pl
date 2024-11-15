@@ -11,11 +11,6 @@ append([H|T], L, [H|R]) :- append(T, L, R).
 length([], 0).
 length([_|T], N) :- length(T, N1), N is N1 + 1.
 
-% reverse
-findall(X, Goal, List) :-
-    bagof(X, Goal, List), !.
-findall(_, _, []).
-
 % reverse a number
 reverse_number(N, R) :- reverse_number(N, 0, R).
 reverse_number(0, R, R).
@@ -31,11 +26,68 @@ reverse_list([], R, R).
 reverse_list([H|T], Acc, R) :- reverse_list(T, [H|Acc], R).
 
 % append a number to a list
-append_number(L, N, R) :- reverse_number(N, RN), append(L, [RN], R).
+append_number([], N, [N]).
+append_number([H|T], N, [H|R]) :- append_number(T, N, R).
 
-% intersection
+% intersection of two lists
 intersection([], _, []).
 intersection([H|T], L2, [H|R]) :- member(H, L2), intersection(T, L2, R).
 intersection([_|T], L2, R) :- intersection(T, L2, R).
 
 
+% sort a list(Insertion sort)
+insert_sorted(E, [], [E]).
+insert_sorted(E, [H|T], [E,H|T]) :- E =< H.
+insert_sorted(E, [H|T], [H|R]) :- E > H, insert_sorted(E, T, R).
+
+insertion_sort([], []).
+insertion_sort([H|T], Sorted) :-
+    insertion_sort(T, SortedTail),
+    insert_sorted(H, SortedTail, Sorted).
+
+
+% merge sort
+merge_sort([], []).
+merge_sort([X], [X]).
+merge_sort(List, Sorted) :-
+    length(List, Len),
+    Len > 1,
+    split(List, L1, L2),
+    merge_sort(L1, Sorted1),
+    merge_sort(L2, Sorted2),
+    merge(Sorted1, Sorted2, Sorted).
+
+split([], [], []).
+split([X], [X], []).
+split([X,Y|Rest], [X|L1], [Y|L2]) :-
+    split(Rest, L1, L2).
+
+merge([], L, L).
+merge(L, [], L).
+merge([X|L1], [Y|L2], [X|L]) :-
+    X =< Y,
+    merge(L1, [Y|L2], L).
+merge([X|L1], [Y|L2], [Y|L]) :-
+    X > Y,
+    merge([X|L1], L2, L).
+
+
+% flatten a list
+flatten_list([], []).
+flatten_list([H|T], FlatList) :-
+    is_list(H),
+    flatten_list(H, FlatH),
+    flatten_list(T, FlatT),
+    append(FlatH, FlatT, FlatList).
+flatten_list([H|T], [H|FlatT]) :-
+    integer(H),
+    flatten_list(T, FlatT).
+
+% remove duplicates
+remove_duplicates([], []).
+remove_duplicates([H|T], [H|R]) :-
+    not(member(H, T)),
+    remove_duplicates(T, R).
+remove_duplicates([H|T], R) :-
+    member(H, T),
+    remove_duplicates(T, R).
