@@ -1,0 +1,377 @@
+------------------------------------------------------
+ExeStack:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+Ref(int) v
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+new(v, 20)
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+print(rH(v))
+{wH(v, 30); print((rH(v) + 5))}
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+Ref(int) v
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+new(v, 20)
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+print(rH(v))
+{wH(v, 30); print((rH(v) + 5))}
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+Ref(int) v
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+new(v, 20)
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+print(rH(v))
+{wH(v, 30); print((rH(v) + 5))}
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+Ref(int) v
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+new(v, 20)
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+print(rH(v))
+{wH(v, 30); print((rH(v) + 5))}
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+{wH(v, 30); print((rH(v) + 5))}
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[20]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+wH(v, 30)
+print((rH(v) + 5))
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[20]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+print((rH(v) + 5))
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=30}
+Out:
+[20]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}
+------------------------------------------------------
+ExeStack:
+
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=30}
+Out:
+[20, 35]
+Original Program:
+{Ref(int) v; {new(v, 20); {print(rH(v)); {wH(v, 30); print((rH(v) + 5))}}}}

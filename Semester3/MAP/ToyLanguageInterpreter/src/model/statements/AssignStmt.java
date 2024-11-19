@@ -1,6 +1,7 @@
 package model.statements;
 
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
@@ -20,10 +21,12 @@ public class AssignStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, StmtException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
+        MyIHeap<Integer, Value> heapTable = state.getHeapTable();
+
         if (!symTable.containsKey(id)) { throw new VariableNotDefined("Variable " + id + " is not defined"); }
 
         Value val;
-        try { val = exp.eval(symTable); }
+        try { val = exp.eval(symTable, heapTable); }
         catch (MyException e) { throw new StmtException(e.getMessage()); }
 
         if (val.getType().equals(symTable.get(id).getType())) { symTable.put(id, val); } 

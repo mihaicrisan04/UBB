@@ -1,4 +1,4 @@
-package model.statements.files;
+package model.statements.file;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,7 @@ import model.exceptions.StmtException;
 import model.statements.IStmt;
 import model.types.IntType;
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 import model.PrgState;
 import model.expressions.Exp;
 import model.values.Value;
@@ -15,11 +16,11 @@ import model.values.StringValue;
 import model.types.StringType;
 import model.values.IntValue;
 
-public class ReadStmt implements IStmt {
+public class ReadFileStmt implements IStmt {
     private Exp exp;
     private String varName;
 
-    public ReadStmt(Exp exp, String varName) {
+    public ReadFileStmt(Exp exp, String varName) {
         this.exp = exp;
         this.varName = varName;
     }
@@ -31,13 +32,14 @@ public class ReadStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
+        MyIHeap<Integer, Value> heapTable = state.getHeapTable();
 
         if (!symTable.containsKey(varName)) { throw new StmtException("Variable not declared"); }
         Value varVal = symTable.get(varName);
         if (!varVal.getType().equals(new IntType())) { throw new StmtException("Variable is not an integer"); }
 
         Value val;
-        try { val = exp.eval(symTable); }
+        try { val = exp.eval(symTable, heapTable); }
         catch (MyException e) { throw new StmtException("Error evaluating expression: " + e.getMessage()); }
 
         if (!val.getType().equals(new StringType())) { throw new StmtException("Expression is not a string"); }
@@ -66,11 +68,11 @@ public class ReadStmt implements IStmt {
 
     @Override
     public IStmt deepCopy() {
-        return new ReadStmt(exp.deepCopy(), varName);
+        return new ReadFileStmt(exp.deepCopy(), varName);
     }
 
     @Override
     public String toString() {
-        return "read(" + exp.toString() + ", " + varName + ")";
+        return "readFile(" + exp.toString() + ", " + varName + ")";
     }
 }

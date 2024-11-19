@@ -8,6 +8,7 @@ import model.types.BoolType;
 import model.values.BoolValue;
 import model.values.Value;
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 
 
 public class LogicExp implements Exp {
@@ -21,11 +22,11 @@ public class LogicExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException, InvalidOperandType, ExpException {
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap<Integer, Value> heap) throws MyException, InvalidOperandType, ExpException {
         Value v1, v2;
         try {
-            v1 = e1.eval(table);
-            v2 = e2.eval(table);
+            v1 = e1.eval(table, heap);
+            v2 = e2.eval(table, heap);
         } catch (MyException e) { throw new ExpException("Logic expression: " + e.getMessage()); }
 
         if (!v1.getType().equals(new BoolType())) { throw new InvalidOperandType("First operand is not a boolean"); }

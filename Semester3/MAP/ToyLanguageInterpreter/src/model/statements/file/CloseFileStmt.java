@@ -1,4 +1,4 @@
-package model.statements.files;
+package model.statements.file;
 
 import model.statements.IStmt;
 import model.types.StringType;
@@ -14,10 +14,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 
 
-public class CloseStmt implements IStmt {
+public class CloseFileStmt implements IStmt {
     private Exp exp;
 
-    public CloseStmt(Exp exp) {
+    public CloseFileStmt(Exp exp) {
         this.exp = exp;
     }
     
@@ -25,7 +25,7 @@ public class CloseStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         Value val;
-        try { val = exp.eval(state.getSymTable()); }
+        try { val = exp.eval(state.getSymTable(), state.getHeapTable()); }
         catch (MyException e) { throw new StmtException("Error evaluating expression: " + e.getMessage()); }
 
         if (!val.getType().equals(new StringType())) { throw new StmtException("Expression is not a string"); }
@@ -50,7 +50,7 @@ public class CloseStmt implements IStmt {
 
     @Override
     public IStmt deepCopy() {
-        return new CloseStmt(exp.deepCopy());
+        return new CloseFileStmt(exp.deepCopy());
     }
 
     @Override

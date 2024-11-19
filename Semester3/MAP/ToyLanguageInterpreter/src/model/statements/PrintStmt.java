@@ -16,7 +16,7 @@ public class PrintStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, StmtException {
         Value val;
-        try { val = exp.eval(state.getSymTable()); } 
+        try { val = exp.eval(state.getSymTable(), state.getHeapTable()); } 
         catch (MyException e) { throw new StmtException("Print statement: " + e.getMessage()); }
 
         state.getOut().add(val);

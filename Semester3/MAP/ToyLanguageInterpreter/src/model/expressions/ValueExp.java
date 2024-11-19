@@ -3,6 +3,7 @@ package model.expressions;
 import model.values.Value; 
 import model.exceptions.MyException;
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 
 public class ValueExp implements Exp {
     private Value val;
@@ -12,7 +13,7 @@ public class ValueExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException {
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap<Integer, Value> heap) throws MyException {
         return val;
     }
 

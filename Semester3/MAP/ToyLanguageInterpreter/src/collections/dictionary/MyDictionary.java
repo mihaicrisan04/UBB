@@ -67,5 +67,20 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
         return null;
     }
 
-    // TODO: Add the other methods from the dictionary interface
+    @Override
+    public Set<Map.Entry<K, V>> entrySet() {
+        return dict.entrySet();
+    }
+
+    @Override
+    public void setContent(Map<K, V> map) {
+        dict = map;
+    }
+
+    @Override
+    public MyIDictionary<K, V> clone() {
+        MyIDictionary<K, V> newDict = new MyDictionary<>();
+        newDict.setContent(new HashMap<>(dict));
+        return newDict;
+    }
 }

@@ -1,7 +1,7 @@
 package collections.dictionary;
 
 import java.util.Collection;
-// import java.util.Map;
+import java.util.Map;
 import java.util.Set;
 
 public interface MyIDictionary<K, V> {
@@ -15,7 +15,7 @@ public interface MyIDictionary<K, V> {
     boolean containsValue(V value);
     K getKey(V value);
     Set<K> keySet();
-    // Set<Map.Entry<K, V>> entrySet();
-    // void setContent(Map<K, V> map);
-    // MyIDictionary<K, V> clone();
+    Set<Map.Entry<K, V>> entrySet();
+    void setContent(Map<K, V> map);
+    MyIDictionary<K, V> clone();
 }

@@ -3,6 +3,7 @@ package model.expressions;
 import model.exceptions.VariableNotDefined;
 import model.values.Value;
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 
 
 public class VarExp implements Exp {
@@ -13,7 +14,7 @@ public class VarExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws VariableNotDefined{
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap<Integer, Value> heap) throws VariableNotDefined{
         if (!table.containsKey(id)) { throw new VariableNotDefined("Variable " + id + " is not defined"); }
         return table.get(id);
     }

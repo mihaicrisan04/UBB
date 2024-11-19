@@ -1,4 +1,4 @@
-package model.statements.files;
+package model.statements.file;
 
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
@@ -15,17 +15,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 
-public class OpenStmt implements IStmt {
+public class OpenFileStmt implements IStmt {
     private Exp exp;
 
-    public OpenStmt(Exp exp) {
+    public OpenFileStmt(Exp exp) {
         this.exp = exp;
     }
 
     @Override
     public PrgState execute(PrgState state) throws MyException, StmtException {
         Value val;
-        try { val = exp.eval(state.getSymTable()); }
+        try { val = exp.eval(state.getSymTable(), state.getHeapTable()); }
         catch (MyException e) { throw new StmtException("Error evaluating expression: " + e.getMessage()); }
 
         if (!val.getType().equals(new StringType())) { throw new StmtException("Expression is not a string"); }
@@ -47,7 +47,7 @@ public class OpenStmt implements IStmt {
 
     @Override
     public IStmt deepCopy() {
-        return new OpenStmt(exp.deepCopy());
+        return new OpenFileStmt(exp.deepCopy());
     }
 
     @Override

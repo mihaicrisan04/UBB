@@ -1,6 +1,7 @@
 package model.expressions;
 
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 import model.enums.CompareOperation;
 import model.exceptions.ExpException;
 import model.exceptions.InvalidOperandType;
@@ -22,11 +23,11 @@ public class CompareExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException, ExpException, InvalidOperandType {
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap<Integer, Value> heap) throws MyException, ExpException, InvalidOperandType {
         Value v1, v2;
         try {
-            v1 = e1.eval(table);
-            v2 = e2.eval(table);
+            v1 = e1.eval(table, heap);
+            v2 = e2.eval(table, heap);
         } catch (MyException e) {
             throw new MyException("Compare expression: " + e.getMessage());
         }

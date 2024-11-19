@@ -9,6 +9,7 @@ import model.values.IntValue;
 import model.values.Value;
 import model.enums.ArithOperation;
 import collections.dictionary.MyIDictionary;
+import collections.heap.MyIHeap;
 
 public class ArithExp implements Exp {
     Exp e1, e2;    
@@ -21,11 +22,11 @@ public class ArithExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws ExpException, DivisionByZeroException, InvalidOperandType {
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap<Integer, Value> heap) throws ExpException, DivisionByZeroException, InvalidOperandType {
         Value v1, v2;
         try {
-            v1 = e1.eval(table);
-            v2 = e2.eval(table);
+            v1 = e1.eval(table, heap);
+            v2 = e2.eval(table, heap);
         } catch (MyException e) { throw new ExpException(e.getMessage()); }
 
         if (!v1.getType().equals(new IntType())) { throw new InvalidOperandType("First operand is not an integer"); }
