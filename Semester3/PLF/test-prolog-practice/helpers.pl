@@ -91,3 +91,35 @@ remove_duplicates([H|T], [H|R]) :-
 remove_duplicates([H|T], R) :-
     member(H, T),
     remove_duplicates(T, R).
+
+% valley check: a list is a valley if it starts with a decreasing sequence followed by an increasing sequence
+valley([], 0).
+valley([H|T], V) :- valley([H|T], 0, V).
+valley([H|T], V, V) :- length(T, 0).
+valley([H1,H2|T], V, R) :-
+    H1 > H2,
+    V1 is V + 1,
+    valley([H2|T], V1, R).
+valley([H1,H2|T], V, R) :-
+    H1 < H2,
+    V1 is V + 1,
+    valley([H2|T], V1, R).
+valley([H1,H2|T], V, R) :-
+    H1 =:= H2,
+    valley([H2|T], V, R).
+
+% peak check: a list is a peak if it starts with an increasing sequence followed by a decreasing sequence
+peak([], 0).
+peak([H|T], P) :- peak([H|T], 0, P).
+peak([H|T], P, P) :- length(T, 0).
+peak([H1,H2|T], P, R) :-
+    H1 < H2,
+    P1 is P + 1,
+    peak([H2|T], P1, R).
+peak([H1,H2|T], P, R) :-
+    H1 > H2,
+    P1 is P + 1,
+    peak([H2|T], P1, R).
+peak([H1,H2|T], P, R) :-
+    H1 =:= H2,
+    peak([H2|T], P, R).
