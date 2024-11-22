@@ -345,3 +345,350 @@ Out:
 [4, 3, 2, 1, 0]
 Original Program:
 {int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+int v
+{v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+v=4
+{while(v > 0) {{print(v); v=(v - 1)}}; print(v)}
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{while(v > 0) {{print(v); v=(v - 1)}}; print(v)}
+SymTable:
+{v=4}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=4}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{print(v); v=(v - 1)}
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=4}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=4}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=4}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=3}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{print(v); v=(v - 1)}
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=3}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=3}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=3}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{print(v); v=(v - 1)}
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+{print(v); v=(v - 1)}
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+v=(v - 1)
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=1}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2, 1]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+while(v > 0) {{print(v); v=(v - 1)}}
+print(v)
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2, 1]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+print(v)
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2, 1]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}
+------------------------------------------------------
+ExeStack:
+
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[4, 3, 2, 1, 0]
+Original Program:
+{int v; {v=4; {while(v > 0) {{print(v); v=(v - 1)}}; print(v)}}}

@@ -2,6 +2,7 @@ package collections.heap;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class MyHeap<K, V> implements MyIHeap<K, V> {
     private Map<K, V> heap;
@@ -62,5 +63,10 @@ public class MyHeap<K, V> implements MyIHeap<K, V> {
         MyHeap<K, V> newHeap = new MyHeap<>();
         newHeap.setContent(new HashMap<>(heap));
         return newHeap;
+    }
+
+    @Override
+    public Set<Map.Entry<K, V>> entrySet() {
+        return heap.entrySet();
     }
 }

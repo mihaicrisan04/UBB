@@ -1,6 +1,7 @@
 package collections.heap;
 
 import java.util.Map;
+import java.util.Set;
 
 
 public interface MyIHeap<K, V> {    
@@ -14,5 +15,6 @@ public interface MyIHeap<K, V> {
     public Map<K, V> getContent();
     public void setContent(Map<K, V> map);
     public MyIHeap<K, V> clone();
+    public Set<Map.Entry<K, V>> entrySet();
 }
 
