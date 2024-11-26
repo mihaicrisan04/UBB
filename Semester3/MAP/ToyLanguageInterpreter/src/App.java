@@ -173,6 +173,24 @@ public class App {
             )
         );
 
+        // Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
+        IStmt ex9 = new CompoundStmt(
+            new VarDeclStmt("v", new RefType(new IntType())),
+            new CompoundStmt(
+                new NewHeapStmt("v", new ValueExp(new IntValue(20))),
+                new CompoundStmt(
+                    new VarDeclStmt("a", new RefType(new RefType(new IntType()))),
+                    new CompoundStmt(
+                        new NewHeapStmt("a", new VarExp("v")),
+                        new CompoundStmt(
+                            new NewHeapStmt("v", new ValueExp(new IntValue(30))),
+                            new PrintStmt(new ReadHeapExp(new ReadHeapExp(new VarExp("a"))))
+                        )
+                    )
+                )
+            )
+        );
+
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -184,6 +202,7 @@ public class App {
         menu.addCommand(new RunExCommand("6", ex6.toString(), ex6, "log6.txt"));
         menu.addCommand(new RunExCommand("7", ex7.toString(), ex7, "log7.txt"));
         menu.addCommand(new RunExCommand("8", ex8.toString(), ex8, "log8.txt"));
+        menu.addCommand(new RunExCommand("9", ex9.toString(), ex9, "log9.txt"));
         menu.show();
     }
 }

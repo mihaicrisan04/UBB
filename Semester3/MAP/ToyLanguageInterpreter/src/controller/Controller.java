@@ -10,7 +10,9 @@ import model.values.Value;
 import model.values.RefValue;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,10 +40,25 @@ public class Controller {
         return repo.getProgramList();
     }
 
-    private MyIHeap<Integer, Value> unsafeGarbageCollector(List<Integer> symTableAddr, MyIHeap<Integer, Value> heap) {
+    private MyIHeap<Integer, Value> safeGarbageCollector(List<Integer> symTableAddr, MyIHeap<Integer, Value> heap) {
+        // Collect all reachable addresses
+        Set<Integer> reachableAddresses = new HashSet<>(symTableAddr);
+        boolean added;
+        do {
+            added = false;
+            Set<Integer> newAddresses = heap.entrySet().stream()
+                    .filter(e -> reachableAddresses.contains(e.getKey()))
+                    .map(e -> e.getValue())
+                    .filter(v -> v instanceof RefValue)
+                    .map(v -> ((RefValue) v).getAddress())
+                    .filter(addr -> !reachableAddresses.contains(addr))
+                    .collect(Collectors.toSet());
+            added = reachableAddresses.addAll(newAddresses);
+        } while (added);
+
         // Filter and collect the entries into a new map
         Map<Integer, Value> newHeapContent = heap.entrySet().stream()
-                .filter(e -> symTableAddr.contains(e.getKey()))
+                .filter(e -> reachableAddresses.contains(e.getKey()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         // Create a new instance of MyHeap with the filtered content
@@ -64,7 +81,7 @@ public class Controller {
                 repo.getCurrentProgram().oneStep();
                 repo.logPrgStateExec();
 
-                repo.getCurrentProgram().getHeapTable().setContent(unsafeGarbageCollector(
+                repo.getCurrentProgram().getHeapTable().setContent(safeGarbageCollector(
                     getAddrFromSymTable(repo.getCurrentProgram().getSymTable().values()),
                     repo.getCurrentProgram().getHeapTable()
                 ).getContent()); // garbage collector
