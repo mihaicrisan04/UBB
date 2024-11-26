@@ -32,7 +32,7 @@ public class ReadFileStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
-        MyIHeap<Integer, Value> heapTable = state.getHeapTable();
+        MyIHeap<Integer, Value> heapTable = state.getHeap();
 
         if (!symTable.containsKey(varName)) { throw new StmtException("Variable not declared"); }
         Value varVal = symTable.get(varName);

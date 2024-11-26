@@ -5,8 +5,7 @@ import model.exceptions.MyException;
 import collections.list.MyIList;
 
 public interface IRepository {
-    PrgState getCurrentProgram();
     MyIList<PrgState> getProgramList();
     void setProgramList(MyIList<PrgState> list);
-    void logPrgStateExec() throws MyException;
+    void logPrgStateExec(PrgState prg) throws MyException;
 }

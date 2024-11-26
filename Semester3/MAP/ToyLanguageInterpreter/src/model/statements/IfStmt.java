@@ -22,7 +22,7 @@ public class IfStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, StmtException {
         Value val;
-        try { val = exp.eval(state.getSymTable(), state.getHeapTable()); }
+        try { val = exp.eval(state.getSymTable(), state.getHeap()); }
         catch (MyException e) { throw new StmtException("If statement: " + e.getMessage()); }
 
         if (!val.getType().equals(new BoolType())) { throw new StmtException("If statement: Expression is not a boolean"); }

@@ -12,7 +12,7 @@ public class NoOpStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) {
-        return state;
+        return null;
     }
 
     @Override

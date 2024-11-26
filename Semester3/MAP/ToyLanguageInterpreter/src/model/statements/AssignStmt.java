@@ -21,7 +21,7 @@ public class AssignStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, StmtException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
-        MyIHeap<Integer, Value> heapTable = state.getHeapTable();
+        MyIHeap<Integer, Value> heapTable = state.getHeap();
 
         if (!symTable.containsKey(id)) { throw new VariableNotDefined("Variable " + id + " is not defined"); }
 

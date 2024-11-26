@@ -25,7 +25,7 @@ public class CloseFileStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         Value val;
-        try { val = exp.eval(state.getSymTable(), state.getHeapTable()); }
+        try { val = exp.eval(state.getSymTable(), state.getHeap()); }
         catch (MyException e) { throw new StmtException("Error evaluating expression: " + e.getMessage()); }
 
         if (!val.getType().equals(new StringType())) { throw new StmtException("Expression is not a string"); }

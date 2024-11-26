@@ -21,7 +21,7 @@ public class WriteHeapStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         var symTable = state.getSymTable();
-        var heapTable = state.getHeapTable();
+        var heapTable = state.getHeap();
 
         // Check if the variable is defined
         if (!symTable.containsKey(varName)) { throw new MyException("Variable " + varName + " is not defined"); }

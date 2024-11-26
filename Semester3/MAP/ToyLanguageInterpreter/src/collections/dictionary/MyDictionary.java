@@ -78,7 +78,7 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
     }
 
     @Override
-    public MyIDictionary<K, V> clone() {
+    public MyIDictionary<K, V> deepCopy() {
         MyIDictionary<K, V> newDict = new MyDictionary<>();
         newDict.setContent(new HashMap<>(dict));
         return newDict;

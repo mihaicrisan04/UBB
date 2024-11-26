@@ -16,12 +16,12 @@ public class PrintStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, StmtException {
         Value val;
-        try { val = exp.eval(state.getSymTable(), state.getHeapTable()); } 
+        try { val = exp.eval(state.getSymTable(), state.getHeap()); } 
         catch (MyException e) { throw new StmtException("[Print statement]: " + e.getMessage()); }
 
         state.getOut().add(val);
 
-        return state;
+        return null;
     }
 
     @Override

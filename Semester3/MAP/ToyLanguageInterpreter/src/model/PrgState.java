@@ -19,16 +19,20 @@ public class PrgState {
    private MyIList<Value> out;
    private IStmt originalProgram;
    private MyIDictionary<StringValue, BufferedReader> fileTable;
-   private MyIHeap<Integer, Value> heapTable;
+   private MyIHeap<Integer, Value> heap;
+   private int id;
 
-   public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, IStmt prg, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> heap) {
-      exeStack = stk;
+   private static int prgId = 0;
+
+   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp) {
+      exeStack = new MyStack<IStmt>();
       symTable = symtbl;
       out = ot;
       originalProgram = prg.deepCopy();
       fileTable = fileTbl;
-      heapTable = heap;
+      heap = hp;
       exeStack.push(prg);
+      id = getNewId();
    }
 
    public PrgState(IStmt prg) {
@@ -36,26 +40,28 @@ public class PrgState {
       symTable = new MyDictionary<String, Value>();
       out = new MyList<Value>();
       fileTable = new MyDictionary<StringValue, BufferedReader>();
-      heapTable = new MyHeap<Integer, Value>();
+      heap = new MyHeap<Integer, Value>();
       originalProgram = prg.deepCopy();
       exeStack.push(prg);
+      id = getNewId();
    } 
    
    public MyIStack<IStmt> getExeStack() { return exeStack; }
    public MyIDictionary<String, Value> getSymTable() { return symTable; }
    public MyIList<Value> getOut() { return out; } // get out :))
-   public IStmt getOriginalProgram() { return originalProgram; }
    public MyIDictionary<StringValue, BufferedReader> getFileTable() { return fileTable; }
-   public MyIHeap<Integer, Value> getHeapTable() { return heapTable; }
+   public MyIHeap<Integer, Value> getHeap() { return heap; }
+   public IStmt getOriginalProgram() { return originalProgram; }
 
    public void setExeStack(MyIStack<IStmt> stk) { exeStack = stk; }
    public void setSymTable(MyIDictionary<String, Value> symtbl) { symTable = symtbl; }
    public void setOut(MyIList<Value> ot) { out = ot; }
-   public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
    public void setFileTable(MyIDictionary<StringValue, BufferedReader> fileTbl) { fileTable = fileTbl; }
-   public void setHeapTable(MyIHeap<Integer, Value> heap) { heapTable = heap; }
+   public void setHeap(MyIHeap<Integer, Value> hp) { heap = hp; }
+   public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   
+   public static synchronized int getNewId() { return prgId++; }
 
 
    public PrgState oneStep() throws MyException {
@@ -67,10 +73,11 @@ public class PrgState {
    @Override
    public String toString() {
       return "------------------------------------------------------\n" +
+             "[ID: " + id + "]\n" +
              "ExeStack:\n" + exeStack.toString() + "\n" +
              "SymTable:\n" + symTable.toString() + "\n" +
              "FileTable:\n" + fileTable.toString() + "\n" +
-             "HeapTable:\n" + heapTable.toString() + "\n" +
+             "HeapTable:\n" + heap.toString() + "\n" +
              "Out:\n" + out.toString() + "\n" +
              "Original Program:\n" + originalProgram.toString() + "\n";
    }

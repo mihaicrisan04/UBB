@@ -20,7 +20,7 @@ public class WhileStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         var symTbl = state.getSymTable();
-        var heap = state.getHeapTable();
+        var heap = state.getHeap();
 
         Value val = exp.eval(symTbl, heap);
         if (!val.getType().equals(new BoolType())) {

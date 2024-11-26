@@ -35,22 +35,19 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public PrgState getCurrentProgram() { return programList.get(0); }
-
-    @Override
     public MyIList<PrgState> getProgramList() { return programList; }
 
     @Override
     public void setProgramList(MyIList<PrgState> list) { programList = list; }
 
     @Override
-    public void logPrgStateExec() throws MyException {
-        System.out.println(getCurrentProgram().toString()); // log to console
+    public void logPrgStateExec(PrgState prg) throws MyException {
+        System.out.println(prg.toString()); // log to console
         if (logFilePath.equals("")) return;
 
         try {
             PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
-            logFile.write(getCurrentProgram().toString());
+            logFile.write(prg.toString());
             logFile.close();
         } catch (IOException e) {
             throw new MyException(e.getMessage());

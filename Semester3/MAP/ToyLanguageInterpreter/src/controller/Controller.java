@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+
 public class Controller {
     IRepository repo;
 
@@ -76,14 +77,16 @@ public class Controller {
 
     public void executeAllSteps() throws MyException {
         try {
-            repo.logPrgStateExec();
-            while (repo.getCurrentProgram().isNotCompleted()) {
-                repo.getCurrentProgram().oneStep();
-                repo.logPrgStateExec();
+            MyIList<PrgState> prgList = repo.getProgramList();
+            PrgState prg = prgList.get(0);
+            repo.logPrgStateExec(prg);
+            while (prg.isNotCompleted()) {
+                prg.oneStep();
+                repo.logPrgStateExec(prg);
 
-                repo.getCurrentProgram().getHeapTable().setContent(safeGarbageCollector(
-                    getAddrFromSymTable(repo.getCurrentProgram().getSymTable().values()),
-                    repo.getCurrentProgram().getHeapTable()
+                prg.getHeap().setContent(safeGarbageCollector(
+                    getAddrFromSymTable(prg.getSymTable().values()),
+                    prg.getHeap()
                 ).getContent()); // garbage collector
             }
         } catch (MyException e) {
@@ -105,5 +108,12 @@ public class Controller {
         } catch (Exception e) {
             throw new MyException(e.getMessage());
         }
+    }
+
+
+    private List<PrgState> removeCompletedPrg(List<PrgState> inPrgList) {
+        return inPrgList.stream()
+                .filter(p -> p.isNotCompleted())
+                .toList();
     }
 }

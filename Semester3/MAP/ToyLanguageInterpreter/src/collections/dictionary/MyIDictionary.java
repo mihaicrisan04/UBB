@@ -17,5 +17,5 @@ public interface MyIDictionary<K, V> {
     Set<K> keySet();
     Set<Map.Entry<K, V>> entrySet();
     void setContent(Map<K, V> map);
-    MyIDictionary<K, V> clone();
+    MyIDictionary<K, V> deepCopy();
 }
