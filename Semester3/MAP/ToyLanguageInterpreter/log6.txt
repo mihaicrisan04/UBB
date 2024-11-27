@@ -642,3 +642,176 @@ Out:
 [(1, int), (2, Ref(int))]
 Original Program:
 {Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+Ref(int) v
+{new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+{new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+new(v, 20)
+{Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}
+SymTable:
+{v=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+{Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+Ref(Ref(int)) a
+{new(a, v); {print(v); print(a)}}
+SymTable:
+{v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+{new(a, v); {print(v); print(a)}}
+SymTable:
+{a=(0, Ref(int)), v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+new(a, v)
+{print(v); print(a)}
+SymTable:
+{a=(0, Ref(int)), v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+{print(v); print(a)}
+SymTable:
+{a=(2, Ref(int)), v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20, 2=(1, int)}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v)
+print(a)
+SymTable:
+{a=(2, Ref(int)), v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20, 2=(1, int)}
+Out:
+[]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(a)
+SymTable:
+{a=(2, Ref(int)), v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20, 2=(1, int)}
+Out:
+[(1, int)]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+
+SymTable:
+{a=(2, Ref(int)), v=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20, 2=(1, int)}
+Out:
+[(1, int), (2, Ref(int))]
+Original Program:
+{Ref(int) v; {new(v, 20); {Ref(Ref(int)) a; {new(a, v); {print(v); print(a)}}}}}
