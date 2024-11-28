@@ -117,7 +117,7 @@ VALUES
 (7, 750.00, 'credit_card', 'completed', '2023-12-03 16:00:00'),
 (8, 500.00, 'credit_card', 'completed', '2023-12-04 18:00:00');
 
-INSERT INTO Property_Photos (property_id, photo_url, uploaded_at)
+INSERT INTO PropertyPhotos (property_id, photo_url, uploaded_at)
 VALUES
 (1, 'https://via.placeholder.com/800x600.png?text=Seaside+Villa', '2023-11-01 10:00:00'),
 (1, 'https://via.placeholder.com/800x600.png?text=Seaside+Villa', '2023-11-02 12:00:00'),

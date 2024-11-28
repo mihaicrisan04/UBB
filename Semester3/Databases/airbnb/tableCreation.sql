@@ -112,3 +112,13 @@ CREATE TABLE Favorites (
     FOREIGN KEY (property_id) REFERENCES Properties(property_id)
 );
 
+-- 11. SchemaVersion Table
+CREATE TABLE SchemaVersion (
+    version INT PRIMARY KEY
+);
+-- Initialize the version
+INSERT INTO SchemaVersion (version) VALUES (1);
+
+-- 12.
+
+
