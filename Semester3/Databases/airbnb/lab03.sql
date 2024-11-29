@@ -15,7 +15,7 @@ EXEC sp_getPropertyDetails 1;
 
 
 
--- a) change the type of a column
+-- a) change the type of column
 -- change description type from text to varchar from the Properties table
 CREATE PROCEDURE sp_changeDescriptionTypeToVarchar
 AS
@@ -45,6 +45,7 @@ EXEC sp_changeDescriptionTypeToText;
 CREATE PROCEDURE sp_addPropertyStarsColumn
 AS
 BEGIN
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Properties' AND COLUMN_NAME = 'stars')
     ALTER TABLE Properties ADD stars DECIMAL(2, 1);
 END;
 GO
@@ -53,6 +54,7 @@ GO
 CREATE PROCEDURE sp_removePropertyStarsColumn
 AS
 BEGIN
+    IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Properties' AND COLUMN_NAME = 'stars')
     ALTER TABLE Properties DROP COLUMN stars;
 END;
 GO
@@ -198,34 +200,87 @@ CREATE PROCEDURE sp_switchVersion
 AS
 BEGIN
     DECLARE @currentVersion INT;
+    DECLARE @maxVersion INT;
+    DECLARE @minVersion INT;
     SELECT @currentVersion = version FROM SchemaVersion;
+    SELECT @maxVersion = max_version FROM SchemaVersion;
+    SELECT @minVersion = min_version FROM SchemaVersion;
 
-    IF @version > @currentVersion
+    IF @version < @minVersion OR @version > @maxVersion
     BEGIN
-        -- Upgrade logic
-        IF @currentVersion = 1 AND @version >= 2
-        BEGIN
-            EXEC sp_changeDescriptionTypeToVarchar;
-            EXEC sp_removePropertyStarsColumn;
-            EXEC sp_removeDefaultConstraintForPriceInBookings;
-            EXEC sp_addPrimaryKeyToMessages;
-            EXEC sp_addCandidateKeyToUsers;
-            EXEC sp_addForeignKeyToBookings;
-            EXEC sp_dropTable;
-        END
+        PRINT 'Invalid version number';
+        RETURN;
     END
-    ELSE IF @version < @currentVersion
+
+    WHILE @currentVersion <> @version
     BEGIN
-        -- Downgrade logic
-        IF @currentVersion = 2 AND @version <= 1
+        IF @version > @currentVersion
         BEGIN
-            EXEC sp_changeDescriptionTypeToText;
-            EXEC sp_addPropertyStarsColumn;
-            EXEC sp_addDefaultConstraintForPriceInBookings;
-            EXEC sp_removePrimaryKeyFromMessages;
-            EXEC sp_removeCandidateKeyFromUsers;
-            EXEC sp_removeForeignKeyFromBookings;
-            EXEC sp_createTable;
+            SET @currentVersion = @currentVersion + 1;
+
+            -- Upgrade logic
+            IF @currentVersion = 2
+            BEGIN
+                EXEC sp_changeDescriptionTypeToVarchar;
+            END
+            ELSE IF @currentVersion = 3
+            BEGIN
+                EXEC sp_removePropertyStarsColumn;
+            END
+            ELSE IF @currentVersion = 4
+            BEGIN
+                EXEC sp_addDefaultConstraintForPriceInBookings;
+            END
+            ELSE IF @currentVersion = 5
+            BEGIN
+                EXEC sp_addPrimaryKeyToMessages;
+            END
+            ELSE IF @currentVersion = 6
+            BEGIN
+                EXEC sp_addCandidateKeyToUsers;
+            END
+            ELSE IF @currentVersion = 7
+            BEGIN
+                EXEC sp_addForeignKeyToBookings;
+            END
+            ELSE IF @currentVersion = 8
+            BEGIN
+                EXEC sp_dropTable;
+            END
+        END
+        ELSE IF @version < @currentVersion
+        BEGIN
+            SET @currentVersion = @currentVersion - 1;
+
+            -- Downgrade logic
+            IF @currentVersion = 7
+            BEGIN
+                EXEC sp_createTable;
+            END
+            ELSE IF @currentVersion = 6
+            BEGIN
+                EXEC sp_removeForeignKeyFromBookings;
+            END
+            ELSE IF @currentVersion = 5
+            BEGIN
+                EXEC sp_removeCandidateKeyFromUsers;
+            END
+            ELSE IF @currentVersion = 4
+            BEGIN
+                EXEC sp_removePrimaryKeyFromMessages;
+            END
+            ELSE IF @currentVersion = 3
+            BEGIN
+                EXEC sp_removeDefaultConstraintForPriceInBookings;
+            END
+            ELSE IF @currentVersion = 2
+            BEGIN
+                EXEC sp_addPropertyStarsColumn;
+            END
+            ELSE IF @currentVersion = 1
+            BEGIN
+                EXEC sp_changeDescriptionTypeToText;
+            END
         END
     END
 
@@ -236,5 +291,6 @@ GO
 
 DROP PROCEDURE sp_switchVersion;
 
-EXEC sp_switchVersion 2;
 EXEC sp_switchVersion 1;
+
+SELECT * FROM SchemaVersion;
