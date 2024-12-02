@@ -18,8 +18,8 @@ public class CompoundStmt implements IStmt {
     public IStmt getSecond() { return second; }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
-        MyIStack<IStmt> stack = state.getExeStack();
+    public PrgState execute(PrgState prg) throws MyException {
+        MyIStack<IStmt> stack = prg.getExeStack();
         stack.push(second);
         stack.push(first);
         return null;

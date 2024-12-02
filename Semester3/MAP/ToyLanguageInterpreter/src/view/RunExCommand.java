@@ -28,8 +28,8 @@ public class RunExCommand extends Command {
             repo.addProgram(prgState);
             Controller ctrl = new Controller(repo);
             ctrl.executeAllSteps();
-        } catch(MyException e) {
+        } catch (MyException e) {
             System.out.println(e.getMessage());
-        }
+        } 
     }
 }

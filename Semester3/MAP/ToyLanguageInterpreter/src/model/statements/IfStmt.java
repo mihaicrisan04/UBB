@@ -20,16 +20,16 @@ public class IfStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException, StmtException {
+    public PrgState execute(PrgState prg) throws MyException, StmtException {
         Value val;
-        try { val = exp.eval(state.getSymTable(), state.getHeap()); }
+        try { val = exp.eval(prg.getSymTable(), prg.getHeap()); }
         catch (MyException e) { throw new StmtException("If statement: " + e.getMessage()); }
 
         if (!val.getType().equals(new BoolType())) { throw new StmtException("If statement: Expression is not a boolean"); }
 
         BoolValue b = (BoolValue) val;
-        if (b.getValue()) { state.getExeStack().push(thenS); } 
-        else { state.getExeStack().push(elseS); }
+        if (b.getValue()) { prg.getExeStack().push(thenS); } 
+        else { prg.getExeStack().push(elseS); }
 
         return null;
     }

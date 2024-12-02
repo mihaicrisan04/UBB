@@ -57,7 +57,7 @@ public class Console {
         }
 
         try {
-            ctrl.executeAllSteps(cmd, displayFlag);
+            ctrl.executeAllSteps();
         } catch (MyException e) {
             System.out.println(e.getMessage());
         } 

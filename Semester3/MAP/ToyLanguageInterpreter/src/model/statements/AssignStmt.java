@@ -19,9 +19,9 @@ public class AssignStmt implements IStmt {
     }
     
     @Override
-    public PrgState execute(PrgState state) throws MyException, StmtException {
-        MyIDictionary<String, Value> symTable = state.getSymTable();
-        MyIHeap<Integer, Value> heapTable = state.getHeap();
+    public PrgState execute(PrgState prg) throws MyException, StmtException {
+        MyIDictionary<String, Value> symTable = prg.getSymTable();
+        MyIHeap<Integer, Value> heapTable = prg.getHeap();
 
         if (!symTable.containsKey(id)) { throw new VariableNotDefined("Variable " + id + " is not defined"); }
 
@@ -32,7 +32,7 @@ public class AssignStmt implements IStmt {
         if (val.getType().equals(symTable.get(id).getType())) { symTable.put(id, val); } 
         else { throw new StmtException("Type of expression does not match type of variable"); }
 
-        return state;
+        return null;
     }
 
     @Override

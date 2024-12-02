@@ -18,9 +18,9 @@ public class WhileStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
-        var symTbl = state.getSymTable();
-        var heap = state.getHeap();
+    public PrgState execute(PrgState prg) throws MyException {
+        var symTbl = prg.getSymTable();
+        var heap = prg.getHeap();
 
         Value val = exp.eval(symTbl, heap);
         if (!val.getType().equals(new BoolType())) {
@@ -29,8 +29,8 @@ public class WhileStmt implements IStmt {
 
         BoolValue boolVal = (BoolValue) val;
         if (boolVal.getValue()) {
-            state.getExeStack().push(this);
-            state.getExeStack().push(stmt);
+            prg.getExeStack().push(this);
+            prg.getExeStack().push(stmt);
         }
 
         return null;

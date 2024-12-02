@@ -11,7 +11,7 @@ public class NoOpStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) {
+    public PrgState execute(PrgState prg) {
         return null;
     }
 

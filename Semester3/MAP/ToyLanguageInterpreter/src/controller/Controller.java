@@ -3,6 +3,7 @@ package controller;
 import collections.heap.MyIHeap;
 import collections.heap.MyHeap;
 import collections.list.MyIList;
+import collections.list.MyList;
 import repository.IRepository;
 import model.exceptions.MyException;
 import model.PrgState;
@@ -13,13 +14,15 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Callable;
 import java.util.List;
 import java.util.stream.Collectors;
 
 
-
 public class Controller {
     IRepository repo;
+    private ExecutorService executor;
 
     public Controller() {
         repo = null;
@@ -27,10 +30,6 @@ public class Controller {
 
     public Controller(IRepository r) {
         repo = r;
-    }
-
-    public void oneStepForAllPrg(MyIList<PrgState> prgList) throws MyException {
-        // TODO: implement this method
     }
 
     public int getNumberOfPrograms() {
@@ -75,45 +74,52 @@ public class Controller {
                 .toList();
     }
 
-    public void executeAllSteps() throws MyException {
-        try {
-            MyIList<PrgState> prgList = repo.getProgramList();
-            PrgState prg = prgList.get(0);
-            repo.logPrgStateExec(prg);
-            while (prg.isNotCompleted()) {
-                prg.oneStep();
-                repo.logPrgStateExec(prg);
 
-                prg.getHeap().setContent(safeGarbageCollector(
-                    getAddrFromSymTable(prg.getSymTable().values()),
-                    prg.getHeap()
-                ).getContent()); // garbage collector
-            }
-        } catch (MyException e) {
-            throw e;
-        } 
-    }
+    public void oneStepForAllPrg(MyIList<PrgState> prgList) throws MyException {
+        for (PrgState prg : prgList) { repo.logPrgStateExec(prg); }
 
-    public void executeAllSteps(int index, boolean displayFlag) throws MyException {
-        PrgState prg = repo.getProgramList().get(index);
+        MyIList<Callable<PrgState>> callList = prgList.stream()
+                .map((PrgState p) -> (Callable<PrgState>)(() -> { return p.oneStep(); }))
+                .collect(Collectors.toCollection(MyList::new));
+
+        MyIList<PrgState> newPrgList;
         try {
-            if (displayFlag) { System.out.println(prg.toString()); }
-            while (prg.isNotCompleted()) {
-                prg.oneStep();
-                if (displayFlag) { System.out.println(prg.toString()); }
-            }
-            if (!displayFlag) { System.out.println(prg.toString()); }
-        } catch (MyException e) {
-            throw e;
-        } catch (Exception e) {
+            newPrgList = executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        return null;
+                    } 
+                })
+                .filter(p -> p != null)
+                .collect(Collectors.toCollection(MyList::new));
+
+        } catch (InterruptedException e) {
             throw new MyException(e.getMessage());
         }
+        
+        prgList.addAll(newPrgList);
+        for (PrgState prg : prgList) { repo.logPrgStateExec(prg); }
+        repo.setProgramList(prgList);
     }
 
+    public void executeAllSteps() throws MyException {
+        executor = java.util.concurrent.Executors.newFixedThreadPool(2);
+        MyIList<PrgState> prgList = removeCompletedPrg(repo.getProgramList());
+        while (prgList.size() > 0) {
+            // conservative garbage collector call
+            oneStepForAllPrg(prgList);
+            prgList = removeCompletedPrg(repo.getProgramList());
+        }
+        executor.shutdownNow();
+        repo.setProgramList(prgList);
+    }
 
-    private List<PrgState> removeCompletedPrg(List<PrgState> inPrgList) {
+    private MyIList<PrgState> removeCompletedPrg(MyIList<PrgState> inPrgList) {
         return inPrgList.stream()
                 .filter(p -> p.isNotCompleted())
-                .toList();
+                .collect(Collectors.toCollection(MyList::new));
     }
 }

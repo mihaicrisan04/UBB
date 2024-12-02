@@ -191,6 +191,40 @@ public class App {
             )
         );
 
+        // int v; Ref int a; v=10;new(a,22);
+        // fork(wH(a,30);v=32;print(v);print(rH(a))); 
+        // print(v);print(rH(a))
+        IStmt ex10 = new CompoundStmt(
+            new VarDeclStmt("v", new IntType()),
+            new CompoundStmt(
+                new VarDeclStmt("a", new RefType(new IntType())),
+                new CompoundStmt(
+                    new AssignStmt("v", new ValueExp(new IntValue(10))),
+                    new CompoundStmt(
+                        new NewHeapStmt("a", new ValueExp(new IntValue(22))),
+                        new CompoundStmt(
+                            new ForkStmt(
+                                new CompoundStmt(
+                                    new WriteHeapStmt("a", new ValueExp(new IntValue(30))),
+                                    new CompoundStmt(
+                                        new AssignStmt("v", new ValueExp(new IntValue(32))),
+                                        new CompoundStmt(
+                                            new PrintStmt(new VarExp("v")),
+                                            new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                                        )
+                                    )
+                                )
+                            ),
+                            new CompoundStmt(
+                                new PrintStmt(new VarExp("v")),
+                                new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                            )
+                        )
+                    )
+                )
+            ) 
+        );
+
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -203,6 +237,7 @@ public class App {
         menu.addCommand(new RunExCommand("7", ex7.toString(), ex7, "log7.txt"));
         menu.addCommand(new RunExCommand("8", ex8.toString(), ex8, "log8.txt"));
         menu.addCommand(new RunExCommand("9", ex9.toString(), ex9, "log9.txt"));
+        menu.addCommand(new RunExCommand("10", ex10.toString(), ex10, "log10.txt"));
         menu.show();
     }
 }

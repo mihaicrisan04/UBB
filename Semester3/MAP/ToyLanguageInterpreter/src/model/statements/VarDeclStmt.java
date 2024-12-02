@@ -16,8 +16,8 @@ public class VarDeclStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws VariableAlreadyDefined {
-        MyIDictionary<String, Value> symTable = state.getSymTable();
+    public PrgState execute(PrgState prg) throws VariableAlreadyDefined {
+        MyIDictionary<String, Value> symTable = prg.getSymTable();
 
         if (symTable.containsKey(id)) { throw new VariableAlreadyDefined("Variable " + id + " is already defined"); }
 
