@@ -3,12 +3,13 @@ package model.statements.file;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import collections.heap.MyIHeap;
+import collections.dictionary.MyIDictionary;
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
 import model.statements.IStmt;
+import model.types.Type;
 import model.types.IntType;
-import collections.dictionary.MyIDictionary;
-import collections.heap.MyIHeap;
 import model.PrgState;
 import model.expressions.Exp;
 import model.values.Value;
@@ -26,8 +27,20 @@ public class ReadFileStmt implements IStmt {
     }
 
     public String getVarName() { return varName; }
-
     public Exp getExp() { return exp; }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type expType = exp.typeCheck(typeEnv);
+        if (!expType.equals(new StringType())) { throw new MyException("Read File Stmt: expression is not a string"); }
+
+        if (!typeEnv.containsKey(varName)) { throw new MyException("Read File Stmt: variable " + varName + " is not defined"); }
+
+        // TODO: only be able to read integers for now
+        if (!typeEnv.get(varName).equals(new IntType())) { throw new MyException("Read File Stmt: variable " + varName + " is not an integer"); }
+
+        return typeEnv;
+    }
 
     @Override
     public PrgState execute(PrgState state) throws MyException {

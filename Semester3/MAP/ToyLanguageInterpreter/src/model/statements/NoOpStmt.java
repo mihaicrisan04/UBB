@@ -1,6 +1,9 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import model.PrgState;
+import model.exceptions.MyException;
+import model.types.Type;
 
 public class NoOpStmt implements IStmt {
     public NoOpStmt() {}
@@ -8,6 +11,11 @@ public class NoOpStmt implements IStmt {
     @Override
     public String toString() {
         return "NoOp";
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        return typeEnv;
     }
 
     @Override

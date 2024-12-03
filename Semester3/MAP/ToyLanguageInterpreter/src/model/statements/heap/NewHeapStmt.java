@@ -1,9 +1,12 @@
 package model.statements.heap;
 
+import collections.dictionary.MyIDictionary;
 import model.statements.IStmt;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.expressions.Exp;
+import model.types.Type;
+import model.types.RefType;
 import model.values.Value;
 import model.values.RefValue;
 
@@ -18,6 +21,18 @@ public class NewHeapStmt implements IStmt {
     }
 
     public String getVarName() { return varName; }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        if (!typeEnv.containsKey(varName)) { throw new MyException("New statement: variable " + varName + " is not defined"); }
+
+        Type varType = typeEnv.get(varName);
+        Type expType = exp.typeCheck(typeEnv);
+
+        if (!varType.equals(new RefType(expType))) { throw new MyException("New statement: right hand side and left hand side have different types"); }
+
+        return typeEnv;
+    }
 
     @Override
     public PrgState execute(PrgState state) throws MyException{

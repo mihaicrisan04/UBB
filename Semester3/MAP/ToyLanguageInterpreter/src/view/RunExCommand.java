@@ -1,8 +1,10 @@
 package view;
 
+import collections.dictionary.MyDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.statements.IStmt;
+import model.types.Type;
 import repository.Repository;
 import controller.Controller;
 
@@ -23,6 +25,10 @@ public class RunExCommand extends Command {
     @Override
     public void execute() {
         try {
+            // typecheck the program
+            MyDictionary<String, Type> typeEnv = new MyDictionary<>();
+            prg.typeCheck(typeEnv);
+
             PrgState prgState = new PrgState(prg);
             Repository repo = new Repository(logFilePath);
             repo.addProgram(prgState);

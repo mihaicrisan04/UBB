@@ -2,6 +2,7 @@ package model.statements;
 
 import collections.dictionary.MyIDictionary;
 import model.PrgState;
+import model.exceptions.MyException;
 import model.exceptions.VariableAlreadyDefined;
 import model.values.Value;
 import model.types.Type;
@@ -13,6 +14,12 @@ public class VarDeclStmt implements IStmt {
     public VarDeclStmt(String id, Type type) {
         this.id = id;
         this.type = type;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        typeEnv.put(id, type);
+        return typeEnv;
     }
 
     @Override

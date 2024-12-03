@@ -1,13 +1,14 @@
 package model.statements.file;
 
+import collections.dictionary.MyIDictionary;
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
 import model.statements.IStmt;
 import model.PrgState;
+import model.types.Type;
 import model.values.StringValue;
 import model.values.Value;
 import model.types.StringType;
-import collections.dictionary.MyIDictionary;
 import model.expressions.Exp;
 
 import java.io.BufferedReader;
@@ -20,6 +21,14 @@ public class OpenFileStmt implements IStmt {
 
     public OpenFileStmt(Exp exp) {
         this.exp = exp;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type expType = exp.typeCheck(typeEnv);
+        if (!expType.equals(new StringType())) { throw new MyException("Open File Stmt: expression is not a string"); }
+
+        return typeEnv;
     }
 
     @Override

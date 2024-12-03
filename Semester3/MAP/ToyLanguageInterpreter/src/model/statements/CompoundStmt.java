@@ -1,7 +1,9 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import collections.stack.MyIStack;
 import model.PrgState;
+import model.types.Type;
 import model.exceptions.MyException;
 
 public class CompoundStmt implements IStmt {
@@ -14,8 +16,12 @@ public class CompoundStmt implements IStmt {
     }
 
     public IStmt getFirst() { return first; }
-
     public IStmt getSecond() { return second; }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        return second.typeCheck(first.typeCheck(typeEnv));
+    }
 
     @Override
     public PrgState execute(PrgState prg) throws MyException {

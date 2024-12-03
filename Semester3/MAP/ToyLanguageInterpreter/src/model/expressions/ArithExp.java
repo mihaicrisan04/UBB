@@ -4,6 +4,7 @@ import model.exceptions.DivisionByZeroException;
 import model.exceptions.ExpException;
 import model.exceptions.InvalidOperandType;
 import model.exceptions.MyException;
+import model.types.Type;
 import model.types.IntType;
 import model.values.IntValue;
 import model.values.Value;
@@ -19,6 +20,17 @@ public class ArithExp implements Exp {
         this.e1 = e1;
         this.e2 = e2;
         this.op = op;
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type t1 = e1.typeCheck(typeEnv);
+        Type t2 = e2.typeCheck(typeEnv);
+
+        if (!t1.equals(new IntType())) { throw new InvalidOperandType("First operand is not an integer"); }
+        if (!t2.equals(new IntType())) { throw new InvalidOperandType("Second operand is not an integer"); }
+
+        return new IntType();
     }
 
     @Override

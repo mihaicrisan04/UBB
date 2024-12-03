@@ -1,9 +1,11 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
 import model.expressions.Exp;
+import model.types.Type;
 import model.types.BoolType;
 import model.values.BoolValue;
 import model.values.Value;
@@ -17,6 +19,17 @@ public class IfStmt implements IStmt {
         exp = e;
         thenS = t;
         elseS = el;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typexp = exp.typeCheck(typeEnv);
+        if (!typexp.equals(new BoolType())) { throw new MyException("If statement: Expression is not a boolean"); }
+
+        thenS.typeCheck(typeEnv.deepCopy());
+        elseS.typeCheck(typeEnv.deepCopy());
+
+        return typeEnv;
     }
 
     @Override

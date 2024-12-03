@@ -2,6 +2,7 @@ package model.expressions;
 
 import model.values.Value; 
 import model.exceptions.MyException;
+import model.types.Type;
 import collections.dictionary.MyIDictionary;
 import collections.heap.MyIHeap;
 
@@ -10,6 +11,11 @@ public class ValueExp implements Exp {
 
     public ValueExp(Value v) {
         val = v;
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        return val.getType();
     }
 
     @Override

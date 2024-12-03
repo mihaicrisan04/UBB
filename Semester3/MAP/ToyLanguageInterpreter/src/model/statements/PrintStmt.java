@@ -1,9 +1,11 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.StmtException;
 import model.exceptions.MyException;
 import model.expressions.Exp;
+import model.types.Type;
 import model.values.Value;
 
 public class PrintStmt implements IStmt {
@@ -11,6 +13,12 @@ public class PrintStmt implements IStmt {
 
     public PrintStmt(Exp exp) {
         this.exp = exp;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        exp.typeCheck(typeEnv);
+        return typeEnv;
     }
 
     @Override

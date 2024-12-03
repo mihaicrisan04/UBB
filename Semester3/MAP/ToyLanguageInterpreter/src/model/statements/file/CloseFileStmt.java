@@ -1,10 +1,11 @@
 package model.statements.file;
 
+import collections.dictionary.MyIDictionary;
 import model.statements.IStmt;
+import model.types.Type;
 import model.types.StringType;
 import model.values.StringValue;
 import model.values.Value;
-import collections.dictionary.MyIDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
@@ -20,7 +21,14 @@ public class CloseFileStmt implements IStmt {
     public CloseFileStmt(Exp exp) {
         this.exp = exp;
     }
-    
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type expType = exp.typeCheck(typeEnv);
+        if (!expType.equals(new StringType())) { throw new MyException("Close File Stmt: expression is not a string"); }
+
+        return typeEnv;
+    }
 
     @Override
     public PrgState execute(PrgState state) throws MyException {

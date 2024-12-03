@@ -1,8 +1,11 @@
 package model.statements.heap;
 
+import collections.dictionary.MyIDictionary;
 import model.statements.IStmt;
 import model.values.RefValue;
 import model.PrgState;
+import model.types.Type;
+import model.types.RefType;
 import model.exceptions.MyException;
 import model.expressions.Exp;
 
@@ -17,6 +20,18 @@ public class WriteHeapStmt implements IStmt {
 
     public String getVarName() { return varName; }
     public Exp getExp() { return exp; }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        if (!typeEnv.containsKey(varName)) { throw new MyException("Write Heap Stmt: variable " + varName + " is not defined"); }
+
+        Type varType = typeEnv.get(varName);
+        Type expType = exp.typeCheck(typeEnv);
+
+        if (!varType.equals(new RefType(expType))) { throw new MyException("Write Heap Stmt: right hand side and left hand side have different types"); }
+
+        return typeEnv;
+    }
 
     @Override
     public PrgState execute(PrgState state) throws MyException {

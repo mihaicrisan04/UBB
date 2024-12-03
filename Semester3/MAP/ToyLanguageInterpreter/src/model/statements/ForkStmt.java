@@ -1,6 +1,9 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import model.PrgState;
+import model.exceptions.MyException; 
+import model.types.Type;
 
 public class ForkStmt implements IStmt {
     private IStmt stmt;
@@ -9,13 +12,12 @@ public class ForkStmt implements IStmt {
         this.stmt = stmt;
     }
 
-    public IStmt getStmt() {
-        return stmt;
-    }
+    public IStmt getStmt() { return stmt; }
 
     @Override
-    public String toString() {
-        return "fork(" + stmt + ")";
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        stmt.typeCheck(typeEnv.deepCopy());
+        return typeEnv;
     }
 
     @Override
@@ -26,5 +28,10 @@ public class ForkStmt implements IStmt {
     @Override
     public IStmt deepCopy() {
         return new ForkStmt(stmt.deepCopy());
+    }
+
+    @Override
+    public String toString() {
+        return "fork(" + stmt + ")";
     }
 }

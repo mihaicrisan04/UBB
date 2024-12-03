@@ -1,9 +1,11 @@
 package model.statements;
 
+import collections.dictionary.MyIDictionary;
 import model.exceptions.MyException;
 import model.expressions.Exp;
 import model.values.BoolValue;
 import model.PrgState;
+import model.types.Type;
 import model.types.BoolType;
 import model.values.Value;
 
@@ -18,14 +20,22 @@ public class WhileStmt implements IStmt {
     }
 
     @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typexp = exp.typeCheck(typeEnv);
+        if (!typexp.equals(new BoolType())) { throw new MyException("While statement: Expression is not a boolean"); }
+
+        stmt.typeCheck(typeEnv.deepCopy());
+
+        return typeEnv;
+    }
+
+    @Override
     public PrgState execute(PrgState prg) throws MyException {
         var symTbl = prg.getSymTable();
         var heap = prg.getHeap();
 
         Value val = exp.eval(symTbl, heap);
-        if (!val.getType().equals(new BoolType())) {
-            throw new MyException("Expression is not a boolean");
-        }
+        if (!val.getType().equals(new BoolType())) { throw new MyException("Expression is not a boolean"); }
 
         BoolValue boolVal = (BoolValue) val;
         if (boolVal.getValue()) {

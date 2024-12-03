@@ -7,6 +7,7 @@ import model.exceptions.MyException;
 import model.exceptions.StmtException;
 import model.exceptions.VariableNotDefined;
 import model.expressions.Exp;
+import model.types.Type;
 import model.values.Value;
 
 public class AssignStmt implements IStmt {
@@ -16,6 +17,18 @@ public class AssignStmt implements IStmt {
     public AssignStmt(String id, Exp exp) {
         this.id = id;
         this.exp = exp;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        if (!typeEnv.containsKey(id)) { throw new StmtException("Assignment: variable " + id + " is not defined"); }
+
+        Type varType = typeEnv.get(id);
+        Type expType = exp.typeCheck(typeEnv);
+
+        if (!varType.equals(expType)) { throw new StmtException("Assignment: right hand side and left hand side have different types"); }
+
+        return typeEnv;
     }
     
     @Override
