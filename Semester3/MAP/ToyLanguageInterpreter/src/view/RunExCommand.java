@@ -25,10 +25,7 @@ public class RunExCommand extends Command {
     @Override
     public void execute() {
         try {
-            // typecheck the program
-            MyDictionary<String, Type> typeEnv = new MyDictionary<>();
-            prg.typeCheck(typeEnv);
-
+            prg.typeCheck(new MyDictionary<>());
             PrgState prgState = new PrgState(prg);
             Repository repo = new Repository(logFilePath);
             repo.addProgram(prgState);
