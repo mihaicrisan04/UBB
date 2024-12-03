@@ -5,6 +5,7 @@ import controller.Controller;
 import model.exceptions.MyException;
 import model.PrgState;
 
+@SuppressWarnings("unused")
 public class Console {
     private Controller ctrl;
     private boolean displayFlag = true;

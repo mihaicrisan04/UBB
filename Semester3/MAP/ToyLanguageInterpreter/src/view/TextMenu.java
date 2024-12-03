@@ -20,16 +20,20 @@ public class TextMenu {
 
     public void show() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            printMenu();
-            System.out.printf("Input the option: ");
-            String key = scanner.nextLine();
-            Command com = commands.get(key);
-            if (com == null) {
-                System.out.println("Invalid Option");
-                continue; 
+        try {
+            while (true) {
+                printMenu();
+                System.out.printf("Input the option: ");
+                String key = scanner.nextLine();
+                Command com = commands.get(key);
+                if (com == null) {
+                    System.out.println("Invalid Option");
+                    continue; 
+                }
+                com.execute();
             }
-            com.execute();
+        } finally {
+            scanner.close();
         }
     }
 }

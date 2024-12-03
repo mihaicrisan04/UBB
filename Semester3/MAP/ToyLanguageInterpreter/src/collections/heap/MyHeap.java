@@ -13,6 +13,7 @@ public class MyHeap<K, V> implements MyIHeap<K, V> {
         nextFreeAddress = 0;
     }
 
+    @SuppressWarnings("unchecked")
     public K getNextFreeAddress() {
         nextFreeAddress++;
         return (K) nextFreeAddress;

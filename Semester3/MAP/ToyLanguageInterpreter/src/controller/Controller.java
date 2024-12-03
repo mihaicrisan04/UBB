@@ -16,7 +16,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Callable;
-import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -32,17 +31,17 @@ public class Controller {
         repo = r;
     }
 
-    public int getNumberOfPrograms() {
-        return repo.getProgramList().size();
-    }
+    public int getNumberOfPrograms() { return repo.getProgramList().size(); }
+    public MyIList<PrgState> getProgramList() { return repo.getProgramList(); }
 
-    public MyIList<PrgState> getProgramList() {
-        return repo.getProgramList();
-    }
-
-    private MyIHeap<Integer, Value> safeGarbageCollector(List<Integer> symTableAddr, MyIHeap<Integer, Value> heap) {
-        // Collect all reachable addresses
-        Set<Integer> reachableAddresses = new HashSet<>(symTableAddr);
+    private MyIHeap<Integer, Value> conservativeGarbageCollector(MyIList<PrgState> prgList, MyIHeap<Integer, Value> heap) {
+        // Collect all reachable addresses from all program states
+        Set<Integer> reachableAddresses = new HashSet<>();
+        for (PrgState prg : prgList) {
+            reachableAddresses.addAll(getAddrFromSymTable(prg.getSymTable().values()));
+        }
+    
+        // Collect all reachable addresses from the heap
         boolean added;
         do {
             added = false;
@@ -55,25 +54,24 @@ public class Controller {
                     .collect(Collectors.toSet());
             added = reachableAddresses.addAll(newAddresses);
         } while (added);
-
+    
         // Filter and collect the entries into a new map
         Map<Integer, Value> newHeapContent = heap.entrySet().stream()
                 .filter(e -> reachableAddresses.contains(e.getKey()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-
+    
         // Create a new instance of MyHeap with the filtered content
         MyIHeap<Integer, Value> newHeap = new MyHeap<>();
         newHeap.setContent(newHeapContent);
         return newHeap;
-    }
+    } 
 
-    private List<Integer> getAddrFromSymTable(Collection<Value> symTableValues) {
+    private MyIList<Integer> getAddrFromSymTable(Collection<Value> symTableValues) {
         return symTableValues.stream()
                 .filter(v -> v instanceof RefValue)
                 .map(v -> ((RefValue) v).getAddress())
-                .toList();
+                .collect(Collectors.toCollection(MyList::new));
     }
-
 
     public void oneStepForAllPrg(MyIList<PrgState> prgList) throws MyException {
         for (PrgState prg : prgList) { repo.logPrgStateExec(prg); }
@@ -109,7 +107,12 @@ public class Controller {
         executor = java.util.concurrent.Executors.newFixedThreadPool(2);
         MyIList<PrgState> prgList = removeCompletedPrg(repo.getProgramList());
         while (prgList.size() > 0) {
-            // conservative garbage collector call
+            synchronized (repo) {
+                // Garbage collector
+                MyIHeap<Integer, Value> heap = repo.getProgramList().get(0).getHeap();
+                heap = conservativeGarbageCollector(prgList, heap);
+                repo.getProgramList().get(0).setHeap(heap);
+            }
             oneStepForAllPrg(prgList);
             prgList = removeCompletedPrg(repo.getProgramList());
         }
