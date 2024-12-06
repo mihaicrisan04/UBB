@@ -291,6 +291,6 @@ GO
 
 DROP PROCEDURE sp_switchVersion;
 
-EXEC sp_switchVersion 1;
+EXEC sp_switchVersion 8;
 
 SELECT * FROM SchemaVersion;
