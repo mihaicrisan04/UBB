@@ -93,7 +93,6 @@ public class Controller {
                 })
                 .filter(p -> p != null)
                 .collect(Collectors.toCollection(MyList::new));
-
         } catch (InterruptedException e) {
             throw new MyException(e.getMessage());
         }
