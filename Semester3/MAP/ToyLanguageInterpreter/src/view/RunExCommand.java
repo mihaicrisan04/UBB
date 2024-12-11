@@ -4,7 +4,6 @@ import collections.dictionary.MyDictionary;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.statements.IStmt;
-import model.types.Type;
 import repository.Repository;
 import controller.Controller;
 

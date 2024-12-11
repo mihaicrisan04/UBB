@@ -8,7 +8,6 @@ import model.values.*;
 import model.enums.*;
 import view.*;
 
-
 public class App {
     public static void main(String[] args) {
         // int v; v=2; Print(v)

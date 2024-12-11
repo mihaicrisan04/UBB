@@ -36,7 +36,6 @@ public class ReadFileStmt implements IStmt {
 
         if (!typeEnv.containsKey(varName)) { throw new MyException("Read File Stmt: variable " + varName + " is not defined"); }
 
-        // TODO: only be able to read integers for now
         if (!typeEnv.get(varName).equals(new IntType())) { throw new MyException("Read File Stmt: variable " + varName + " is not an integer"); }
 
         return typeEnv;
