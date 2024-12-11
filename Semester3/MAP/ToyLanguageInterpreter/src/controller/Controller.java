@@ -2,6 +2,7 @@ package controller;
 
 import collections.heap.MyIHeap;
 import collections.heap.MyHeap;
+import collections.list.MyConsumer;
 import collections.list.MyIList;
 import collections.list.MyList;
 import repository.IRepository;
@@ -106,12 +107,12 @@ public class Controller {
         executor = java.util.concurrent.Executors.newFixedThreadPool(2);
         MyIList<PrgState> prgList = removeCompletedPrg(repo.getProgramList());
         while (prgList.size() > 0) {
-            // synchronized (repo) {
-            //     // Garbage collector
-            //     MyIHeap<Integer, Value> heap = repo.getProgramList().get(0).getHeap();
-            //     heap = conservativeGarbageCollector(prgList, heap);
-            //     repo.getProgramList().get(0).setHeap(heap);
-            // }
+            synchronized (repo) {
+                // Garbage collector
+                MyIHeap<Integer, Value> heap = repo.getProgramList().get(0).getHeap();
+                heap = conservativeGarbageCollector(prgList, heap);
+                for (PrgState prg: prgList) { prg.setHeap(heap); }
+            }
             oneStepForAllPrg(prgList);
             prgList = removeCompletedPrg(repo.getProgramList());
         }
