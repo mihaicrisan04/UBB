@@ -158,3 +158,180 @@ EXEC sp_removeDummyBookings;
 
 EXEC sp_insertDummyUsers 10;
 EXEC sp_removeDummyUsers;
+
+
+
+
+CREATE OR ALTER PROCEDURE sp_runTest
+    @TestName VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @TestID INT = (SELECT TestID FROM Tests WHERE Name = @TestName);
+    IF @TestID IS NULL RETURN;
+
+    DECLARE @TestRunID INT;
+    DECLARE @StartTime DATETIME = GETDATE();
+    INSERT INTO TestRuns (Description, StartAt)
+    VALUES (@TestName, @StartTime);
+    SET @TestRunID = SCOPE_IDENTITY();
+
+    -- Deleting data from test tables in the specified order
+    DECLARE @TableID INT, @Position INT;
+    DECLARE table_cursor CURSOR FOR
+    SELECT TableID, Position
+    FROM TestTables
+    WHERE TestID = @TestID
+    ORDER BY Position;
+
+    OPEN table_cursor;
+    FETCH NEXT FROM table_cursor INTO @TableID, @Position;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        IF @TableID = (SELECT TableID FROM Tables WHERE Name = 'Properties')
+            EXEC sp_removeDummyProperties;
+        ELSE IF @TableID = (SELECT TableID FROM Tables WHERE Name = 'Bookings')
+            EXEC sp_removeDummyBookings;
+        ELSE IF @TableID = (SELECT TableID FROM Tables WHERE Name = 'Users')
+            EXEC sp_removeDummyUsers;
+
+        FETCH NEXT FROM table_cursor INTO @TableID, @Position;
+    END
+
+    CLOSE table_cursor;
+    DEALLOCATE table_cursor;
+
+    -- Inserting data into test tables in reverse deletion order
+    DECLARE @NoOfRows INT, @InsertStart DATETIME, @InsertEnd DATETIME;
+    DECLARE reverse_cursor CURSOR FOR
+    SELECT TableID, NoOfRows
+    FROM TestTables
+    WHERE TestID = @TestID
+    ORDER BY Position DESC;
+
+    OPEN reverse_cursor;
+    FETCH NEXT FROM reverse_cursor INTO @TableID, @NoOfRows;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        SET @InsertStart = GETDATE();
+
+        IF @TableID = (SELECT TableID FROM Tables WHERE Name = 'Properties')
+            EXEC sp_insertDummyProperties @NoOfRows;
+        ELSE IF @TableID = (SELECT TableID FROM Tables WHERE Name = 'Bookings')
+            EXEC sp_insertDummyBookings @NoOfRows;
+        ELSE IF @TableID = (SELECT TableID FROM Tables WHERE Name = 'Users')
+            EXEC sp_insertDummyUsers @NoOfRows;
+
+        SET @InsertEnd = GETDATE();
+
+        INSERT INTO TestRunTables (TestRunID, TableID, StartAt, EndAt)
+        VALUES (@TestRunID, @TableID, @InsertStart, @InsertEnd);
+
+        FETCH NEXT FROM reverse_cursor INTO @TableID, @NoOfRows;
+    END
+
+    CLOSE reverse_cursor;
+    DEALLOCATE reverse_cursor;
+
+    -- Evaluating views
+    DECLARE @ViewID INT;
+    DECLARE view_cursor CURSOR FOR
+    SELECT ViewID
+    FROM TestViews
+    WHERE TestID = @TestID;
+
+    OPEN view_cursor;
+    FETCH NEXT FROM view_cursor INTO @ViewID;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        DECLARE @ViewStart DATETIME = GETDATE();
+
+        IF @ViewID = (SELECT ViewID FROM Views WHERE Name = 'vw_PropertyDetails')
+            SELECT * FROM vw_PropertyDetails;
+        ELSE IF @ViewID = (SELECT ViewID FROM Views WHERE Name = 'vw_BookingDetails')
+            SELECT * FROM vw_BookingDetails;
+        ELSE IF @ViewID = (SELECT ViewID FROM Views WHERE Name = 'vw_UserDetails')
+            SELECT * FROM vw_UserDetails;
+
+        INSERT INTO TestRunViews (TestRunID, ViewID, StartAt, EndAt)
+        VALUES (@TestRunID, @ViewID, @ViewStart, GETDATE());
+
+        FETCH NEXT FROM view_cursor INTO @ViewID;
+    END
+
+    CLOSE view_cursor;
+    DEALLOCATE view_cursor;
+
+    -- Update the end time of the test run
+    UPDATE TestRuns
+    SET EndAt = GETDATE()
+    WHERE TestRunID = @TestRunID;
+END;
+GO
+
+
+
+-- Tables and views that are being tested
+-- Insert data into Tables
+INSERT INTO Tables (Name) VALUES
+    ('Users'),
+    ('Properties'),
+    ('Bookings');
+
+-- Insert data into Views
+INSERT INTO Views (Name) VALUES
+    ('vw_PropertyDetails'),
+    ('vw_BookingDetails'),
+    ('vw_UserDetails');
+
+
+
+-- Test 1
+INSERT INTO Tests (Name) VALUES
+    ('Test1');
+
+-- Declare variables for table and test IDs
+DECLARE @UsersID INT = (SELECT TableID FROM Tables WHERE Name = 'Users');
+DECLARE @PropertiesID INT = (SELECT TableID FROM Tables WHERE Name = 'Properties');
+DECLARE @BookingsID INT = (SELECT TableID FROM Tables WHERE Name = 'Bookings');
+DECLARE @TestID INT = (SELECT TestID FROM Tests WHERE Name = 'Test1');
+
+-- Insert data into TestTables
+INSERT INTO TestTables (TestID, TableID, NoOfRows, Position) VALUES
+    (@TestID, @BookingsID, 10, 1),
+    (@TestID, @PropertiesID, 10, 2),
+    (@TestID, @UsersID, 10, 3);
+
+-- Insert data into TestViews
+INSERT INTO TestViews (TestID, ViewID)
+SELECT @TestID, ViewID FROM Views;
+
+
+
+-- Test 2
+INSERT INTO Tests (Name) VALUES
+    ('Test2');
+
+DECLARE @UsersID INT = (SELECT TableID FROM Tables WHERE Name = 'Users');
+DECLARE @PropertiesID INT = (SELECT TableID FROM Tables WHERE Name = 'Properties');
+DECLARE @BookingsID INT = (SELECT TableID FROM Tables WHERE Name = 'Bookings');
+DECLARE @Test2ID INT = (SELECT TestID FROM Tests WHERE Name = 'Test2');
+
+INSERT INTO TestTables (TestID, TableID, NoOfRows, Position) VALUES
+    (@Test2ID, @BookingsID, 1000, 1),
+    (@Test2ID, @PropertiesID, 1000, 2),
+    (@Test2ID, @UsersID, 1000, 3);
+
+INSERT INTO TestViews (TestID, ViewID)
+SELECT @Test2ID, ViewID FROM Views;
+
+
+
+EXEC sp_runTest 'Test1';
+EXEC sp_runTest 'Test2';
+
+
