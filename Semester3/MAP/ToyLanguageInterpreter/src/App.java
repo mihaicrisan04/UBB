@@ -227,16 +227,16 @@ public class App {
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
-        menu.addCommand(new RunExCommand("1", ex.toString(), ex, "log1.txt"));
-        menu.addCommand(new RunExCommand("2", ex2.toString(), ex2, "log2.txt"));
-        menu.addCommand(new RunExCommand("3", ex3.toString(), ex3, "log3.txt"));
-        menu.addCommand(new RunExCommand("4", ex4.toString(), ex4, "log4.txt"));
-        menu.addCommand(new RunExCommand("5", ex5.toString(), ex5, "log5.txt"));
-        menu.addCommand(new RunExCommand("6", ex6.toString(), ex6, "log6.txt"));
-        menu.addCommand(new RunExCommand("7", ex7.toString(), ex7, "log7.txt"));
-        menu.addCommand(new RunExCommand("8", ex8.toString(), ex8, "log8.txt"));
-        menu.addCommand(new RunExCommand("9", ex9.toString(), ex9, "log9.txt"));
-        menu.addCommand(new RunExCommand("10", ex10.toString(), ex10, "log10.txt"));
+        menu.addCommand(new RunExCommand("1", ex.toString(), ex, "logs/log1.txt"));
+        menu.addCommand(new RunExCommand("2", ex2.toString(), ex2, "logs/log2.txt"));
+        menu.addCommand(new RunExCommand("3", ex3.toString(), ex3, "logs/log3.txt"));
+        menu.addCommand(new RunExCommand("4", ex4.toString(), ex4, "logs/log4.txt"));
+        menu.addCommand(new RunExCommand("5", ex5.toString(), ex5, "logs/log5.txt"));
+        menu.addCommand(new RunExCommand("6", ex6.toString(), ex6, "logs/log6.txt"));
+        menu.addCommand(new RunExCommand("7", ex7.toString(), ex7, "logs/log7.txt"));
+        menu.addCommand(new RunExCommand("8", ex8.toString(), ex8, "logs/log8.txt"));
+        menu.addCommand(new RunExCommand("9", ex9.toString(), ex9, "logs/log9.txt"));
+        menu.addCommand(new RunExCommand("10", ex10.toString(), ex10, "logs/log10.txt"));
         menu.show();
     }
 }
