@@ -224,6 +224,16 @@ public class App {
             ) 
         );
 
+        // stmt that will fail the type check
+        // int v; v=true; print(v)
+        IStmt ex11 = new CompoundStmt(
+            new VarDeclStmt("v", new IntType()),
+            new CompoundStmt(
+                new AssignStmt("v", new ValueExp(new BoolValue(true))),
+                new PrintStmt(new VarExp("v"))
+            )
+        );
+
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -237,6 +247,7 @@ public class App {
         menu.addCommand(new RunExCommand("8", ex8.toString(), ex8, "logs/log8.txt"));
         menu.addCommand(new RunExCommand("9", ex9.toString(), ex9, "logs/log9.txt"));
         menu.addCommand(new RunExCommand("10", ex10.toString(), ex10, "logs/log10.txt"));
+        menu.addCommand(new RunExCommand("11", ex11.toString(), ex11, "logs/log11.txt"));
         menu.show();
     }
 }
