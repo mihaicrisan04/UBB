@@ -18,8 +18,8 @@
 
 ## [Semester 3](https://github.com/mihaicrisan04/UBB/tree/main/Semester3)
 
-* [🔌 Computer Networks](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/ComputerNetworks)
-* [📊 Probabilty & Statistics](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/ProbAndStats)
-* [🗄️ Databases](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/Databases)
+* [🔌 Computer Networks](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/CN)
+* [📊 Probabilty & Statistics](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/PS)
+* [🗄️ Databases](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/DB)
 * [🧮 Functional & Logic Porgramming](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/PLF)
 * [🤓 Advanced Programming Methods](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/MAP)
