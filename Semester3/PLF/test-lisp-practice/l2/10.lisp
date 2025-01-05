@@ -2,7 +2,7 @@
 
 ;; work in progress
 
-(defun level (tree X lvl))
+(defun level (tree X lvl)
   (cond
     ((null tree) nil)
     ((eq (car tree) X) lvl)
@@ -11,6 +11,6 @@
              (apply #'max (remove nil result))
              nil)))))
 
-(format t "~a~%" (level '(1 (2 (4 (8) (9)) (5 (10) (11))) (3 (6) (7))) 5 0)
+(format t "~a~%" (level '(1 (2 (4 (8) (9)) (5 (10) (11))) (3 (6) (7))) 5 0)) ; 5
 
 
