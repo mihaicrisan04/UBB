@@ -1,12 +1,12 @@
 
-import model.expressions.*;
 import model.statements.*;
 import model.statements.file.*;
 import model.statements.heap.*;
+import model.expressions.*;
 import model.types.*;
 import model.values.*;
 import model.enums.*;
-import view.*;
+import view.command.*;
 
 public class App {
     public static void main(String[] args) {

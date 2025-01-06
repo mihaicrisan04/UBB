@@ -1,4 +1,4 @@
-package view;
+package view.command;
 
 import collections.dictionary.MyDictionary;
 import model.PrgState;
