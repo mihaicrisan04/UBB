@@ -1,0 +1,31 @@
+RIP (Routing Information Protocol) is a distance-vector routing protocol, which employs the hop count as a routing metric. RIP prevents routing loops by implementing a limit on the number of hops allowed in a path from source to destination. The maximum number of hops allowed for RIP is 15.
+
+Enabling RIP on a router:
+enable
+configure terminal
+router rip
+version 2
+network 192.168.1.0
+network 10.0.0.0
+exit
+write memory
+
+
+show RIP routing table:
+    show ip route
+
+show RIP configuration:
+    show ip protocols
+
+Example use case:
+R1, R2, R3
+        NR(10.0.0.0)
+      / |  \
+   R1   R2  R3
+    |    |    |
+    N1   N2   N3
+
+- enable RIP on all routers
+- set up the directly connected networks
+
+
