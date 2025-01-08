@@ -9,8 +9,8 @@
     (t (let ((result (mapcar (lambda (subtree) (level subtree X (+ lvl 1))) (cdr tree))))
          (if (some #'identity result)
              (apply #'max (remove nil result))
-             nil)))))
+              nil)))))
 
-(format t "~a~%" (level '(1 (2 (4 (8) (9)) (5 (10) (11))) (3 (6) (7))) 5 0)) ; 5
+(format t "~a~%" (level '(1 (2 (4 (8) (9)) (5 (10) (11))) (3 (6) (7))) 10 0)) ; 3
 
 
