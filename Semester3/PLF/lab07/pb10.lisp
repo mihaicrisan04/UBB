@@ -23,8 +23,9 @@
 
 
 ;; replace-node( root, l1, ..., ln, node, replacement) = null,  if root == null
-;;                                                     = root + lambda:(child) replace-node(child, node replacement) (l1, l2, ..., ln), if root != node and root != null
-;;                                                     = replacement + lambda:(child) replace-node(child, node replacement) (l1, l2, ..., ln), if root == node and root != null
+;;                                                     = root + (1..n)∑ replace-node(li, node, replacement), if root != node
+;;                                                     = replacement + (1..n)∑ replace-node(li, node, replacement), if root != node
+
 
 (defun replace-node (lst node replacement)
   (cond
@@ -34,8 +35,8 @@
     (t
      (cons (car lst) (mapcar #'(lambda (child) (replace-node child node replacement)) (cdr lst))))))
 
-(format t "~a~%" (replace-node '(A (B (C)) (D) (E (F))) 'B 'G)) ; (A (G (C)) (D) (E (F)))
-(format t "~a~%" (replace-node '(A (B) (C (D) (E)) (F (G) (H) (I))) 'C 'X)) ; (A (B) (X (D) (E)) (F (G) (H) (I)))
+(format t "~a~%" (replace-node '(A (B (C)) (D) (E (F))) 'B 'G)) ;; (A (G (C)) (D) (E (F)))
+(format t "~a~%" (replace-node '(A (B) (C (D) (E)) (F (G) (H) (I))) 'C 'X)) ;; (A (B) (X (D) (E)) (F (G) (H) (I)))
 
 ;; (defun replace-node (lst node replacement)
 ;;     (if (null lst)
