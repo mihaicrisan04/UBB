@@ -41,6 +41,7 @@ merge([X|L1], [Y|L2], [Y|L]):-
     merge([X|L1], L2, L).
 
 
+% merge 2 lists and remove duplicates
 merge_list(L1, L2, R):-
     merge(L1, L2, L),
     remove_duplicates(L, R).
