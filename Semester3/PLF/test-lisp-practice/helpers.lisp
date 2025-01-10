@@ -42,6 +42,10 @@
       ...)
   body)
 
+;; how to use some
+(some predicate list)
+;; returns t if predicate is true for any element in the list
+
 
 ;; how to use max and min
 (max x1 x2 ... xn)
@@ -134,6 +138,13 @@
   (cond 
     ((null lst) nil)
     (t (append (my-reverse (cdr lst)) (list (car lst))))))
+
+
+;; append 2 lists
+(defun my-append (lst1 lst2)
+    (cond
+        ((null lst1) lst2)
+        (t (cons (car lst1) (my-append (cdr lst1) lst2)))))
 
 
 ;; List of atoms from a non-linear list
