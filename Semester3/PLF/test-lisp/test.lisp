@@ -17,4 +17,7 @@
 (format t "~a~%" (insert-every-n-wrapper '(1 2 3 4 5) '2 '7)) ;; (1 2 7 3 4 7 5)
 (format t "~a~%" (insert-every-n-wrapper '(1 2 3 4) '3 '7)) ;; (1 2 3 7 4)
 (format t "~a~%" (insert-every-n-wrapper '(1 2 3 4) '1 '7)) ;; (1 7 2 7 3 7 4 7)
+(format t "~a~%" (insert-every-n-wrapper '(1 2 3 4 5) '8 '7))
+(format t "~a~%" (insert-every-n-wrapper '(1 2 3 4 5) '4 '7))
+(format t "~a~%" (insert-every-n-wrapper '(1 2 3 4 5 6 7 8 9 10) '3 '7))
 
