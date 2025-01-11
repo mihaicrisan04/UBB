@@ -11,6 +11,7 @@ import model.types.IntType;
 import model.values.Value;
 import model.values.BoolValue;
 import model.values.IntValue;
+import model.types.BoolType;
 
 
 public class CompareExp implements Exp {
@@ -31,7 +32,7 @@ public class CompareExp implements Exp {
         if (!t1.equals(new IntType())) { throw new InvalidOperandType("First operand is not an integer"); }
         if (!t2.equals(new IntType())) { throw new InvalidOperandType("Second operand is not an integer"); }
 
-        return new IntType();
+        return new BoolType();
     }
 
     @Override
