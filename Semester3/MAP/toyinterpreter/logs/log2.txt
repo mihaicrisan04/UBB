@@ -1,0 +1,144 @@
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+{v=(2 * (3 + 5)); print(v)}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+{v=(2 * (3 + 5)); print(v)}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{v=(2 * (3 + 5)); print(v)}
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{v=(2 * (3 + 5)); print(v)}
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(2 * (3 + 5))
+print(v)
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(2 * (3 + 5))
+print(v)
+SymTable:
+{v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{v=16}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{v=16}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{v=16}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[16]
+Original Program:
+{int v; {v=(2 * (3 + 5)); print(v)}}
