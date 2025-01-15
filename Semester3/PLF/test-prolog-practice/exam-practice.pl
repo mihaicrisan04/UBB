@@ -7,6 +7,7 @@
 subset([], 0, []).
 
 % If we have more elements to select than available in the list, fail
+% not mandatory, but can be used to avoid unnecessary backtracking
 subset(List, N, _) :- 
     length(List, L), 
     N > L, 
@@ -37,38 +38,42 @@ subset_all(L, N, R) :-
 % Predicate to generate all arrangements (permutations) of N elements from a list
 
 % Base case: Selecting 0 elements results in the empty arrangement
-arrangement(_, 0, []).
+my_select(X, [X|T], T).
+my_select(X, [H|T], [H|Rest]) :-
+    my_select(X, T, Rest).
+
+arr(_, 0, []).
 
 % Recursive case: Select an element and arrange the remaining N-1 elements
-arrangement(List, N, [H|R]) :-
+arr(List, N, [H|R]) :-
     N > 0,
     N1 is N - 1,
-    select(H, List, Rest),
-    arrangement(Rest, N1, R).
+    my_select(H, List, Rest),
+    arr(Rest, N1, R).
 
 cond([], 1).
 cond([H|T], P) :- 
     cond(T, P1),
     P is P1 * H.
 
-arr(L, N, P, R) :-
-    findall(X, (arrangement(L, N, X), cond(X, P)), R).
+arr_all(L, N, P, R) :-
+    findall(X, (arr(L, N, X), cond(X, P)), R).
 
 % ------------------------------------------------------------------------------------------------
 
+% Helper predicate to pick an element H from List, resulting in Rest; this is the same as my_select
+pick(X, [X|T], T).
+pick(X, [H|T], [X|Rest]) :-
+    pick(X, T, Rest).
+
 % Base case: The permutation of an empty list is an empty list
-permutation([], []).
+perm([], []).
 
 % Recursive case:
-% Select an element H from the list, generate permutations of the remaining list, and prepend H
-permutation([H|T], Perm) :-
-    permutation(T, PermT),
+% Select an element H from the list, generate perms of the remaining list, and prepend H
+perm([H|T], Perm) :-
+    perm(T, PermT),
     pick(H, Perm, PermT).
-
-% Helper predicate to pick an element H from List, resulting in Rest
-pick(H, [H|T], T).
-pick(H, [X|T], [X|Rest]) :-
-    pick(H, T, Rest).
 
 cond([_]).
 cond([X,Y|T]) :-
@@ -76,9 +81,30 @@ cond([X,Y|T]) :-
     Abs < 4,
     cond([Y|T]).
 
-permutations_all(L, R) :-
-    findall(X, (permutation(L, X), cond(X)), R).
+perms_all(L, R) :-
+    findall(X, (perm(L, X), cond(X)), R).
 
+
+% ------------------------------------------------------------------------------------------------
+
+comb(_, 0, []).
+
+% % not mandatory, but can be used to avoid unnecessary backtracking
+comb(List, N, _) :- 
+    length(List, L), 
+    N > L, 
+    !,
+    fail.
+
+comb([H|T], N, [H|R]) :-
+    N > 0,
+    N1 is N - 1,
+    comb(T, N1, R).
+comb([_|T], N, R) :-
+    comb(T, N, R).
+
+comb_all(L, N, R) :-
+    findall(X, comb(L, N, X), R).
 
 % ------------------------------------------------------------------------------------------------
 
