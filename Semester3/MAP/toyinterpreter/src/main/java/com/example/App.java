@@ -176,7 +176,23 @@ public class App extends Application {
         // Add listeners for PrgState selection
         prgStateList.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
-                updateSymTableAndExeStack(newVal);
+                MyIList<PrgState> programStates = controller.getRepo().getProgramList();
+                programStates.stream()
+                    .filter(p -> String.valueOf(p.getId()).equals(newVal))
+                    .findFirst()
+                    .ifPresent(prg -> {
+                        // Update SymTable for selected program
+                        symTable.getItems().setAll(prg.getSymTable().entrySet().stream()
+                            .map(entry -> new SymTableEntry(entry.getKey(), entry.getValue().toString()))
+                            .collect(Collectors.toList()));
+
+                        // Update ExeStack for selected program
+                        exeStackList.getItems().setAll(
+                            prg.getExeStack().stream()
+                                .map(IStmt::toString)
+                                .collect(Collectors.toList())
+                        );
+                    });
             }
         });
     }
@@ -235,10 +251,21 @@ public class App extends Application {
             .map(entry -> entry.getKey().toString() + " -> " + entry.getValue().toString())
             .collect(Collectors.toList()));
 
+        // Store current selection
+        String selectedPrgState = prgStateList.getSelectionModel().getSelectedItem();
+
         // Update PrgState IDs list
         prgStateList.getItems().setAll(programStates.stream()
             .map(prg -> String.valueOf(prg.getId()))
             .collect(Collectors.toList()));
+
+        // Restore selection if it still exists
+        if (selectedPrgState != null && prgStateList.getItems().contains(selectedPrgState)) {
+            prgStateList.getSelectionModel().select(selectedPrgState);
+        } else {
+            // If selected program no longer exists, select the first one
+            prgStateList.getSelectionModel().selectFirst();
+        }
 
         // Update SymTable
         symTable.getItems().setAll(currentPrg.getSymTable().entrySet().stream()

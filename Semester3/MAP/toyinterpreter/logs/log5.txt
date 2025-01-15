@@ -602,3 +602,1113 @@ Out:
 [15, 50]
 Original Program:
 {string varf; {varf=test.in; {open(varf); {int varc; {readFile(varf, varc); {print(varc); {readFile(varf, varc); {print(varc); close(varf)}}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+string varf
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+string varf
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+varf=test.in
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+varf=test.in
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+open(varf)
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+open(varf)
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=0}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=0}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=0}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=0}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc)
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc)
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc)
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc)
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc)
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+readFile(varf, varc)
+print(varc);
+close(varf)
+SymTable:
+{varf=test.in, varc=15}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+close(varf)
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{test.in=java.io.BufferedReader@758162c8}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{varf=test.in, varc=50}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[15, 15]
+Original Program:
+string varf;
+varf=test.in;
+open(varf);
+int varc;
+readFile(varf, varc);
+print(varc);
+readFile(varf, varc);
+print(varc);
+close(varf)

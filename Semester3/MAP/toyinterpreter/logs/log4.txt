@@ -1,7 +1,11 @@
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 SymTable:
 {}
 FileTable:
@@ -11,14 +15,106 @@ HeapTable:
 Out:
 []
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+bool a
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+bool a
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
 int v
-{v=(2 * (3 + 5)); print(v)}
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 SymTable:
-{}
+{a=false}
 FileTable:
 {}
 HeapTable:
@@ -26,57 +122,20 @@ HeapTable:
 Out:
 []
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
 int v
-{v=(2 * (3 + 5)); print(v)}
-SymTable:
-{}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-{v=(2 * (3 + 5)); print(v)}
-SymTable:
-{v=0}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-{v=(2 * (3 + 5)); print(v)}
-SymTable:
-{v=0}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-v=(2 * (3 + 5))
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
 print(v)
 SymTable:
-{v=0}
+{a=false}
 FileTable:
 {}
 HeapTable:
@@ -84,14 +143,19 @@ HeapTable:
 Out:
 []
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
-v=(2 * (3 + 5))
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
 print(v)
 SymTable:
-{v=0}
+{a=false, v=0}
 FileTable:
 {}
 HeapTable:
@@ -99,13 +163,191 @@ HeapTable:
 Out:
 []
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3)
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3)
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=2
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=2
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
 print(v)
 SymTable:
-{v=16}
+{a=true, v=2}
 FileTable:
 {}
 HeapTable:
@@ -113,13 +355,17 @@ HeapTable:
 Out:
 []
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
 print(v)
 SymTable:
-{v=16}
+{a=true, v=2}
 FileTable:
 {}
 HeapTable:
@@ -127,188 +373,26 @@ HeapTable:
 Out:
 []
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
 ------------------------------------------------------
 [ID: 0]
 ExeStack:
 
 SymTable:
-{v=16}
+{a=true, v=2}
 FileTable:
 {}
 HeapTable:
 {}
 Out:
-[16]
+[2]
 Original Program:
-{int v; {v=(2 * (3 + 5)); print(v)}}
-------------------------------------------------------
-[ID: 0]
-ExeStack:
+bool a;
 int v;
-v=(2 * (3 + 5));
-print(v)
-SymTable:
-{}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-int v
-v=(2 * (3 + 5));
-print(v)
-SymTable:
-{}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-int v
-v=(2 * (3 + 5));
-print(v)
-SymTable:
-{}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-v=(2 * (3 + 5));
-print(v)
-SymTable:
-{v=0}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-v=(2 * (3 + 5));
-print(v)
-SymTable:
-{v=0}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-v=(2 * (3 + 5))
-print(v)
-SymTable:
-{v=0}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-v=(2 * (3 + 5))
-print(v)
-SymTable:
-{v=0}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-print(v)
-SymTable:
-{v=16}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-print(v)
-SymTable:
-{v=16}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[]
-Original Program:
-int v;
-v=(2 * (3 + 5));
-print(v)
-------------------------------------------------------
-[ID: 0]
-ExeStack:
-
-SymTable:
-{v=16}
-FileTable:
-{}
-HeapTable:
-{}
-Out:
-[16]
-Original Program:
-int v;
-v=(2 * (3 + 5));
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
 print(v)
