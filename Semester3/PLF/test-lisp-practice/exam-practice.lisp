@@ -90,5 +90,23 @@
 ;; ------------------------------------------------------------------------------------------------------------------------
 
 
+(defun f (l)
+  (cond 
+    ((null l) nil)
+    ((listp (car l)) (append (f (car l)) (f (cdr l)) (car (f (car l))))
+    (t (list (car l))))))
 
+;; rewrite the algorithgm without the double recursion of f (car l)
+
+(defun f (l)
+  (cond 
+    ((null l) nil)
+    ((listp (car l))
+     (funcall (lambda (processed)
+                (append processed (f (cdr l)) (car processed)))
+              (f (car l))))
+    (t (list (car l)))))
+
+
+;; ------------------------------------------------------------------------------------------------------------------------
 
