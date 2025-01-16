@@ -90,23 +90,33 @@
 ;; ------------------------------------------------------------------------------------------------------------------------
 
 
-(defun f (l)
+;; (defun f (l)
+;;   (cond 
+;;     ((null l) nil)
+;;     ((listp (car l)) (append (f (car l)) (f (cdr l)) (car (f (car l))))
+;;     (t (list (car l))))))
+
+;; ;; rewrite the algorithgm without the double recursion of f (car l)
+
+;; (defun f (l)
+;;   (cond 
+;;     ((null l) nil)
+;;     ((listp (car l))
+;;      (funcall (lambda (processed)
+;;                 (append processed (f (cdr l)) (car processed)))
+;;               (f (car l))))
+;;     (t (list (car l)))))
+
+
+;; ------------------------------------------------------------------------------------------------------------------------
+
+(defun mx (lst)
   (cond 
-    ((null l) nil)
-    ((listp (car l)) (append (f (car l)) (f (cdr l)) (car (f (car l))))
-    (t (list (car l))))))
+    ((null lst) nil)
+    ((atom lst) (if (numberp lst) lst nil))
+    (t (apply #'max (remove nil (mapcar #'mx lst))))))
 
-;; rewrite the algorithgm without the double recursion of f (car l)
-
-(defun f (l)
-  (cond 
-    ((null l) nil)
-    ((listp (car l))
-     (funcall (lambda (processed)
-                (append processed (f (cdr l)) (car processed)))
-              (f (car l))))
-    (t (list (car l)))))
-
+(format t "~a~%" (mx '(1 (2 a (3 a)) (6)))) ; Output: 6
 
 ;; ------------------------------------------------------------------------------------------------------------------------
 
