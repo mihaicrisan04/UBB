@@ -30,6 +30,7 @@ To find the PDF of $Y = g(X)$, we use the following steps when $g(X)$ is not str
 2. Compute the PDF of $Y$ by summing contributions from all segments.
 
 Here:
+
 $$
 Y = |X| =
 \begin{cases}
@@ -37,7 +38,6 @@ X, & X \geq 0, \\
 -X, & X < 0.
 \end{cases}
 $$
-
 
 The segments are:
 • $X \geq 0$, where $Y = X$.
