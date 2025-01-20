@@ -143,3 +143,159 @@ $$
 
 
 
+#### Seminar 7: Inequalities, Central Limit Theorem, Point Estimators
+
+**1. Markov’s Inequality**
+For any non-negative random variable $X$ and any $a > 0$:
+
+$$
+P(|X| \geq a) \leq \frac{E(|X|)}{a}
+$$
+
+---
+
+**2. Chebyshev’s Inequality**
+For any random variable $X$ with finite expectation $E(X)$ and variance $V(X)$, and for any $\varepsilon > 0$:
+
+$$
+P(|X - E(X)| \geq \varepsilon) \leq \frac{V(X)}{\varepsilon^2}
+$$
+
+---
+
+**3. Central Limit Theorem (CLT)**
+Let $X_1, X_2, \dots, X_n$ be independent and identically distributed (i.i.d.) random variables with mean $\mu = E(X_i)$ and standard deviation $\sigma$. Define the sum:
+
+$$
+S_n = \sum_{i=1}^{n} X_i
+$$
+
+As $n \to \infty$, the standardized sum:
+
+$$
+Z_n = \frac{S_n - E(S_n)}{\sigma(S_n)} = \frac{S_n - n\mu}{\sigma \sqrt{n}}
+$$
+
+converges in distribution to the standard normal distribution:
+
+$$
+Z_n \to N(0,1)
+$$
+
+This means the cumulative distribution function (CDF) of $Z_n$ approaches the standard normal CDF $\Phi(z)$.
+
+---
+
+**Steps for Solving Problems Using Methods of Moements (MoM)**
+**Step 1: Find theoretical moments**
+• Compute the theoretical mean (first moment), variance (second moment), or higher moments from the given probability density function (PDF) or cumulative distribution function (CDF).
+• Example:
+
+$$
+E(X) = \text{some function of } \theta
+$$
+
+$$ 
+E(X) = f(x; \theta) = \int_{-\infty}^{\infty} x f(x; \theta) \, dx
+$$
+
+
+**Step 2: Compute sample moments**
+• Calculate the sample moments from the given data:
+
+$$
+\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+$$
+
+**Step 3: Solve for the parameter(s)**
+• Set the sample moments equal to the theoretical moments:
+
+$$
+\text{Theoretical Moment} = \text{Sample Moment}
+$$
+
+$$
+E(X) = \bar{X}
+$$
+
+$$
+\int_{-\infty}^{\infty} x f(x; \theta) \, dx = \frac{1}{n} \sum_{i=1}^{n} X_i
+$$
+
+• Solve the resulting equation for the unknown parameter(s).
+
+---
+
+**Steps for Solving Problems Using MLE**
+**Step 1: Write the likelihood function**
+• Given the PDF of the distribution, construct the likelihood function by multiplying the PDFs of the sample data:
+
+$$
+L(\theta) = \prod_{i=1}^{n} f(X_i; \theta)
+$$
+
+$$
+L(\theta) = f(X_1; \theta) \cdot f(X_2; \theta) \cdot \dots \cdot f(X_n; \theta)
+$$
+
+
+**Step 2: Take the natural logarithm (log-likelihood function)**
+• The log-likelihood function simplifies calculations:
+
+$$
+\ln L(\theta) = \sum_{i=1}^{n} \ln f(X_i; \theta)
+$$
+
+
+**Step 3: Differentiate the log-likelihood with respect to $\theta$**
+• Compute the derivative of the log-likelihood with respect to the unknown parameter:
+
+$$
+\frac{d}{d\theta} \ln L(\theta) = 0
+$$
+
+**Step 4: Solve for the parameter**
+• Solve the resulting equation to find the maximum likelihood estimator $\hat{\theta}$.
+
+---
+
+**Standard Error of an Estimator:**
+The standard error of an estimator $\hat{\theta}$ is:
+
+$$
+\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}
+$$
+
+---
+
+**Fisher Information:**
+$$
+I_n(\theta) = -E\left[\frac{\partial^2 \ln L(X_1, \dots, X_n; \theta)}{\partial \theta^2}\right]
+$$
+
+If the range of $X$ does not depend on $\theta$, then:
+
+$$
+I_n(\theta) = n I_1(\theta)
+$$
+
+---
+
+**Efficiency of an Estimator:**
+The efficiency of an estimator $\hat{\theta}$ is:
+
+$$
+e(\theta) = \frac{1}{I_n(\theta)V(\hat{\theta})}
+$$
+
+---
+
+**Estimator Properties:**
+
+An estimator $\hat{\theta}$ of the parameter $\theta$ is:
+• Unbiased: if $E(\hat{\theta}) = \theta$.
+• Absolutely Correct: if $E(\hat{\theta}) = \theta$ and $V(\hat{\theta}) \to 0$ as $n \to \infty$.
+• MVUE (Minimum Variance Unbiased Estimator): if $E(\hat{\theta}) = \theta$ and its variance is the lowest among all unbiased estimators.
+• Efficient: if $e(\theta) = 1$, meaning it achieves the Cramér-Rao lower bound.
+
+Note: If an estimator is efficient, it is also the MVUE.
