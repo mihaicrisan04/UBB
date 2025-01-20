@@ -41,8 +41,7 @@ $$
 f_{X,Y}(x, y) = f_X(x) f_Y(y).
 $$
 
-#### Transformation of Random Variables
-
+**Transformation of Random Variables**
 To find the PDF of a transformed random variable $Y = g(X)$ , where $g$ is a differentiable and strictly monotone function, we use:
 
 $$
