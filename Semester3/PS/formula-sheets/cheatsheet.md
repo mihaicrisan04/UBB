@@ -1,19 +1,130 @@
-### Cheatsheet
+### Cheatsheet: Probability and Statistics
+
+#### Seminar 2: Rules of Probability
+
+**Mutually Exclusive Events:**
+Events  A  and  B  are mutually exclusive (disjoint, incompatible) if:
+$
+P(A \cap B) = 0
+$
+
+**Rules of Probability:**
+
+1. Complement Rule:
+$
+P(A^c) = 1 - P(A)
+$
+
+2. Union Rule:
+$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$
+
+3. Difference Rule:
+$
+P(A \setminus B) = P(A) - P(A \cap B)
+$
+
+**Conditional Probability:**
+The probability of $A$ given $B$ (if $P(B) \neq 0$):
+$
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}
+$
+
+**Independent Events:**
+Events $A$ and $B$ are independent if:
+$
+P(A \cap B) = P(A)P(B) \quad \text{or} \quad P(A \mid B) = P(A)
+$
+
+**Total Probability Rule:**
+For a partition $\{A_i\}{i \in I}$ of the sample space $S$:
+$
+P(E) = \sum{i \in I} P(A_i) P(E \mid A_i)
+$
+
+**Multiplication Rule:**
+For $n$ events $A_1, A_2, \dots, A_n$:
+$
+P\left( \bigcap_{i=1}^{n} A_i \right) = P(A_1) P(A_2 \mid A_1) P(A_3 \mid A_1 \cap A_2) \dots P(A_n \mid \bigcap_{i=1}^{n-1} A_i)
+$
+
+---
+
+#### Seminar 3: Probabilistic Models
+
+**1. Binomial Model:**
+• Describes the probability of $k$ successes in $n$ independent Bernoulli trials with success probability $p$.
+$
+P(n, k) = \binom{n}{k} p^k (1-p)^{n-k}
+$
+
+**2. Hypergeometric Model:**
+• Deals with the probability of drawing $k$ successes from a finite population of $N$ items, without replacement.
+$
+P(n, k) = \frac{\binom{n_1}{k} \binom{N-n_1}{n-k}}{\binom{N}{n}}
+$
+
+**3. Poisson Model:**
+• Used for counting the probability of a given number of events occurring in fixed intervals of time/space.
+• Formula involves the sum of probabilities for specific success occurrences in trials.
+
+**4. Pascal (Negative Binomial) Model:**
+• Describes the probability of achieving the  n -th success after  k  failures in Bernoulli trials.
+$
+P(n, k) = \binom{n+k-1}{n-1} p^n (1-p)^k
+$
+
+**5. Geometric Model:**
+• Represents the probability that the first success occurs after  k  failures.
+$
+P(k) = p(1-p)^k
+$
+
+---
+
+#### Seminar 4: Discrete Random Variables
+
+The expectation (expected value) of a discrete random variable  X  is calculated using the formula:
+
+$
+\begin{array}{c|c c c c}
+X & 0 & 1 & 2 & 3 \\
+\hline
+P(X) & \frac{5}{18} & \frac{17}{36} & \frac{2}{9} & \frac{1}{36}
+\end{array}
+$
+
+$
+E(X) = \sum_{i} x_i \cdot P(X = x_i)
+$
+
+Using the previously computed probabilities:
+$
+E(X) = 0 \cdot P(X = 0) + 1 \cdot P(X = 1) + 2 \cdot P(X = 2) + 3 \cdot P(X = 3)
+$
+
+Substituting the values:
+$
+E(X) = 0 \cdot \frac{5}{18} + 1 \cdot \frac{17}{36} + 2 \cdot \frac{2}{9} + 3 \cdot \frac{1}{36}
+$
+
+---
 
 #### Seminar 5: Continuous Random Variables
 
 **1. Continuous Random Variables**
 A continuous random variable $X$ has:
+
 • Probability Density Function (PDF) $f(x)$:
 $f(x) \geq 0$ for all $x$, and $\int_{-\infty}^\infty f(x) dx = 1$.
-• Cumulative Distribution Function (CDF) $F(x)$:
 
+• Cumulative Distribution Function (CDF) $F(x)$:
 $
 F(x) = P(X \leq x) = \int_{-\infty}^x f(t) dt.
 $
 
 • Probability for an interval:
-
 $
 P(a < X < b) = \int_a^b f(x) dx.
 $
@@ -47,10 +158,15 @@ $
 
 **Transformation of Random Variables**
 To find the PDF of a transformed random variable $Y = g(X)$ , where $g$ is a differentiable and strictly monotone function, we use:
-
 $
 f_Y(y) = f_X\left(g^{-1}(y)\right) \cdot \left| \frac{d}{dy} g^{-1}(y) \right|.
 $
+
+or if $g$ is not sitrctly monotone:
+$
+f_Y(y) = \sum_i f_X\left(g^{-1}_i(y)\right) \cdot \left| \frac{d}{dy} g^{-1}_i(y) \right|.
+$
+summing over all segments.
 
 Here’s the process:
 
@@ -60,90 +176,6 @@ Here’s the process:
 4. Substitute $g^{-1}(y)$ into $f_X(x)$ and multiply by $\left| \frac{d}{dy} g^{-1}(y) \right|$.
 
 ---
-
-Exercise Statement
-Let $X \sim N(0, 1)$, a standard normal random variable. Find the probability density function (PDF) of $Y = |X|$.
-
-**Step 1: Transformation of a Random Variable**
-Theory:
-To find the PDF of $Y = g(X)$, we use the following steps when $g(X)$ is not strictly monotonic over the entire domain:
-
-1. Divide the domain of $X$ into monotonic segments.
-2. Compute the PDF of $Y$ by summing contributions from all segments.
-
-Here:
-
-$
-Y = |X| =
-\begin{cases}
-X, & X \geq 0, \\
--X, & X < 0.
-\end{cases}
-$
-
-The segments are:
-• $X \geq 0$, where $Y = X$.
-• $X < 0$, where $Y = -X$.
-
-The corresponding inverse transformations are:
-• $X = Y$ for $X \geq 0$,
-• $X = -Y$ for $X < 0$.
-
-**Step 2: Derive the PDF of $Y$**
-The PDF of $Y$ is obtained by summing over both segments:
-
-$
-f_Y(y) = f_X(y) \cdot \left|\frac{d}{dy} y\right| + f_X(-y) \cdot \left|\frac{d}{dy}(-y)\right|,
-$
-
-where $f_X(x)$ is the standard normal PDF:
-
-$
-f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2 / 2}.
-$
-
-Since $\frac{d}{dy}y = 1$ and $\frac{d}{dy}(-y) = -1$, we have:
-
-$
-f_Y(y) = f_X(y) \cdot 1 + f_X(-y) \cdot 1.
-$
-
-
-Substitute $f_X(x)$ into the equation:
-
-$
-f_Y(y) = \frac{1}{\sqrt{2\pi}} e^{-y^2 / 2} + \frac{1}{\sqrt{2\pi}} e^{-(-y)^2 / 2}.
-$
-
-Since $(-y)^2 = y^2$:
-
-$
-f_Y(y) = \frac{1}{\sqrt{2\pi}} e^{-y^2 / 2} + \frac{1}{\sqrt{2\pi}} e^{-y^2 / 2}.
-$
-
-Combine the terms:
-
-$
-f_Y(y) = \frac{2}{\sqrt{2\pi}} e^{-y^2 / 2}, \quad y \geq 0.
-$
-
-**Step 3: Domain of $Y$**
-Since $Y = |X|$, and $X \sim N(0, 1)$, $Y \geq 0$.
-
-**Result: The PDF of $Y$ is**
-$
-f_Y(y) =
-\begin{cases}
-\frac{2}{\sqrt{2\pi}} e^{-y^2 / 2}, & y \geq 0, \\
-0, & y < 0.
-\end{cases}
-$
-
----
-
-#### Seminar 6: Numerical Characteristics of Random Variables
-
-
 
 #### Seminar 7: Inequalities, Central Limit Theorem, Point Estimators
 
