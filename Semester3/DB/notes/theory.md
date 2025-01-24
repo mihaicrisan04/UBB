@@ -16,9 +16,7 @@ A **B-tree of order* $m$ has the following properties:
 
 **Functional dependency rule (Union Rule):**
 
-$
-\text{If } \alpha \to \beta \text{ and } \alpha \to \gamma, \text{ then } \alpha \to \beta \gamma
-$
+$\text{If } \alpha \to \beta \text{ and } \alpha \to \gamma, \text{ then } \alpha \to \beta \gamma$
 
 This means if $\alpha$ determines both $\beta$ and $\gamma$ separately, it must also determine their combination, $\alpha \to \beta \gamma$.
 
