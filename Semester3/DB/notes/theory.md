@@ -17,10 +17,11 @@ The general order of SQL statement execution, from first to last, is as follows:
 ## Understanding B-tree order and properties
 
 A **B-tree of order* $m$ has the following properties:
-**1. Internal (non-leaf) nodes:**
+
+1. **Internal (non-leaf) nodes:**
     - Can have a maximum of $m$ children and $m - 1$ keys.
     - Can have a minimum of $\lceil m/2 \rceil$ children.
-**2. Leaf nodes:**
+2. **Leaf nodes:**
     - Must all appear at the same level (balanced property).
 
 ---
