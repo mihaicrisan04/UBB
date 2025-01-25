@@ -207,6 +207,8 @@ Returns:
 
 ## Evaluation Tree
 
+![alt text](algebra-evaluation.png)
+
 ![alt text](evaluation-tree.png)
 
 ---
