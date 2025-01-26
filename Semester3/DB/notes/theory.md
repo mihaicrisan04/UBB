@@ -14,16 +14,17 @@ The general order of SQL statement execution, from first to last, is as follows:
 7. **DISTINCT**: Removes duplicate rows from the result set.
 8. **ORDER BY**: Sorts the result based on specified columns.
 
-## Understanding B-tree order and properties
+## B-tree order and properties
 
-A **B-tree of order* $m$ has the following properties:
+A *B-tree of order* $m$ has the following properties:
 
 1. **Internal (non-leaf) nodes:**
-    - Can have a maximum of $m$ children and $m - 1$ keys.
-    - Can have a minimum of $\lceil m/2 \rceil$ children.
+    - Can have at most $m$ children and $m - 1$ keys(ordered values).
+    - Can have at least $\lceil m/2 \rceil$ children.
 2. **Leaf nodes:**
     - Must all appear at the same level (balanced property).
 
+## 2-3 Trees
 ---
 
 ## Define the key from the relational model
@@ -123,9 +124,80 @@ The buffer manager in a DBMS handles the efficient loading and replacement of pa
 
 ---
 
+## Disk Space Manager in DBMS
+
+The **Disk Space Manager** in a Database Management System (DBMS) is responsible for managing how data is stored and retrieved on disk storage, ensuring efficient space utilization and optimized performance.
+
+### Role of the Disk Space Manager
+
+1. **Storage Allocation**  
+   - Allocates space for tables, indexes, and logs.  
+   - Minimizes fragmentation.
+
+2. **Data Access Management**  
+   - Handles reading and writing of database pages.  
+   - Uses buffering techniques to speed up access.
+
+3. **Free Space Management**  
+   - Tracks available and allocated space.  
+   - Reclaims unused disk blocks.
+
+4. **Caching and Buffering**  
+   - Works with buffer managers to reduce disk I/O.  
+   - Stores frequently accessed data in memory.
+
+5. **Data Integrity and Security**  
+   - Ensures safe storage and retrieval.  
+   - Implements security measures.
+
+6. **File Organization and Storage Structures**  
+   - Organizes files into pages and blocks.  
+   - Supports various storage formats.
+
+7. **Disk I/O Optimization**  
+   - Uses techniques like prefetching and clustering.  
+   - Reduces latency with efficient retrieval algorithms.
+
+### Characteristics of the Disk Space Manager
+
+- **Persistence:** Data remains available after system restarts.  
+- **Abstraction:** Provides a high-level interface to hide hardware complexities.  
+- **Efficiency:** Optimized for minimal disk usage and fast performance.  
+- **Scalability:** Handles large-scale storage efficiently.  
+- **Fragmentation Handling:** Reduces disk space wastage.  
+- **Fault Tolerance:** Ensures data recovery in case of failures.  
+- **Multi-user Support:** Allows concurrent access with isolation.
+
+---
+
 ## Relational Algebra
 
 ![alt text](algebra-operators.png)
+
+---
+
+## Relational Algebra Operators in Databases
+
+### Operator Types:
+
+1. **Unary Operator:** Operates on a single relation.  
+2. **Binary Operator:** Operates on two relations.  
+3. **Ternary Operator:** Operates on three relations (rare in relational algebra).
+
+### List of Operators:
+
+| Operator          | Symbol       | Description                                | Type     |
+|------------------|--------------|--------------------------------------------|----------|
+| **Selection**     | `σ`           | Filters rows based on a condition          | Unary    |
+| **Projection**    | `π`           | Selects specific columns                   | Unary    |
+| **Rename**        | `ρ`           | Renames attributes                         | Unary    |
+| **Union**         | `∪`           | Combines tuples from two relations         | Binary   |
+| **Intersection**  | `∩`           | Returns common tuples from two relations   | Binary   |
+| **Difference**    | `-`           | Returns tuples in one relation but not the other | Binary   |
+| **Cartesian Product** | `×`      | Combines every row from both relations (cross join) | Binary   |
+| **Natural Join**  | `⋈`           | Combines tuples based on common attributes | Binary   |
+| **Theta Join**    | `⋈θ`          | Combines tuples based on a condition        | Binary   |
+| **Division**      | `÷`           | Finds tuples related to all tuples in another relation | Binary   |
 
 ---
 
@@ -213,3 +285,79 @@ Returns:
 ![alt text](evaluation-tree.png)
 
 ---
+
+## Indexing Alternatives in Databases
+
+### 1. Alternative 1 (Primary Index / Sparse Index)
+- **Concept:** Index stores full records sorted by key.
+- **Example:**  
+  | Index (StudentID) | Full Record           |
+  |------------------|-----------------------|
+  | 1001             | (1001, Alice, CS, 3.9) |
+  | 1002             | (1002, Bob, Math, 3.5) |
+
+- **Pros:**  
+  - Fast lookup (single access).  
+  - No need to fetch records separately.  
+- **Cons:**  
+  - High storage cost.  
+  - Difficult maintenance.
+
+### 2. Alternative 2 (Secondary Index / Dense Index)
+- **Concept:** Index stores key values with pointers to actual records.
+- **Example:**  
+  | Index (StudentID) | Pointer to Record |
+  |------------------|------------------|
+  | 1001             | → Record #1       |
+  | 1002             | → Record #2       |
+
+- **Pros:**  
+  - Smaller index size.  
+  - Efficient for secondary keys.  
+- **Cons:**  
+  - Slower (two disk accesses needed).  
+  - Index updates required for insertions.
+
+### 3. Alternative 3 (Indirect Indexing / Sparse Indexing with Blocks)
+- **Concept:** Index stores pointers to blocks of records.
+- **Example:**  
+  | Index (StudentID) | Pointer to Block |
+  |------------------|-----------------|
+  | 1001             | → Block 1        |
+  | 1010             | → Block 2        |
+
+- **Pros:**  
+  - Space-efficient.  
+  - Works well for range queries.  
+- **Cons:**  
+  - Not ideal for exact matches.  
+  - Requires scanning within a block.
+
+### Comparison Table
+
+| Feature             | Alternative 1 (Primary Index) | Alternative 2 (Secondary Index) | Alternative 3 (Sparse Index) |
+|--------------------|------------------------------|---------------------------------|------------------------------|
+| Storage Type       | Full records in index         | Pointers to individual records  | Pointers to blocks           |
+| Lookup Speed       | Fastest (1 disk access)       | Slower (2 disk accesses)        | Efficient for range queries  |
+| Space Efficiency   | Least efficient               | Moderate efficiency             | Most efficient               |
+| Best Use Case      | Primary key searches          | Secondary key searches          | Range queries, large datasets|
+| Maintenance        | Difficult                     | Moderate                        | Easiest                      |
+
+---
+
+
+<!-- 
+Exercise
+
+The website of a famous gym is powered by a relational database that contains
+data about trainers that perform classes and are rewarded by their VIP memberes.
+You are asked to desing a part of the database schema.
+A trainer has a first name, last name, email address, and a single
+branch of activities; a branch of activities is given by a title,
+description and number of sets. Due to each branch of activities there are
+classess allocated for VIP members. A class belongs to a trainer and
+is characterized by title, day, start hour and end hour. Each VIP memeber
+has a first name, last name and an email address. He/She rewards the trainer
+by extra bonus points that increaet the salary of each trainer for the 
+attended class. 
+-->

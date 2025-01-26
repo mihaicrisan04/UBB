@@ -155,8 +155,3 @@ EMPLOYEE_PROJECT(Employee, Project)
 | 4NF         | Remove multi-valued dependencies   | Independent attributes               |
 | 5NF         | Remove join dependencies           | Lossless decomposition               |
 | 6NF         | Handle temporal data               | Preserve historical records          |
-
----
-
-By following these normalization steps, databases become more efficient, consistent, and easier to maintain.
-
