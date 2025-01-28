@@ -51,5 +51,6 @@ Semester3/MAP/**/*.class
 Semester3/MAP/**/*.jar
 Semester3/MAP/**/bin/
 Semester3/MAP/**/*.iml
+Semester3/MAP/toyinterpreter/logs
 
 
