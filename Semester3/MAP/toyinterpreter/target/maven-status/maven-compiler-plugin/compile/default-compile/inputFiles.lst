@@ -7,6 +7,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/controller/Controller.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/ArithExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/repository/Repository.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/SwitchStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/PrgState.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/gui/MainProgramView.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/module-info.java

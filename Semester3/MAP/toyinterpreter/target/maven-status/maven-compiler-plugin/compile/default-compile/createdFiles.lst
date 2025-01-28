@@ -50,6 +50,7 @@ com/example/repository/Repository.class
 com/example/model/statements/VarDeclStmt.class
 com/example/model/statements/IfStmt.class
 com/example/model/statements/heap/WriteHeapStmt.class
+com/example/model/statements/SwitchStmt.class
 com/example/model/values/RefValue.class
 com/example/model/statements/file/OpenFileStmt.class
 com/example/collections/stack/MyIStack.class

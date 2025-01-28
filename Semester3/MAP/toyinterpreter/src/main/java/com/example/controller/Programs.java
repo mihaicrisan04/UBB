@@ -244,6 +244,56 @@ public class Programs {
             )
         );
 
+        // int a; int b; int c;
+        // a=1;b=2;c=5;
+        // (switch(a*10)
+        // (case (b*c) : print(a);print(b))
+        // (case (10) : print(100);print(200))
+        // (default : print(300)));
+        // print(300)
+        IStmt ex12 = new CompoundStmt(
+            new VarDeclStmt("a", new IntType()),
+            new CompoundStmt(
+                new VarDeclStmt("b", new IntType()),
+                new CompoundStmt(
+                    new VarDeclStmt("c", new IntType()),
+                    new CompoundStmt(
+                        new AssignStmt("a", new ValueExp(new IntValue(1))),
+                        new CompoundStmt(
+                            new AssignStmt("b", new ValueExp(new IntValue(2))),
+                            new CompoundStmt(
+                                new AssignStmt("c", new ValueExp(new IntValue(5))),
+                                new CompoundStmt(
+                                    new SwitchStmt(
+                                        new ArithExp(
+                                            new VarExp("a"),
+                                            new ValueExp(new IntValue(10)),
+                                            ArithOperation.MUL
+                                        ),
+                                        new ArithExp(
+                                            new VarExp("b"),
+                                            new VarExp("c"),
+                                            ArithOperation.MUL
+                                        ),
+                                        new CompoundStmt(
+                                            new PrintStmt(new VarExp("a")),
+                                            new PrintStmt(new VarExp("b"))
+                                        ),
+                                        new ValueExp(new IntValue(10)),
+                                        new CompoundStmt(
+                                            new PrintStmt(new ValueExp(new IntValue(100))),
+                                            new PrintStmt(new ValueExp(new IntValue(200)))
+                                        ),
+                                        new PrintStmt(new ValueExp(new IntValue(300)))
+                                    ),
+                                    new PrintStmt(new ValueExp(new IntValue(300)))
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
 
         programs.add(ex);
         programs.add(ex2);
@@ -256,7 +306,7 @@ public class Programs {
         programs.add(ex9);
         programs.add(ex10);
         programs.add(ex11);
-
+        programs.add(ex12);
 
         // TextMenu menu = new TextMenu();
         // menu.addCommand(new ExitCommand("0", "exit"));
