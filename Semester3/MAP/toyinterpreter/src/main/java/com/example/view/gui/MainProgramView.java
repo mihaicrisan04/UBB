@@ -1,13 +1,11 @@
-/* 
-package com.example;
+package com.example.view.gui;
 
-import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
+import javafx.stage.Stage;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -24,7 +22,7 @@ import com.example.collections.list.MyIList;
 
 import java.util.stream.Collectors;
 
-public class App extends Application {
+public class MainProgramView {
     private Controller controller;
     private PrgState prgState;
     private MyIList<PrgState> prgList;
@@ -37,39 +35,12 @@ public class App extends Application {
     private TableView<SymTableEntry> symTable;
     private ListView<String> exeStackList;
     private TextField prgStatesCount;
-    
-    @Override
-    public void start(Stage primaryStage) {
-        // First window - Program selection
-        Stage selectionStage = new Stage();
-        VBox selectionRoot = new VBox(10);
-        selectionRoot.setPadding(new Insets(10));
-        
-        ListView<String> programList = new ListView<>();
-        programList.getItems().addAll(programs.getProgramStrings());
-        
-        Button selectButton = new Button("Select Program");
-        selectButton.setOnAction(e -> {
-            String selected = programList.getSelectionModel().getSelectedItem();
-            if (selected != null) {
-                selectionStage.close();
-                showMainProgramWindow(selected);
-            }
-        });
-        
-        selectionRoot.getChildren().addAll(
-            new Label("Select a program to execute:"),
-            programList,
-            selectButton
-        );
-        
-        Scene selectionScene = new Scene(selectionRoot, 800, 500);
-        selectionStage.setTitle("Program Selection");
-        selectionStage.setScene(selectionScene);
-        selectionStage.show();
+
+    public MainProgramView() {
+        createComponents();
     }
-    
-    private void showMainProgramWindow(String selectedProgram) {
+
+    public void showMainProgramWindow(String selectedProgram) {
         Stage mainStage = new Stage();
         BorderPane mainRoot = new BorderPane();
         
@@ -82,9 +53,6 @@ public class App extends Application {
             controller = new Controller(repo);
             controller.executor = java.util.concurrent.Executors.newFixedThreadPool(2);
 
-            // Create all the required components
-            createComponents();
-            
             // Layout setup
             VBox leftPane = new VBox(10);
             leftPane.setPadding(new Insets(10));
@@ -147,7 +115,7 @@ public class App extends Application {
         
         mainStage.show();
     }
-    
+
     @SuppressWarnings("unchecked")
     private void createComponents() {
         // Initialize all UI components
@@ -197,7 +165,7 @@ public class App extends Application {
             }
         });
     }
-    
+
     private void runOneStep() {
         if (controller.getRepo().getProgramList().size() == 0) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -227,7 +195,7 @@ public class App extends Application {
             alert.showAndWait();
         }
     }
-    
+
     private void updateUIComponents() {
         // Update number of program states
         prgStatesCount.setText(String.valueOf(controller.getRepo().getProgramList().size()));
@@ -264,8 +232,9 @@ public class App extends Application {
         if (selectedPrgState != null && prgStateList.getItems().contains(selectedPrgState)) {
             prgStateList.getSelectionModel().select(selectedPrgState);
         } else {
-            // If selected program no longer exists, select the first one
-            prgStateList.getSelectionModel().selectFirst();
+            // If selected program no longer exists, select the id from the top of the prtList
+            PrgState topPrg = programStates.get(0);
+            prgStateList.getSelectionModel().select(String.valueOf(topPrg.getId()));
         }
 
         // Update SymTable
@@ -279,30 +248,6 @@ public class App extends Application {
                 .map(IStmt::toString)
                 .collect(Collectors.toList())
         );
-    }
-    
-    private void updateSymTableAndExeStack(String prgStateId) {
-        MyIList<PrgState> programStates = controller.getRepo().getProgramList();
-        programStates.stream()
-            .filter(p -> String.valueOf(p.getId()).equals(prgStateId))
-            .findFirst()
-            .ifPresent(prg -> {
-                // Update SymTable for selected program
-                symTable.getItems().setAll(prg.getSymTable().entrySet().stream()
-                    .map(entry -> new SymTableEntry(entry.getKey(), entry.getValue().toString()))
-                    .collect(Collectors.toList()));
-
-                // Update ExeStack for selected program
-                exeStackList.getItems().setAll(
-                    prg.getExeStack().stream()
-                        .map(IStmt::toString)
-                        .collect(Collectors.toList())
-                );
-            });
-    }
-    
-    public static void main(String[] args) {
-        launch(args);
     }
 }
 
@@ -331,36 +276,4 @@ class SymTableEntry {
 
     public String getVarName() { return varName; }
     public String getValue() { return value; }
-}
-
-*/
-
-package com.example;
-
-import javafx.application.Application;
-import javafx.stage.Stage;
-
-import com.example.view.gui.ProgramSelectionView;
-import com.example.view.gui.MainProgramView;
-import com.example.controller.Programs;
-
-public class App extends Application {
-    private Programs programs = new Programs();
-
-    @Override
-    public void start(Stage primaryStage) {
-        ProgramSelectionView selectionView = new ProgramSelectionView();
-        selectionView.setPrograms(programs.getProgramStrings());
-        selectionView.setOnProgramSelect(this::showMainProgramWindow);
-        selectionView.show();
-    }
-
-    private void showMainProgramWindow(String selectedProgram) {
-        MainProgramView mainView = new MainProgramView();
-        mainView.showMainProgramWindow(selectedProgram);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

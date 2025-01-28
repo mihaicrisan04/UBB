@@ -15,11 +15,13 @@ com/example/model/statements/WhileStmt.class
 com/example/model/statements/NoOpStmt.class
 com/example/model/expressions/CompareExp$1.class
 com/example/model/types/StringType.class
+com/example/view/gui/HeapEntry.class
 com/example/model/exceptions/VariableNotDefined.class
 com/example/model/values/Value.class
 com/example/view/command/Command.class
 com/example/model/types/Type.class
 com/example/model/expressions/VarExp.class
+com/example/view/gui/MainProgramView.class
 com/example/model/exceptions/StmtException.class
 com/example/model/PrgState.class
 com/example/model/expressions/Exp.class
@@ -30,6 +32,7 @@ com/example/model/values/StringValue.class
 com/example/collections/dictionary/MyDictionary.class
 com/example/collections/stack/MyStack.class
 com/example/model/statements/ForkStmt.class
+com/example/view/gui/ProgramSelectionView.class
 com/example/model/expressions/ArithExp$1.class
 com/example/controller/Controller.class
 com/example/model/statements/CompoundStmt.class
@@ -47,7 +50,6 @@ com/example/repository/Repository.class
 com/example/model/statements/VarDeclStmt.class
 com/example/model/statements/IfStmt.class
 com/example/model/statements/heap/WriteHeapStmt.class
-com/example/SymTableEntry.class
 com/example/model/values/RefValue.class
 com/example/model/statements/file/OpenFileStmt.class
 com/example/collections/stack/MyIStack.class
@@ -55,7 +57,6 @@ com/example/model/statements/AssignStmt.class
 com/example/collections/heap/MyIHeap.class
 com/example/model/expressions/ArithExp.class
 com/example/view/command/ExitCommand.class
-com/example/HeapEntry.class
 com/example/model/enums/LogicOperation.class
 com/example/model/expressions/LogicExp$1.class
 com/example/model/enums/ArithOperation.class
@@ -64,4 +65,5 @@ com/example/model/values/BoolValue.class
 com/example/model/statements/PrintStmt.class
 com/example/model/statements/heap/NewHeapStmt.class
 com/example/model/expressions/LogicExp.class
+com/example/view/gui/SymTableEntry.class
 com/example/model/exceptions/ADTEmptyException.class

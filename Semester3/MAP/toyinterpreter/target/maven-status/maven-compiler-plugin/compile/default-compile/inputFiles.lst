@@ -8,6 +8,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/ArithExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/repository/Repository.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/PrgState.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/gui/MainProgramView.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/module-info.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/ValueExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/command/TextMenu.java
@@ -32,6 +33,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/VarDeclStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/command/ExitCommand.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/enums/ArithOperation.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/gui/ProgramSelectionView.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/heap/MyIHeap.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/Exp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/values/BoolValue.java
