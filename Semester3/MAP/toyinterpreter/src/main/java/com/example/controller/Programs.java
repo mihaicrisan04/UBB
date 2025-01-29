@@ -295,6 +295,15 @@ public class Programs {
             )
         );
 
+        // Ref int v1; int cnt;
+        // new(v1,1);createSemaphore(cnt,rH(v1));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));print(rh(v1));release(cnt));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));wh(v1,rh(v1)*2));print(rh(v1));release(cnt
+        // ));
+        // acquire(cnt);
+        // print(rh(v1)-1);
+        // release(cnt)
+
         programs.add(ex);
         programs.add(ex2);
         programs.add(ex3);

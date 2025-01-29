@@ -21,6 +21,7 @@ public class PrgState {
    private MyIDictionary<StringValue, BufferedReader> fileTable;
    private MyIHeap<Integer, Value> heap;
    private int id;
+   private MyIDictionary<String, Value> semaphoreTable;
 
    private static int prgId = 0;
 
