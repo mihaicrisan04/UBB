@@ -4,6 +4,7 @@ package com.example.controller;
 import com.example.model.statements.*;
 import com.example.model.statements.file.*;
 import com.example.model.statements.heap.*;
+import com.example.model.statements.semaphore.*;
 import com.example.model.expressions.*;
 import com.example.model.types.*;
 import com.example.model.values.*;
@@ -298,11 +299,77 @@ public class Programs {
         // Ref int v1; int cnt;
         // new(v1,1);createSemaphore(cnt,rH(v1));
         // fork(acquire(cnt);wh(v1,rh(v1)*10));print(rh(v1));release(cnt));
-        // fork(acquire(cnt);wh(v1,rh(v1)*10));wh(v1,rh(v1)*2));print(rh(v1));release(cnt
-        // ));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));wh(v1,rh(v1)*2));print(rh(v1));release(cnt));
         // acquire(cnt);
         // print(rh(v1)-1);
         // release(cnt)
+        IStmt ex13 = new CompoundStmt(
+            new VarDeclStmt("v1", new RefType(new IntType())),
+            new CompoundStmt(
+                new VarDeclStmt("cnt", new IntType()),
+                new CompoundStmt(
+                    new NewHeapStmt("v1", new ValueExp(new IntValue(1))),
+                    new CompoundStmt(
+                        new CreateSemaphoreStmt("cnt", new ReadHeapExp(new VarExp("v1"))),
+                        new CompoundStmt(
+                            new ForkStmt(
+                                new CompoundStmt(
+                                    new AcquireStmt("cnt"),
+                                    new CompoundStmt(
+                                        new WriteHeapStmt("v1", new ArithExp(
+                                            new ReadHeapExp(new VarExp("v1")),
+                                            new ValueExp(new IntValue(10)),
+                                            ArithOperation.MUL
+                                        )),
+                                        new CompoundStmt(
+                                            new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                            new ReleaseStmt("cnt")
+                                        )
+                                    )
+                                )
+                            ),
+                            new CompoundStmt(
+                                new ForkStmt(
+                                    new CompoundStmt(
+                                        new AcquireStmt("cnt"),
+                                        new CompoundStmt(
+                                            new WriteHeapStmt("v1", new ArithExp(
+                                                new ReadHeapExp(new VarExp("v1")),
+                                                new ValueExp(new IntValue(10)),
+                                                ArithOperation.MUL
+                                            )),
+                                            new CompoundStmt(
+                                                new WriteHeapStmt("v1", new ArithExp(
+                                                    new ReadHeapExp(new VarExp("v1")),
+                                                    new ValueExp(new IntValue(2)),
+                                                    ArithOperation.MUL
+                                                )),
+                                                new CompoundStmt(
+                                                    new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                                    new ReleaseStmt("cnt")
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                new CompoundStmt(
+                                    new AcquireStmt("cnt"),
+                                    new CompoundStmt(
+                                        new PrintStmt(new ArithExp(
+                                            new ReadHeapExp(new VarExp("v1")),
+                                            new ValueExp(new IntValue(1)),
+                                            ArithOperation.SUB
+                                        )),
+                                        new ReleaseStmt("cnt")
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+
 
         programs.add(ex);
         programs.add(ex2);
@@ -316,6 +383,7 @@ public class Programs {
         programs.add(ex10);
         programs.add(ex11);
         programs.add(ex12);
+        programs.add(ex13);
 
         // TextMenu menu = new TextMenu();
         // menu.addCommand(new ExitCommand("0", "exit"));
