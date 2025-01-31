@@ -1,0 +1,10052 @@
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+CondAssignStmt
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200, 200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+CondAssignStmt;
+print(v);
+CondAssignStmt;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200, 200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200, 200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(2, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{2=2}
+Out:
+[200, 200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), b=(1, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=2}
+Out:
+[200, 200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) b
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 0)
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(0, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(b, 0)
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(a, 1)
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=0, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+wH(b, 2)
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=0}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = rH(a) < rH(b) ? 100 : 200
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(rH(a) < rH(b)) THEN(v=100) ELSE(v=200)
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=100
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=100
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v = (rH(b) - 2) > rH(a) ? 100 : 200
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF((rH(b) - 2) > rH(a)) THEN(v=100) ELSE(v=200)
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=200
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=100}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=(1, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), b=(2, int), v=200}
+FileTable:
+{}
+HeapTable:
+{1=1, 2=2}
+Out:
+[100, 200]
+Original Program:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+wH(a, 1);
+wH(b, 2);
+v = rH(a) < rH(b) ? 100 : 200;
+print(v);
+v = (rH(b) - 2) > rH(a) ? 100 : 200;
+print(v)

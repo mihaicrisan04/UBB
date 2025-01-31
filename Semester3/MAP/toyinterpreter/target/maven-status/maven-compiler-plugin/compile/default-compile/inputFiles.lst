@@ -44,6 +44,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/VariableAlreadyDefined.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/AssignStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/ExpException.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/CondAssignStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/CompareExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/enums/LogicOperation.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/dictionary/MyIDictionary.java

@@ -49,6 +49,7 @@ module-info.class
 com/example/model/expressions/ReadHeapExp.class
 com/example/repository/IRepository.class
 com/example/model/types/RefType.class
+com/example/model/statements/CondAssignStmt.class
 com/example/repository/Repository.class
 com/example/model/statements/VarDeclStmt.class
 com/example/model/statements/IfStmt.class

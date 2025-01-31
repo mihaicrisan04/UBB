@@ -370,6 +370,68 @@ public class Programs {
             )
         );
 
+        // Ref int a; Ref int b; int v;
+        // new(a,0); new(b,0);
+        // wh(a,1); wh(b,2);
+        // v=(rh(a)<rh(b))?100:200;
+        // print(v);
+        // v= ((rh(b)-2)>rh(a))?100:200;
+        // print(v);
+        // The final Out should be {100,200}
+        IStmt ex14 = new CompoundStmt(
+            new VarDeclStmt("a", new RefType(new IntType())),
+            new CompoundStmt(
+                new VarDeclStmt("b", new RefType(new IntType())),
+                new CompoundStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompoundStmt(
+                        new NewHeapStmt("a", new ValueExp(new IntValue(0))),
+                        new CompoundStmt(
+                            new NewHeapStmt("b", new ValueExp(new IntValue(0))),
+                            new CompoundStmt(
+                                new WriteHeapStmt("a", new ValueExp(new IntValue(1))),
+                                new CompoundStmt(
+                                    new WriteHeapStmt("b", new ValueExp(new IntValue(2))),
+                                    new CompoundStmt(
+                                        new CondAssignStmt(
+                                            "v",
+                                            new CompareExp(
+                                                new ReadHeapExp(new VarExp("a")),
+                                                new ReadHeapExp(new VarExp("b")),
+                                                CompareOperation.LESS
+                                            ),
+                                            new ValueExp(new IntValue(100)),
+                                            new ValueExp(new IntValue(200))
+                                        ),
+                                        new CompoundStmt(
+                                            new PrintStmt(new VarExp("v")),
+                                            new CompoundStmt(
+                                                new CondAssignStmt(
+                                                    "v",
+                                                    new CompareExp(
+                                                        new ArithExp(
+                                                            new ReadHeapExp(new VarExp("b")),
+                                                            new ValueExp(new IntValue(2)),
+                                                            ArithOperation.SUB
+                                                        ),
+                                                        new ReadHeapExp(new VarExp("a")),
+                                                        CompareOperation.GREATER
+                                                    ),
+                                                    new ValueExp(new IntValue(100)),
+                                                    new ValueExp(new IntValue(200))
+                                                ),
+                                                new PrintStmt(new VarExp("v"))
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+
 
         programs.add(ex);
         programs.add(ex2);
@@ -384,6 +446,7 @@ public class Programs {
         programs.add(ex11);
         programs.add(ex12);
         programs.add(ex13);
+        programs.add(ex14);
 
         // TextMenu menu = new TextMenu();
         // menu.addCommand(new ExitCommand("0", "exit"));
