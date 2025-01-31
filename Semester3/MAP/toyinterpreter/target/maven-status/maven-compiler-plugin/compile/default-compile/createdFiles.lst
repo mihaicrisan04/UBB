@@ -37,6 +37,7 @@ com/example/collections/stack/MyStack.class
 com/example/model/statements/ForkStmt.class
 com/example/view/gui/ProgramSelectionView.class
 com/example/model/expressions/ArithExp$1.class
+com/example/model/statements/ForStmt.class
 com/example/controller/Controller.class
 com/example/model/statements/CompoundStmt.class
 com/example/model/enums/CompareOperation.class

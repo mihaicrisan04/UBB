@@ -10,7 +10,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.example.model.exceptions.MyException;
 
 public class SemaphoreTable implements ISemaphoreTable {
-
     private HashMap<Integer, Pair<Integer, List<Integer>>> semaphoreTable;
     ReentrantLock lock;
     private int freeLocation = 0;

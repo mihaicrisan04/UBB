@@ -432,6 +432,43 @@ public class Programs {
             )
         );
 
+        // Ref int a; new(a,20);
+        // (for(v=0;v<3;v=v+1) fork(print(v);v=v*rh(a)));
+        // print(rh(a))
+        // The final Out should be {0,1,2,20}
+        IStmt ex15 = new CompoundStmt(
+            new VarDeclStmt("a", new RefType(new IntType())),
+            new CompoundStmt(
+                new NewHeapStmt("a", new ValueExp(new IntValue(20))),
+                new CompoundStmt(
+                    new ForStmt(
+                        "v",
+                        new ValueExp(new IntValue(0)),
+                        new ValueExp(new IntValue(3)),
+                        new ArithExp(
+                            new VarExp("v"),
+                            new ValueExp(new IntValue(1)),
+                            ArithOperation.ADD
+                        ),
+                        new ForkStmt(
+                            new CompoundStmt(
+                                new PrintStmt(new VarExp("v")),
+                                new AssignStmt(
+                                    "v",
+                                    new ArithExp(
+                                        new VarExp("v"),
+                                        new ReadHeapExp(new VarExp("a")),
+                                        ArithOperation.MUL
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                )
+            )
+        );
+
 
         programs.add(ex);
         programs.add(ex2);
@@ -447,6 +484,7 @@ public class Programs {
         programs.add(ex12);
         programs.add(ex13);
         programs.add(ex14);
+        programs.add(ex15);
 
         // TextMenu menu = new TextMenu();
         // menu.addCommand(new ExitCommand("0", "exit"));
