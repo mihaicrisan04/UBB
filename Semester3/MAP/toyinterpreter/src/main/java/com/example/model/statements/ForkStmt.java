@@ -22,7 +22,7 @@ public class ForkStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState prg) {
-        return new PrgState(stmt, prg.getSymTable().deepCopy(), prg.getOut(), prg.getFileTable(), prg.getHeap(), prg.getSemaphoreTable());
+        return new PrgState(stmt, prg.getSymTable().deepCopy(), prg.getOut(), prg.getFileTable(), prg.getHeap(), prg.getSemaphoreTable(), prg.getLockTable());
     }
     
     @Override

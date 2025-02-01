@@ -1,3 +1,4 @@
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/lock/NewLockStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/list/MyList.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/types/RefType.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/VariableNotDefined.java
@@ -29,6 +30,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/ForkStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/values/StringValue.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/stack/MyIStack.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/lock/LockStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/heap/WriteHeapStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/VarExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/StmtException.java
@@ -36,6 +38,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/dictionary/MyDictionary.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/VarDeclStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/command/ExitCommand.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/lockTable/ILockTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/enums/ArithOperation.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/gui/ProgramSelectionView.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/heap/MyIHeap.java
@@ -61,6 +64,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/ReadHeapExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/PrintStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/types/IntType.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/lock/UnlockStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/InvalidOperandType.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/MyException.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/semaphore/CreateSemaphoreStmt.java
@@ -68,5 +72,6 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/values/IntValue.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/file/CloseFileStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/file/OpenFileStmt.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/lockTable/LockTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/CompoundStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/values/Value.java

@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.example.model.exceptions.MyException;
 
 public class SemaphoreTable implements ISemaphoreTable {
-    private HashMap<Integer, Pair<Integer, List<Integer>>> semaphoreTable;
+private HashMap<Integer, Pair<Integer, List<Integer>>> semaphoreTable;
     ReentrantLock lock;
     private int freeLocation = 0;
 
@@ -88,8 +88,7 @@ public class SemaphoreTable implements ISemaphoreTable {
         }
     }
 
-//    HashMap<Integer, Pair<Integer, List<Integer>>> to list
-
+    @Override
     public List<Pair<Pair<Integer, Integer>, List<Integer>>> getSemaphoreDictionaryAsList() {
         this.lock.lock();
         List<Pair<Pair<Integer, Integer>, List<Integer> > > answer = new ArrayList<>();

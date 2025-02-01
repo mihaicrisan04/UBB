@@ -5,6 +5,7 @@ import com.example.model.statements.*;
 import com.example.model.statements.file.*;
 import com.example.model.statements.heap.*;
 import com.example.model.statements.semaphore.*;
+import com.example.model.statements.lock.*;
 import com.example.model.expressions.*;
 import com.example.model.types.*;
 import com.example.model.values.*;
@@ -469,6 +470,142 @@ public class Programs {
             )
         );
 
+        // Ref int v1; Ref int v2; int x; int q;
+        // new(v1,20);new(v2,30);newLock(x);
+        // fork(
+        //   fork(
+        //     lock(x);wh(v1,rh(v1)-1);unlock(x)
+        //   );
+        //   lock(x);wh(v1,rh(v1)*10);unlock(x)
+        // );newLock(q);
+        // fork(
+        //   fork(lock(q);wh(v2,rh(v2)+5);unlock(q));
+        //   lock(q);wh(v2,rh(v2)*10);unlock(q)
+        // );
+        // nop;nop;nop;nop;
+        // lock(x); print(rh(v1)); unlock(x);
+        // lock(q); print(rh(v2)); unlock(q);
+        // The final Out should be {190 or 199,350 or 305}
+        IStmt ex16 = new CompoundStmt(
+            new VarDeclStmt("v1", new RefType(new IntType())),
+            new CompoundStmt(
+                new VarDeclStmt("v2", new RefType(new IntType())),
+                new CompoundStmt(
+                    new VarDeclStmt("x", new IntType()),
+                    new CompoundStmt(
+                        new VarDeclStmt("q", new IntType()),
+                        new CompoundStmt(
+                            new NewHeapStmt("v1", new ValueExp(new IntValue(20))),
+                            new CompoundStmt(
+                                new NewHeapStmt("v2", new ValueExp(new IntValue(30))),
+                                new CompoundStmt(
+                                    new NewLockStmt("x"),
+                                    new CompoundStmt(
+                                        new ForkStmt(
+                                            new CompoundStmt(
+                                                new ForkStmt(
+                                                    new CompoundStmt(
+                                                        new LockStmt("x"),
+                                                        new CompoundStmt(
+                                                            new WriteHeapStmt("v1", 
+                                                                new ArithExp(
+                                                                    new ReadHeapExp(new VarExp("v1")),
+                                                                    new ValueExp(new IntValue(1)),
+                                                                    ArithOperation.SUB
+                                                                )
+                                                            ),
+                                                            new UnlockStmt("x")
+                                                        )
+                                                    )
+                                                ),
+                                                new CompoundStmt(
+                                                    new LockStmt("x"),
+                                                    new CompoundStmt(
+                                                        new WriteHeapStmt("v1",
+                                                            new ArithExp(
+                                                                new ReadHeapExp(new VarExp("v1")),
+                                                                new ValueExp(new IntValue(10)),
+                                                                ArithOperation.MUL
+                                                            )
+                                                        ),
+                                                        new UnlockStmt("x")
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        new CompoundStmt(
+                                            new NewLockStmt("q"),
+                                            new CompoundStmt(
+                                                new ForkStmt(
+                                                    new CompoundStmt(
+                                                        new ForkStmt(
+                                                            new CompoundStmt(
+                                                                new LockStmt("q"),
+                                                                new CompoundStmt(
+                                                                    new WriteHeapStmt("v2",
+                                                                        new ArithExp(
+                                                                            new ReadHeapExp(new VarExp("v2")),
+                                                                            new ValueExp(new IntValue(5)),
+                                                                            ArithOperation.ADD
+                                                                        )
+                                                                    ),
+                                                                    new UnlockStmt("q")
+                                                                )
+                                                            )
+                                                        ),
+                                                        new CompoundStmt(
+                                                            new LockStmt("q"),
+                                                            new CompoundStmt(
+                                                                new WriteHeapStmt("v2",
+                                                                    new ArithExp(
+                                                                        new ReadHeapExp(new VarExp("v2")),
+                                                                        new ValueExp(new IntValue(10)),
+                                                                        ArithOperation.MUL
+                                                                    )
+                                                                ),
+                                                                new UnlockStmt("q")
+                                                            )
+                                                        )
+                                                    )
+                                                ),
+                                                new CompoundStmt(
+                                                    new NoOpStmt(),
+                                                    new CompoundStmt(
+                                                        new NoOpStmt(),
+                                                        new CompoundStmt(
+                                                            new NoOpStmt(),
+                                                            new CompoundStmt(
+                                                                new NoOpStmt(),
+                                                                new CompoundStmt(
+                                                                    new LockStmt("x"),
+                                                                    new CompoundStmt(
+                                                                        new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                                                        new CompoundStmt(
+                                                                            new UnlockStmt("x"),
+                                                                            new CompoundStmt(
+                                                                                new LockStmt("q"),
+                                                                                new CompoundStmt(
+                                                                                    new PrintStmt(new ReadHeapExp(new VarExp("v2"))),
+                                                                                    new UnlockStmt("q")
+                                                                                )
+                                                                            )
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
 
         programs.add(ex);
         programs.add(ex2);
@@ -485,6 +622,7 @@ public class Programs {
         programs.add(ex13);
         programs.add(ex14);
         programs.add(ex15);
+        programs.add(ex16);
 
         // TextMenu menu = new TextMenu();
         // menu.addCommand(new ExitCommand("0", "exit"));

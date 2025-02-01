@@ -7,6 +7,7 @@ com/example/collections/list/MyConsumer.class
 com/example/model/statements/file/CloseFileStmt.class
 com/example/model/statements/semaphore/CreateSemaphoreStmt.class
 com/example/model/exceptions/MyException.class
+com/example/model/statements/lock/UnlockStmt.class
 com/example/model/exceptions/DivisionByZeroException.class
 com/example/model/types/IntType.class
 com/example/model/states/countSemaphore/ISemaphoreTable.class
@@ -24,6 +25,7 @@ com/example/view/command/Command.class
 com/example/model/types/Type.class
 com/example/model/expressions/VarExp.class
 com/example/view/gui/MainProgramView.class
+com/example/model/states/lockTable/LockTable.class
 com/example/model/exceptions/StmtException.class
 com/example/model/PrgState.class
 com/example/model/statements/semaphore/ReleaseStmt.class
@@ -53,11 +55,13 @@ com/example/model/types/RefType.class
 com/example/model/statements/CondAssignStmt.class
 com/example/repository/Repository.class
 com/example/model/statements/VarDeclStmt.class
+com/example/model/states/lockTable/ILockTable.class
 com/example/model/statements/IfStmt.class
 com/example/model/statements/heap/WriteHeapStmt.class
 com/example/model/statements/SwitchStmt.class
 com/example/model/values/RefValue.class
 com/example/model/statements/semaphore/AcquireStmt.class
+com/example/model/statements/lock/LockStmt.class
 com/example/model/statements/file/OpenFileStmt.class
 com/example/collections/stack/MyIStack.class
 com/example/model/statements/AssignStmt.class
@@ -74,4 +78,5 @@ com/example/model/statements/heap/NewHeapStmt.class
 com/example/model/expressions/LogicExp.class
 com/example/view/gui/SymTableEntry.class
 com/example/model/states/countSemaphore/SemaphoreTable.class
+com/example/model/statements/lock/NewLockStmt.class
 com/example/model/exceptions/ADTEmptyException.class

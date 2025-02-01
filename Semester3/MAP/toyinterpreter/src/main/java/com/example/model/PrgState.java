@@ -10,6 +10,7 @@ import com.example.collections.dictionary.*;
 import com.example.collections.heap.*;
 import com.example.model.statements.IStmt;
 import com.example.model.states.countSemaphore.*;
+import com.example.model.states.lockTable.*;
 import com.example.model.values.StringValue;
 import com.example.model.values.Value;
 
@@ -22,11 +23,12 @@ public class PrgState {
    private MyIDictionary<StringValue, BufferedReader> fileTable;
    private MyIHeap<Integer, Value> heap;
    private ISemaphoreTable semaphoreTable;
+   private ILockTable lockTable;
    private int id;
 
    private static int prgId = 0;
 
-   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp, ISemaphoreTable semTbl) {
+   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp, ISemaphoreTable semTbl, ILockTable lockTbl) {
       exeStack = new MyStack<IStmt>();
       symTable = symtbl;
       out = ot;
@@ -35,6 +37,7 @@ public class PrgState {
       heap = hp;
       exeStack.push(prg);
       semaphoreTable = semTbl;
+      lockTable = lockTbl;
       id = getNewId();
    }
 
@@ -45,6 +48,7 @@ public class PrgState {
       fileTable = new MyDictionary<StringValue, BufferedReader>();
       heap = new MyHeap<Integer, Value>();
       semaphoreTable = new SemaphoreTable();
+      lockTable = new LockTable();
       originalProgram = prg.deepCopy();
       exeStack.push(prg);
       id = getNewId();
@@ -56,6 +60,7 @@ public class PrgState {
    public MyIDictionary<StringValue, BufferedReader> getFileTable() { return fileTable; }
    public MyIHeap<Integer, Value> getHeap() { return heap; }
    public ISemaphoreTable getSemaphoreTable() { return semaphoreTable; }
+   public ILockTable getLockTable() { return lockTable; }
    public IStmt getOriginalProgram() { return originalProgram; }
    public int getId() { return id; }
 
@@ -65,6 +70,7 @@ public class PrgState {
    public void setFileTable(MyIDictionary<StringValue, BufferedReader> fileTbl) { fileTable = fileTbl; }
    public void setHeap(MyIHeap<Integer, Value> hp) { heap = hp; }
    public void setSemaphoreTable(ISemaphoreTable semTbl) { semaphoreTable = semTbl; }
+   public void setLockTable(ILockTable lockTbl) { lockTable = lockTbl; }
    public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   
@@ -86,6 +92,8 @@ public class PrgState {
              "FileTable:\n" + fileTable.toString() + "\n" +
              "HeapTable:\n" + heap.toString() + "\n" +
              "Out:\n" + out.toString() + "\n" +
+             "SemaphoreTable:\n" + semaphoreTable.toString() + "\n" +
+             "LockTable:\n" + lockTable.toString() + "\n" +
              "Original Program:\n" + originalProgram.toString() + "\n";
    }
 }

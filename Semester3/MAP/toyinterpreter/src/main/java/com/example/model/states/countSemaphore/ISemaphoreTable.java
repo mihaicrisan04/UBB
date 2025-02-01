@@ -17,4 +17,5 @@ public interface ISemaphoreTable {
         HashMap<Integer, Pair<Integer, List<Integer>>> getSemaphoreTable();
         List<Pair<Pair<Integer, Integer>, List<Integer>>> getSemaphoreDictionaryAsList();
         void setSemaphoreTable(HashMap<Integer, Pair<Integer, List<Integer>>> newSemaphoreTable);
+        String toString();
 }
