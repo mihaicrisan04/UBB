@@ -17,7 +17,9 @@ com/example/view/command/TextMenu.class
 com/example/view/command/RunExCommand.class
 com/example/model/statements/WhileStmt.class
 com/example/model/statements/NoOpStmt.class
+com/example/view/gui/LatchEntry.class
 com/example/model/states/latchTable/LatchTable.class
+com/example/view/gui/LockEntry.class
 com/example/model/expressions/CompareExp$1.class
 com/example/model/types/StringType.class
 com/example/view/gui/HeapEntry.class
@@ -54,6 +56,7 @@ com/example/model/exceptions/InvalidOperandType.class
 com/example/model/types/BoolType.class
 module-info.class
 com/example/model/expressions/ReadHeapExp.class
+com/example/view/gui/SemaphoreEntry.class
 com/example/repository/IRepository.class
 com/example/model/types/RefType.class
 com/example/model/statements/CondAssignStmt.class
