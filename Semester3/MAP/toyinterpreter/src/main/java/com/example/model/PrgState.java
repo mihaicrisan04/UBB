@@ -10,6 +10,7 @@ import com.example.collections.dictionary.*;
 import com.example.collections.heap.*;
 import com.example.model.statements.IStmt;
 import com.example.model.states.countSemaphore.*;
+import com.example.model.states.latchTable.*;
 import com.example.model.states.lockTable.*;
 import com.example.model.values.StringValue;
 import com.example.model.values.Value;
@@ -24,11 +25,12 @@ public class PrgState {
    private MyIHeap<Integer, Value> heap;
    private ISemaphoreTable semaphoreTable;
    private ILockTable lockTable;
+   private ILatchTable latchTable;
    private int id;
 
    private static int prgId = 0;
 
-   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp, ISemaphoreTable semTbl, ILockTable lockTbl) {
+   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp, ISemaphoreTable semTbl, ILockTable lockTbl, ILatchTable lt) {
       exeStack = new MyStack<IStmt>();
       symTable = symtbl;
       out = ot;
@@ -38,6 +40,7 @@ public class PrgState {
       exeStack.push(prg);
       semaphoreTable = semTbl;
       lockTable = lockTbl;
+      latchTable = lt;
       id = getNewId();
    }
 
@@ -49,6 +52,7 @@ public class PrgState {
       heap = new MyHeap<Integer, Value>();
       semaphoreTable = new SemaphoreTable();
       lockTable = new LockTable();
+      latchTable = new LatchTable();
       originalProgram = prg.deepCopy();
       exeStack.push(prg);
       id = getNewId();
@@ -56,11 +60,12 @@ public class PrgState {
    
    public MyIStack<IStmt> getExeStack() { return exeStack; }
    public MyIDictionary<String, Value> getSymTable() { return symTable; }
-   public MyIList<Value> getOut() { return out; } // get out :))
+   public MyIList<Value> getOut() { return out; }
    public MyIDictionary<StringValue, BufferedReader> getFileTable() { return fileTable; }
    public MyIHeap<Integer, Value> getHeap() { return heap; }
    public ISemaphoreTable getSemaphoreTable() { return semaphoreTable; }
    public ILockTable getLockTable() { return lockTable; }
+   public ILatchTable getLatchTable() { return latchTable; }
    public IStmt getOriginalProgram() { return originalProgram; }
    public int getId() { return id; }
 
@@ -71,6 +76,7 @@ public class PrgState {
    public void setHeap(MyIHeap<Integer, Value> hp) { heap = hp; }
    public void setSemaphoreTable(ISemaphoreTable semTbl) { semaphoreTable = semTbl; }
    public void setLockTable(ILockTable lockTbl) { lockTable = lockTbl; }
+   public void setLatchTable(ILatchTable lt) { latchTable = lt; }
    public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   
@@ -94,6 +100,7 @@ public class PrgState {
              "Out:\n" + out.toString() + "\n" +
              "SemaphoreTable:\n" + semaphoreTable.toString() + "\n" +
              "LockTable:\n" + lockTable.toString() + "\n" +
+             "LatchTable:\n" + latchTable.toString() + "\n" +
              "Original Program:\n" + originalProgram.toString() + "\n";
    }
 }

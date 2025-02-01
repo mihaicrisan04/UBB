@@ -8,6 +8,7 @@ com/example/model/statements/file/CloseFileStmt.class
 com/example/model/statements/semaphore/CreateSemaphoreStmt.class
 com/example/model/exceptions/MyException.class
 com/example/model/statements/lock/UnlockStmt.class
+com/example/model/statements/countDownLatch/CountDownStmt.class
 com/example/model/exceptions/DivisionByZeroException.class
 com/example/model/types/IntType.class
 com/example/model/states/countSemaphore/ISemaphoreTable.class
@@ -16,12 +17,14 @@ com/example/view/command/TextMenu.class
 com/example/view/command/RunExCommand.class
 com/example/model/statements/WhileStmt.class
 com/example/model/statements/NoOpStmt.class
+com/example/model/states/latchTable/LatchTable.class
 com/example/model/expressions/CompareExp$1.class
 com/example/model/types/StringType.class
 com/example/view/gui/HeapEntry.class
 com/example/model/exceptions/VariableNotDefined.class
 com/example/model/values/Value.class
 com/example/view/command/Command.class
+com/example/model/states/latchTable/ILatchTable.class
 com/example/model/types/Type.class
 com/example/model/expressions/VarExp.class
 com/example/view/gui/MainProgramView.class
@@ -41,6 +44,7 @@ com/example/view/gui/ProgramSelectionView.class
 com/example/model/expressions/ArithExp$1.class
 com/example/model/statements/ForStmt.class
 com/example/controller/Controller.class
+com/example/model/statements/countDownLatch/NewLatchStmt.class
 com/example/model/statements/CompoundStmt.class
 com/example/model/enums/CompareOperation.class
 com/example/model/exceptions/VariableAlreadyDefined.class
@@ -72,6 +76,7 @@ com/example/model/enums/LogicOperation.class
 com/example/model/expressions/LogicExp$1.class
 com/example/model/enums/ArithOperation.class
 com/example/model/statements/file/ReadFileStmt.class
+com/example/model/statements/countDownLatch/AwaitStmt.class
 com/example/model/values/BoolValue.class
 com/example/model/statements/PrintStmt.class
 com/example/model/statements/heap/NewHeapStmt.class

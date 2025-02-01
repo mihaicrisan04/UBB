@@ -1,4 +1,5 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/lock/NewLockStmt.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/countDownLatch/AwaitStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/list/MyList.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/types/RefType.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/VariableNotDefined.java
@@ -15,6 +16,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/ValueExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/command/TextMenu.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/ADTEmptyException.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/countDownLatch/NewLatchStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/stack/MyStack.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/countSemaphore/ISemaphoreTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/NoOpStmt.java
@@ -41,12 +43,14 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/lockTable/ILockTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/enums/ArithOperation.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/gui/ProgramSelectionView.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/countDownLatch/CountDownStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/heap/MyIHeap.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/Exp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/countSemaphore/SemaphoreTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/values/BoolValue.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/VariableAlreadyDefined.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/AssignStmt.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/latchTable/ILatchTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/exceptions/ExpException.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/CondAssignStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/expressions/CompareExp.java
@@ -56,6 +60,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/collections/heap/MyHeap.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/IStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/App.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/states/latchTable/LatchTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/enums/CompareOperation.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/view/command/RunExCommand.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter/src/main/java/com/example/model/statements/file/ReadFileStmt.java
