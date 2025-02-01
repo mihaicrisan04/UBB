@@ -1,0 +1,2905 @@
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20)
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20)
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int), v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0;
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0;
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=20}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2, 20]
+Original Program:
+Ref(int) a;
+int v;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=40}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2, 20]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+Ref(int) a
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20)
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+new(a, 20)
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(0, int)}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0;
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0;
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int)}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=0
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 1]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=0}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=1}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 2]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=20}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+fork(print(v);
+v=(v * rH(a)))
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=(v + 1)
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v);
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+while(v < 3) {fork(print(v);
+v=(v * rH(a)));
+v=(v + 1)}
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+print(v)
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(rH(a))
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+v=(v * rH(a))
+SymTable:
+{a=(1, int), v=2}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2]
+Original Program:
+print(v);
+v=(v * rH(a))
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=3}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2, 20]
+Original Program:
+Ref(int) a;
+new(a, 20);
+for(v = 0; v < 3; v = (v + 1)) {fork(print(v);
+v=(v * rH(a)))};
+print(rH(a))
+------------------------------------------------------
+[ID: 3]
+ExeStack:
+
+SymTable:
+{a=(1, int), v=40}
+FileTable:
+{}
+HeapTable:
+{1=20}
+Out:
+[0, 1, 2, 20]
+Original Program:
+print(v);
+v=(v * rH(a))

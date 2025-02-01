@@ -9,6 +9,7 @@ import com.example.collections.stack.*;
 import com.example.collections.dictionary.*;
 import com.example.collections.heap.*;
 import com.example.model.statements.IStmt;
+import com.example.model.states.countSemaphore.*;
 import com.example.model.values.StringValue;
 import com.example.model.values.Value;
 
@@ -20,11 +21,12 @@ public class PrgState {
    private IStmt originalProgram;
    private MyIDictionary<StringValue, BufferedReader> fileTable;
    private MyIHeap<Integer, Value> heap;
+   private ISemaphoreTable semaphoreTable;
    private int id;
 
    private static int prgId = 0;
 
-   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp) {
+   public PrgState(IStmt prg, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, MyIDictionary<StringValue, BufferedReader> fileTbl, MyIHeap<Integer, Value> hp, ISemaphoreTable semTbl) {
       exeStack = new MyStack<IStmt>();
       symTable = symtbl;
       out = ot;
@@ -32,6 +34,7 @@ public class PrgState {
       fileTable = fileTbl;
       heap = hp;
       exeStack.push(prg);
+      semaphoreTable = semTbl;
       id = getNewId();
    }
 
@@ -41,6 +44,7 @@ public class PrgState {
       out = new MyList<Value>();
       fileTable = new MyDictionary<StringValue, BufferedReader>();
       heap = new MyHeap<Integer, Value>();
+      semaphoreTable = new SemaphoreTable();
       originalProgram = prg.deepCopy();
       exeStack.push(prg);
       id = getNewId();
@@ -51,6 +55,7 @@ public class PrgState {
    public MyIList<Value> getOut() { return out; } // get out :))
    public MyIDictionary<StringValue, BufferedReader> getFileTable() { return fileTable; }
    public MyIHeap<Integer, Value> getHeap() { return heap; }
+   public ISemaphoreTable getSemaphoreTable() { return semaphoreTable; }
    public IStmt getOriginalProgram() { return originalProgram; }
    public int getId() { return id; }
 
@@ -59,6 +64,7 @@ public class PrgState {
    public void setOut(MyIList<Value> ot) { out = ot; }
    public void setFileTable(MyIDictionary<StringValue, BufferedReader> fileTbl) { fileTable = fileTbl; }
    public void setHeap(MyIHeap<Integer, Value> hp) { heap = hp; }
+   public void setSemaphoreTable(ISemaphoreTable semTbl) { semaphoreTable = semTbl; }
    public void setOriginalProgram(IStmt prg) { originalProgram = prg; }
 
    public boolean isNotCompleted() { return !exeStack.isEmpty(); }   

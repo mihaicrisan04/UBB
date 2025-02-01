@@ -1,6 +1,7 @@
 package com.example.model.statements.heap;
 
 import com.example.collections.dictionary.MyIDictionary;
+import com.example.collections.heap.MyHeap;
 import com.example.model.statements.IStmt;
 import com.example.model.PrgState;
 import com.example.model.exceptions.MyException;
@@ -42,7 +43,8 @@ public class NewHeapStmt implements IStmt {
         if (!symTable.containsKey(varName)) { throw new MyException("Variable " + varName + " is not defined"); }
 
         Value val = exp.eval(symTable, heapTable);
-        Integer address = heapTable.getNextFreeAddress();
+        // Integer address = heapTable.getNextFreeAddress();
+        Integer address = MyHeap.getNextAddr();
         RefValue refVal = new RefValue(address, val.getType());
 
         heapTable.put(address, val);

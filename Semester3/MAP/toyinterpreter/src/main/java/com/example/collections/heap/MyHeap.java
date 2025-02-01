@@ -8,16 +8,25 @@ public class MyHeap<K, V> implements MyIHeap<K, V> {
     private Map<K, V> heap;
     private Integer nextFreeAddress;
 
+    private static int nextAddr = 0;
+
     public MyHeap() {
         heap = new HashMap<>();
         nextFreeAddress = 0;
     }
 
+    // this doesn't work
     @SuppressWarnings("unchecked")
     public K getNextFreeAddress() {
-        nextFreeAddress++;
+        nextFreeAddress += 1;
         return (K) nextFreeAddress;
     }
+
+    public static int getNextAddr() {
+        nextAddr += 1;
+        return nextAddr;
+    }
+
 
     @Override
     public V get(K key) {

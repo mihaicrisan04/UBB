@@ -4,6 +4,7 @@ package com.example.controller;
 import com.example.model.statements.*;
 import com.example.model.statements.file.*;
 import com.example.model.statements.heap.*;
+import com.example.model.statements.semaphore.*;
 import com.example.model.expressions.*;
 import com.example.model.types.*;
 import com.example.model.values.*;
@@ -244,6 +245,230 @@ public class Programs {
             )
         );
 
+        // int a; int b; int c;
+        // a=1;b=2;c=5;
+        // (switch(a*10)
+        // (case (b*c) : print(a);print(b))
+        // (case (10) : print(100);print(200))
+        // (default : print(300)));
+        // print(300)
+        IStmt ex12 = new CompoundStmt(
+            new VarDeclStmt("a", new IntType()),
+            new CompoundStmt(
+                new VarDeclStmt("b", new IntType()),
+                new CompoundStmt(
+                    new VarDeclStmt("c", new IntType()),
+                    new CompoundStmt(
+                        new AssignStmt("a", new ValueExp(new IntValue(1))),
+                        new CompoundStmt(
+                            new AssignStmt("b", new ValueExp(new IntValue(2))),
+                            new CompoundStmt(
+                                new AssignStmt("c", new ValueExp(new IntValue(5))),
+                                new CompoundStmt(
+                                    new SwitchStmt(
+                                        new ArithExp(
+                                            new VarExp("a"),
+                                            new ValueExp(new IntValue(10)),
+                                            ArithOperation.MUL
+                                        ),
+                                        new ArithExp(
+                                            new VarExp("b"),
+                                            new VarExp("c"),
+                                            ArithOperation.MUL
+                                        ),
+                                        new CompoundStmt(
+                                            new PrintStmt(new VarExp("a")),
+                                            new PrintStmt(new VarExp("b"))
+                                        ),
+                                        new ValueExp(new IntValue(10)),
+                                        new CompoundStmt(
+                                            new PrintStmt(new ValueExp(new IntValue(100))),
+                                            new PrintStmt(new ValueExp(new IntValue(200)))
+                                        ),
+                                        new PrintStmt(new ValueExp(new IntValue(300)))
+                                    ),
+                                    new PrintStmt(new ValueExp(new IntValue(300)))
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+
+        // Ref int v1; int cnt;
+        // new(v1,1);createSemaphore(cnt,rH(v1));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));print(rh(v1));release(cnt));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));wh(v1,rh(v1)*2));print(rh(v1));release(cnt));
+        // acquire(cnt);
+        // print(rh(v1)-1);
+        // release(cnt)
+        IStmt ex13 = new CompoundStmt(
+            new VarDeclStmt("v1", new RefType(new IntType())),
+            new CompoundStmt(
+                new VarDeclStmt("cnt", new IntType()),
+                new CompoundStmt(
+                    new NewHeapStmt("v1", new ValueExp(new IntValue(1))),
+                    new CompoundStmt(
+                        new CreateSemaphoreStmt("cnt", new ReadHeapExp(new VarExp("v1"))),
+                        new CompoundStmt(
+                            new ForkStmt(
+                                new CompoundStmt(
+                                    new AcquireStmt("cnt"),
+                                    new CompoundStmt(
+                                        new WriteHeapStmt("v1", new ArithExp(
+                                            new ReadHeapExp(new VarExp("v1")),
+                                            new ValueExp(new IntValue(10)),
+                                            ArithOperation.MUL
+                                        )),
+                                        new CompoundStmt(
+                                            new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                            new ReleaseStmt("cnt")
+                                        )
+                                    )
+                                )
+                            ),
+                            new CompoundStmt(
+                                new ForkStmt(
+                                    new CompoundStmt(
+                                        new AcquireStmt("cnt"),
+                                        new CompoundStmt(
+                                            new WriteHeapStmt("v1", new ArithExp(
+                                                new ReadHeapExp(new VarExp("v1")),
+                                                new ValueExp(new IntValue(10)),
+                                                ArithOperation.MUL
+                                            )),
+                                            new CompoundStmt(
+                                                new WriteHeapStmt("v1", new ArithExp(
+                                                    new ReadHeapExp(new VarExp("v1")),
+                                                    new ValueExp(new IntValue(2)),
+                                                    ArithOperation.MUL
+                                                )),
+                                                new CompoundStmt(
+                                                    new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                                    new ReleaseStmt("cnt")
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                new CompoundStmt(
+                                    new AcquireStmt("cnt"),
+                                    new CompoundStmt(
+                                        new PrintStmt(new ArithExp(
+                                            new ReadHeapExp(new VarExp("v1")),
+                                            new ValueExp(new IntValue(1)),
+                                            ArithOperation.SUB
+                                        )),
+                                        new ReleaseStmt("cnt")
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+
+        // Ref int a; Ref int b; int v;
+        // new(a,0); new(b,0);
+        // wh(a,1); wh(b,2);
+        // v=(rh(a)<rh(b))?100:200;
+        // print(v);
+        // v= ((rh(b)-2)>rh(a))?100:200;
+        // print(v);
+        // The final Out should be {100,200}
+        IStmt ex14 = new CompoundStmt(
+            new VarDeclStmt("a", new RefType(new IntType())),
+            new CompoundStmt(
+                new VarDeclStmt("b", new RefType(new IntType())),
+                new CompoundStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompoundStmt(
+                        new NewHeapStmt("a", new ValueExp(new IntValue(0))),
+                        new CompoundStmt(
+                            new NewHeapStmt("b", new ValueExp(new IntValue(0))),
+                            new CompoundStmt(
+                                new WriteHeapStmt("a", new ValueExp(new IntValue(1))),
+                                new CompoundStmt(
+                                    new WriteHeapStmt("b", new ValueExp(new IntValue(2))),
+                                    new CompoundStmt(
+                                        new CondAssignStmt(
+                                            "v",
+                                            new CompareExp(
+                                                new ReadHeapExp(new VarExp("a")),
+                                                new ReadHeapExp(new VarExp("b")),
+                                                CompareOperation.LESS
+                                            ),
+                                            new ValueExp(new IntValue(100)),
+                                            new ValueExp(new IntValue(200))
+                                        ),
+                                        new CompoundStmt(
+                                            new PrintStmt(new VarExp("v")),
+                                            new CompoundStmt(
+                                                new CondAssignStmt(
+                                                    "v",
+                                                    new CompareExp(
+                                                        new ArithExp(
+                                                            new ReadHeapExp(new VarExp("b")),
+                                                            new ValueExp(new IntValue(2)),
+                                                            ArithOperation.SUB
+                                                        ),
+                                                        new ReadHeapExp(new VarExp("a")),
+                                                        CompareOperation.GREATER
+                                                    ),
+                                                    new ValueExp(new IntValue(100)),
+                                                    new ValueExp(new IntValue(200))
+                                                ),
+                                                new PrintStmt(new VarExp("v"))
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+
+        // Ref int a; new(a,20);
+        // (for(v=0;v<3;v=v+1) fork(print(v);v=v*rh(a)));
+        // print(rh(a))
+        // The final Out should be {0,1,2,20}
+        IStmt ex15 = new CompoundStmt(
+            new VarDeclStmt("a", new RefType(new IntType())),
+            new CompoundStmt(
+                new NewHeapStmt("a", new ValueExp(new IntValue(20))),
+                new CompoundStmt(
+                    new ForStmt(
+                        "v",
+                        new ValueExp(new IntValue(0)),
+                        new ValueExp(new IntValue(3)),
+                        new ArithExp(
+                            new VarExp("v"),
+                            new ValueExp(new IntValue(1)),
+                            ArithOperation.ADD
+                        ),
+                        new ForkStmt(
+                            new CompoundStmt(
+                                new PrintStmt(new VarExp("v")),
+                                new AssignStmt(
+                                    "v",
+                                    new ArithExp(
+                                        new VarExp("v"),
+                                        new ReadHeapExp(new VarExp("a")),
+                                        ArithOperation.MUL
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                )
+            )
+        );
+
 
         programs.add(ex);
         programs.add(ex2);
@@ -256,7 +481,10 @@ public class Programs {
         programs.add(ex9);
         programs.add(ex10);
         programs.add(ex11);
-
+        programs.add(ex12);
+        programs.add(ex13);
+        programs.add(ex14);
+        programs.add(ex15);
 
         // TextMenu menu = new TextMenu();
         // menu.addCommand(new ExitCommand("0", "exit"));
