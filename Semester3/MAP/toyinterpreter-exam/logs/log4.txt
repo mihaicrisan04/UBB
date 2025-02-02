@@ -1,0 +1,398 @@
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+bool a
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+bool a
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int v
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=true
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=false, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3)
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+IF(a) THEN(v=2) ELSE(v=3)
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=2
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+v=2
+print(v)
+SymTable:
+{a=true, v=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=true, v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(v)
+SymTable:
+{a=true, v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=true, v=2}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[2]
+Original Program:
+bool a;
+int v;
+a=true;
+IF(a) THEN(v=2) ELSE(v=3);
+print(v)

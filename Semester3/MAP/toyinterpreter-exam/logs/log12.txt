@@ -1,0 +1,5081 @@
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2, 300]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2, 300]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)): print(a);
+print(b))
+(CASE(10): print(100);
+print(200))
+(DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2, 300]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10))
+(CASE((b * c)):
+print(a);
+print(b))
+(CASE(10):
+print(100);
+print(200))
+(DEFAULT:
+print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+{int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+{int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+{int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+{int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+{a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+{a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+{b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+{b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+{c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+{c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+{SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+{SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{print(a); print(b)}
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+{print(a); print(b)}
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2, 300]
+Original Program:
+{int a; {int b; {int c; {a=1; {b=2; {c=5; {SWITCH((a * 10)) (CASE((b * c)): {print(a); print(b)}) (CASE(10): {print(100); print(200)}) (DEFAULT: print(300)); print(300)}}}}}}}
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int a
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int b
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+int c
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+a=1
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=0, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+b=2
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=0, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+c=5
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=0}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300))
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a);
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(a)
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(b)
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+print(300)
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
+------------------------------------------------------
+[ID: 0]
+ExeStack:
+
+SymTable:
+{a=1, b=2, c=5}
+FileTable:
+{}
+HeapTable:
+{}
+Out:
+[1, 2, 300]
+Original Program:
+int a;
+int b;
+int c;
+a=1;
+b=2;
+c=5;
+SWITCH((a * 10)) (CASE((b * c)): print(a);
+print(b)) (CASE(10): print(100);
+print(200)) (DEFAULT: print(300));
+print(300)
