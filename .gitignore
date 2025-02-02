@@ -53,4 +53,7 @@ Semester3/MAP/**/bin/
 Semester3/MAP/**/*.iml
 Semester3/MAP/toyinterpreter/logs
 
+# other
+Semester3/CN/cn_exam/
+
 
