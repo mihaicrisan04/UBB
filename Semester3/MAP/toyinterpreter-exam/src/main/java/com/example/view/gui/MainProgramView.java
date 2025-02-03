@@ -145,7 +145,7 @@ public class MainProgramView {
         
         exeStackList = new ListView<>();
 
-        // // Create Semaphore Table
+        // Create Semaphore Table
         semaphoreTable = new TableView<>();
         TableColumn<SemaphoreEntry, Integer> semaphoreAddressCol = new TableColumn<>("Location");
         TableColumn<SemaphoreEntry, Integer> semaphoreValueCol = new TableColumn<>("Value");

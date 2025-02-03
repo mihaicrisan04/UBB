@@ -3,12 +3,12 @@ package com.example.model.statements;
 
 import com.example.collections.dictionary.MyIDictionary;
 import com.example.model.expressions.Exp;
+import com.example.model.expressions.CompareExp;
 import com.example.model.PrgState;
+import com.example.model.enums.CompareOperation;
 import com.example.model.exceptions.MyException;
 import com.example.model.exceptions.StmtException;
 import com.example.model.types.Type;
-import com.example.model.values.IntValue;
-import com.example.model.values.Value;
 
 
 // switch(exp) (case exp1: stmt1) (case exp2: stmt2) (default: stmt3)
@@ -34,7 +34,7 @@ public class SwitchStmt implements IStmt {
         Type typexp = exp.typeCheck(typeEnv);
         Type typexp1 = exp1.typeCheck(typeEnv);
         Type typexp2 = exp2.typeCheck(typeEnv);
-        if (!typexp.equals(typexp1) || !typexp.equals(typexp2)) { throw new MyException("Switch statement: Expressions do not have the same type"); }
+        if (!typexp.equals(typexp1) || !typexp.equals(typexp2) || !typexp1.equals(typexp2)) { throw new MyException("Switch statement: Expressions do not have the same type"); }
         
         stmt1.typeCheck(typeEnv.deepCopy());
         stmt2.typeCheck(typeEnv.deepCopy());
@@ -45,26 +45,9 @@ public class SwitchStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState prg) throws MyException, StmtException {
-        Value val;
-        Value val1;
-        Value val2;
+        IStmt stmt = new IfStmt(new CompareExp(exp, exp1, CompareOperation.EQUAL), stmt1, new IfStmt(new CompareExp(exp, exp2, CompareOperation.EQUAL), stmt2, stmt3));
 
-        try { val = exp.eval(prg.getSymTable(), prg.getHeap()); }
-        catch (MyException e) { throw new StmtException("Switch statement: " + e.getMessage()); }
-
-        try { val1 = exp1.eval(prg.getSymTable(), prg.getHeap()); }
-        catch (MyException e) { throw new StmtException("Switch statement: " + e.getMessage()); }
-
-        try { val2 = exp2.eval(prg.getSymTable(), prg.getHeap()); }
-        catch (MyException e) { throw new StmtException("Switch statement: " + e.getMessage()); }
-
-        IntValue i = (IntValue) val;
-        IntValue i1 = (IntValue) val1;
-        IntValue i2 = (IntValue) val2;
-
-        if (i.getValue() == i1.getValue()) { prg.getExeStack().push(stmt1); }
-        else if (i.getValue() == i2.getValue()) { prg.getExeStack().push(stmt2); }
-        else { prg.getExeStack().push(stmt3); }
+        prg.getExeStack().push(stmt);
 
         return null;
     }
