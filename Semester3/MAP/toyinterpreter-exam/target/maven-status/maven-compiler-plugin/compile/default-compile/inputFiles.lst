@@ -1,3 +1,4 @@
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/semaphore/AcquireStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/heap/WriteHeapStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/values/StringValue.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/expressions/ReadHeapExp.java
@@ -9,6 +10,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/collections/stack/MyIStack.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/values/Value.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/file/CloseFileStmt.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/states/countSemaphore/ISemaphoreTable.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/values/BoolValue.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/repository/IRepository.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/WhileStmt.java
@@ -17,6 +19,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/collections/heap/MyHeap.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/collections/dictionary/MyIDictionary.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/collections/dictionary/MyDictionary.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/semaphore/CreateSemaphoreStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/IStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/values/RefValue.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/types/Type.java
@@ -43,6 +46,7 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/enums/ArithOperation.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/collections/list/MyList.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/NoOpStmt.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/semaphore/ReleaseStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/repository/Repository.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/controller/Controller.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/ForkStmt.java
@@ -57,6 +61,8 @@
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/expressions/VarExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/CompoundStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/exceptions/DivisionByZeroException.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/states/countSemaphore/SemaphoreTable.java
+/Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/statements/SwitchStmt.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/model/expressions/CompareExp.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/App.java
 /Users/mihaicrisan/Developer/UBB/Semester3/MAP/toyinterpreter-exam/src/main/java/com/example/collections/list/MyIList.java

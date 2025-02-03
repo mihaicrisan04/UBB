@@ -35,9 +35,7 @@ public class MainProgramView {
     private TableView<SymTableEntry> symTable;
     private ListView<String> exeStackList;
     private TextField prgStatesCount;
-    // private TableView<LockEntry> lockTable;
-    // private TableView<LatchEntry> latchTable;
-    // private TableView<SemaphoreEntry> semaphoreTable;
+    private TableView<SemaphoreEntry> semaphoreTable;
 
     public MainProgramView() {
         createComponents();
@@ -74,13 +72,9 @@ public class MainProgramView {
                 new Label("FileTable:"),
                 fileTableList,
                 new Label("PrgState IDs:"),
-                prgStateList
-                // new Label("LockTable:"),
-                // lockTable,
-                // new Label("LatchTable:"),
-                // latchTable,
-                // new Label("SemaphoreTable:"),
-                // semaphoreTable
+                prgStateList,
+                new Label("SemaphoreTable:"),
+                semaphoreTable
             );
             
             VBox rightPane = new VBox(10);
@@ -150,32 +144,16 @@ public class MainProgramView {
         symTable.getColumns().addAll(varNameCol, varValueCol);
         
         exeStackList = new ListView<>();
-        
-        // Create Lock Table
-        // lockTable = new TableView<>();
-        // TableColumn<LockEntry, Integer> lockAddressCol = new TableColumn<>("Location");
-        // TableColumn<LockEntry, Integer> lockValueCol = new TableColumn<>("Value");
-        // lockAddressCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getLocation()));
-        // lockValueCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getValue()));
-        // lockTable.getColumns().addAll(lockAddressCol, lockValueCol);
-
-        // // Create Latch Table
-        // latchTable = new TableView<>();
-        // TableColumn<LatchEntry, Integer> latchAddressCol = new TableColumn<>("Location");
-        // TableColumn<LatchEntry, Integer> latchValueCol = new TableColumn<>("Value");
-        // latchAddressCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getLocation()));
-        // latchValueCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getValue()));
-        // latchTable.getColumns().addAll(latchAddressCol, latchValueCol);
 
         // // Create Semaphore Table
-        // semaphoreTable = new TableView<>();
-        // TableColumn<SemaphoreEntry, Integer> semaphoreAddressCol = new TableColumn<>("Location");
-        // TableColumn<SemaphoreEntry, Integer> semaphoreValueCol = new TableColumn<>("Value");
-        // TableColumn<SemaphoreEntry, String> semaphoreListCol = new TableColumn<>("List");
-        // semaphoreAddressCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getLocation()));
-        // semaphoreValueCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getValue()));
-        // semaphoreListCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getList()));
-        // semaphoreTable.getColumns().addAll(semaphoreAddressCol, semaphoreValueCol, semaphoreListCol);
+        semaphoreTable = new TableView<>();
+        TableColumn<SemaphoreEntry, Integer> semaphoreAddressCol = new TableColumn<>("Location");
+        TableColumn<SemaphoreEntry, Integer> semaphoreValueCol = new TableColumn<>("Value");
+        TableColumn<SemaphoreEntry, String> semaphoreListCol = new TableColumn<>("List");
+        semaphoreAddressCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getLocation()));
+        semaphoreValueCol.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getValue()));
+        semaphoreListCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getList()));
+        semaphoreTable.getColumns().addAll(semaphoreAddressCol, semaphoreValueCol, semaphoreListCol);
 
         // Add listeners for PrgState selection
         prgStateList.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
@@ -284,24 +262,14 @@ public class MainProgramView {
                 .collect(Collectors.toList())
         );
 
-        // Update LockTable
-        // lockTable.getItems().setAll(currentPrg.getLockTable().getLockTable().entrySet().stream()
-        //     .map(entry -> new LockEntry(entry.getKey(), entry.getValue()))
-        //     .collect(Collectors.toList()));
-
-        // // Update LatchTable
-        // latchTable.getItems().setAll(currentPrg.getLatchTable().getLatchTable().entrySet().stream()
-        //     .map(entry -> new LatchEntry(entry.getKey(), entry.getValue()))
-        //     .collect(Collectors.toList()));
-
-        // // Update SemaphoreTable
-        // semaphoreTable.getItems().setAll(currentPrg.getSemaphoreTable().getSemaphoreDictionaryAsList().stream()
-        //     .map(entry -> new SemaphoreEntry(
-        //         entry.getKey().getKey(),
-        //         entry.getKey().getValue(),
-        //         entry.getValue().toString()
-        //     ))
-        //     .collect(Collectors.toList()));
+        // Update SemaphoreTable
+        semaphoreTable.getItems().setAll(currentPrg.getSemaphoreTable().getSemaphoreDictionaryAsList().stream()
+            .map(entry -> new SemaphoreEntry(
+                entry.getKey().getKey(),
+                entry.getKey().getValue(),
+                entry.getValue().toString()
+            ))
+            .collect(Collectors.toList()));
     }
 }
 
@@ -332,44 +300,18 @@ class SymTableEntry {
     public String getValue() { return value; }
 }
 
-// class LockEntry {
-//     private Integer location;
-//     private Integer value;
+class SemaphoreEntry {
+    private Integer location;
+    private Integer value;
+    private String list;
 
-//     public LockEntry(Integer location, Integer value) {
-//         this.location = location;
-//         this.value = value;
-//     }
+    public SemaphoreEntry(Integer location, Integer value, String list) {
+        this.location = location;
+        this.value = value;
+        this.list = list;
+    }
 
-//     public Integer getLocation() { return location; }
-//     public Integer getValue() { return value; }
-// }
-
-// class LatchEntry {
-//     private Integer location;
-//     private Integer value;
-
-//     public LatchEntry(Integer location, Integer value) {
-//         this.location = location;
-//         this.value = value;
-//     }
-
-//     public Integer getLocation() { return location; }
-//     public Integer getValue() { return value; }
-// }
-
-// class SemaphoreEntry {
-//     private Integer location;
-//     private Integer value;
-//     private String list;
-
-//     public SemaphoreEntry(Integer location, Integer value, String list) {
-//         this.location = location;
-//         this.value = value;
-//         this.list = list;
-//     }
-
-//     public Integer getLocation() { return location; }
-//     public Integer getValue() { return value; }
-//     public String getList() { return list; }
-// }
+    public Integer getLocation() { return location; }
+    public Integer getValue() { return value; }
+    public String getList() { return list; }
+}
