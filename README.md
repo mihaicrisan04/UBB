@@ -23,3 +23,11 @@
 * [🗄️ Databases](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/DB)
 * [🧮 Functional & Logic Porgramming](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/PLF)
 * [🤓 Advanced Programming Methods](https://github.com/mihaicrisan04/UBB/tree/main/Semester3/MAP)
+
+## [Semester 4](https://github.com/mihaicrisan04/UBB/tree/main/Semester4)
+
+* [🤖 Artificial Intelligence](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/ai)
+* [🗄️ Data Base Management Systems](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/dbms)
+* [🖼️ Design and Programming Environments](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/mpp)
+* [🛠️ Software Engineering](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/swe)
+* [📄 Web Programming](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/web)
