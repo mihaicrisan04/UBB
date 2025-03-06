@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab02</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            width: 50%;
+            height: 100px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            background-color: aqua;
+        }
+        aside {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin: 10px;
+        }
+        article {
+            flex: 1;
+            background-color: red;
+            padding: 20px;
+            margin: 10px;
+        }
+        section {
+            display: none;
+            flex-direction: column;
+            align-items: left;
+            background-color: violet;
+            padding: 20px;
+        }
+        section:target {
+            display: flex;
+        }
+        footer {
+            background-color: bisque;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            header, main, Footer {
+                width: 100%;
+            }
+            
+            main {
+                flex-direction: column-reverse; /* Puts article before aside */
+            }
+            
+            aside {
+                width: auto;
+            }
+        }
+        
+        /* Optional: hide aside completely on very small screens */
+        @media (max-width: 480px) {
+            aside {
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <nav>
+            <h1>Lab 02</h1>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#table-data">Table</a></li>
+            </ul>
+        </aside>
+
+        <article>
+            <section id="home">
+                <h2>Home</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum nisi non maiores, aperiam iste deserunt eligendi tempore illum! Impedit tempore aut cum reiciendis quia dolor obcaecati hic ea, ad quaerat!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque aliquid eveniet numquam dolor vero soluta quia asperiores error nemo? Minima, quibusdam similique totam amet incidunt blanditiis mollitia. Quidem, ipsam officiis!</p>
+            </section>
+
+            <section id="about">
+                <h2>About</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos natus non sit placeat expedita alias sapiente ea dignissimos repellendus nulla est veritatis iusto sequi quas corrupti repellat neque, cumque excepturi.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, repellendus ullam. Tenetur, maiores? Corrupti fugit a facilis quo, tempora minima suscipit voluptate illum assumenda quaerat, repellendus illo impedit perferendis animi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eveniet nihil suscipit dignissimos officiis rerum quasi minus libero magnam recusandae reprehenderit amet, eum excepturi, expedita sint necessitatibus, corporis perspiciatis praesentium!</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto, architecto quo nihil unde ipsum a dolores hic. Nisi reprehenderit iusto, nihil quas laboriosam eius vitae saepe repudiandae rerum itaque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat ipsum suscipit quibusdam dolores, nulla incidunt accusantium at vero autem adipisci eum obcaecati veritatis minus quam voluptate cumque, officiis eligendi reprehenderit!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur odio ullam sunt nulla, possimus, veniam corporis odit exercitationem fugiat at perspiciatis. Expedita cupiditate commodi nesciunt explicabo quisquam mollitia molestias necessitatibus!</p>
+            </section>
+
+            <section id="table-data">
+                <h2>Table Data</h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>080-1234-5678</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>080-8765-4321</td>
+                    </tr>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>080-1111-2222</td>
+                    </tr>
+                </table>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>Lab02</p>
+    </footer>
+</body>
+</html>
+

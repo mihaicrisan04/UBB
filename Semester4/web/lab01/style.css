@@ -1,25 +1,20 @@
 :root {
-    /* Color Palette */
     --primary-bg: rgb(228, 238, 243);
     --secondary-bg: #e6e8f3;
     --text-color: #333;
     --accent-color: #2c5282;
     --border-color: #ccc;
 
-    /* Spacing */
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
 
-    /* Layout - consistent width values */
     --content-width: 70%;
     --max-content-width: 700px;
 
-    /* Typography */
     --font-main: Arial, sans-serif;
 }
 
-/* Basic styling */
 body {
     font-family: var(--font-main);
     margin: 0;
@@ -30,7 +25,6 @@ body {
     color: var(--text-color);
 }
 
-/* Make main element full width */
 main {
     width: 100%;
     margin: 0;
@@ -38,14 +32,12 @@ main {
     text-align: center;
 }
 
-/* Header styling */
 header {
     padding: var(--spacing-md);
     text-align: center;
     width: 100%;
 }
 
-/* Navigation styling */
 nav ul {
     list-style: none;
     padding: 0;
@@ -57,9 +49,7 @@ nav ul li {
     margin: 0 10px;
 }
 
-/* Standard width for sections, aside, hr */
 .content-container,
-section:not(#sports),
 aside,
 hr {
     width: var(--content-width);
@@ -68,12 +58,12 @@ hr {
     margin-right: auto;
 }
 
-/* Sports section specifics */
-#sports {
-    width: 100%;
+#sports article ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* Figure is full width */
 figure {
     width: 100%;
     margin: 0;
@@ -87,22 +77,12 @@ img {
     display: block;
 }
 
-/* Post-figure content in sports section */
-#sports article > *:not(figure) {
-    width: var(--content-width);
-    max-width: var(--max-content-width);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Lists styling */
 section ul {
     display: inline-block;
     text-align: center;
     list-style: none;
 }
 
-/* Table styling */
 table {
     width: 100%;
     margin: 0 auto;
@@ -114,59 +94,15 @@ th, td {
     text-align: center;
 }
 
-/* Aside styling with border */
-aside {
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    margin: var(--spacing-lg) auto;
-}
-
-aside h3 {
-    margin-top: var(--spacing-md);
-}
-
-/* Multimedia section */
-#multimedia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-#multimedia video {
-    width: 100%;
-}
-
-/* Horizontal rule styling */
 hr {
     border: none;
     border-top: 1px solid var(--border-color);
     margin: var(--spacing-lg) auto;
 }
 
-/* Footer styling */
 footer {
     text-align: center;
     padding: var(--spacing-md);
     width: 100%;
 }
 
-/* Text styling */
-h2, h3, h4, h5, h6, p, figcaption {
-    text-align: center;
-}
-
-/* Link styling */
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Add spacing after sections */
-section, aside {
-    margin-bottom: var(--spacing-lg);
-}
