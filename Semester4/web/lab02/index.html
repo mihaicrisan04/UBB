@@ -149,15 +149,14 @@
             aspect-ratio: 1 / 1;
             border-radius: 5px;
             cursor: pointer;
-            transition: all 0.5s ease;
-
+            transition: all 0.3s ease;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             font-weight: bold;
             font-size: 1.5rem;
-            order: 0;
+            order: 1;
         }
 
         .grid-item:nth-child(1) { background-color: #e74c3c; }
@@ -175,18 +174,17 @@
             transform: scale(1.05);
             filter: brightness(1.2);
         }
-        
-        /* Set target item to order 10 (end) and other items to lower orders */
-        #item1:target { order: 10; transform: scale(1.1); }
-        #item2:target { order: 10; transform: scale(1.1); }
-        #item3:target { order: 10; transform: scale(1.1); }
-        #item4:target { order: 10; transform: scale(1.1); }
-        #item5:target { order: 10; transform: scale(1.1); }
-        #item6:target { order: 10; transform: scale(1.1); }
-        #item7:target { order: 10; transform: scale(1.1); }
-        #item8:target { order: 10; transform: scale(1.1); }
-        #item9:target { order: 10; transform: scale(1.1); }
-        #item10:target { order: 10; transform: scale(1.1); }
+
+        /* Hide checkboxes but keep them accessible */
+        .grid-checkbox {
+            display: none;
+        }
+
+        /* When checkbox is checked, move the associated label to the end */
+        .grid-checkbox:checked + .grid-item {
+            order: 2;
+            transform: scale(1.1);
+        }
 
         /* Responsive styles */
         @media (max-width: 768px) {
@@ -223,16 +221,35 @@
     <!-- Interactive Grid Section with CSS-only reordering -->
     <h1>Interactive Grid (Click an item to move it to the end)</h1>
     <div class="grid-container">
-        <a href="#item1" class="grid-item" id="item1">1</a>
-        <a href="#item2" class="grid-item" id="item2">2</a>
-        <a href="#item3" class="grid-item" id="item3">3</a>
-        <a href="#item4" class="grid-item" id="item4">4</a>
-        <a href="#item5" class="grid-item" id="item5">5</a>
-        <a href="#item6" class="grid-item" id="item6">6</a>
-        <a href="#item7" class="grid-item" id="item7">7</a>
-        <a href="#item8" class="grid-item" id="item8">8</a>
-        <a href="#item9" class="grid-item" id="item9">9</a>
-        <a href="#item10" class="grid-item" id="item10">10</a>
+        <input type="checkbox" id="checkbox1" class="grid-checkbox">
+        <label for="checkbox1" class="grid-item">1</label>
+        
+        <input type="checkbox" id="checkbox2" class="grid-checkbox">
+        <label for="checkbox2" class="grid-item">2</label>
+        
+        <input type="checkbox" id="checkbox3" class="grid-checkbox">
+        <label for="checkbox3" class="grid-item">3</label>
+        
+        <input type="checkbox" id="checkbox4" class="grid-checkbox">
+        <label for="checkbox4" class="grid-item">4</label>
+        
+        <input type="checkbox" id="checkbox5" class="grid-checkbox">
+        <label for="checkbox5" class="grid-item">5</label>
+        
+        <input type="checkbox" id="checkbox6" class="grid-checkbox">
+        <label for="checkbox6" class="grid-item">6</label>
+        
+        <input type="checkbox" id="checkbox7" class="grid-checkbox">
+        <label for="checkbox7" class="grid-item">7</label>
+        
+        <input type="checkbox" id="checkbox8" class="grid-checkbox">
+        <label for="checkbox8" class="grid-item">8</label>
+        
+        <input type="checkbox" id="checkbox9" class="grid-checkbox">
+        <label for="checkbox9" class="grid-item">9</label>
+        
+        <input type="checkbox" id="checkbox10" class="grid-checkbox">
+        <label for="checkbox10" class="grid-item">10</label>
     </div>
 </body>
 </html>
