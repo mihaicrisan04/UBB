@@ -49,6 +49,13 @@ body {
     background: #f7f9fa;
 }
 
+.search-icon {
+    padding: 0 1.2rem;
+    height: 4rem;
+    border: none;
+    background: transparent;
+}
+
 .search-input {
     border: none;
     background: transparent;
@@ -81,6 +88,10 @@ body {
     color: #1c1d1f;
     text-decoration: none;
     font-weight: 400;
+}
+
+.fas {
+    font-size: 1.4rem;
 }
 
 .login {
