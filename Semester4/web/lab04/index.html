@@ -11,7 +11,7 @@
         }
 
         .main-link {
-            background-color: #4CAF50;
+            background-color: #392f8e;
             color: white;
             padding: 16px;
             font-size: 16px;
@@ -70,94 +70,153 @@
 <body>
     <div class="dropdown">
         <a href="#" class="main-link">Menu</a>
-        <div class="submenu">
-            <div class="submenu-item">
-                <a href="#" class="submenu-link">Option 1</a>
-                <div class="nested-submenu">
-                    <a href="#" class="nested-submenu-link">Sub 1.1</a>
-                    <a href="#" class="nested-submenu-link">Sub 1.2</a>
-                    <a href="#" class="nested-submenu-link">Sub 1.3</a>
-                    <a href="#" class="nested-submenu-link">Sub 1.4</a>
-                </div>
-            </div>
-            <div class="submenu-item">
-                <a href="#" class="submenu-link">Option 2</a>
-                <div class="nested-submenu">
-                    <a href="#" class="nested-submenu-link">Sub 2.1</a>
-                    <a href="#" class="nested-submenu-link">Sub 2.2</a>
-                    <a href="#" class="nested-submenu-link">Sub 2.3</a>
-                    <a href="#" class="nested-submenu-link">Sub 2.4</a>
-                </div>
-            </div>
-            <div class="submenu-item">
-                <a href="#" class="submenu-link">Option 3</a>
-                <div class="nested-submenu">
-                    <a href="#" class="nested-submenu-link">Sub 3.1</a>
-                    <a href="#" class="nested-submenu-link">Sub 3.2</a>
-                    <a href="#" class="nested-submenu-link">Sub 3.3</a>
-                    <a href="#" class="nested-submenu-link">Sub 3.4</a>
-                </div>
-            </div>
-            <div class="submenu-item">
-                <a href="#" class="submenu-link">Option 4</a>
-                <div class="nested-submenu">
-                    <a href="#" class="nested-submenu-link">Sub 4.1</a>
-                    <a href="#" class="nested-submenu-link">Sub 4.2</a>
-                    <a href="#" class="nested-submenu-link">Sub 4.3</a>
-                    <a href="#" class="nested-submenu-link">Sub 4.4</a>
-                </div>
-            </div>
-            <div class="submenu-item">
-                <a href="#" class="submenu-link">Option 5</a>
-                <div class="nested-submenu">
-                    <a href="#" class="nested-submenu-link">Sub 5.1</a>
-                    <a href="#" class="nested-submenu-link">Sub 5.2</a>
-                    <a href="#" class="nested-submenu-link">Sub 5.3</a>
-                    <a href="#" class="nested-submenu-link">Sub 5.4</a>
-                </div>
-            </div>
+        <div class="submenu"></div>
+    </div>
+
+    <div class="menu-creator" style="margin-top: 20px; padding: 20px; border: 1px solid #ccc;">
+        <div>
+            <label for="menuLabel">Menu Label:</label>
+            <input type="text" id="menuLabel" placeholder="Enter menu label">
         </div>
+
+        <div>
+            <label for="subItems">Sub Items (comma-separated):</label>
+            <input type="text" id="subItems" placeholder="Sub 1, Sub 2, Sub 3">
+        </div>
+
+        <button id="addMenuItem" style="cursor: pointer;">Add Menu Item</button>
     </div>
 
     <script>
+        // Menu data structure
+        const menuData = [
+            {
+                label: 'Option 1',
+                subItems: ['Sub 1.1', 'Sub 1.2', 'Sub 1.3', 'Sub 1.4']
+            },
+            {
+                label: 'Option 2',
+                subItems: ['Sub 2.1', 'Sub 2.2', 'Sub 2.3', 'Sub 2.4']
+            },
+            {
+                label: 'Option 3',
+                subItems: ['Sub 3.1', 'Sub 3.2', 'Sub 3.3', 'Sub 3.4']
+            },
+            {
+                label: 'Option 4',
+                subItems: ['Sub 4.1', 'Sub 4.2', 'Sub 4.3', 'Sub 4.4']
+            },
+            {
+                label: 'Option 5',
+                subItems: ['Sub 5.1', 'Sub 5.2', 'Sub 5.3', 'Sub 5.4']
+            }
+        ];
+
         document.addEventListener('DOMContentLoaded', function() {
             const mainLink = document.querySelector('.main-link');
             const submenu = document.querySelector('.submenu');
-            const submenuItems = document.querySelectorAll('.submenu-item');
             let activeSubmenu = null;
+
+            // Generate menu structure
+            function generateMenu() {
+                // Clear existing menu items
+                submenu.innerHTML = '';
+                
+                menuData.forEach(item => {
+                    // Create submenu item container
+                    const submenuItem = document.createElement('div');
+                    submenuItem.className = 'submenu-item';
+
+                    // Create main submenu link
+                    const submenuLink = document.createElement('a');
+                    submenuLink.href = '#';
+                    submenuLink.className = 'submenu-link';
+                    submenuLink.textContent = item.label;
+                    submenuItem.appendChild(submenuLink);
+
+                    // Create nested submenu
+                    const nestedSubmenu = document.createElement('div');
+                    nestedSubmenu.className = 'nested-submenu';
+
+                    // Add nested submenu items
+                    item.subItems.forEach(subItem => {
+                        const nestedLink = document.createElement('a');
+                        nestedLink.href = '#';
+                        nestedLink.className = 'nested-submenu-link';
+                        nestedLink.textContent = subItem;
+                        nestedSubmenu.appendChild(nestedLink);
+                    });
+
+                    submenuItem.appendChild(nestedSubmenu);
+                    submenu.appendChild(submenuItem);
+                });
+
+                // Reattach event listeners to new menu items
+                attachMenuEventListeners();
+            }
+
+            // Attach event listeners to menu items
+            function attachMenuEventListeners() {
+                const submenuItems = document.querySelectorAll('.submenu-item');
+                submenuItems.forEach(item => {
+                    const nestedSubmenu = item.querySelector('.nested-submenu');
+                    
+                    item.addEventListener('mouseenter', function() {
+                        if (activeSubmenu && activeSubmenu !== nestedSubmenu) {
+                            activeSubmenu.style.display = 'none';
+                        }
+                        nestedSubmenu.style.display = 'block';
+                        activeSubmenu = nestedSubmenu;
+                    });
+
+                    item.addEventListener('mouseleave', function() {
+                        nestedSubmenu.style.display = 'none';
+                    });
+                });
+            }
+
+            // Handle adding new menu items
+            const addMenuItemBtn = document.getElementById('addMenuItem');
+            addMenuItemBtn.addEventListener('click', function() {
+                const menuLabel = document.getElementById('menuLabel').value.trim();
+                const subItemsText = document.getElementById('subItems').value.trim();
+                
+                if (menuLabel && subItemsText) {
+                    // Split sub items by comma and trim each item
+                    const subItems = subItemsText.split(',').map(item => item.trim());
+                    
+                    // Add new item to menuData
+                    menuData.push({
+                        label: menuLabel,
+                        subItems: subItems
+                    });
+                    
+                    // Regenerate the menu
+                    generateMenu();
+                    
+                    // Clear the inputs
+                    document.getElementById('menuLabel').value = '';
+                    document.getElementById('subItems').value = '';
+                } else {
+                    alert('Please fill in both fields');
+                }
+            });
+
+            // Generate the menu initially
+            generateMenu();
 
             // Toggle main menu
             mainLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; // Toggle the submenu
-            });
-
-            // Handle submenu items
-            submenuItems.forEach(item => {
-                const nestedSubmenu = item.querySelector('.nested-submenu'); // Get the nested submenu from the current menu item
-                
-                item.addEventListener('mouseenter', function() {
-                    // If there's already an open submenu and it's different from the current one
-                    if (activeSubmenu && activeSubmenu !== nestedSubmenu) {
-                        activeSubmenu.style.display = 'none'; // Close the previous open submenu
-                    }
-                    nestedSubmenu.style.display = 'block'; // Show the new submenu
-                    activeSubmenu = nestedSubmenu; // Remember which submenu is open
-                });
-
-                // When mouse leaves a submenu item
-                item.addEventListener('mouseleave', function() {
-                    nestedSubmenu.style.display = 'none'; // Hide the submenu
-                });
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
             });
 
             // Close menus when clicking outside
             document.addEventListener('click', function(e) {
-                // Check if click was outside the dropdown
                 if (!e.target.closest('.dropdown')) {
-                    submenu.style.display = 'none'; // Hide main menu
+                    submenu.style.display = 'none';
                     if (activeSubmenu) {
-                        activeSubmenu.style.display = 'none'; // Hide any open nested submenu
+                        activeSubmenu.style.display = 'none';
                     }
                 }
             });
