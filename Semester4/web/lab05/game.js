@@ -15,6 +15,7 @@ $(document).ready(function() {
     const BASKET_HEIGHT = 50;
     const GAME_SPEED = 20; // milliseconds
     const SHAPE_SPAWN_INTERVAL = 1000; // milliseconds
+    const BASKET_MOVE_SPEED = 40; // pixels per key press
     
     // Initialize basket position
     basket.css({
@@ -22,18 +23,36 @@ $(document).ready(function() {
         bottom: '20px'
     });
     
-    // Mouse movement handler
-    $(document).mousemove(function(e) {
+    // Function to move basket
+    function moveBasket(newX) {
         if (isGameOver) return;
-        
-        const gameAreaOffset = gameArea.offset();
-        const mouseX = e.pageX - gameAreaOffset.left;
         
         // Keep basket within game area bounds
         const maxX = gameArea.width() - BASKET_WIDTH;
-        const newX = Math.max(0, Math.min(mouseX, maxX));
+        const boundedX = Math.max(0, Math.min(newX, maxX));
         
-        basket.css('left', newX + 'px');
+        basket.css('left', boundedX + 'px');
+    }
+    
+    // Mouse movement handler
+    $(document).mousemove(function(e) {
+        const gameAreaOffset = gameArea.offset();
+        const mouseX = e.pageX - gameAreaOffset.left;
+        moveBasket(mouseX);
+    });
+    
+    // Keyboard controls
+    $(document).keydown(function(e) {
+        const currentPosition = parseInt(basket.css('left'));
+        
+        switch(e.key) {
+            case 'ArrowLeft':
+                moveBasket(currentPosition - BASKET_MOVE_SPEED);
+                break;
+            case 'ArrowRight':
+                moveBasket(currentPosition + BASKET_MOVE_SPEED);
+                break;
+        }
     });
     
     // Create a new falling shape
@@ -42,6 +61,12 @@ $(document).ready(function() {
         
         const shape = $('<div>').addClass('shape');
         const startX = Math.random() * (gameArea.width() - SHAPE_SIZE);
+
+        const isAtmoicBomb = Math.random() < 0.1;
+
+        if (isAtmoicBomb) {
+            shape.addClass('atomic-bomb');
+        }
         
         shape.css({
             left: startX + 'px',
@@ -52,6 +77,14 @@ $(document).ready(function() {
         
         // Random speed between 2 and 5
         const speed = 2 + Math.random() * 3;
+
+        let shapeScore = 1;
+        if (speed > 3) {
+            shapeScore = 2;
+        } else {
+            shapeScore = 1;
+        }
+
         
         // Animate the shape falling
         shape.animate({
@@ -66,10 +99,15 @@ $(document).ready(function() {
                 if (shapePos.top + SHAPE_SIZE >= basketPos.top &&
                     shapePos.left + SHAPE_SIZE >= basketPos.left &&
                     shapePos.left <= basketPos.left + BASKET_WIDTH) {
-                    // Shape caught
-                    $(this).remove();
-                    score++;
-                    scoreDisplay.text('Score: ' + score);
+                    if (isAtmoicBomb) {
+                        lives -= 999;
+                        gameOver();
+                    } else {
+                        // Shape caught
+                        $(this).remove();
+                        score += shapeScore;
+                        scoreDisplay.text('Score: ' + score);
+                    }
                 }
             },
             complete: function() {
