@@ -27,6 +27,7 @@ if ($result->num_rows > 0) {
             <th>Name</th>
             <th>Username</th>
             <th>Role</th>
+            <th>Gender</th>
             <th>Email</th>
             <th>Age</th>
             <th>Actions</th>
@@ -37,6 +38,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . htmlspecialchars($row['name']) . '</td>';
         echo '<td>' . htmlspecialchars($row['username']) . '</td>';
         echo '<td>' . htmlspecialchars($row['role']) . '</td>';
+        echo '<td>' . htmlspecialchars($row['gender']) . '</td>';
         echo '<td>' . htmlspecialchars($row['email']) . '</td>';
         echo '<td>' . htmlspecialchars($row['age']) . '</td>';
         echo '<td>
@@ -53,4 +55,4 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 $conn->close();
-?> 
+?>

@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $age = (int)sanitizeInput($_POST['age']);
     $role = sanitizeInput($_POST['role']);
+    $gender = sanitizeInput($_POST['gender']);
     $email = sanitizeInput($_POST['email']);
     $webpage = sanitizeInput($_POST['webpage']);
     $profile = sanitizeInput($_POST['profile']);
@@ -26,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($check_result->num_rows > 0) {
         $message = '<div class="error">Username or email already exists!</div>';
     } else {
-        $sql = "INSERT INTO users (name, username, password, age, role, email, webpage, profile) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (name, username, password, age, role, gender, email, webpage, profile) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssissss", $name, $username, $password, $age, $role, $email, $webpage, $profile);
+        $stmt->bind_param("sssisssss", $name, $username, $password, $age, $role, $gender, $email, $webpage, $profile);
         
         if ($stmt->execute()) {
             $message = '<div class="success">User added successfully!</div>';
@@ -104,6 +105,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 
                 <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
@@ -117,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="profile">Profile:</label>
                     <textarea id="profile" name="profile" rows="4"></textarea>
                 </div>
-                
+
                 <button type="submit">Add User</button>
             </form>
         </main>
@@ -134,6 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             const password = document.getElementById('password').value;
             const age = document.getElementById('age').value;
             const role = document.getElementById('role').value;
+            const gender = document.getElementById('gender').value;
             const email = document.getElementById('email').value;
             const webpage = document.getElementById('webpage').value;
             
@@ -163,6 +175,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 return false;
             }
             
+            if (!gender) {
+                alert('Please select a gender');
+                return false;
+            }
+            
             if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 alert('Please enter a valid email address');
                 return false;
@@ -177,4 +194,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </script>
 </body>
-</html> 
+</html>

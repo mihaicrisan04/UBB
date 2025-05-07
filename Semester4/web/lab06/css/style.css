@@ -146,4 +146,21 @@ footer {
 
 .setup-button:hover {
     background-color: #c82333;
-} 
+}
+
+.filter-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 4px;
+}
+
+.filter-section p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+#previous-filter {
+    font-weight: bold;
+    color: #333;
+}

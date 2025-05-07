@@ -27,6 +27,7 @@ require_once 'config.php';
             <h2>Browse Users</h2>
             
             <div class="filter-section">
+                <p>Previous filter: <span id="previous-filter">None</span></p>
                 <label for="role-filter">Filter by Role:</label>
                 <select id="role-filter" onchange="filterUsers()">
                     <option value="">All Roles</option>
@@ -48,9 +49,17 @@ require_once 'config.php';
     </div>
     
     <script>
+        let previousFilter = 'None';
+        
         function filterUsers() {
             const role = document.getElementById('role-filter').value;
             const xhr = new XMLHttpRequest();
+            
+            // Update the previous filter display
+            document.getElementById('previous-filter').textContent = previousFilter;
+            
+            // Store current filter as previous for next time
+            previousFilter = role ? role : 'All Roles';
             
             xhr.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
@@ -82,4 +91,4 @@ require_once 'config.php';
         window.onload = filterUsers;
     </script>
 </body>
-</html> 
+</html>

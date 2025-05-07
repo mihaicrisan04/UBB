@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $username = sanitizeInput($_POST['username']);
     $age = (int)sanitizeInput($_POST['age']);
     $role = sanitizeInput($_POST['role']);
+    $gender = sanitizeInput($_POST['gender']);
     $email = sanitizeInput($_POST['email']);
     $webpage = sanitizeInput($_POST['webpage']);
     $profile = sanitizeInput($_POST['profile']);
@@ -47,10 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     if ($check_result->num_rows > 0) {
         $message = '<div class="error">Username or email already exists!</div>';
     } else {
-        $sql = "UPDATE users SET name = ?, username = ?, age = ?, role = ?, 
+        $sql = "UPDATE users SET name = ?, username = ?, age = ?, role = ?, gender = ?, 
                 email = ?, webpage = ?, profile = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssissssi", $name, $username, $age, $role, $email, $webpage, $profile, $id);
+        $stmt->bind_param("ssisssssi", $name, $username, $age, $role, $gender, $email, $webpage, $profile, $id);
         
         if ($stmt->execute()) {
             $message = '<div class="success">User updated successfully!</div>';
@@ -61,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
                 'username' => $username,
                 'age' => $age,
                 'role' => $role,
+                'gender' => $gender,
                 'email' => $email,
                 'webpage' => $webpage,
                 'profile' => $profile
@@ -134,6 +136,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
                 </div>
                 
                 <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male" <?php echo $user['gender'] === 'male' ? 'selected' : ''; ?>>Male</option>
+                        <option value="female" <?php echo $user['gender'] === 'female' ? 'selected' : ''; ?>>Female</option>
+                        <option value="other" <?php echo $user['gender'] === 'other' ? 'selected' : ''; ?>>Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
                 </div>
@@ -166,6 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
             const username = document.getElementById('username').value;
             const age = document.getElementById('age').value;
             const role = document.getElementById('role').value;
+            const gender = document.getElementById('gender').value;
             const email = document.getElementById('email').value;
             const webpage = document.getElementById('webpage').value;
             
@@ -190,6 +203,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
                 return false;
             }
             
+            if (!gender) {
+                alert('Please select a gender');
+                return false;
+            }
+            
             if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 alert('Please enter a valid email address');
                 return false;
@@ -204,4 +222,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
         }
     </script>
 </body>
-</html> 
+</html>
