@@ -1,0 +1,93 @@
+<h2>Edit User (ID: {{ userId }})</h2>
+
+<div *ngIf="isFetching" class="loading">Fetching user data...</div>
+
+<div *ngIf="successMessage" class="message success-message">
+  {{ successMessage }}
+</div>
+<div *ngIf="errorMessage && !isFetching" class="message error-message">
+  {{ errorMessage }}
+</div>
+
+<!-- Only show the form if we are not fetching and have a valid userId -->
+<form *ngIf="!isFetching && userId" [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+  
+  <input type="hidden" formControlName="id"> 
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error-detail">
+      <small *ngIf="name?.errors?.['required']">Name is required.</small>
+      <small *ngIf="name?.errors?.['minlength']">Name must be at least 2 characters long.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username" required>
+    <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="error-detail">
+      <small *ngIf="username?.errors?.['required']">Username is required.</small>
+      <small *ngIf="username?.errors?.['minlength']">Username must be at least 3 characters long.</small>
+    </div>
+  </div>
+
+  <!-- Password field is omitted - handle separately if needed -->
+
+  <div class="form-group">
+    <label for="age">Age:</label>
+    <input type="number" id="age" formControlName="age" required min="1" max="120">
+    <div *ngIf="age?.invalid && (age?.dirty || age?.touched)" class="error-detail">
+      <small *ngIf="age?.errors?.['required']">Age is required.</small>
+      <small *ngIf="age?.errors?.['min'] || age?.errors?.['max']">Age must be between 1 and 120.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="role">Role:</label>
+    <select id="role" formControlName="role" required>
+      <option value="" disabled>Select Role</option>
+      <option *ngFor="let r of roles" [value]="r">{{ r | titlecase }}</option>
+    </select>
+     <div *ngIf="role?.invalid && (role?.dirty || role?.touched)" class="error-detail">
+      <small *ngIf="role?.errors?.['required']">Role is required.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="gender">Gender:</label>
+    <select id="gender" formControlName="gender" required>
+      <option value="" disabled>Select Gender</option>
+      <option *ngFor="let g of genders" [value]="g">{{ g | titlecase }}</option>
+    </select>
+     <div *ngIf="gender?.invalid && (gender?.dirty || gender?.touched)" class="error-detail">
+      <small *ngIf="gender?.errors?.['required']">Gender is required.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" required>
+     <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-detail">
+      <small *ngIf="email?.errors?.['required']">Email is required.</small>
+      <small *ngIf="email?.errors?.['email']">Please enter a valid email address.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="webpage">Webpage:</label>
+    <input type="url" id="webpage" formControlName="webpage">
+     <div *ngIf="webpage?.invalid && (webpage?.dirty || webpage?.touched)" class="error-detail">
+      <small *ngIf="webpage?.errors?.['pattern']">Please enter a valid URL (e.g., http://example.com).</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="profile">Profile:</label>
+    <textarea id="profile" formControlName="profile" rows="4"></textarea>
+  </div>
+
+  <button type="submit" [disabled]="userForm.invalid || isLoading || !userForm.dirty">
+    {{ isLoading ? 'Updating...' : 'Update User' }}
+  </button>
+</form>

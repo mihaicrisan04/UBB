@@ -1,0 +1,19 @@
+<header class="app-header">
+  <nav class="navbar">
+    <div class="navbar-brand">User Management</div>
+    <ul class="navbar-links">
+      <li><a routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Browse Users</a></li>
+      <li><a routerLink="/users/add" routerLinkActive="active-link">Add User</a></li>
+      <li><a routerLink="/search" routerLinkActive="active-link">Search Users</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="content-container">
+  <h1>User Management System</h1>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <p>&copy; 2024 User Management System</p>
+</footer>

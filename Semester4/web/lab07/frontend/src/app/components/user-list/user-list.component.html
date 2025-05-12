@@ -1,0 +1,46 @@
+<h2>Browse Users</h2>
+
+<div class="filter-section">
+  <p>Previous filter: <span>{{ previousFilter }}</span></p>
+  <label for="role-filter">Filter by Role:</label>
+  <select id="role-filter" [(ngModel)]="selectedRole" (change)="onFilterChange()">
+    <option value="">All Roles</option>
+    <option *ngFor="let role of roles" [value]="role">{{ role | titlecase }}</option>
+  </select>
+</div>
+
+<div *ngIf="isLoading" class="loading">Loading users...</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  Error: {{ errorMessage }}
+</div>
+
+<div *ngIf="!isLoading && !errorMessage && users.length === 0" class="no-users">
+  No users found.
+</div>
+
+<table *ngIf="!isLoading && !errorMessage && users.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.role | titlecase }}</td> 
+      <td>{{ user.email }}</td>
+      <td>
+        <button (click)="editUser(user.id)" class="action-button edit">Edit</button>
+        <button (click)="deleteUser(user.id)" class="action-button delete">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

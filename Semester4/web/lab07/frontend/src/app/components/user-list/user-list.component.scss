@@ -1,0 +1,39 @@
+/* Styles specific to UserListComponent, if any */
+/* Most table styles are now global in styles.scss */
+
+.filter-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff; /* White background for filter */
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+
+  label {
+    margin-right: 5px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  select {
+    padding: 8px 10px;
+    min-width: 180px;
+  }
+
+  p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #666;
+      span {
+          font-weight: bold;
+          color: #333;
+      } 
+  }
+}
+
+/* Loading/Error messages use global styles */
+/* Table uses global styles */
+/* Action buttons use global styles */

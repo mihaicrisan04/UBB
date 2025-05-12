@@ -1,0 +1,53 @@
+<h2>Search Users</h2>
+
+<div class="search-section">
+  <label for="search-name">Search by Name/Username:</label>
+  <input 
+    type="text" 
+    id="search-name" 
+    [formControl]="searchControl" 
+    placeholder="Enter name or username..."
+  >
+</div>
+
+<div *ngIf="isLoading" class="loading">Searching...</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  Error: {{ errorMessage }}
+</div>
+
+<div *ngIf="!isLoading && !errorMessage && searchResults.length === 0 && searchControl.value" class="no-results">
+  No users found matching "{{ searchControl.value }}".
+</div>
+
+<div *ngIf="!isLoading && !errorMessage && searchResults.length === 0 && !searchControl.value" class="no-results">
+  Enter a name or username to search.
+</div>
+
+<!-- Reuse table structure from user-list -->
+<table *ngIf="!isLoading && !errorMessage && searchResults.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Loop through searchResults instead of users -->
+    <tr *ngFor="let user of searchResults">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.role | titlecase }}</td> 
+      <td>{{ user.email }}</td>
+      <td>
+        <button (click)="editUser(user.id)" class="action-button edit">Edit</button>
+        <button (click)="deleteUser(user.id)" class="action-button delete">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

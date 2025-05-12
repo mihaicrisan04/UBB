@@ -1,0 +1,14 @@
+{
+    "name": "mihaicrisan/backend",
+    "require-dev": {
+        "slim/slim": "^4.14",
+        "slim/psr7": "^1.7"
+    },
+    "authors": [
+        {
+            "name": "Mihai Crisan",
+            "email": "crisanmihai2004@gmail.com"
+        }
+    ],
+    "require": {}
+}

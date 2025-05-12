@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f6; /* Light background for the body */
+  color: #333;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* General container for centering content if needed outside of app.component */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+/* General link styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Basic Button Styling (can be overridden by component styles) */
+button {
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #007bff;
+  color: white;
+
+  &:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+}
+
+/* Styling for form elements - make them consistent */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%; /* Make form elements take full width of their container by default */
+  box-sizing: border-box; 
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+}
+
+.message {
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.95em;
+
+  &.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  &.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+
+  &.info-message, &.loading, &.no-results, &.no-users /* from components */ {
+    background-color: #e7f3fe;
+    color: #31708f;
+    border: 1px solid #d0e3f0;
+  }
+}
+
+/* Styles for tables used in components */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background-color: #fff; /* Give tables a white background */
+
+  th, td {
+    border: 1px solid #e0e0e0; /* Lighter border */
+    padding: 12px 15px; /* More padding */
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    background-color: #f8f9fa; /* Lighter header */
+    font-weight: 500; /* Medium weight for headers */
+    color: #333;
+    text-transform: capitalize;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #fbfcfd;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f5f8;
+  }
+}
+
+/* Action buttons inside tables/forms */
+.action-button {
+  padding: 6px 10px;
+  font-size: 0.85em;
+  margin-right: 6px;
+
+  &.edit {
+    background-color: #28a745; /* Green */
+    &:hover { background-color: #218838; }
+  }
+
+  &.delete {
+    background-color: #dc3545; /* Red */
+    &:hover { background-color: #c82333; }
+  }
+}
