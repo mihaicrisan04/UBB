@@ -27,7 +27,7 @@ CREATE FUNCTION uf_ValidateEmailFormat (@email VARCHAR(255))
 RETURNS INT AS
 BEGIN
     DECLARE @return INT = 0;
-    IF @email LIKE '%_@__%.__%' AND CHARINDEX(' ', @email) = 0 AND LEN(@email) > 5 
+    IF @email LIKE '%_@__%.__%' AND CHARINDEX(' ', @email) = 0 AND LEN(@email) > 5
         SET @return = 1;
     RETURN @return;
 END
@@ -145,20 +145,13 @@ BEGIN
 END
 GO
 
-PRINT 'LogTable and Validation Functions created successfully.'
-GO
-
-----------------------------------------------------------------------------------------------------
--- Stored Procedure 1: Create a Booking and Add a Review
--- Analogue to AddRaceDriverResult
-----------------------------------------------------------------------------------------------------
+-- Create a Booking and Add a Review
 CREATE OR ALTER PROCEDURE CreateBookingAndAddReview
     @property_id INT,
     @guest_id INT,
     @start_date DATE,
     @end_date DATE,
-    -- @total_price DECIMAL(10, 2), -- This will be calculated based on property price and duration
-    @booking_status VARCHAR(20) = 'pending', -- Default to pending
+    @booking_status VARCHAR(20) = 'pending',
     @review_rating INT,
     @review_comment TEXT
 AS
@@ -234,7 +227,7 @@ BEGIN
         -- Insert into Bookings
         INSERT INTO Bookings (property_id, guest_id, start_date, end_date, total_price, status)
         VALUES (@property_id, @guest_id, @start_date, @end_date, @calculated_total_price, @booking_status);
-        
+
         SET @new_booking_id = SCOPE_IDENTITY();
         INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('insert', @procedure_name, 'Bookings', 'New booking created. ID: ' + CAST(@new_booking_id AS VARCHAR));
@@ -254,13 +247,13 @@ BEGIN
     BEGIN CATCH
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
-        
+
         INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('error', @procedure_name, NULL, 'Error: ' + ERROR_MESSAGE());
-        
+
         INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('rollback', @procedure_name, NULL, 'Transaction rolled back due to error.');
-        
+
         THROW;
     END CATCH
 END
@@ -269,10 +262,7 @@ GO
 PRINT 'Stored Procedure CreateBookingAndAddReview created successfully.'
 GO
 
-----------------------------------------------------------------------------------------------------
--- Stored Procedure 2: Register Host, Add Property, Register Guest, and Create Booking (Recoverable)
--- Analogue to AddRaceDriverResultRecoverable
-----------------------------------------------------------------------------------------------------
+-- Register Host, Add Property, Register Guest, and Create Booking (Recoverable)
 CREATE OR ALTER PROCEDURE RegisterUsersPropertyAndBooking_Recoverable
     -- Host details
     @host_first_name VARCHAR(100),
@@ -303,7 +293,7 @@ CREATE OR ALTER PROCEDURE RegisterUsersPropertyAndBooking_Recoverable
 AS
 BEGIN
     DECLARE @procedure_name VARCHAR(100) = 'RegisterUsersPropertyAndBooking_Recoverable';
-    INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+    INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
     VALUES ('begin', @procedure_name, NULL, 'Procedure started');
 
     DECLARE @host_id INT, @property_id INT, @guest_id INT, @booking_id INT;
@@ -316,7 +306,7 @@ BEGIN
 
     -- Step 1: Create or Find Host User
     BEGIN TRY
-        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('info', @procedure_name, 'Users', 'Attempting to find or create host: ' + @host_email);
 
         IF dbo.uf_ValidateName(@host_first_name) = 0 RAISERROR('Invalid host first name.', 16, 1);
@@ -334,21 +324,21 @@ BEGIN
             VALUES (@host_first_name, @host_last_name, @host_email, @host_password, @host_phone, 'host');
             SET @host_id = SCOPE_IDENTITY();
             COMMIT TRANSACTION HostCreation;
-            set @host_status = 'Host created successfully. ID: ' + CAST(@host_id AS VARCHAR);
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @host_status = 'Host created successfully. ID: ' + CAST(@host_id AS VARCHAR);
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('insert', @procedure_name, 'Users', @host_status);
         END
         ELSE
         BEGIN
-            set @host_status = 'Existing host found. ID: ' + CAST(@host_id AS VARCHAR);
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @host_status = 'Existing host found. ID: ' + CAST(@host_id AS VARCHAR);
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('info', @procedure_name, 'Users', @host_status);
         END
     END TRY
     BEGIN CATCH
         IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION HostCreation;
-        set @host_status = 'Host creation failed: ' + ERROR_MESSAGE();
-        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+        SET @host_status = 'Host creation failed: ' + ERROR_MESSAGE();
+        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('error', @procedure_name, 'Users', @host_status);
     END CATCH
 
@@ -356,7 +346,7 @@ BEGIN
     IF @host_id IS NOT NULL
     BEGIN
         BEGIN TRY
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('info', @procedure_name, 'Properties', 'Attempting to create property: ' + @prop_title + ' for host ID: ' + CAST(@host_id AS VARCHAR));
 
             IF dbo.uf_ValidateStringNotEmpty(@prop_title) = 0 RAISERROR('Property title cannot be empty.', 16, 1);
@@ -367,27 +357,26 @@ BEGIN
             IF dbo.uf_ValidatePropertyType(@prop_property_type) = 0 RAISERROR('Invalid property type.', 16, 1);
             IF dbo.uf_ValidatePrice(@prop_price_per_night) = 0 RAISERROR('Invalid property price per night.', 16, 1);
 
-            -- For simplicity, we'll always create a new property. Add duplicate checks if needed.
             BEGIN TRANSACTION PropertyCreation;
             INSERT INTO Properties (host_id, title, description, address, city, state, country, zipcode, property_type, price_per_night)
             VALUES (@host_id, @prop_title, @prop_description, @prop_address, @prop_city, @prop_state, @prop_country, @prop_zipcode, @prop_property_type, @prop_price_per_night);
             SET @property_id = SCOPE_IDENTITY();
             COMMIT TRANSACTION PropertyCreation;
-            set @property_status = 'Property created successfully. ID: ' + CAST(@property_id AS VARCHAR);
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @property_status = 'Property created successfully. ID: ' + CAST(@property_id AS VARCHAR);
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('insert', @procedure_name, 'Properties', @property_status);
         END TRY
         BEGIN CATCH
             IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION PropertyCreation;
-            set @property_status = 'Property creation failed: ' + ERROR_MESSAGE();
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @property_status = 'Property creation failed: ' + ERROR_MESSAGE();
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('error', @procedure_name, 'Properties', @property_status);
         END CATCH
     END
     ELSE
     BEGIN
-        set @property_status = 'Property creation skipped: Host creation failed or host not found.';
-        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+        SET @property_status = 'Property creation skipped: Host creation failed or host not found.';
+        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('skip', @procedure_name, 'Properties', @property_status);
     END
 
@@ -395,7 +384,7 @@ BEGIN
     IF @property_id IS NOT NULL
     BEGIN
         BEGIN TRY
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('info', @procedure_name, 'Users', 'Attempting to find or create guest: ' + @guest_email);
 
             IF dbo.uf_ValidateName(@guest_first_name) = 0 RAISERROR('Invalid guest first name.', 16, 1);
@@ -413,28 +402,28 @@ BEGIN
                 VALUES (@guest_first_name, @guest_last_name, @guest_email, @guest_password, @guest_phone, 'guest');
                 SET @guest_id = SCOPE_IDENTITY();
                 COMMIT TRANSACTION GuestCreation;
-                set @guest_status = 'Guest created successfully. ID: ' + CAST(@guest_id AS VARCHAR);
-                INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+                SET @guest_status = 'Guest created successfully. ID: ' + CAST(@guest_id AS VARCHAR);
+                INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
                 VALUES ('insert', @procedure_name, 'Users', @guest_status);
             END
             ELSE
             BEGIN
-                set @guest_status = 'Existing guest found. ID: ' + CAST(@guest_id AS VARCHAR);
-                INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+                SET @guest_status = 'Existing guest found. ID: ' + CAST(@guest_id AS VARCHAR);
+                INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
                 VALUES ('info', @procedure_name, 'Users', @guest_status);
             END
         END TRY
         BEGIN CATCH
             IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION GuestCreation;
-            set @guest_status = 'Guest creation failed: ' + ERROR_MESSAGE();
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @guest_status = 'Guest creation failed: ' + ERROR_MESSAGE();
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('error', @procedure_name, 'Users', @guest_status);
         END CATCH
     END
     ELSE
     BEGIN
-        set @guest_status = 'Guest creation skipped: Property creation failed.';
-         INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+        SET @guest_status = 'Guest creation skipped: Property creation failed.';
+         INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('skip', @procedure_name, 'Users', @guest_status);
     END
 
@@ -442,7 +431,7 @@ BEGIN
     IF @guest_id IS NOT NULL AND @property_id IS NOT NULL
     BEGIN
         BEGIN TRY
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('info', @procedure_name, 'Bookings', 'Attempting to create booking for guest ID: ' + CAST(@guest_id AS VARCHAR) + ' at property ID: ' + CAST(@property_id AS VARCHAR));
 
             IF dbo.uf_ValidateBookingDates(@book_start_date, @book_end_date) = 0 RAISERROR('Invalid booking dates.', 16, 1);
@@ -450,11 +439,11 @@ BEGIN
 
             SET @duration_in_days = DATEDIFF(day, @book_start_date, @book_end_date);
             IF @duration_in_days <= 0 SET @duration_in_days = 1; -- Or handle as error
-            
+
             SELECT @prop_price_per_night = price_per_night FROM Properties WHERE property_id = @property_id;
             SET @calculated_total_price = @prop_price_per_night * @duration_in_days;
 
-            IF dbo.uf_ValidatePrice(@calculated_total_price) = 0 AND @calculated_total_price > 0 
+            IF dbo.uf_ValidatePrice(@calculated_total_price) = 0 AND @calculated_total_price > 0
             BEGIN
                 RAISERROR('Calculated total price is not valid (must be > 0).', 16, 1);
             END
@@ -464,32 +453,32 @@ BEGIN
             VALUES (@property_id, @guest_id, @book_start_date, @book_end_date, @calculated_total_price, @book_status);
             SET @booking_id = SCOPE_IDENTITY();
             COMMIT TRANSACTION BookingCreation;
-            set @booking_status_report = 'Booking created successfully. ID: ' + CAST(@booking_id AS VARCHAR);
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @booking_status_report = 'Booking created successfully. ID: ' + CAST(@booking_id AS VARCHAR);
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('insert', @procedure_name, 'Bookings', @booking_status_report);
         END TRY
         BEGIN CATCH
             IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION BookingCreation;
-            set @booking_status_report = 'Booking creation failed: ' + ERROR_MESSAGE();
-            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+            SET @booking_status_report = 'Booking creation failed: ' + ERROR_MESSAGE();
+            INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
             VALUES ('error', @procedure_name, 'Bookings', @booking_status_report);
         END CATCH
     END
     ELSE
     BEGIN
-        set @booking_status_report = 'Booking creation skipped: Guest or Property not available.';
-        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+        SET @booking_status_report = 'Booking creation skipped: Guest or Property not available.';
+        INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
         VALUES ('skip', @procedure_name, 'Bookings', @booking_status_report);
     END
 
     -- Report final status
-    SELECT 
+    SELECT
         HostStatus = @host_status,
         PropertyStatus = @property_status,
         GuestStatus = @guest_status,
         BookingStatus = @booking_status_report;
-    
-    INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message) 
+
+    INSERT INTO LogTable (typeOperation, procedure_name, tableOperation, message)
     VALUES ('end', @procedure_name, NULL, 'Procedure finished. Host: ' + @host_status + '; Property: ' + @property_status + '; Guest: ' + @guest_status + '; Booking: ' + @booking_status_report);
 
 END
@@ -529,11 +518,12 @@ EXEC CreateBookingAndAddReview
 
 -- 2. Test the RegisterUsersPropertyAndBooking_Recoverable procedure
 -- Call that will not fail
+-- assuming the host and guest emails are unique and valid
 EXEC RegisterUsersPropertyAndBooking_Recoverable
     -- Host details
-    @host_first_name = 'John',
-    @host_last_name = 'Doe',
-    @host_email = 'john.doe.host@example.com',
+    @host_first_name = 'Mihai',
+    @host_last_name = 'Crisan',
+    @host_email = 'mihai.crisan@gmail.com',
     @host_password = 'SecurePassword123!',
     @host_phone = '555-0101',
     -- Property details

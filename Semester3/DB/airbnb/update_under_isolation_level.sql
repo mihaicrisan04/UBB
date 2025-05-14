@@ -1,0 +1,7 @@
+ALTER DATABASE [airbnb] SET ALLOW_SNAPSHOT_ISOLATION ON;
+ALTER DATABASE [airbnb] SET READ_COMMITTED_SNAPSHOT ON;
+
+
+use airbnb;
+
+select * from users;
