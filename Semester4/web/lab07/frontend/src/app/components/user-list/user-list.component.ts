@@ -21,6 +21,7 @@ export class UserListComponent implements OnInit {
   
   selectedRole: string = '';
   previousFilter: string = 'None';
+  currentFilter: string = 'None';
   roles: string[] = ['admin', 'user', 'manager', 'employee'];
 
   ngOnInit(): void {
@@ -28,14 +29,16 @@ export class UserListComponent implements OnInit {
   }
 
   loadUsers(): void {
+    this.previousFilter = this.currentFilter;
+
     this.isLoading = true;
     this.errorMessage = null;
-    this.previousFilter = this.selectedRole ? this.selectedRole : 'All Roles';
 
     this.userService.getUsers(this.selectedRole || undefined).subscribe({
       next: (data) => {
         this.users = data;
         this.isLoading = false;
+        this.currentFilter = this.selectedRole ? this.selectedRole : 'All Roles';
       },
       error: (err) => {
         this.errorMessage = err.message || 'Failed to load users.';
