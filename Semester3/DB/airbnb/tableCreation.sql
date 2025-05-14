@@ -56,6 +56,13 @@ CREATE TABLE Reviews (
     FOREIGN KEY (guest_id) REFERENCES Users(user_id)
 );
 
+ALTER TABLE Reviews
+ADD booking_id INT NULL;
+
+-- 5. Add foreign key constraint to Reviews table
+ALTER TABLE Reviews
+ADD CONSTRAINT FK_Reviews_Bookings FOREIGN KEY (booking_id) REFERENCES Bookings(booking_id);
+
 -- 5. Payments Table
 CREATE TABLE Payments (
     payment_id INT PRIMARY KEY IDENTITY(1,1),
