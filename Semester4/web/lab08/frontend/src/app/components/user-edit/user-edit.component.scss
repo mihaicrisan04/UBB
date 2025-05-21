@@ -1,0 +1,26 @@
+/* Styles specific to UserEditComponent, if any */
+/* Reuses styles from user-add component and global styles */
+
+form {
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px;
+}
+
+/* Submit button might need slight adjustments */
+button[type="submit"] {
+   margin-top: 10px;
+   background-color: #28a745; /* Ensure edit button color persists if needed */
+    &:hover {
+      background-color: #218838;
+    }
+}
+
+.error-detail {
+  margin-top: 5px;
+  small {
+    font-size: 0.85em;
+  }
+}
+
+/* Loading/Message styles use global */

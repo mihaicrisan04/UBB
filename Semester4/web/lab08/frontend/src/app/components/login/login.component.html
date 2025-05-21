@@ -1,0 +1,41 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <div *ngIf="errorMessage" class="message error-message">
+    {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" formControlName="username" required>
+      <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="error-detail">
+        <small *ngIf="username?.errors?.['required']">Username is required.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required>
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-detail">
+        <small *ngIf="password?.errors?.['required']">Password is required.</small>
+      </div>
+    </div>
+
+    <div class="form-group checkbox-group">
+        <input type="checkbox" id="rememberMe" formControlName="rememberMe">
+        <label for="rememberMe">Remember me</label>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid || isLoading">
+      {{ isLoading ? 'Logging in...' : 'Login' }}
+    </button>
+  </form>
+
+  <div class="additional-links">
+    <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+    <!-- Add a link to a password reset page if you have one -->
+    <!-- <p><a routerLink="/forgot-password">Forgot password?</a></p> -->
+  </div>
+
+</div> 

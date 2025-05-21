@@ -1,0 +1,86 @@
+/* app.component.scss */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #333;
+  color: white;
+  padding: 0 20px; /* Removed top/bottom padding to let navbar control it */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* Standard navbar height */
+  max-width: 1200px; /* Optional: constrain navbar width */
+  margin: 0 auto;    /* Center navbar if max-width is used */
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff; /* Ensure brand text is white */
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Spacing between links */
+
+  li {
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: #555;
+      }
+
+      &.active-link {
+        background-color: #007bff; /* Highlight color for active link */
+        color: #fff;
+      }
+    }
+  }
+}
+
+.content-container {
+  flex-grow: 1; /* Allows this area to take up available space */
+  padding: 20px;
+  max-width: 1200px; /* Optional: Max width for content */
+  margin: 20px auto; /* Center content and add top/bottom margin */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Remove the h1 from app.component.html if each component has its own title */
+/* Or style it if it's meant to be a global title */
+.content-container > h1 {
+  text-align: center; /* Center the main H1 from app.component.html */
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+}
+
+.app-footer {
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+  padding: 15px 20px;
+  border-top: 1px solid #e7e7e7;
+  margin-top: auto; /* Pushes footer to the bottom */
+}

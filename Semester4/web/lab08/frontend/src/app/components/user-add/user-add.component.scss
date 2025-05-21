@@ -1,0 +1,23 @@
+/* Styles specific to UserAddComponent, if any */
+/* Most form and message styles are now global in styles.scss */
+
+form {
+  max-width: 600px; /* Slightly wider form */
+  background-color: #fff; /* White background */
+  padding: 30px; /* More padding */
+}
+
+/* Submit button might need slight adjustments if global style isn't perfect */
+button[type="submit"] {
+   margin-top: 10px; /* Add some space above the button */
+}
+
+/* Error details within form groups */
+.error-detail {
+  margin-top: 5px;
+  small {
+    font-size: 0.85em;
+  }
+}
+
+/* Message styles use global */

@@ -1,0 +1,111 @@
+Project Initialization and Setup: ASP.NET Core Web API for MySQL
+
+Date: 2024-05-21 (Approximation, actual timestamp of commands may vary slightly)
+
+Summary of Changes:
+
+1. Project Creation:
+   - File: N/A (dotnet CLI command)
+   - Change: Created a new ASP.NET Core Web API project named 'backend' using 'dotnet new webapi -o backend --no-https'.
+
+2. NuGet Packages Added/Updated:
+   - File: backend/backend.csproj
+   - Changes:
+     - Added Pomelo.EntityFrameworkCore.MySql (version 9.0.0-preview.3.efcore.9.0.0 for .NET 9 compatibility)
+     - Added Microsoft.EntityFrameworkCore.Tools
+     - Added Microsoft.AspNetCore.Identity.EntityFrameworkCore
+     - Added Microsoft.VisualStudio.Web.CodeGeneration.Design
+     - Added Swashbuckle.AspNetCore (for Swagger/OpenAPI)
+
+3. User Model Creation:
+   - File: backend/Models/ApplicationUser.cs (New file)
+   - Change: Defined ApplicationUser class inheriting from IdentityUser with custom properties: Name, Age, Role, Gender, Webpage, Profile.
+
+4. DbContext Creation:
+   - File: backend/Data/ApplicationDbContext.cs (New file)
+   - Change: Defined ApplicationDbContext class inheriting from IdentityDbContext<ApplicationUser>.
+
+5. Configuration - Connection String:
+   - File: backend/appsettings.json
+   - Change: Added MySQL connection string "DefaultConnection" for 'lab07_db'.
+
+6. Configuration - Program.cs:
+   - File: backend/Program.cs
+   - Changes:
+     - Configured ApplicationDbContext with UseMySql and connection string.
+     - Added and configured ASP.NET Core Identity (AddIdentity<ApplicationUser, IdentityRole>).
+     - Configured cookie-based authentication (AddAuthentication().AddIdentityCookies()).
+     - Added authorization services.
+     - Added AddControllers() and app.MapControllers().
+     - Configured Swagger/OpenAPI services and middleware.
+     - Removed default weather forecast endpoint.
+
+7. Database Migrations:
+   - Files: backend/Migrations/*_InitialCreate.cs (New files)
+   - Change: Generated initial database migration for Identity schema and ApplicationUser.
+   - Command: dotnet ef migrations add InitialCreate
+
+8. Database Update:
+   - File: N/A (dotnet CLI command, affects MySQL 'lab07_db' database)
+   - Change: Applied migrations to create tables in the database.
+   - Command: dotnet ef database update
+
+9. DTO for Registration:
+   - File: backend/Models/DTOs/RegisterDto.cs (New file)
+   - Change: Created RegisterDto with fields for user registration, including validation attributes.
+
+10. Account Controller - Registration Endpoint:
+    - File: backend/Controllers/AccountController.cs (New file)
+    - Change: Created AccountController with a [HttpPost("register")] endpoint to register new users using UserManager.
+
+11. DTO for Login:
+    - File: backend/Models/DTOs/LoginDto.cs (New file)
+    - Change: Created LoginDto with Username, Password, and RememberMe properties for login requests.
+
+12. Account Controller - Login Endpoint:
+    - File: backend/Controllers/AccountController.cs
+    - Change: Added [HttpPost("login")] endpoint to authenticate users using SignInManager and establish a session cookie.
+
+13. Account Controller - Logout Endpoint:
+    - File: backend/Controllers/AccountController.cs
+    - Change: Added [Authorize] protected [HttpPost("logout")] endpoint to sign out users using SignInManager.
+
+14. DTO for User Details:
+    - File: backend/Models/DTOs/UserDto.cs (New file)
+    - Change: Created UserDto to represent user data returned by the API (excluding sensitive info).
+
+15. Users Controller - Get All Users:
+    - File: backend/Controllers/UsersController.cs (New file)
+    - Change: Created UsersController with an initial [Authorize] protected [HttpGet] endpoint to get all users, mapping them to UserDto.
+
+16. Users Controller - Get User by ID:
+    - File: backend/Controllers/UsersController.cs
+    - Change: Added [HttpGet("{id}")] endpoint to retrieve a specific user by ID and return as UserDto.
+
+17. DTO for User Update:
+    - File: backend/Models/DTOs/UpdateUserDto.cs (New file)
+    - Change: Created UpdateUserDto for updating user information, excluding username and password.
+
+18. Users Controller - Update User:
+    - File: backend/Controllers/UsersController.cs
+    - Change: Added [HttpPut("{id}")] endpoint to update a user's details based on UpdateUserDto.
+
+19. Users Controller - Delete User:
+    - File: backend/Controllers/UsersController.cs
+    - Change: Added [HttpDelete("{id}")] endpoint to delete a user (basic implementation, further security checks like Admin role or self-delete to be considered).
+
+20. Users Controller - Search Users:
+    - File: backend/Controllers/UsersController.cs
+    - Change: Added [HttpGet("search")] endpoint to search users by a query string (checks UserName, Email, Name, Role).
+
+21. Code Cleanup - Program.cs:
+    - File: backend/Program.cs
+    - Change: Removed the unused WeatherForecast record definition.
+
+22. NuGet Package for Seeding:
+    - File: backend/backend.csproj
+    - Change: Added Bogus package for generating fake data.
+
+23. Data Seeding Controller:
+    - File: backend/Controllers/SetupController.cs (New file)
+    - Change: Created SetupController with a [HttpPost("seed-users")] endpoint to populate the database with a specified number of random users (including roles). Uses Bogus for data generation. Default password "P@$$wOrd123!". Endpoint should be secured for production. 
