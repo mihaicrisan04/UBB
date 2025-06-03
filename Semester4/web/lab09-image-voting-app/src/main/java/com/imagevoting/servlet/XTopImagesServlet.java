@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-public class TopImagesServlet extends HttpServlet {
+public class XTopImagesServlet extends HttpServlet {
     
     private ImageDAO imageDAO;
     

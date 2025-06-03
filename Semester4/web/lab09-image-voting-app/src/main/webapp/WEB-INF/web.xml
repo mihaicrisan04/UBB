@@ -55,7 +55,7 @@
     
     <servlet>
         <servlet-name>TopImagesServlet</servlet-name>
-        <servlet-class>com.imagevoting.servlet.TopImagesServlet</servlet-class>
+        <servlet-class>com.imagevoting.servlet.XTopImagesServlet</servlet-class>
     </servlet>
     
     <servlet>
