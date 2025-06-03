@@ -1,4 +1,3 @@
-Okay, Mihai, here's a cheat sheet based on your lecture slides, designed to help you solve exercises similar to those in Lecture 13. I've focused on extracting the core concepts, definitions, and formulas needed for problem-solving, with references to the specific lectures and slides.
 
 ## DBMS Cheat Sheet (Based on Lectures 1-12)
 
@@ -226,7 +225,7 @@ Okay, Mihai, here's a cheat sheet based on your lecture slides, designed to help
     *   *Example (L8, S34): E(1000p), S(500p), B=5. T1=E(10p), T2=S(250p). BNLJ on T1, T2. T1 outer: $10 + (\lceil 10/(5-2) \rceil \cdot 250) = 10 + (4 \cdot 250) = 1010$ I/Os.*
 *   **Index Nested Loops Join (INLJ) (L6, S30-S32; L8, S36-S37):**
     *   For each tuple e $\in$ E (outer), use index on S (inner) to find matching s.
-    *   Cost: $M + (M \cdot p_E) \cdot (\text{cost_to_find_match_in_S_using_index})$.
+    *   Cost: $M + (M \cdot p_E) \cdot C_{index}$.
     *   Cost to find match:
         *   Hash index: ~1.2 I/Os (index) + 1 I/O (data, if clustered/key) or more (unclustered).
         *   B+ tree: 2-4 I/Os (index) + data retrieval cost.
@@ -249,14 +248,14 @@ Okay, Mihai, here's a cheat sheet based on your lecture slides, designed to help
     *   Pass 0: Create $\lceil N/B \rceil$ initial sorted runs of B pages each. Cost: 2N (read N, write N).
     *   Subsequent Passes: Merge B-1 runs at a time.
     *   Number of passes = $1 + \lceil \log_{B-1} (\lceil N/B \rceil) \rceil$.
-    *   Total Cost = $2N \cdot (\text{num_passes})$.
+    *   Total Cost = $2N \cdot P$ where $P$ = number of passes.
     *   *Example (L13, E2): R(1000 pages), B=200. Pass 0: $\lceil 1000/200 \rceil = 5$ runs. Merge passes: $\lceil \log_{199} 5 \rceil = 1$. Total passes = 1+1=2. Cost = $2 \cdot 1000 \cdot 2 = 4000$ I/Os.*
 *   **Projection ($\Pi_{attrs}(R)$) (L8, S3-S14):**
     *   **Sorting-based:**
         1.  Scan R, write out only desired attributes to E' (T pages). Cost M (read R) + T (write E').
-        2.  Sort E' on all its attributes. Cost $2T(\text{sort_passes_for_T})$.
+        2.  Sort E' on all its attributes. Cost $2T \cdot P_T$ where $P_T$ = sort passes for T.
         3.  Scan sorted E', eliminate duplicates. Cost T (read E').
-        *   Total cost: $M + 2T + 2T(\text{sort_passes_for_T})$.
+        *   Total cost: $M + 2T + 2T \cdot P_T$.
         *   Improvement: Eliminate columns in Pass 0 of sort, eliminate duplicates during merge. (L8, S7, S10)
     *   **Hashing-based:**
         1.  Partitioning: Scan R, project attributes, hash to B-1 partitions. Cost M (read R) + T (write partitions).
@@ -326,7 +325,7 @@ Okay, Mihai, here's a cheat sheet based on your lecture slides, designed to help
     *   Replication: Choose site with lowest processing + shipping cost.
 *   **Join Queries (R at Site1, A at Site2) (L10, S34-S46):**
     *   **Fetch as needed (Page-NLJ with R outer, at Site1):** For each page of R, fetch all pages of A. Cost: $M_R \cdot t_d + M_R \cdot (M_A \cdot t_d + M_A \cdot t_s)$. (Simplified from L10, S35 which is tuple-oriented).
-        *   *Tuple-oriented (L13, E3): $N_S \cdot t_d + (\text{tuples_S}) \cdot (\text{tuples_R_per_page} \cdot M_R \cdot (t_d + t_s))$ if R is inner and shipped per tuple of S. The exercise has S outer, R inner. Cost for S outer: $N_S \cdot t_d + (\text{tuples_S}) \cdot M_R \cdot (t_d + t_s)$. For L13, E3: $200 t_d + 2000 \cdot 1000 (t_d + t_s)$.*
+        *   *Tuple-oriented (L13, E3): $N_S \cdot t_d + |S| \cdot \text{recs per page} \cdot M_R \cdot (t_d + t_s)$ if R is inner and shipped per tuple of S. The exercise has S outer, R inner. Cost for S outer: $N_S \cdot t_d + |S| \cdot M_R \cdot (t_d + t_s)$. For L13, E3: $200 \cdot t_d + 2000 \cdot 1000 \cdot (t_d + t_s)$.*
     *   **Ship to one site:**
         *   Ship R to Site2, join at Site2: Cost $M_R(t_d+t_s) + M_R t_d + \text{JoinCost}(R,A)$ at Site2. (L10, S41)
         *   Ship A to Site1, join at Site1: Cost $M_A(t_d+t_s) + M_A t_d + \text{JoinCost}(R,A)$ at Site1. (L10, S42)
