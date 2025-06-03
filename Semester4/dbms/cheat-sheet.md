@@ -370,5 +370,3 @@
     5.  **Decryption:** `Msg_val = (Enc_val - Key_val + n) $\bmod n$`.
 
 ---
-
-This cheat sheet should cover the main theoretical aspects needed for exercises similar to those in Lecture 13. Remember to understand the concepts rather than just memorizing formulas. Good luck!
