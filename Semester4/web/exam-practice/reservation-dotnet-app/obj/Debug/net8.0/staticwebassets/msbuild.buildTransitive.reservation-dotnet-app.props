@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/reservation-dotnet-app.props" />
+</Project>

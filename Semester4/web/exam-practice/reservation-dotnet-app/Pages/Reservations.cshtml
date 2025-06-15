@@ -1,0 +1,55 @@
+@page
+@model ReservationApp.Pages.ReservationsModel
+@{
+    ViewData["Title"] = "Make a Reservation";
+}
+
+<h1>Reserve for @Model.DestinationCity on @Model.SelectedDate.Date.ToShortDateString()</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Flights</h2>
+        @if (Model.AvailableFlights.Any())
+        {
+            <ul class="list-group">
+                @foreach (var flight in Model.AvailableFlights)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Flight #@flight.FlightID - @flight.AvailableSeats seats available
+                        <form method="post" asp-page-handler="ReserveFlight">
+                            <input type="hidden" name="id" value="@flight.FlightID" />
+                            <button type="submit" class="btn btn-sm btn-success">Reserve</button>
+                        </form>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No flights available for this date and destination.</p>
+        }
+    </div>
+    <div class="col-md-6">
+        <h2>Hotels</h2>
+        @if (Model.AvailableHotels.Any())
+        {
+            <ul class="list-group">
+                @foreach (var hotel in Model.AvailableHotels)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        @hotel.HotelName - @hotel.AvailableRooms rooms available
+                        <form method="post" asp-page-handler="ReserveHotel">
+                            <input type="hidden" name="id" value="@hotel.HotelID" />
+                            <button type="submit" class="btn btn-sm btn-success">Reserve</button>
+                        </form>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No hotels available for this date and city.</p>
+        }
+    </div>
+</div>

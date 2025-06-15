@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mihaicrisan/Developer/UBB/Semester4/web/exam-practice/reservation-dotnet-app/reservation-dotnet-app.csproj": {}
+  },
+  "projects": {
+    "/Users/mihaicrisan/Developer/UBB/Semester4/web/exam-practice/reservation-dotnet-app/reservation-dotnet-app.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mihaicrisan/Developer/UBB/Semester4/web/exam-practice/reservation-dotnet-app/reservation-dotnet-app.csproj",
+        "projectName": "reservation-dotnet-app",
+        "projectPath": "/Users/mihaicrisan/Developer/UBB/Semester4/web/exam-practice/reservation-dotnet-app/reservation-dotnet-app.csproj",
+        "packagesPath": "/Users/mihaicrisan/.nuget/packages/",
+        "outputPath": "/Users/mihaicrisan/Developer/UBB/Semester4/web/exam-practice/reservation-dotnet-app/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mihaicrisan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@8/8.0.16/libexec/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
