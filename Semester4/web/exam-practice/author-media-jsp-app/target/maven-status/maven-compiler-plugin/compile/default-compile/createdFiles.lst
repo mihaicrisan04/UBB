@@ -1,0 +1,8 @@
+com/am/dao/AuthorDAO.class
+com/am/dao/DocumentDAO.class
+com/am/dao/MovieDAO.class
+com/am/model/Movie.class
+com/am/util/DatabaseConnection.class
+com/am/controller/MainServlet.class
+com/am/model/Document.class
+com/am/model/Author.class
