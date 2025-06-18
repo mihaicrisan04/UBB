@@ -7,41 +7,42 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+
+import jakarta.servlet.http.HttpSession;
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
-@SessionAttributes("author") // Store "author" object in the session
+@SessionAttributes("user")
 public class MainController {
 
-    @Autowired private AuthorRepository authorRepo;
-    @Autowired private DocumentRepository docRepo;
-    @Autowired private MovieRepository movieRepo;
+    @Autowired private UserRepository userRepo;
+    @Autowired private ProductRepository productRepo;
+    @Autowired private OrderRepository orderRepo;
+    @Autowired private OrderItemRepository orderItemsRepo;
 
-    // Show login page
     @GetMapping("/")
     public String index(Model model) {
         try {
-            // Test database connection
-            long authorCount = authorRepo.count();
-            model.addAttribute("authorCount", authorCount);
-            return "index"; // Renders /WEB-INF/jsp/index.jsp
+            long userCount = userRepo.count();
+            model.addAttribute("userCount", userCount);
+            return "index";
         } catch (Exception e) {
             model.addAttribute("error", "Database connection error: " + e.getMessage());
             return "index";
         }
     }
 
-    // Handle login
     @PostMapping("/login")
-    public String login(@RequestParam String name, Model model) {
+    public String login(@RequestParam String name, Model model, HttpSession session) {
         try {
-            Optional<Author> authorOpt = authorRepo.findByName(name);
-            if (authorOpt.isPresent()) {
-                model.addAttribute("author", authorOpt.get()); // Add to session
+            Optional<User> userOpt = userRepo.findByUsername(name);
+            if (userOpt.isPresent()) {
+                model.addAttribute("user", userOpt.get());
+                session.setAttribute("currentOrder", new ArrayList<Product>());
                 return "redirect:/dashboard";
             }
-            model.addAttribute("error", "Author not found.");
+            model.addAttribute("error", "User not found.");
             return "index";
         } catch (Exception e) {
             model.addAttribute("error", "Login error: " + e.getMessage());
@@ -49,23 +50,61 @@ public class MainController {
         }
     }
 
-    // Show dashboard
     @GetMapping("/dashboard")
-    public String dashboard(@ModelAttribute(value="author", binding=false) Author author, Model model) {
+    public String dashboard(@ModelAttribute(value="user", binding=false) User user, Model model, HttpSession session) {
         try {
-            if (author == null) {
+            if (user == null) {
                 return "redirect:/";
             }
             
-            // Fetch documents and movies
-            List<Integer> docIds = parseIds(author.getDocumentList());
-            List<Integer> movieIds = parseIds(author.getMovieList());
-            model.addAttribute("documents", docRepo.findAllById(docIds));
-            model.addAttribute("movies", movieRepo.findAllById(movieIds));
-
-            // Find document with most authors
-            findDocWithMostAuthors(model);
-
+            List<Product> allProducts = productRepo.findAll();
+            model.addAttribute("products", allProducts);
+            
+            @SuppressWarnings("unchecked")
+            List<Product> currentOrder = (List<Product>) session.getAttribute("currentOrder");
+            if (currentOrder == null) {
+                currentOrder = new ArrayList<>();
+                session.setAttribute("currentOrder", currentOrder);
+            }
+            model.addAttribute("currentOrder", currentOrder);
+            
+            int totalPrice = currentOrder.stream().mapToInt(Product::getPrice).sum();
+            model.addAttribute("totalPrice", totalPrice);
+            
+            Set<String> categoriesInCurrentOrder = currentOrder.stream()
+                    .map(p -> extractCategory(p.getName()))
+                    .collect(Collectors.toSet());
+            
+            String diversificationWarning = null;
+            for (String category : categoriesInCurrentOrder) {
+                String warning = checkDiversification(user.getId(), category);
+                if (warning != null) {
+                    diversificationWarning = warning;
+                    break;
+                }
+            }
+            if (diversificationWarning != null) {
+                model.addAttribute("warning", diversificationWarning);
+            }
+            
+            // Handle order confirmation from session
+            Boolean orderConfirmed = (Boolean) session.getAttribute("orderConfirmed");
+            if (orderConfirmed != null && orderConfirmed) {
+                model.addAttribute("orderConfirmed", true);
+                model.addAttribute("finalPrice", session.getAttribute("finalPrice"));
+                model.addAttribute("originalPrice", session.getAttribute("originalPrice"));
+                model.addAttribute("discountPercent", session.getAttribute("discountPercent"));
+                // Clear the confirmation from session
+                session.removeAttribute("orderConfirmed");
+                session.removeAttribute("finalPrice");
+                session.removeAttribute("originalPrice");
+                session.removeAttribute("discountPercent");
+            }
+            
+            List<Order> userOrders = orderRepo.findByUserIdOrderByIdDesc(user.getId())
+                    .stream().limit(3).collect(Collectors.toList());
+            model.addAttribute("recentOrders", userOrders);
+            
             return "dashboard";
         } catch (Exception e) {
             model.addAttribute("error", "Dashboard error: " + e.getMessage());
@@ -73,67 +112,166 @@ public class MainController {
         }
     }
 
-    // Handle adding a document
-    @PostMapping("/documents/add")
-    public String addDocument(@ModelAttribute("author") Author author, @RequestParam String docName, @RequestParam String docContents) {
-        Document newDoc = new Document();
-        newDoc.setName(docName);
-        newDoc.setContents(docContents);
-        docRepo.save(newDoc); // Save returns the persisted entity with ID
-
-        String currentList = author.getDocumentList();
-        String newList = (currentList == null || currentList.isEmpty())
-            ? String.valueOf(newDoc.getId())
-            : currentList + "," + newDoc.getId();
-        author.setDocumentList(newList);
-        authorRepo.save(author);
-
-        return "redirect:/dashboard";
+    @PostMapping("/add-product")
+    public String addProduct(@RequestParam int productId, @ModelAttribute("user") User user, HttpSession session) {
+        try {
+            Optional<Product> productOpt = productRepo.findById(productId);
+            if (productOpt.isPresent()) {
+                Product product = productOpt.get();
+                
+                @SuppressWarnings("unchecked")
+                List<Product> currentOrder = (List<Product>) session.getAttribute("currentOrder");
+                if (currentOrder == null) {
+                    currentOrder = new ArrayList<>();
+                }
+                
+                currentOrder.add(product);
+                session.setAttribute("currentOrder", currentOrder);
+            }
+            return "redirect:/dashboard";
+        } catch (Exception e) {
+            return "redirect:/dashboard";
+        }
     }
 
-    // Handle deleting a movie
-    @GetMapping("/movies/delete/{id}")
-    public String deleteMovie(@ModelAttribute("author") Author author, @PathVariable int id) {
-        List<String> movieIds = new ArrayList<>(Arrays.asList(author.getMovieList().split(",")));
-        movieIds.remove(String.valueOf(id));
-        author.setMovieList(String.join(",", movieIds));
-        authorRepo.save(author);
-        return "redirect:/dashboard";
+    @PostMapping("/remove-product")
+    public String removeProduct(@RequestParam int index, HttpSession session) {
+        try {
+            @SuppressWarnings("unchecked")
+            List<Product> currentOrder = (List<Product>) session.getAttribute("currentOrder");
+            if (currentOrder != null && index >= 0 && index < currentOrder.size()) {
+                currentOrder.remove(index);
+                session.setAttribute("currentOrder", currentOrder);
+            }
+            return "redirect:/dashboard";
+        } catch (Exception e) {
+            return "redirect:/dashboard";
+        }
     }
 
-    // Handle logout
+    @PostMapping("/confirm-order")
+    public String confirmOrder(@ModelAttribute("user") User user,
+                             HttpSession session) {
+        try {
+            @SuppressWarnings("unchecked")
+            List<Product> currentOrder = (List<Product>) session.getAttribute("currentOrder");
+            
+            if (currentOrder == null || currentOrder.isEmpty()) {
+                return "redirect:/dashboard";
+            }
+            
+            int totalPrice = currentOrder.stream().mapToInt(Product::getPrice).sum();
+            double discount = calculateDiscount(currentOrder);
+            int finalPrice = (int) (totalPrice * (1 - discount));
+            
+            Order order = new Order();
+            order.setUserId(user.getId());
+            order.setTotalPrice(finalPrice);
+            Order savedOrder = orderRepo.save(order);
+
+            for (Product product: currentOrder) {
+                OrderItem orderItem = new OrderItem();
+                orderItem.setOrderId(order.getId());
+                orderItem.setProductId(product.getId());
+                orderItemsRepo.save(orderItem);
+            }
+            
+            session.setAttribute("currentOrder", new ArrayList<Product>());
+            session.setAttribute("orderConfirmed", true);
+            session.setAttribute("finalPrice", finalPrice);
+            session.setAttribute("originalPrice", totalPrice);
+            session.setAttribute("discountPercent", (int)(discount * 100));
+            
+            return "redirect:/dashboard";
+        } catch (Exception e) {
+            return "redirect:/dashboard";
+        }
+    }
+
     @GetMapping("/logout")
-    public String logout(SessionStatus status) {
-        status.setComplete(); // Clear the session
+    public String logout(SessionStatus status, HttpSession session) {
+        status.setComplete();
+        session.invalidate();
         return "redirect:/";
     }
 
-    // Helper methods
-    private List<Integer> parseIds(String idList) {
-        if (idList == null || idList.trim().isEmpty()) {
-            return Collections.emptyList();
+    private String extractCategory(String productName) {
+        int dashIndex = productName.indexOf('-');
+        if (dashIndex > 0) {
+            return productName.substring(0, dashIndex);
         }
-        return Arrays.stream(idList.split(","))
-                     .map(Integer::parseInt)
-                     .collect(Collectors.toList());
+        return productName;
     }
 
-    private void findDocWithMostAuthors(Model model) {
-        Map<Integer, Long> docAuthorCounts = authorRepo.findAll().stream()
-            .map(Author::getDocumentList)
-            .filter(Objects::nonNull)
-            .flatMap(list -> Arrays.stream(list.split(",")))
-            .filter(id -> !id.isEmpty())
-            .map(Integer::parseInt)
-            .collect(Collectors.groupingBy(id -> id, Collectors.counting()));
-
-        Optional<Map.Entry<Integer, Long>> maxEntry = docAuthorCounts.entrySet()
-            .stream()
-            .max(Map.Entry.comparingByValue());
-
-        if (maxEntry.isPresent()) {
-            docRepo.findById(maxEntry.get().getKey())
-                   .ifPresent(doc -> model.addAttribute("docWithMostAuthors", doc));
+    private double calculateDiscount(List<Product> products) {
+        double discount = 0.0;
+        
+        if (products.size() >= 3) {
+            discount += 0.10;
         }
+        
+        Map<String, Long> categoryCount = products.stream()
+                .collect(Collectors.groupingBy(
+                    p -> extractCategory(p.getName()),
+                    Collectors.counting()
+                ));
+        
+        boolean hasDuplicateCategory = categoryCount.values().stream()
+                .anyMatch(count -> count >= 2);
+        
+        if (hasDuplicateCategory) {
+            discount += 0.05;
+        }
+        
+        return Math.min(discount, 0.15);
+    }
+
+    private String checkDiversification(int userId, String category) {
+        try {
+            List<Order> lastThreeOrders = orderRepo.findByUserIdOrderByIdDesc(userId)
+                    .stream().limit(3).collect(Collectors.toList());
+            
+            if (lastThreeOrders.size() < 3) {
+                return null;
+            }
+            
+            int ordersWithCategory = 0;
+            for (Order order : lastThreeOrders) {
+                List<Product> orderProducts = getProductsForOrder(order.getId());
+                boolean categoryInThisOrder = false;
+                for (Product product : orderProducts) {
+                    String productCategory = extractCategory(product.getName());
+                    if (category.equals(productCategory)) {
+                        categoryInThisOrder = true;
+                        break;
+                    }
+                }
+                if (categoryInThisOrder) {
+                    ordersWithCategory++;
+                }
+            }
+            
+            if (ordersWithCategory == 3) {
+                return "Warning: This category was present in all your last 3 orders. Consider diversifying your choices.";
+            }
+            
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private List<Product> getProductsForOrder(int orderId) {
+        List<OrderItem> orderItems = orderItemsRepo.findByOrderId(orderId);
+        List<Product> products = new ArrayList<>();
+
+        for (OrderItem orderItem: orderItems) {
+            Optional<Product> product = productRepo.findById(orderItem.getProductId());
+            if (product.isPresent()) {
+                products.add(product.get());
+            }
+        }
+
+        return products;
     }
 }

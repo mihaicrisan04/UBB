@@ -1,0 +1,18 @@
+
+do not mind the author app with the documenst and movies! that is old and is just for reffrence
+
+the user should specify his/her name prior to using th application (login page)
+after logging in the user can begin building an order by selecting products 
+
+the selected products are added to a new order(they are saved in the database only when the user confirms the order)
+
+discount logic:
+before computing the order the totatl price is computed based on the following dynamic discount rules;
+- if th order contains 3 or more products, apply 10 percent discount
+- if 2 or more products share the sane category (derived from the prodcut name prefix) apply 5 percent additional discount
+
+only when a user confirms the order the discount is computed, th order and reltead orderItem entries are saved in the databas and the final total (with discount applied) is displayed
+
+thhe application should track the last 3 orders from this user. if the user tries to add (in the current order) a prodcut whose category already eitsts in all of the last 3 order, the system should warn the user that they are not diversifying their product choices. 
+
+user the current app that was an author with media application to change it from that to this new store. I already started with the model and some repos. The name of the table Orderr with 2 r's is not a mistake is by choice so do not try to change it.

@@ -3,82 +3,117 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Store Dashboard</title>
     <style>
         body { font-family: sans-serif; padding: 20px; }
-        h1, h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        form { margin-top: 20px; padding: 15px; border: 1px solid #ccc; }
-        .logout { float: right; }
-        .card { border: 1px solid #007bff; padding: 15px; margin-top: 20px; border-radius: 5px; }
+        .error { background: rgb(255, 9, 9)}
+        .success { background: rgb(118, 255, 13);}
     </style>
 </head>
 <body>
-    <a href="/logout" class="logout">Logout</a>
-    <h1>Welcome, ${author.name}</h1>
+    <div class="header">
+        <h1>Welcome to the Store, ${user.username}!</h1>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
 
-    <!-- Add New Document -->
-    <h2>Add New Document</h2>
-    <form action="/documents/add" method="post">
-        <div>
-            <label for="docName">Name:</label>
-            <input type="text" id="docName" name="docName" required>
+    <c:if test="${not empty error}">
+        <div class="error">${error}</div>
+    </c:if>
+
+    <c:if test="${orderConfirmed}">
+        <div class="success">
+            Order confirmed successfully! 
+            <br>Original Price: $${originalPrice}
+            <c:if test="${discountPercent > 0}">
+                <br>Discount Applied: ${discountPercent}%
+            </c:if>
+            <br><strong>Final Price: $${finalPrice}</strong>
         </div>
-        <div style="margin-top: 10px;">
-            <label for="docContents">Contents:</label>
-            <textarea id="docContents" name="docContents" rows="4" cols="50" required></textarea>
+    </c:if>
+
+    <div class="container">
+        <div class="section">
+            <h2>Available Products</h2>
+            <div class="products-grid">
+                <c:forEach var="product" items="${products}">
+                    <div class="product-card">
+                        <h4>${product.name}</h4>
+                        <div class="price">$${product.price}</div>
+                        <form action="/add-product" method="post" style="margin: 0;">
+                            <input type="hidden" name="productId" value="${product.id}">
+                            <button type="submit">Add to Order</button>
+                        </form>
+                    </div>
+                </c:forEach>
+            </div>
         </div>
-        <button type="submit" style="margin-top: 10px;">Add Document</button>
-    </form>
 
-    <!-- Interleaved List -->
-    <h2>Your Authored Works</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Type</th>
-                <th>Title / Name</th>
-                <th>Details</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:set var="maxSize" value="${fn:length(documents) > fn:length(movies) ? fn:length(documents) : fn:length(movies)}" />
-            <c:forEach var="i" begin="0" end="${maxSize - 1}">
-                <c:if test="${i < fn:length(documents)}">
-                    <tr>
-                        <td>Document</td>
-                        <td>${documents[i].name}</td>
-                        <td>${documents[i].contents}</td>
-                        <td>-</td>
-                    </tr>
-                </c:if>
-                <c:if test="${i < fn:length(movies)}">
-                    <tr>
-                        <td>Movie</td>
-                        <td>${movies[i].title}</td>
-                        <td>Duration: ${movies[i].duration} mins</td>
-                        <td>
-                            <a href="/movies/delete/${movies[i].id}">Delete</a>
-                        </td>
-                    </tr>
-                </c:if>
-            </c:forEach>
-        </tbody>
-    </table>
+        <div class="section">
+            <h2>Current Order</h2>
+            <c:choose>
+                <c:when test="${fn:length(currentOrder) > 0}">
+                    <c:forEach var="product" items="${currentOrder}" varStatus="status">
+                        <div class="order-item">
+                            <span>${product.name} - $${product.price}</span>
+                            <form action="/remove-product" method="post" style="margin: 0;">
+                                <input type="hidden" name="index" value="${status.index}">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </div>
+                    </c:forEach>
+                    
+                    <div class="total">
+                        Total: $${totalPrice}
+                    </div>
 
-    <!-- Document with Most Authors -->
-    <h2>Document with the Most Authors</h2>
-    <div class="card">
-        <c:if test="${not empty docWithMostAuthors}">
-            <strong>Name:</strong> ${docWithMostAuthors.name}<br>
-            <strong>Contents:</strong> ${docWithMostAuthors.contents}
-        </c:if>
-        <c:if test="${empty docWithMostAuthors}">
-            <p>No documents found.</p>
-        </c:if>
+                    <c:if test="${fn:length(currentOrder) >= 3}">
+                        <div class="discount-info">
+                            3+ products discount: 10% off
+                        </div>
+                    </c:if>
+
+                    <c:if test="${not empty warning}">
+                        <div class="warning" style="margin: 10px 0;">
+                            ${warning}
+                        </div>
+                    </c:if>
+
+                    <form action="/confirm-order" method="post" style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-success">Confirm Order</button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <p>Your order is empty. Add some products to get started</p>
+                </c:otherwise>
+            </c:choose>
+        </div>
+    </div>
+
+    <div class="section" style="margin-top: 20px;">
+        <h2>Your Recent Orders</h2>
+        <c:choose>
+            <c:when test="${fn:length(recentOrders) > 0}">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="order" items="${recentOrders}">
+                            <tr>
+                                <td style="border: 1px solid #000000;">#${order.id}</td>
+                                <td style="border: 1px solid #000000;">$${order.totalPrice}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </c:when>
+            <c:otherwise>
+                <p>No previous orders found.</p>
+            </c:otherwise>
+        </c:choose>
     </div>
 
 </body>

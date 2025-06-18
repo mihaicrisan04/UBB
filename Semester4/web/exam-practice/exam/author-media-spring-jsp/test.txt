@@ -1,0 +1,4 @@
+
+
+the user should specify his/her name prior to using th application (login page)
+after logging in the user can begin building an order
