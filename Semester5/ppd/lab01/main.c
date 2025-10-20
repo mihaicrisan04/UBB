@@ -49,7 +49,7 @@ Product* find_or_create_product(Warehouse* warehouse, const char* product_name) 
   // lock the warehouse to modify it safely
   pthread_mutex_lock(&warehouse->warehouse_lock);
 
-  // another thread might have added it while waiting for the lock
+  // another thread might have added it while waiting for the lock (small chance i think -- suggested by ai)
   for (int i = 0; i < warehouse->product_count; i++) {
     if (strcmp(warehouse->products[i].name, product_name) == 0) {
       pthread_mutex_unlock(&warehouse->warehouse_lock);
@@ -168,9 +168,10 @@ void *move_handler(void *arg) {
 void inventory_check() {
   printf("\nInventory Check:\n");
 
-  char unique_products[MAX_WAREHOUSES * MAX_PRODUCTS_PER_WAREHOUSE][MAX_PRODUCT_NAME];
+  char unique_products[MAX_WAREHOUSES * MAX_PRODUCTS_PER_WAREHOUSE][MAX_PRODUCT_NAME]; // list of unique product names
   int unique_count = 0;
 
+  // build list of unique products
   for (int w = 0; w < warehouse_count; w++) {
       for (int p = 0; p < warehouses[w].product_count; p++) {
           const char* product_name = warehouses[w].products[p].name;
@@ -190,6 +191,7 @@ void inventory_check() {
       }
   }
 
+  // check the the inventory for a each unique product in all warehouses
   for (int u = 0; u < unique_count; u++) {
       int total_quantity = 0;
       const char* product_name = unique_products[u];
