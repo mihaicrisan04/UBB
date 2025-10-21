@@ -9,8 +9,9 @@
 #define MAX_WAREHOUSES 10
 #define MAX_PRODUCTS_PER_WAREHOUSE 50
 #define MAX_PRODUCT_NAME 50
-#define NUM_THREADS 4
-#define NUM_MOVES 20
+#define NUM_THREADS 20
+#define NUM_MOVES 1000
+#define CONSITENCY_CHECK_INTERVAL 1
 
 typedef struct {
   char name[MAX_PRODUCT_NAME];
@@ -33,8 +34,17 @@ typedef struct {
   int thread_id;
 } MoveData;
 
+typedef struct {
+  char product_names[MAX_WAREHOUSES * MAX_PRODUCTS_PER_WAREHOUSE][MAX_PRODUCT_NAME];
+  int total_quantities[MAX_WAREHOUSES * MAX_PRODUCTS_PER_WAREHOUSE];
+  int product_count;
+} ConsistencyData;
+
 Warehouse warehouses[MAX_WAREHOUSES];
 int warehouse_count = 0;
+
+ConsistencyData consistency_data;
+int should_continue_checking = 1; // flag to control the consistency checker thread
 
 pthread_mutex_t global_mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -94,6 +104,22 @@ void add_product_to_warehouse(int warehouse_id, const char* product_name, int qu
         pthread_mutex_unlock(&product->lock);
         printf("Added %d units of %s to warehouse %d\n", quantity, product_name, warehouse_id);
       }
+
+      // add to consistency data (no need for locking as the initial setup is made in the main thread before starting the others)
+      int found = 0;
+      for (int i = 0; i < consistency_data.product_count; i++) {
+        if (strcmp(consistency_data.product_names[i], product_name) == 0) {
+          consistency_data.total_quantities[i] += quantity;
+          found = 1;
+          break;
+        }
+      }
+      if (!found) {
+        strcpy(consistency_data.product_names[consistency_data.product_count], product->name);
+        consistency_data.total_quantities[consistency_data.product_count] = quantity;
+        consistency_data.product_count += 1;
+      }
+
       break;
     }
   }
@@ -145,7 +171,7 @@ int move_product(int source_id, int dest_id, const char* product_name, int quant
       pthread_mutex_unlock(&second_lock->lock);
     }
     pthread_mutex_unlock(&first_lock->lock);
-    return 0;
+      return 0;
   } else {
     printf("Error: Not enough %s in warehouse %d (has %d, requested %d)\n", product_name, source_id, source_product->quantity, quantity);
 
@@ -157,46 +183,16 @@ int move_product(int source_id, int dest_id, const char* product_name, int quant
   }
 }
 
-void *move_handler(void *arg) {
-  MoveData* move_data = (MoveData*) arg;
-  move_product(move_data->source_warehouse_id, move_data->dest_warehouse_id, move_data->product_name, move_data->quantity);
-
-  free(move_data);
-  return NULL;
-}
-
 void inventory_check() {
   printf("\nInventory Check:\n");
-
-  char unique_products[MAX_WAREHOUSES * MAX_PRODUCTS_PER_WAREHOUSE][MAX_PRODUCT_NAME]; // list of unique product names
-  int unique_count = 0;
-
-  // build list of unique products
-  for (int w = 0; w < warehouse_count; w++) {
-      for (int p = 0; p < warehouses[w].product_count; p++) {
-          const char* product_name = warehouses[w].products[p].name;
-
-          int found = 0;
-          for (int u = 0; u < unique_count; u++) {
-              if (strcmp(unique_products[u], product_name) == 0) {
-                  found = 1;
-                  break;
-              }
-          }
-
-          if (!found) {
-              strcpy(unique_products[unique_count], product_name);
-              unique_count++;
-          }
-      }
-  }
+  int total_inconsistencies = 0;
 
   // check the the inventory for a each unique product in all warehouses
-  for (int u = 0; u < unique_count; u++) {
+  for (int u = 0; u < consistency_data.product_count; u++) {
       int total_quantity = 0;
-      const char* product_name = unique_products[u];
+      const char* product_name = consistency_data.product_names[u];
 
-      printf("Product: %s\n", product_name);
+      // printf("Product: %s\n", product_name);
 
       // Check each warehouse for this product
       for (int w = 0; w < warehouse_count; w++) {
@@ -207,13 +203,43 @@ void inventory_check() {
                   int quantity = warehouses[w].products[p].quantity;
                   pthread_mutex_unlock(&warehouses[w].products[p].lock);
 
-                  printf("  Warehouse %d: %d units\n", warehouses[w].id, quantity);
+                  // printf("  Warehouse %d: %d units\n", warehouses[w].id, quantity);
                   total_quantity += quantity;
               }
           }
       }
-      printf("  Total: %d units\n\n", total_quantity);
+
+      printf("  Current total: %d\n", total_quantity);
+      if (consistency_data.total_quantities[u] != total_quantity) {
+          printf("  CONSISTENCY ERROR: Product %s (Expected: %d, Found: %d)\n",
+                 product_name, consistency_data.total_quantities[u], total_quantity);
+          total_inconsistencies++;
+      }
   }
+  printf("\nTotal inconsistencies found: %d\n", total_inconsistencies);
+}
+
+void *move_handler(void *arg) {
+  MoveData* move_data = (MoveData*) arg;
+  move_product(move_data->source_warehouse_id, move_data->dest_warehouse_id, move_data->product_name, move_data->quantity);
+
+  free(move_data);
+  return NULL;
+}
+
+void* consistency_checker(void* arg) {
+  while (should_continue_checking) {
+    printf("\033[2J\033[H");
+
+    time_t now;
+    time(&now);
+    printf("Consistency checker at %s", ctime(&now));
+
+    inventory_check();
+
+    sleep(CONSITENCY_CHECK_INTERVAL);
+  }
+  return NULL;
 }
 
 int main(int argc, char *argv[]) {
@@ -222,16 +248,21 @@ int main(int argc, char *argv[]) {
   init_warehouse(1);
   init_warehouse(2);
 
-  add_product_to_warehouse(1, "Apples", 100);
-  add_product_to_warehouse(1, "Bananas", 150);
-  add_product_to_warehouse(1, "Oranges", 75);
+  add_product_to_warehouse(1, "Apples", 1000);
+  add_product_to_warehouse(1, "Bananas", 1000);
+  add_product_to_warehouse(1, "Oranges", 1000);
+  add_product_to_warehouse(1, "Grapes", 1000);
 
-  add_product_to_warehouse(2, "Apples", 50);
-  add_product_to_warehouse(2, "Bananas", 80);
-  add_product_to_warehouse(2, "Grapes", 120);
+  add_product_to_warehouse(2, "Apples", 1000);
+  add_product_to_warehouse(2, "Bananas", 1000);
+  add_product_to_warehouse(2, "Oranges", 1000);
+  add_product_to_warehouse(2, "Grapes", 1000);
 
-  inventory_check();
+  // create the consistency checker thread
+  pthread_t  consistency_thread;
+  pthread_create(&consistency_thread, NULL, consistency_checker, NULL);
 
+  // create worker threads
   pthread_t threads[NUM_THREADS];
 
   for (int i = 0; i < NUM_THREADS; i++) {
@@ -244,16 +275,21 @@ int main(int argc, char *argv[]) {
 
     const char* products[] = {"Apples", "Bananas", "Oranges", "Grapes"};
     strcpy(move_data->product_name, products[rand() % 4]);
-    move_data->quantity = (rand() % 20) + 1; // 1-20 units
+    move_data->quantity = (rand() % 10) + 1; // 1-10 units
 
     pthread_create(&threads[i], NULL, move_handler, move_data);
+
+    // sleep(1); // delay between the moves
+    usleep(100000); // 0.1 second
   }
 
   for (int i = 0; i < NUM_THREADS; i++) {
     pthread_join(threads[i], NULL);
   }
 
-  inventory_check();
+  // stop the consistecy checker thread
+  should_continue_checking = 0;
+  pthread_join(consistency_thread, NULL);
 
   for (int w = 0; w < warehouse_count; w++) {
     for (int p = 0; p < warehouses[w].product_count; p++) {
