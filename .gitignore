@@ -2,6 +2,7 @@
 # git files
 **/.gitignore
 **/.git
+.gitconfig
 
 # User-specific files for IDEs
 **/.DS_Store
