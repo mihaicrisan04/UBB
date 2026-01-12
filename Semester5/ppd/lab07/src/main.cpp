@@ -96,9 +96,7 @@ int main(int argc, char** argv) {
             std::cout << "  karatsuba mpi == kara seq:  " << (karaOk ? "OK" : "MISMATCH") << "\n";
             std::cout << "  karatsuba seq == naive seq: " << (crossOk ? "OK" : "MISMATCH") << "\n";
 
-            if (cfg.size <= 20) {
-                std::cout << "\nResult: " << results[0].result.toString() << "\n";
-            }
+            std::cout << "\nResult: " << results[0].result.toString() << "\n";
         }
     } else {
         std::function<Polynomial()> fn;
@@ -130,6 +128,10 @@ int main(int argc, char** argv) {
             Polynomial ref = multiply::naiveSeq(A, B);
             bool ok = ref == result.result;
             std::cout << "\nVerification vs naive seq: " << (ok ? "OK" : "MISMATCH") << "\n";
+        }
+
+        if (rank == 0) {
+            std::cout << "\nResult: " << result.result.toString() << "\n";
         }
     }
 

@@ -18,7 +18,8 @@ void print_usage() {
               << "Options:\n"
               << "  --vars N     Number of variables (default: 3)\n"
               << "  --demo       Run demonstration\n"
-              << "  --test       Run total ordering test\n";
+              << "  --test       Run total ordering test\n"
+              << "  --cas-race   Run CAS race condition demo (shows failures)\n";
 }
 
 void run_demo(int rank, int size, int num_vars) {
@@ -151,6 +152,64 @@ void run_ordering_test(int rank, int size, int num_vars) {
     mem.close();
 }
 
+void run_cas_race(int rank, int size, int num_vars) {
+    dsm::DSM mem(MPI_COMM_WORLD, num_vars);
+
+    // All processes subscribe to all variables
+    std::set<int> all_procs;
+    for (int p = 0; p < size; p++) {
+        all_procs.insert(p);
+    }
+    for (int v = 0; v < num_vars; v++) {
+        mem.subscribe(v, all_procs);
+    }
+
+    mem.set_callback([rank](int var_id, int old_val, int new_val) {
+        std::cout << "[P" << rank << "] Variable " << var_id
+                  << " changed: " << old_val << " -> " << new_val << "\n";
+    });
+
+    mem.sync();
+
+    if (rank == 0) {
+        std::cout << "\n=== CAS Race Condition Demo ===\n";
+        std::cout << "All processes will try to CAS var 0 from 0 to (rank+1)*100\n";
+        std::cout << "Only ONE should succeed, all others should FAIL!\n\n";
+    }
+    mem.sync();
+
+    // All processes read the current value (should be 0)
+    int current_value = mem.read(0);
+    std::cout << "[P" << rank << "] Read var 0 = " << current_value << "\n";
+    
+    mem.sync();  // Ensure all reads are done before CAS attempts
+
+    // ALL processes try to CAS at the same time!
+    // They all expect 0, but only one will win
+    int my_new_value = (rank + 1) * 100;
+    
+    if (rank == 0) {
+        std::cout << "\n--- All processes attempting CAS(var=0, expected=0, new=<their_value>) ---\n\n";
+    }
+    mem.sync();
+
+    bool success = mem.compare_exchange(0, 0, my_new_value);
+    
+    std::cout << "[P" << rank << "] CAS(var=0, expected=0, new=" << my_new_value << "): " 
+              << (success ? "SUCCESS ✓" : "FAILED ✗") << "\n";
+
+    mem.sync();
+
+    // Show final state
+    if (rank == 0) {
+        std::cout << "\n=== Final State ===\n";
+        std::cout << "Variable 0 = " << mem.read(0) << "\n";
+        std::cout << "\nNote: Only the winner's value should be stored!\n";
+    }
+
+    mem.close();
+}
+
 int main(int argc, char* argv[]) {
     MPI_Init(&argc, &argv);
 
@@ -161,6 +220,7 @@ int main(int argc, char* argv[]) {
     int num_vars = 3;
     bool demo_mode = true;
     bool test_mode = false;
+    bool cas_race_mode = false;
 
     for (int i = 1; i < argc; i++) {
         std::string arg = argv[i];
@@ -173,9 +233,15 @@ int main(int argc, char* argv[]) {
         } else if (arg == "--demo") {
             demo_mode = true;
             test_mode = false;
+            cas_race_mode = false;
         } else if (arg == "--test") {
             test_mode = true;
             demo_mode = false;
+            cas_race_mode = false;
+        } else if (arg == "--cas-race") {
+            cas_race_mode = true;
+            demo_mode = false;
+            test_mode = false;
         }
     }
 
@@ -186,6 +252,8 @@ int main(int argc, char* argv[]) {
 
     if (test_mode) {
         run_ordering_test(rank, size, num_vars);
+    } else if (cas_race_mode) {
+        run_cas_race(rank, size, num_vars);
     } else {
         run_demo(rank, size, num_vars);
     }
