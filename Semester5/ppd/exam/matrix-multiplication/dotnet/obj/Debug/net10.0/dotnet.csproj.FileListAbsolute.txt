@@ -1,0 +1,15 @@
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/bin/Debug/net10.0/dotnet
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/bin/Debug/net10.0/dotnet.deps.json
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/bin/Debug/net10.0/dotnet.runtimeconfig.json
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/bin/Debug/net10.0/dotnet.dll
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/bin/Debug/net10.0/dotnet.pdb
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.AssemblyInfoInputs.cache
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.AssemblyInfo.cs
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.csproj.CoreCompileInputs.cache
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.sourcelink.json
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.dll
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/refint/dotnet.dll
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.pdb
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/dotnet.genruntimeconfig.cache
+/Users/mihai/dev/UBB/Semester5/ppd/exam/matrix-multiplication/dotnet/obj/Debug/net10.0/ref/dotnet.dll
