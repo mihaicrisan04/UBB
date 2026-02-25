@@ -39,7 +39,7 @@
 * [📱 Mobile Applications](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ma)
 * [⚡ Parallel & Distributed Programming](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppd)
 * [🧠 Project Planning & Innovation](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppi)
-* [🎮 Developing Applications on Specific Platforms](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppoc)
+* [🚀 Performance Oriented Coding](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppoc)
 
 ## [Semester 6](https://github.com/mihaicrisan04/UBB/tree/main/Semester6)
 
