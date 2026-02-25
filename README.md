@@ -31,3 +31,20 @@
 * [🖼️ Design and Programming Environments](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/mpp)
 * [🛠️ Software Engineering](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/swe)
 * [📄 Web Programming](https://github.com/mihaicrisan04/UBB/tree/main/Semester4/web)
+
+## [Semester 5](https://github.com/mihaicrisan04/UBB/tree/main/Semester5)
+
+* [🏗️ Computer Architecture Arm](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/caa)
+* [🔤 Formal Languages & Compiler Design](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/lftc)
+* [📱 Mobile Applications](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ma)
+* [⚡ Parallel & Distributed Programming](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppd)
+* [🧠 Project Planning & Innovation](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppi)
+* [🎮 Developing Applications on Specific Platforms](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppoc)
+
+## [Semester 6](https://github.com/mihaicrisan04/UBB/tree/main/Semester6)
+
+* [⛓️ Blockchain](https://github.com/mihaicrisan04/UBB/tree/main/Semester6/blockchain)
+* [👁️ Computer Vision & Deep Learning](https://github.com/mihaicrisan04/UBB/tree/main/Semester6/cvdl)
+* [🧮 Numerical Calculus](https://github.com/mihaicrisan04/UBB/tree/main/Semester6/nc)
+* [🎓 Preparation for Bachelor Thesis](https://github.com/mihaicrisan04/UBB/tree/main/Semester6/pbt)
+* [✅ Software Systems Verification & Validation](https://github.com/mihaicrisan04/UBB/tree/main/Semester6/ssvv)
