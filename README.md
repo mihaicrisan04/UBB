@@ -34,7 +34,7 @@
 
 ## [Semester 5](https://github.com/mihaicrisan04/UBB/tree/main/Semester5)
 
-* [🏗️ Computer Architecture Arm](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/caa)
+* [☁️ Cloud Application Architecture](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/caa)
 * [🔤 Formal Languages & Compiler Design](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/lftc)
 * [📱 Mobile Applications](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ma)
 * [⚡ Parallel & Distributed Programming](https://github.com/mihaicrisan04/UBB/tree/main/Semester5/ppd)
