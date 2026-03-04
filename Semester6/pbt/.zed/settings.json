@@ -1,0 +1,30 @@
+{
+  "lsp": {
+    "texlab": {
+      "settings": {
+        "texlab": {
+          "build": {
+            "executable": "latexmk",
+            "args": ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"],
+            "onSave": true
+          },
+          "forwardSearch": {
+            "executable": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+            "args": ["-r", "%l", "%p", "%f"]
+          }
+        }
+      }
+    }
+  },
+  "languages": {
+    "LaTeX": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "tex-fmt",
+          "arguments": ["--stdin"]
+        }
+      }
+    }
+  }
+}
