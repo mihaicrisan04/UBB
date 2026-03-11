@@ -1,0 +1,7 @@
+code=0
+nE=5
+Lorelai d1 manager 4500
+Luke d2 f2 4000
+Lane d1 f1 2500
+Jess d1 f2 5500
+Logan d2 f1 400
