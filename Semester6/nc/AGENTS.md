@@ -29,6 +29,10 @@
 - In notebook Markdown, write math with `$...$` (inline) and `$$...$$` (block).
 - Do not use `\(...\)` or `\[...\]` for formulas in this project.
 
+## Difference Table Presentation
+- For divided-difference and finite-difference exercises, it is important to present unused triangular table entries as `0` in the notebook output when a full rectangular table is expected.
+- It is acceptable to keep internal computations as `NaN` to preserve the triangular structure, but displayed results for this kind of exercise should show `0`.
+
 ## MATLAB PDF Mismatch Rule
 - Treat MATLAB instructions in PDFs as conceptual guidance only.
 - Translate all tasks to Python idioms and notebook-based solutions.
