@@ -1,0 +1,7 @@
+[tools]
+"npm:git-truck" = "3.3.0"
+
+[tasks.truck]
+description = "Run git-truck on the cloned repo"
+dir = "{{cwd}}/rentngo"
+run = "git-truck"
