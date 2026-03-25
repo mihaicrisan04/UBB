@@ -3,10 +3,8 @@
 
 % language may be romanian or english (default is english)
 % type may be bachelor or master (default is bachelor)
-\usepackage[language=romanian, type=bachelor]{style}
+\usepackage[language=english, type=bachelor]{style}
 
-%\geometry{a4paper,top=2.5cm,left=3cm,right=2.5cm,bottom=2.5cm}
-%in style
 %controlling the appearance of your headers and footers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -15,12 +13,27 @@
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0.2pt}
 
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{red!70!black},
+  breaklines=true,
+  frame=single,
+  captionpos=b,
+  tabsize=2
+}
+
 \begin{document}
 
-\specialization{[Secție]}
-\title{[Titlu lucrare]}
-\author{[Nume student]}
-\supervisor{[Grad, titlu și nume coordonator]}
+\specialization{Computer Science}
+\title{Design and Evaluation of a Trustworthy AI Shopping Assistant
+for E-Commerce}
+\author{Mihai}
+\supervisor{[Title and name of supervisor]}
 
 \maketitle
 
@@ -31,16 +44,41 @@
 \pagenumbering{roman}
 
 \cleardoublepage
-ABSTRACT
+\textbf{\Large ABSTRACT}
 \vspace{0.5cm}
 \hrule
 \vspace{0.5cm}
-%\cleardoublepage
 
-Abstract: un rezumat în limba engleză cu prezentarea, pe scurt, a
-conținutului pe capitole, punând accent pe contribuțiile proprii
-șisdlfjksdlkfjslkdjf
-originalitate sdfdk
+Online shopping systems increasingly integrate large language models
+to support product discovery and decision-making. However, many AI
+shopping assistants are intrusive, poorly timed, or perceived as
+upselling tools rather than genuine advisors. This thesis presents
+the design, implementation, and evaluation of a reactive-first AI
+shopping advisor for e-commerce. The proposed system combines a
+classical recommendation layer based on co-occurrence, content
+similarity, and personalized ranking with a behavior-aware readiness
+model and an LLM-based explanation layer. Instead of proactively
+interrupting the user, the system uses lightweight browsing signals
+to infer when help may be useful and only generates AI advice when
+the user explicitly engages.
+
+The system is implemented as a full-stack prototype with a simulated
+e-commerce store, a seeded product and order dataset, a
+recommendation backend, and an interactive advisor interface.
+Evaluation is performed at three levels: recommendation quality,
+system performance, and user perception. Offline recommender metrics
+are used to assess the baseline recommendation layer, while latency
+and token-based cost measurements capture the efficiency of the
+AI-assisted pipeline. A structured user evaluation compares the
+baseline shopping experience with the reactive-first AI-assisted
+version in terms of perceived usefulness, trust, intrusiveness, and
+purchase confidence.
+
+The thesis aims to show that hybrid architectures can deliver useful
+and explainable shopping assistance while avoiding the drawbacks of
+overly proactive AI interaction. The results contribute practical
+guidance for building trustworthy, non-intrusive AI assistants in
+consumer-facing systems.
 
 \tableofcontents
 
@@ -48,16 +86,12 @@ originalitate sdfdk
 \pagenumbering{arabic}
 
 \input{chapters/chapter1_introduction}
-%\addcontentsline{toc}{chapter}{Introducere}
-%\addcontentsline{toc}{chapter}{Introduction}
-
-\input{chapters/chapter2}
-\input{chapters/chapter3}
-\input{chapters/chapter4}
-
-\input{chapters/chapter6_conclusions}
-%\addcontentsline{toc}{chapter}{Concluzii}
-%\addcontentsline{toc}{chapter}{Conclusions}
+\input{chapters/chapter2_background}
+\input{chapters/chapter3_problem}
+\input{chapters/chapter4_design}
+\input{chapters/chapter5_implementation}
+\input{chapters/chapter6_evaluation}
+\input{chapters/chapter7_conclusions}
 
 \bibliography{references}
 

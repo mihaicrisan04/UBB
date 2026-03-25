@@ -1,0 +1,100 @@
+\chapter{Implementation}
+\label{chap:implementation}
+
+\section{Technology Stack}
+\label{sec:impl-stack}
+
+% Next.js 16, React 19, Convex, Clerk, Tailwind v4, Gemini Flash
+% Turborepo monorepo with bun workspaces
+
+\section{Project Structure}
+\label{sec:impl-structure}
+
+% apps/web, packages/backend, packages/ui, packages/env, packages/config
+
+\section{E-Commerce Store}
+\label{sec:impl-store}
+
+\subsection{Application Pages}
+\label{subsec:impl-pages}
+
+% Home, category, product detail, search, cart, favorites, order history, checkout
+
+\subsection{UI Components and Shared Library}
+\label{subsec:impl-components}
+
+% @zalem/ui with shadcn, ProductCard, ProductGrid, ProductFilters, etc.
+
+\subsection{Interactions and UX Patterns}
+\label{subsec:impl-ux}
+
+% Optimistic updates, URL-based filters, skeleton loaders, responsive design
+
+\section{Convex Data Layer}
+\label{sec:impl-data}
+
+\subsection{Schema and Indexing}
+\label{subsec:impl-schema}
+
+% Tables, indexes, denormalization strategy
+
+\subsection{Seed Data}
+\label{subsec:impl-seed}
+
+% DummyJSON + faker, persona clusters, realistic order patterns
+
+\section{Recommendation Engine}
+\label{sec:impl-recommendations}
+
+\subsection{Co-Occurrence with Jaccard Similarity}
+\label{subsec:impl-jaccard}
+
+% Implementation details, cron precomputation
+
+\subsection{Content-Based Similarity}
+\label{subsec:impl-content-sim}
+
+% Weighted scoring formula
+
+\subsection{Trending with Exponential Decay}
+\label{subsec:impl-trending}
+
+% Score formula, daily cron
+
+\subsection{Personalized Hybrid Recommendations}
+\label{subsec:impl-personalized}
+
+% Switching hybrid logic, cold-start fallbacks
+
+\subsection{Diversification with Maximal Marginal Relevance}
+\label{subsec:impl-mmr}
+
+% MMR for preventing same-brand clusters
+
+\section{Behavioral Tracking}
+\label{sec:impl-behavior}
+
+% React hooks, event buffer, beacon flush, behaviorSessions
+
+\section{Readiness Signals}
+\label{sec:impl-readiness}
+
+% Client-side evaluator, thresholds, cooldowns, question chips
+
+\section{LLM Integration}
+\label{sec:impl-llm}
+
+\subsection{Agent Infrastructure}
+\label{subsec:impl-agent}
+
+% @convex-dev/agent, Gemini configuration, system prompt
+
+\subsection{Advisor Sidebar Interface}
+\label{subsec:impl-sidebar}
+
+% Push-content layout, streaming, prompt-kit components
+
+\subsection{Agent Tools}
+\label{subsec:impl-tools}
+
+% getProductDetails, searchProducts, getRecommendations, getCartContents, getReviewsSummary

@@ -1,0 +1,74 @@
+\chapter{System Design}
+\label{chap:design}
+
+\section{Overall Architecture}
+\label{sec:design-architecture}
+
+% Three-layer architecture: client, Convex backend, external APIs
+
+\section{Two-Stage Recommendation Pipeline}
+\label{sec:design-pipeline}
+
+\subsection{Stage 1: Candidate Generation}
+\label{subsec:design-candidates}
+
+% Co-occurrence (Jaccard), content similarity, trending, personalized hybrid
+% <50ms target
+
+\subsection{Stage 2: LLM Re-Ranking and Explanation}
+\label{subsec:design-llm-reranking}
+
+% Gemini Flash reranking, natural language message generation
+% 300-500ms target
+
+\section{Reactive-First Interaction Model}
+\label{sec:design-reactive}
+
+\subsection{Readiness Signals}
+\label{subsec:design-readiness}
+
+% Product dwell, deep scroll, review engagement, comparison behavior, cart deliberation
+
+\subsection{Subtle Indicators and Question Chips}
+\label{subsec:design-indicators}
+
+% Breathing button, contextual chips, cooldown mechanism
+
+\subsection{Privacy Boundary}
+\label{subsec:design-privacy}
+
+% Client-side aggregation, no raw events to backend
+
+\section{Behavioral Tracking}
+\label{sec:design-behavior}
+
+% useDwellTime, useViewportTracking, useScrollDepth, useProductEngagement
+% Event buffer with 5-second flush, composite interest score
+
+\section{Review Summarization}
+\label{sec:design-reviews}
+
+% Batch processing with Flash-Lite, conflict surfacing, theme extraction
+
+\section{AI-Assisted Comparison Mode}
+\label{sec:design-comparison}
+
+% 2-3 products, structured analysis, tradeoff identification
+
+\section{Data Model}
+\label{sec:design-data}
+
+% Convex schema: products, categories, reviews, orders, cartItems, favorites,
+% productCoOccurrences, behaviorSessions, suggestions, userPreferences
+
+\section{Model Routing and Cost Strategy}
+\label{sec:design-model-routing}
+
+% Flash-Lite for batch/simple, Flash for conversational
+% Context caching, token budget optimization
+
+\section{Output Validation Strategy}
+\label{sec:design-validation}
+
+% Hydration over generation: LLM outputs productIds, client hydrates live data
+% Never let LLM generate prices/specs
