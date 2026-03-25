@@ -1,0 +1,44 @@
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM jenkins/jenkins:lts
+        USER root
+        RUN apt-get update && apt-get install -y maven tree
+        RUN jenkins-plugin-cli --plugins allure-jenkins-plugin workflow-aggregator matrix-project git
+        RUN mkdir -p /usr/share/jenkins/ref/init.groovy.d \
+            && echo 'import jenkins.model.*' > /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'import hudson.tools.*' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'import ru.yandexqatools.allure.jenkins.tools.*' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'def desc = Jenkins.instance.getDescriptor(AllureCommandlineInstallation.class)' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'def installer = new AllureCommandlineInstaller("2.32.2")' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'def installSourceProperty = new InstallSourceProperty([installer])' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'def installation = new AllureCommandlineInstallation("allure", "", [installSourceProperty])' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'desc.setInstallations(installation)' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy \
+            && echo 'desc.save()' >> /usr/share/jenkins/ref/init.groovy.d/allure_init.groovy
+        USER jenkins
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - './jenkins_data:/var/jenkins_home'
+
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    restart: always
+    ports:
+      - "3000:3000"
+      - "2222:22"
+    volumes:
+      - './gitea_data:/data'
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__database__DB_TYPE=sqlite3
+      - GITEA__server__DISABLE_REGISTRATION=true
+      - GITEA__security__INSTALL_LOCK=true
+      - GITEA__server__ROOT_URL=http://gitea:3000/
