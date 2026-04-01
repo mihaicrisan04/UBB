@@ -4,7 +4,8 @@
 **DOI:** 10.1109/ICSME58944.2024.00090\
 **Conference:** ICSME 2024 - Tool Demo Track\
 **Authors:** Adrian Hoff, Thomas Hoffmann Kilbak, Leonel Merino, Mircea Lungu\
-**Team members:** TODO
+**Team members:** Mihai Crisan, Catalin Giga, Ovidiu Daescu, Alex Danciu, Hunor Feketics\
+**Group:** 933
 
 ## Approach and motivation
 

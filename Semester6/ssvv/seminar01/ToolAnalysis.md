@@ -3,7 +3,8 @@
 **Paper:** GitTruck@Duck - Interactive Time Range Selection in Hierarchy-Oriented Polymetric Visualization of Git Repository Evolution\
 **DOI:** 10.1109/ICSME58944.2024.00090\
 **Conference:** ICSME 2024 - Tool Demo Track\
-**Team members:** TODO
+**Team members:** Mihai Crisan, Catalin Giga, Ovidiu Daescu, Alex Danciu, Hunor Feketics\
+**Group:** 933
 
 ## Installation and setup
 
@@ -11,7 +12,7 @@ GitTruck is distributed as an npm package and requires Node.js >= 22 and Git >= 
 
 ## Usage and benefits
 
-We ran GitTruck on an open-source project (RentNGo, a full-stack web application) to evaluate its capabilities. The tool immediately parsed the repository's Git history and presented an interactive bubble chart visualization. The main benefits we observed:
+We ran GitTruck on Express.js, a popular open-source Node.js web framework with 300+ contributors, to evaluate its capabilities. The tool immediately parsed the repository's Git history and presented an interactive bubble chart visualization. The main benefits we observed:
 
 - **Instant codebase overview**: the bubble chart immediately reveals the project structure, largest files, and folder hierarchy without reading any code. Larger bubbles represent bigger files, and nesting shows the directory structure.
 - **Configurable metrics**: switching the color encoding between file type, number of commits, top contributor, and last changed date provides different perspectives on the same codebase. The "last changed" view (Figure 4) is particularly useful for spotting stale vs. actively maintained areas.

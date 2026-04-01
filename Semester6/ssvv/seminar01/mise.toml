@@ -3,5 +3,5 @@
 
 [tasks.truck]
 description = "Run git-truck on the cloned repo"
-dir = "{{cwd}}/rentngo"
+dir = "{{cwd}}/express"
 run = "git-truck"
