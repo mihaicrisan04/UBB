@@ -69,6 +69,36 @@ Once you have $PA = LU$, solving $Ax = b$ is two triangular solves on the **perm
 1. Forward-solve $Ly = Pb$ (lower triangular, top-down).
 2. Back-solve $Ux = y$ (upper triangular, bottom-up).
 
+### Full worked solve
+
+Take $b = \begin{bmatrix} -3 \\ 1 \\ 3 \end{bmatrix}$. (Chosen so both solves stay fraction-free: the last back-substitution step is $\tfrac45 x_3 = y_3$, so a clean $x_3$ needs $y_3$ a multiple of $\tfrac45$ — this $b$ arranges that.)
+
+**Permute the right-hand side.** $P$ takes the rows in order $(3,1,2)$, so
+
+$$Pb = \begin{bmatrix} b_3 \\ b_1 \\ b_2 \end{bmatrix} = \begin{bmatrix} 3 \\ -3 \\ 1 \end{bmatrix}.$$
+
+**Forward-solve $Ly = Pb$** (top → down), with $L = \begin{bmatrix} 1 & 0 & 0 \\ \tfrac23 & 1 & 0 \\ \tfrac13 & \tfrac45 & 1 \end{bmatrix}$:
+
+$$y_1 = 3,$$
+$$\tfrac23 y_1 + y_2 = -3 \;\Rightarrow\; y_2 = -3 - \tfrac23(3) = -3 - 2 = -5,$$
+$$\tfrac13 y_1 + \tfrac45 y_2 + y_3 = 1 \;\Rightarrow\; y_3 = 1 - \tfrac13(3) - \tfrac45(-5) = 1 - 1 + 4 = 4.$$
+
+So $y = (3,\ -5,\ 4)^T$.
+
+**Back-solve $Ux = y$** (bottom → up), with $U = \begin{bmatrix} 3 & -1 & 1 \\ 0 & \tfrac53 & -\tfrac83 \\ 0 & 0 & \tfrac45 \end{bmatrix}$:
+
+$$\tfrac45 x_3 = 4 \;\Rightarrow\; x_3 = 5,$$
+$$\tfrac53 x_2 - \tfrac83 x_3 = -5 \;\Rightarrow\; \tfrac53 x_2 = -5 + \tfrac83(5) = \tfrac{-15 + 40}{3} = \tfrac{25}{3} \;\Rightarrow\; x_2 = \tfrac{25}{3}\cdot\tfrac{3}{5} = 5,$$
+$$3x_1 - x_2 + x_3 = 3 \;\Rightarrow\; 3x_1 = 3 + 5 - 5 = 3 \;\Rightarrow\; x_1 = 1.$$
+
+$$\boxed{\,x = (1,\ 5,\ 5)^T\,}$$
+
+**Verify** against the original $Ax = b$:
+
+- $2(1) + 1(5) - 2(5) = 2 + 5 - 10 = -3$ ✓
+- $1(1) + 1(5) - 1(5) = 1 + 5 - 5 = 1$ ✓
+- $3(1) - 1(5) + 1(5) = 3 - 5 + 5 = 3$ ✓
+
 ## Key takeaway
 
 1. Pick the largest-magnitude pivot in the current column (partial pivoting) — this keeps the multipliers $\le 1$ in size and the method numerically stable.

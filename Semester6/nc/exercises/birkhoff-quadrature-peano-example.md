@@ -18,7 +18,7 @@ $$\boxed{\,(Pf)(x) = f(-1) + (x+1)\,f'(1)\,}$$
 
 **Check:** $P(-1) = f(-1) + (-1+1)f'(1) = f(-1)$ ✓, and $P'(x) = f'(1) \Rightarrow P'(1) = f'(1)$ ✓.
 
-This is a **Birkhoff** interpolation: a function value at $x = -1$ and a derivative value at $x = 1$, with a "gap" (no function value at $x=1$, no derivative at $x=-1$).
+This is a **Birkhoff** interpolation: a function value at $x = -1$ and a derivative value at $x = 1$, with a "gap" (no function value at $x=1$, no derivative at $x=-1$). The "B" method here is *Birkhoff* — not Cholesky, which is an unrelated matrix factorization ($A=R^TR$) for solving linear systems, nothing to do with interpolation.
 
 Equivalently, via fundamental polynomials: $A_0(x) = 1$ (with $A_0(-1)=1$, $A_0'(1)=0$) and $A_1(x) = x+1$ (with $A_1(-1)=0$, $A_1'(1)=1$), so $(Pf)(x) = f(-1)A_0(x) + f'(1)A_1(x)$.
 
